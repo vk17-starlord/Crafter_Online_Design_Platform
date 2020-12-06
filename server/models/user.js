@@ -16,15 +16,24 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
-    }, 
+    },
     password: {
         type: String,
         required: true
     },
-    whoAmI: {
+    whoAreYou: {
         type: String,
         required: true
-    }
-}) 
+    },
+    profilePic: {
+        type: String,
+        default: "https://i.pinimg.com/originals/86/b9/4c/86b94c56b28e6bd8533320241440ddef.gif"
+    },
+    bio: {
+        type: String,
+    },
+}, {
+    timestamps: true
+});
 
-mongoose.model("User", userSchema);
+mongoose.model('User', userSchema);

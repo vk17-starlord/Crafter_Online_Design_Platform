@@ -1,0 +1,38 @@
+<div id="profile-form">
+    <div class="form">
+        <h2>Lets Set Up Your Profile</h2>
+        
+        <mat-vertical-stepper>
+            <mat-step  state="phone">
+              <mat-form-field class="example-full-width">
+                <mat-label>What Your Bio Should Have?</mat-label>
+                <input matInput #message maxlength="256" placeholder="Ex. I am Developer">
+                <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+                <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+              </mat-form-field>
+             
+            </mat-step>
+            <mat-step  state="chat">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Tell Us More About You !</mat-label>
+                    <input matInput #message maxlength="256" placeholder="Ex. I am Developer">
+                    <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+                    <mat-hint align="end"><strong>{{message.value.length}} / 256</strong></mat-hint>
+                  </mat-form-field>
+
+            </mat-step>
+            <mat-step >
+                <input type="file" (change)="onchange($event)">
+                <button (click)="onProfileUpload()">Update</button>
+            </mat-step>
+          
+            <!-- Icon overrides. -->
+            <ng-template matStepperIcon="phone">
+              <mat-icon>call_end</mat-icon>
+            </ng-template>
+            <ng-template matStepperIcon="chat">
+              <mat-icon>forum</mat-icon>
+            </ng-template>
+        </mat-vertical-stepper>
+    </div>
+</div>

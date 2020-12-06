@@ -15,24 +15,63 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatGridListModule} from '@angular/material/grid-list'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 import { MatSliderModule} from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button'; 
 import {MatRippleModule} from '@angular/material/core'; 
-import {MatSelectModule} from '@angular/material/select'; 
+import {MatSelectModule} from '@angular/material/select';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { HeaderComponent } from './header/header.component'; 
+import {MatIconModule} from '@angular/material/icon'; 
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthGuardGuard} from './auth-guard.guard';
+import {TokenInterceptorService} from './token-interceptor.service';
+import { ProfileformComponent } from './profileform/profileform.component';
+import {MatStepperModule} from '@angular/material/stepper'; 
+
+import {AngularFireStorageModule} from "@angular/fire/storage"
+import {AngularFireModule } from '@angular/fire'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingpageComponent,
+    LoginComponent,
+    SignupComponent,
+    HomepageComponent,
+    HeaderComponent,
+    ProfileformComponent
   ],
   imports: [
+AngularFireModule.initializeApp({
+    apiKey: "AIzaSyBURMnlC8N3HEABhm0YsDDWVJALhBvRLG8",
+    authDomain: "majorprojecr.firebaseapp.com",
+    projectId: "majorprojecr",
+    storageBucket: "majorprojecr.appspot.com",
+    messagingSenderId: "585567558613",
+    appId: "1:585567558613:web:c5e697643417c21cd77b5c",
+    measurementId: "G-KV63S85BTN"
+}),
+AngularFireStorageModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTooltipModule,
+    HttpClientModule,
+    MatStepperModule,
+    MatButtonModule,
     MatSlideToggleModule,
+    MatIconModule,
     MatSidenavModule,
     MatRippleModule,
     MatSliderModule,
@@ -43,6 +82,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatBadgeModule,
     MatBottomSheetModule,
     MatSnackBarModule,
+    MatInputModule ,
     MatCardModule,
     MatTabsModule,
     MatCheckboxModule,
@@ -53,7 +93,11 @@ import {MatSelectModule} from '@angular/material/select';
 
 
   ],
-  providers: [],
+  providers: [AuthGuardGuard,{
+    provide:HTTP_INTERCEPTORS  ,
+    useClass:TokenInterceptorService,
+    multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

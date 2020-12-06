@@ -1,18 +1,45 @@
 const router = require('express').Router();
-const requireLogin = require('../middleware/requireLogin');
 const mongoose = require('mongoose');
-const Post = mongoose.model("Post");
-const User = mongoose.model("User");
+const Profile = mongoose.model('Profile');
+const User = mongoose.model('User');
+const requireLogin = require('../middleware/auth');
 
-router.get('/user/:id',requireLogin, (req,res)=>{
-    User.findOne({_id: req.params.id}).select('-password').then((user)=>{
-        Post.find({postedBy: req.params.id}).populate("postedBy","_id userName").exec((err,posts)=>{
-            if(err){
-                return res.status(422).json({error: err});
-            }
-            res.json({user,posts});
-        })
-    })
+router.get('/getProfileInfo', requireLogin, async (req,res)=>{
+    try {
+        const userProfile = await Profile.find().populate('postedBy','userName profilePic');
+        res.json(userProfile);
+    } catch (err) {
+        return res.status(500).json({err: err.message});
+    }
 })
 
-module.exports = router;
+
+
+router.post('/postProfileInfo', requireLogin, async (req,res)=>{
+    try {
+        const {bio,desc} = req.body;
+        
+        const newUserProfile = new Profile({
+            bio,
+            desc,
+            postedBy: req.user
+        })
+
+        await newUserProfile.save();
+
+        res.json({message: "Profile Info Updated Successfully"});
+    } catch (err) {
+        return res.status(500).json({err: err.message});
+    }
+})
+
+router.get('/getUserProfile', requireLogin, async (req,res)=>{
+        const userProfile = await Profile.find({postedBy: req.user._id}).populate('postedBy','userName profilePic')
+    try {
+        res.json(userProfile);
+    } catch (err) {
+        return res.status(500).json({err: err.message});
+    }
+})
+
+module.exports = router
