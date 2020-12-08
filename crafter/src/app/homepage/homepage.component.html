@@ -1,1 +1,57 @@
-<p>homepage works!</p>
+<div id="home-page">
+    <h4>Crafter</h4>
+ 
+      
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    
+      </button>
+      <button mat-menu-item>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    
+      </button>
+      <button mat-menu-item>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    
+      </button> 
+ 
+    </mat-menu>
+    
+
+    <div class="row">
+        <div class="col-sm-12 col-lg-2 hide-on-small-only" id="side-navbar">
+<div class="profile-card">
+ <img src='{{CurrentUser.profilePic}}' alt="" class="profile-pic">
+<h1>{{CurrentUser.firstName}} {{CurrentUser.lastName}}</h1>
+<button mat-raised-button color="primary" routerLink='/profilepage' >View Profile</button>
+</div>
+<div class="links">
+  <a  href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+    <span>Home</span></a>
+
+
+    
+<a  href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">ballot</mat-icon>
+    <span>Blog</span></a>
+
+
+    
+<a  href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">terrain</mat-icon>
+    <span>Explore</span></a>
+
+
+    
+<a  href="#"><mat-icon aria-hidden="false" aria-label="Example home icon">insights</mat-icon>
+    <span>Project</span></a>
+</div>
+
+        </div>
+        <div class="col-sm-12 col-lg-10" id="featured-posts"></div>
+
+    </div>
+
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service'
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-landingpage',
   templateUrl: './landingpage.component.html',
@@ -8,11 +10,15 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class LandingpageComponent implements OnInit {
 
-  constructor(private authentication:AuthenticationService,private _snackBar: MatSnackBar) { }
+  constructor(private authentication:AuthenticationService,private _snackBar: MatSnackBar,private router: Router) { }
 
   ngOnInit(): void {
 
+    if(this.authentication.loggedIn()){
+this.router.navigateByUrl('/homepage')
+    }
   }
+
   
   onlogout(){
    this.authentication.logout();

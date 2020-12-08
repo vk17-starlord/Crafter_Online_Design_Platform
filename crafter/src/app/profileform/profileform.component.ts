@@ -14,30 +14,51 @@ export class ProfileformComponent implements OnInit {
   ngOnInit(): void {
   }
 
+bio:''
+desc:''
    
+
    Profileurl=``
 selectedFile
   onchange(ev){
    this.selectedFile = ev.target.files[0];
- 
-
   }
 
 
+  Myprofile={
+    firstName:'',
+    lastName:''
+  }
+
+  ProfileUrl='https://i.pinimg.com/originals/86/b9/4c/86b94c56b28e6bd8533320241440ddef.gif'
+isLinear=true;
   onProfileUpload(){
     let userId=localStorage.getItem('id');
-   var filepath=`ProfileImage/${userId}/profilepic_${this.selectedFile.name}`;
+   var filepath=`ProfileImage/${userId}/profilepic`;
    const fileRef=this.AF.ref(filepath)
 
    this.AF.upload(filepath,this.selectedFile).then((res)=>{
-     console.log(res)
+    
      fileRef.getDownloadURL().subscribe((url)=>{
       console.log(url);
-    })
-   
-   })
+      this.ProfileUrl=url;
 
+      this.profileupload.UpdateProfile(this.ProfileUrl).subscribe((res:any)=>{
+        console.log(res,'this is res')
+      },(error)=>{
+        console.log(error,'this is error')
+      })
+
+    })
+   })
   }
+
+
+  // save profile
+
+
+  
+  
 
 
 

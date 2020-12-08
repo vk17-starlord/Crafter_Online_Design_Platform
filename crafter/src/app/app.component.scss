@@ -7,6 +7,10 @@ $pure-black:#000000;
 $text-color:#EFEEF7;
 $pure-white:#FFFFFF;
 
+
+
+
+
 @font-face {
     font-family: HighTowerText;
     src: url("./fonts/HTOWERT.TTF");
@@ -31,4 +35,8 @@ $pure-white:#FFFFFF;
     src: url("./fonts/Roboto-Bold.ttf");
   }
 
+
+  a{
+    text-decoration: none;
+}
 

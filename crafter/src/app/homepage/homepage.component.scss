@@ -1,0 +1,91 @@
+
+@import "../app.component.scss";
+
+#home-page{
+    width:100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff !important;
+background-color: $darkyellow;
+}
+
+h4{
+    font-family: HighTowerText;
+    font-size: 42px !important;
+    padding:30px;
+
+}
+
+#side-navbar,#featured-posts{
+    min-height: 85vh;
+}
+
+#side-navbar{
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction:column;
+    a{ 
+        display:block;
+        color:#ccc;
+        margin:40px 100px;
+        font-size: 18px;
+        
+    }
+    mat-icon{
+       position:absolute; 
+       left: 80px;
+       margin-top: -5px;
+    }
+}
+
+button{
+    border: none !important;
+}
+
+button:hover{background-color: $primary;}
+
+.menu{
+    position:absolute;
+    right: 20px;
+    top: 20px;
+    display: none;
+}
+@media screen and (max-width:900px){
+    .hide-on-small-only{
+        display: none !important;
+      }
+      .menu{
+          display:block;
+      }
+    #side-navbar{
+        min-height: 10vh
+        a{ margin:20px  auto!important;}
+        mat-icon{
+            position: relative;
+            align-items: center;
+         
+            display:inline-block;
+        }
+    }
+}
+
+.profile-card{
+    display:flex;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    .profile-pic{
+        width:120px;
+        height: 120px;
+      border: 2px solid $primary;
+        border-radius: 50%;
+        margin: 0 auto;
+        object-fit:cover;
+    }
+    h1{ margin:20px auto;
+    font-family: FranklinGothic;
+    font-weight: lighter;
+    }
+}

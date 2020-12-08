@@ -15,6 +15,8 @@ $input:rgba(44, 43, 43, 0.678);
 
 
 .input{
+    width:100%;
+  
     color: #fff;
     display: block;
  margin: 15px auto !important;
@@ -22,7 +24,7 @@ $input:rgba(44, 43, 43, 0.678);
     border: none !important;
     text-align: left;
     box-sizing: border-box !important;
-    padding:0px 20px!important;
+    padding:10px 20px!important;
     border-radius: 10px !important;    font-family: RobotoMedium;
 }
 

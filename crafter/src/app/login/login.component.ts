@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+ 
+
 result:any;
   Login(){
     this.AuthService.loginUser(this.User).subscribe((res) =>{
@@ -33,7 +36,7 @@ localStorage.setItem('token',this.result.token);
         duration: 2000
       });
        
-      this.router.navigateByUrl('/profileform');
+      this.router.navigateByUrl('/homepage');
     },(err) =>{
       this.errMsg=err.error;
       console.log()

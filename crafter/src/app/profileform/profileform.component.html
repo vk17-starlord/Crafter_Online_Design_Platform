@@ -2,28 +2,41 @@
     <div class="form">
         <h2>Lets Set Up Your Profile</h2>
         
-        <mat-vertical-stepper>
-            <mat-step  state="phone">
-              <mat-form-field class="example-full-width">
-                <mat-label>What Your Bio Should Have?</mat-label>
-                <input matInput #message maxlength="256" placeholder="Ex. I am Developer">
-                <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-                <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-              </mat-form-field>
-             
-            </mat-step>
-            <mat-step  state="chat">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Tell Us More About You !</mat-label>
-                    <input matInput #message maxlength="256" placeholder="Ex. I am Developer">
-                    <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-                    <mat-hint align="end"><strong>{{message.value.length}} / 256</strong></mat-hint>
-                  </mat-form-field>
-
-            </mat-step>
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+        
             <mat-step >
-                <input type="file" (change)="onchange($event)">
-                <button (click)="onProfileUpload()">Update</button>
+
+              <div class="row">
+                <div class="col s12 l4 m12">
+              
+                  <img [src]='ProfileUrl' class="avatar" alt="">
+
+                </div>
+                <div class="col s12 l4 m12">
+                  <input type="file" (change)="onchange($event)">
+    
+                
+                </div>
+                <div class="col s12 l4 m12">
+                  <button mat-raised-button color="primary" (click)="onProfileUpload()">Update</button>
+              
+                
+                </div>
+              
+              
+              </div>
+      
+            </mat-step>
+          
+
+            <mat-step>
+              <img [src]='ProfileUrl' class="avatar" alt="">
+
+              <p>{{Myprofile.firstName}}{{Myprofile.lastName}}</p>
+             
+
+            <button mat-raised-button color="primary" mat-dialog-close >Continue</button>
+              
             </mat-step>
           
             <!-- Icon overrides. -->

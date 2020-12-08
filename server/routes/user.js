@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const requireLogin = require('../middleware/auth');
 
-router.get('/getUser', async (req,res)=>{
+router.get('/getUsers', async (req,res)=>{
     try {
         const user = await User.find();
         res.json(user);
@@ -13,6 +13,16 @@ router.get('/getUser', async (req,res)=>{
         return res.status(500).json({error: err.message});
     }
 })
+
+router.get('/getUser',requireLogin, async (req,res)=>{
+    try {
+        const user = await User.find({_id:req.user._id});
+        res.json(user);
+    } catch (err) {
+        return res.status(500).json({error: err.message});
+    }
+})
+
 
 
 
@@ -95,6 +105,7 @@ router.post('/signin', async (req,res)=>{
 })
 
 router.put('/updateProfilePic', requireLogin, async (req,res)=>{
+	
     try {
         const updateProfile = await User.findByIdAndUpdate(req.user._id, {
             $set: {profilePic: req.body.profilePic}

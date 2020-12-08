@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {ProfileformComponent} from './profileform/profileform.component';
 import { AuthGuardGuard} from './auth-guard.guard';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 const routes: Routes = [
 
   {path:'homepage',component:HomepageComponent, canActivate:[AuthGuardGuard]},
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'profileform',component:ProfileformComponent},
+  {path:'profilepage',component:ProfilePageComponent},
+
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
 ];

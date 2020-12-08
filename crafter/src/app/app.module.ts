@@ -40,7 +40,8 @@ import { ProfileformComponent } from './profileform/profileform.component';
 import {MatStepperModule} from '@angular/material/stepper'; 
 
 import {AngularFireStorageModule} from "@angular/fire/storage"
-import {AngularFireModule } from '@angular/fire'
+import {AngularFireModule } from '@angular/fire';
+import { ProfilePageComponent } from './profile-page/profile-page.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import {AngularFireModule } from '@angular/fire'
     SignupComponent,
     HomepageComponent,
     HeaderComponent,
-    ProfileformComponent
+    ProfileformComponent,
+    ProfilePageComponent
   ],
   imports: [
 AngularFireModule.initializeApp({
@@ -98,6 +100,9 @@ AngularFireStorageModule,
     useClass:TokenInterceptorService,
     multi: true
     }],
+    entryComponents: [
+     ProfileformComponent
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@
 $input:rgba(44, 43, 43, 0.678);
 #signup{
     width:100%;
+    overflow: hidden;
     height:auto;
     background-color: $darkyellow;
     min-height: 100vh;
@@ -11,15 +12,17 @@ $input:rgba(44, 43, 43, 0.678);
     
 }
 
+
 .input{
     color: #fff;
+    width: 100%;
+    padding:10px 20px;
     display: block;
  margin: 15px auto !important;
     background-color: $input !important;
     border: none !important;
     text-align: left;
     box-sizing: border-box !important;
-    padding:0px 20px!important;
     border-radius: 10px !important;    font-family: RobotoMedium;
 }
 
@@ -50,7 +53,7 @@ button{
   
     min-height: 100vh;
     height: auto;
-    background-image: url('../images/designer.jpg');
+    background-image: url('https://cdn.dribbble.com/users/721278/screenshots/6024927/rabbit.gif');
     background-size: cover;
     background-position: center center;
 }
