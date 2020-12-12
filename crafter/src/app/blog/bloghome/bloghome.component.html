@@ -1,0 +1,35 @@
+<div id="blog-home">
+    <h1 class="heading" >Qoute Of the Day ! <br></h1>
+    
+<div id="poster">
+   <div class="poster-card" (click)="RandomeQoute()" [style.background-color]="colorpallete.bg">
+       <div class="content">
+        <h1>{{TodaysQoutes.b_qoute}}</h1>
+        <span>~ {{TodaysQoutes.postedBy.userName}}</span>
+       </div>
+   </div>
+   
+   
+</div>
+
+
+<div id="blog-container">
+<h1 class="heading">Lets Read Some Articles</h1>
+
+<div style="width:90%;margin: 0 auto;">
+    <h4 class="subheading"><mat-icon aria-hidden="false" aria-label="Example home icon">category</mat-icon>Category</h4>
+
+
+    <div class="card-container row">
+        <div class="blog-card col-sm-12 col-lg-3" *ngFor="let blog of Blogs"  [routerLink]="['/blogdetail', blog._id]">
+  <img [src]='blog.b_coverPhoto' alt="blog-image">
+  <div class="content">
+      <h1>{{blog.b_title}}</h1>
+</div>
+        </div>
+
+    </div>
+     
+</div>
+</div>
+</div>

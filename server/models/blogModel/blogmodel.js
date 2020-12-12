@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
     b_coverPhoto: {
-        type: Object,
+        type: String,
         required: true
     },
     b_title: {
@@ -13,12 +13,15 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    b_body: {
-        type: String,
-        required: true
-    },
+        b_body:[ {
+        heading:String,
+        para:[{
+        text:String,    
+        }],
+        image:String
+        }],
     b_post: {
-        type: Object,
+        type: String,
         required: true
     },
     b_category: {

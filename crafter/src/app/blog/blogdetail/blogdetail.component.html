@@ -1,0 +1,20 @@
+<div id="blog-detail">
+    <div class="container">
+
+        <img [src]="CurrentBlog.b_coverPhoto" id="coverpic" alt="">
+        <h1>{{CurrentBlog.b_title}}</h1>
+        <h4>{{CurrentBlog.b_desc}}</h4>
+
+        <table>
+            <th>
+                <img src='{{CurrentBlog.postedBy.profilePic}}' alt="" class="profile-pic">
+            </th>
+            <th>
+                <h4>{{CurrentBlog.postedBy.userName}}</h4>
+            </th>
+
+        </table>
+
+        <p>{{CurrentBlog.b_body}}</p>
+    </div>
+</div>

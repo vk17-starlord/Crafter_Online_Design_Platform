@@ -50,6 +50,22 @@ router.post('/blog', requireLogin, async (req,res)=>{
     }
 })
 
+router.get('/blog/:id', requireLogin, async (req,res)=>{
+    try {
+        await Blog.findOne({_id: req.params.id}).exec((err,blog)=>{
+            if(err){
+                return res.status(401).json({err: err.message});
+            }
+           
+		   
+		   res.json(blog);
+        })
+    } catch (err) {
+        return res.status(500).json({err: err.message});
+    }
+})
+
+
 router.delete('/blog/:id', requireLogin, async (req,res)=>{
     try {
         await Blog.findOne({_id: req.params.id}).populate('postedBy', '_id').exec((err,blog)=>{

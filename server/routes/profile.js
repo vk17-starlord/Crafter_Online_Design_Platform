@@ -34,7 +34,7 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
 })
 
 router.get('/getUserProfile', requireLogin, async (req,res)=>{
-        const userProfile = await Profile.find({postedBy: req.user._id}).populate('postedBy','userName profilePic')
+        const userProfile = await Profile.find({postedBy: req.user._id}).populate('postedBy','_id')
     try {
         res.json(userProfile);
     } catch (err) {

@@ -7,6 +7,9 @@ import { SignupComponent } from './signup/signup.component';
 import {ProfileformComponent} from './profileform/profileform.component';
 import { AuthGuardGuard} from './auth-guard.guard';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { BloghomeComponent } from './blog/bloghome/bloghome.component';
+import { BlogformComponent } from './blog/blogform/blogform.component';
+import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 const routes: Routes = [
 
   {path:'homepage',component:HomepageComponent, canActivate:[AuthGuardGuard]},
@@ -15,7 +18,13 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'profileform',component:ProfileformComponent},
   {path:'profilepage',component:ProfilePageComponent},
+  { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
+  // blog routes
+
+  {path:'blog',component:BloghomeComponent},
+  {path:'blogform',component:BlogformComponent},
+  {path:'blogdetail/:id',component:BlogdetailComponent},
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
 ];

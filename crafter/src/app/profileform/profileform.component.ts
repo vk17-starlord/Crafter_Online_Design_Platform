@@ -49,8 +49,10 @@ isLinear=true;
         console.log(error,'this is error')
       })
 
+    } ,(err)=>{
+      console.log(err,'this is err')
     })
-   })
+   }).catch(err => console.log(err))
   }
 
 
