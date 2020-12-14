@@ -14,9 +14,7 @@ export class LandingpageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(this.authentication.loggedIn()){
-this.router.navigateByUrl('/homepage')
-    }
+
   }
 
   

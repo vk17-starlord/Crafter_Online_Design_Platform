@@ -15,7 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatGridListModule} from '@angular/material/grid-list'; 
 import {MatTabsModule} from '@angular/material/tabs'; 
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
-
+import {MatListModule} from '@angular/material/list'; 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
@@ -38,7 +38,6 @@ import { AuthGuardGuard} from './auth-guard.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
 import { ProfileformComponent } from './profileform/profileform.component';
 import {MatStepperModule} from '@angular/material/stepper'; 
-
 import {AngularFireStorageModule} from "@angular/fire/storage"
 import {AngularFireModule } from '@angular/fire';
 import { ProfilePageComponent } from './profile-page/profile-page.component'
@@ -47,7 +46,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BloghomeComponent } from './blog/bloghome/bloghome.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { BlogformComponent } from './blog/blogform/blogform.component';
- 
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +58,7 @@ import { BlogformComponent } from './blog/blogform/blogform.component';
     ProfilePageComponent,
     BloghomeComponent,
     BlogdetailComponent,
-    BlogformComponent
+    BlogformComponent,
   ],
   imports: [
 AngularFireModule.initializeApp({
@@ -84,7 +82,7 @@ AngularFireStorageModule,
     MatSlideToggleModule,
     MatIconModule,
     MatSidenavModule,
-    MatRippleModule,
+    MatRippleModule,MatListModule,
     MatSliderModule,
     MatMenuModule,
     MatRadioModule,
@@ -110,7 +108,7 @@ AngularFireStorageModule,
     multi: true
     }],
     entryComponents: [
-     ProfileformComponent
+     ProfileformComponent,
 ],
   bootstrap: [AppComponent]
 })

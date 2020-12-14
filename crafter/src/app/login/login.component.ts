@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../services/authentication.service'
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
-import {UserInfo} from '../shared/user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

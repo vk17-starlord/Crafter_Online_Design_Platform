@@ -59,7 +59,7 @@ getOnlythree(n=0){
 
     this.BlogService.getallBlogs().subscribe((res)=>{
       this.Blogs=res
-console.log(this.Blogs)    
+console.log(this.Blogs);  
     })
    
 

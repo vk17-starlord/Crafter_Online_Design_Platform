@@ -184,14 +184,13 @@ router.put('/b_uncomment', requireLogin, async (req,res)=>{
             b_text: req.body.b_text,
             postedBy: req.user
         }
-
         await Blog.findByIdAndUpdate(req.body.blogId, {
             $pull: {b_comments: comment}
         },{
             new: true
         }).populate('b_comments.postedBy', "userName").exec((err,result)=>{
             if(err){
-                return res.status(401).json({err: err.message});
+                return res.status(401).json({err: err.message});	
             }
             res.json({result});
         })

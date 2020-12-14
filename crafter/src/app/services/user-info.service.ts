@@ -11,11 +11,7 @@ export class UserInfoService {
   apiURL="http://localhost:3000";
 
 
-  PostUserInfo(){
-
-  }
-
   GetUserInfo(){
-
+ return this.http.get(this.apiURL+"/getUser")
   }
 }
