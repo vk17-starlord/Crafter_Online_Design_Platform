@@ -17,11 +17,11 @@ router.get('/dribbble', requireLogin, async (req,res)=>{
 
 router.post('/dribbble', requireLogin, async (req,res)=>{
     try {
-        const {d_title, d_pic, d_desc, d_category, d_color} = req.body;
+        const {d_title, d_pic, d_desc, d_category, d_color, d_tags, d_link} = req.body;
          
         if(!d_pic) return res.status(401).json({msg: "No Images Selected"});
 
-        if(!d_title || !d_desc || !d_category || !d_color){
+        if(!d_title || !d_desc || !d_category || !d_color || !d_tags || !d_link){
             return res.status(401).json({msg: "Please Enter all the fields"});
         }
 
@@ -30,7 +30,10 @@ router.post('/dribbble', requireLogin, async (req,res)=>{
             d_pic, 
             d_desc, 
             d_category,
-            d_color
+            d_color,
+            d_tags,
+            d_link,
+            postedBy: req.user
         });
 
         await newPost.save();
@@ -66,18 +69,18 @@ router.delete('/dribbble/:id', requireLogin, async (req,res)=>{
 
 router.put('/dribbble/:id', requireLogin, async (req,res)=>{
     try {
-        const {d_title, d_pic, d_desc, d_category, d_color} = req.body;
+        const {d_title, d_pic, d_desc, d_category, d_color, d_tags, d_link} = req.body;
 
         if(!d_pic){
             return res.status(401).json({msg: "No Image Selected"});
         }
 
-        if(!d_title || !d_desc || !d_category || !d_color){
+        if(!d_title || !d_desc || !d_category || !d_color || !d_tags || !d_link){
             return res.status(401).json({msg: "Please Enter all the fields"})
         }
 
         const post = await Dribbble.findOneAndUpdate({_id: req.params.id}, {
-            d_title, d_pic, d_desc, d_category, d_color
+            d_title, d_pic, d_desc, d_category, d_color, d_tags, d_link, postedBy: req.user
         }, (err, posts)=>{
             if(err) throw err;
             if(posts.postedBy._id.toString() === req.user._id.toString()){

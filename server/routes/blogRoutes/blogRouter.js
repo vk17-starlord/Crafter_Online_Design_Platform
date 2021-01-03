@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Blog = mongoose.model('Blog');
 const User = mongoose.model('User');
 const Profile = mongoose.model('Profile')
+const Dribbble = mongoose.model('Dribbble');
 
 router.get('/blog', requireLogin, async (req,res)=>{
     try {
@@ -227,10 +228,13 @@ router.get('/b_user_prof/:id', requireLogin, async(req,res)=>{
     try {
         const user = await User.findOne({_id: req.params.id}).select('-password');
         if(user){
-            await Blog.findOne({postedBy: req.params.id}).populate('postedBy','userName  profilePic').exec((err,posts)=>{
-                if(err) throw err;
-                res.json({user, posts});
-            });
+            // await Blog.findOne({postedBy: req.params.id}).populate('postedBy','userName  profilePic').exec((err,posts)=>{
+            //     if(err) throw err;
+            //     res.json({user, posts});
+            // });
+            const blog = await Blog.find({postedBy: req.params.id}).populate("postedBy", "userName profilePic");
+            const dribbble = await Dribbble.find({postedBy: req.params.id}).populate("postedBy", "userName profilePic")
+            res.json({user, blog, dribbble})
         }
     } catch (err) {
         return res.status(500).json({err: err.message});
