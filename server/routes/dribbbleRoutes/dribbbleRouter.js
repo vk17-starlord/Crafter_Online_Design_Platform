@@ -119,7 +119,7 @@ router.put('/d_like', requireLogin, async (req,res)=>{
             $push: {d_likes: like}
         }, {
             new: true
-        }).populate('postedBy', 'userName profilePic').exec((err, result)=>{
+        }).populate('d_likes.postedBy', 'userName profilePic').exec((err, result)=>{
             if(err) throw err;
             res.json({msg: "Post Liked Successfully"});
         })
@@ -139,7 +139,7 @@ router.put('/d_unlike', requireLogin, async (req,res)=>{
             $pull: {d_likes: like}
         }, {
             new: true
-        }).populate('postedBy', 'userName profilePic').exec((err, result)=>{
+        }).populate('d_likes.postedBy', 'userName profilePic').exec((err, result)=>{
             if(err) throw err;
             res.json({msg: "Post Unliked Successfully"});
         })
@@ -159,7 +159,7 @@ router.put('/d_comment', requireLogin, async (req,res)=>{
             $push: {d_comments: comment}
         }, {
             new: true
-        }).populate('postedBy', 'userName profilePic').exec((err, result)=>{
+        }).populate('d_comments.postedBy', 'userName profilePic').exec((err, result)=>{
             if(err) throw err;
             res.json({msg: "Commented Successfully"});
         })
@@ -180,7 +180,7 @@ router.put('/d_uncomment', requireLogin, async (req,res)=>{
             $pull: {d_comments: comment}
         }, {
             new: true
-        }).populate('postedBy', 'userName profilePic').exec((err, result)=>{
+        }).populate('d_comments.postedBy', 'userName profilePic').exec((err, result)=>{
             if(err) throw err;
             res.json({msg: "Uncommented Successfully"});
         })
