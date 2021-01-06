@@ -117,6 +117,7 @@ cursor: pointer;
 // blog card container
 
 .card-container{
+    text-align: center;
     width:100%;
    height: auto;
    padding:20px;
@@ -130,10 +131,13 @@ cursor: pointer;
     padding:0px !important;
 margin: 10px 20px;
 border: 1px solid inherit;
+z-index: 1;
 transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 &:hover{
     transition:3s cubic-bezier(.645,.045,.355);
     transform:scale(1.2,1.2);
+    position: relative;
+    z-index: 3;
 }
 img{
     width:100%;
@@ -157,8 +161,25 @@ img{
 }
 
 }
+.search-container{
+    width: 80%;
+    border-radius: 20px;
+    margin: 0 auto;
 
-
+}
+#search{
+    text-align: center;
+    width: 50% !important;
+    position: relative;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    color: white;
+    box-shadow: 5px5px 8px rgb(48, 48, 48);
+    background-color: lighten($color:rgba(17, 17, 17, 0.459), $amount: 10);
+    border-radius: 20px;
+}
 
 @media only screen and (max-width: 700px) {
 

@@ -1,3 +1,18 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Simonetta;
+  src: url("./fonts/Simonetta-Black.ttf");
+}
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url("./fonts/JosefinSans-SemiBold.ttf");
+}
+
 @font-face {
   font-family: HighTowerText;
   src: url("./fonts/HTOWERT.TTF");
@@ -23,15 +38,24 @@
   src: url("./fonts/Roboto-Bold.ttf");
 }
 
+a {
+  text-decoration: none;
+}
+
 #signup {
   width: 100%;
   height: auto;
-  background-color: #060403;
+  background-color: #030303;
   min-height: 100vh;
   color: #fff;
 }
 
+::ng-deep .mat-select-value {
+  color: white !important;
+}
+
 .input {
+  width: 100%;
   color: #fff;
   display: block;
   margin: 15px auto !important;
@@ -40,7 +64,7 @@
   text-align: left;
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
-  padding: 0px 20px !important;
+  padding: 10px 20px !important;
   border-radius: 10px !important;
   font-family: RobotoMedium;
 }

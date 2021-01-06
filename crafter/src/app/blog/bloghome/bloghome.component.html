@@ -1,4 +1,6 @@
-<div id="blog-home">
+
+<div id="blog-home" *ngIf="Qoutes">
+    <mat-icon routerLink="/homepage" style="cursor: pointer;margin: 20px;">navigate_before</mat-icon>    
     <h1 class="heading" >Qoute Of the Day ! <br></h1>
     
 <div id="poster">
@@ -16,7 +18,10 @@
 <div id="blog-container">
 <h1 class="heading">Lets Read Some Articles</h1>
 
-<div style="width:90%;margin: 0 auto;">
+<div style="width:90%;margin: 0 auto;text-align: center;">
+    <div class="search-container">
+        <input type="text" id="search" [(ngModel)]="searchquery" (keyup)="SearchBlog()" placeholder="Search Your Favorite Topic">
+    </div>
 
 
     <div class="card-container row">

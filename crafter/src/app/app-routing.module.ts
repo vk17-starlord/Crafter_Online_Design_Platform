@@ -16,15 +16,13 @@ const routes: Routes = [
   {path:'landingpage',component:LandingpageComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
-  {path:'profileform',component:ProfileformComponent},
-  {path:'profilepage',component:ProfilePageComponent},
-  { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
+  {path:'profileform',component:ProfileformComponent ,canActivate:[AuthGuardGuard]},
+  {path:'profilepage',component:ProfilePageComponent ,canActivate:[AuthGuardGuard]},
 
-  // blog routes
 
-  {path:'blog',component:BloghomeComponent},
-  {path:'blogform',component:BlogformComponent},
-  {path:'blogdetail/:id',component:BlogdetailComponent},
+  {path:'blog',component:BloghomeComponent,canActivate:[AuthGuardGuard]},
+  {path:'blogform',component:BlogformComponent,canActivate:[AuthGuardGuard]},
+  {path:'blogdetail/:id',component:BlogdetailComponent,canActivate:[AuthGuardGuard]},
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
 ];

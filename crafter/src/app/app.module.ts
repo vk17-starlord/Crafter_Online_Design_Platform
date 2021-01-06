@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,6 +46,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BloghomeComponent } from './blog/bloghome/bloghome.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { BlogformComponent } from './blog/blogform/blogform.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { BlogformComponent } from './blog/blogform/blogform.component';
     BloghomeComponent,
     BlogdetailComponent,
     BlogformComponent,
+    AboutMeComponent,
   ],
   imports: [
 AngularFireModule.initializeApp({
@@ -80,6 +82,7 @@ AngularFireStorageModule,
     MatStepperModule,
     MatButtonModule,
     MatSlideToggleModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatSidenavModule,
     MatRippleModule,MatListModule,

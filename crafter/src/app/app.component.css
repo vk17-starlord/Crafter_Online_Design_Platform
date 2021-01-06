@@ -1,3 +1,18 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Simonetta;
+  src: url("./fonts/Simonetta-Black.ttf");
+}
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url("./fonts/JosefinSans-SemiBold.ttf");
+}
+
 @font-face {
   font-family: HighTowerText;
   src: url("./fonts/HTOWERT.TTF");
@@ -21,4 +36,8 @@
 @font-face {
   font-family: Robotobold;
   src: url("./fonts/Roboto-Bold.ttf");
+}
+
+a {
+  text-decoration: none;
 }

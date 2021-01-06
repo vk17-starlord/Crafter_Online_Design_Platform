@@ -1,1 +1,250 @@
-/* No CSS */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Simonetta;
+  src: url("./fonts/Simonetta-Black.ttf");
+}
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url("./fonts/JosefinSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: HighTowerText;
+  src: url("./fonts/HTOWERT.TTF");
+}
+
+@font-face {
+  font-family: FranklinGothic;
+  src: url("./fonts/FranklinGothic.woff");
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url("./fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: RobotoLight;
+  src: url("./fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: Robotobold;
+  src: url("./fonts/Roboto-Bold.ttf");
+}
+
+a {
+  text-decoration: none;
+}
+
+#home-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #000000 !important;
+  background-color: white;
+}
+
+.navbar {
+  width: 100%;
+  background-attachment: fixed;
+  position: -webkit-sticky;
+  /* Required for Safari */
+  position: sticky;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 10vh;
+  height: auto;
+  padding: 20px 20px;
+}
+
+.navbar h1 {
+  font-family: HighTowerText;
+  font-size: 42px !important;
+}
+
+.navbar .right a {
+  font-family: RobotoMedium;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.navbar .right a:hover {
+  color: #cccccc;
+}
+
+#landing-section {
+  width: 100%;
+  min-height: 90vh;
+  margin: 0 auto;
+  border: 1px solid inherit;
+  background-attachment: fixed !important;
+}
+
+#landing-section > div {
+  min-height: 90vh;
+  padding-left: 70px;
+  border: 1px solid inherit;
+}
+
+#landing-section #text-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#landing-section #text-card h4 {
+  font-family: RobotoMedium;
+  text-align: left;
+  line-height: 60px;
+  font-weight: 100;
+  font-size: 52px !important;
+}
+
+#landing-section #text-card button {
+  background-color: #000;
+  color: white;
+}
+
+#landing-section #text-card .img {
+  background-image: url("../images/card-image.jpg");
+  width: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#landing-section #text-card .img:hover {
+  -webkit-animation: rotate-me-in 2s;
+          animation: rotate-me-in 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+#landing-section #image-1 {
+  background-image: url("../images/s0f04wah.png");
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#landing-section #image-1:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+#landing-section #image-2 {
+  background-image: url("../images/Collage series 06.png");
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#landing-section #image-2:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+#featured-section {
+  width: 100%;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+@-webkit-keyframes rotate-me-in {
+  /* You could think of as "step 1" */
+  0% {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+  75% {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+  }
+  /* You could think of as "step 2" */
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotate-me-in {
+  /* You could think of as "step 1" */
+  0% {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+  75% {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+  }
+  /* You could think of as "step 2" */
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+  .navbar .right {
+    margin-top: 50px;
+  }
+  .navbar .right a {
+    margin-left: 30px;
+    text-align: left;
+    font-size: 14px;
+  }
+  #image-1 {
+    background-size: contain !important;
+    background-repeat: no-repeat;
+  }
+}

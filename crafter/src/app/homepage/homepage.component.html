@@ -7,7 +7,13 @@
       <a >Projects</a>
 
       <a >Guide </a>
+      <a [matMenuTriggerFor]="menu">Log </a> 
+<mat-menu #menu="matMenu">
+  <button mat-button (click)="onlogout()">Logout</button> <br>
+  <button mat-button routerLink="/login">Login</button>
+</mat-menu>
 
+      <img [src]="CurrentUser.profilePic" alt="" id="profile-pic" routerLink="/profilepage">
     </div>
   </div>
  <div class="row" id="landing-section">
@@ -37,6 +43,16 @@ OF DESIGN <br>
  </div>
 
  <div id="featured-section">
+   <h1>Featured Blogs</h1>
+   <div class="container">
+<div class="row">
 
+  
+<div class="col-sm-12 col-lg-3 blogcard"  *ngFor="let blog of FeaturedBlogs"  [routerLink]="['/blogdetail', blog._id]">
+<img [src]="blog.b_coverPhoto" class="img" alt="">
+<h4>{{blog.b_title}}</h4>
+</div>
+     
+   </div>
  </div>
 </div>

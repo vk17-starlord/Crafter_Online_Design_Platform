@@ -14,7 +14,7 @@ router.get('/b_qoutes', requireLogin, async (req,res)=>{
 
 router.post('/b_qoutes', requireLogin, async (req,res)=>{
     try {
-        const {b_qoute} = req.body;
+        const {	} = req.body;
         if(!b_qoute){
             return res.status(500).json({error: "Please Enter the required Field"})
         }

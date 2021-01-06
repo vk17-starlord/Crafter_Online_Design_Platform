@@ -9,8 +9,8 @@ import {BlogService} from '../../services/blog.service'
 export class BloghomeComponent implements OnInit {
 
   constructor(private BlogQoute:BlogqouteService ,private BlogService: BlogService    ) { }
-
-  Qoutes:any='';
+searchquery:any=""
+  Qoutes:any=false;
 TodaysQoutes:any='';
 colorpallete:any={
   bg:'',
@@ -39,7 +39,7 @@ console.log(this.colorpallete,'pallete')
 
 
 Blogs:any;
-
+AllBlog:any;
 getOnlythree(n=0){
 
   console.log(this.Blogs.slice(n,n+3))
@@ -59,14 +59,25 @@ getOnlythree(n=0){
 
     this.BlogService.getallBlogs().subscribe((res)=>{
       this.Blogs=res
-console.log(this.Blogs);  
+console.log(this.Blogs); 
+this.AllBlog=res; 
     })
    
-
-
-
-
     
   }
 
+
+  SearchBlog(){
+    this.Blogs= this.AllBlog.filter((blog)=>{
+    if(blog.b_title.toLowerCase().indexOf(this.searchquery.toLowerCase())>-1){
+    
+      return blog
+    }
+    else if(blog.b_category.indexOf(this.searchquery)>-1){
+      return blog;
+      }
+    })
+
+  }
+ 
 }

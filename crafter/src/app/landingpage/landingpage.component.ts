@@ -13,8 +13,9 @@ export class LandingpageComponent implements OnInit {
   constructor(private authentication:AuthenticationService,private _snackBar: MatSnackBar,private router: Router) { }
 
   ngOnInit(): void {
-
-
+if(localStorage.getItem('token')){
+  this.router.navigateByUrl('/homepage')
+}
   }
 
   

@@ -1,0 +1,126 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Simonetta;
+  src: url("./fonts/Simonetta-Black.ttf");
+}
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url("./fonts/JosefinSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: HighTowerText;
+  src: url("./fonts/HTOWERT.TTF");
+}
+
+@font-face {
+  font-family: FranklinGothic;
+  src: url("./fonts/FranklinGothic.woff");
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url("./fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: RobotoLight;
+  src: url("./fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: Robotobold;
+  src: url("./fonts/Roboto-Bold.ttf");
+}
+
+a {
+  text-decoration: none;
+}
+
+#profile-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #030303;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#profile-page #profile-update {
+  margin: 15px;
+}
+
+#profile-page .profile-container {
+  width: 50%;
+  min-height: 70vh;
+}
+
+#profile-page .row > div {
+  border: 1px solid transparent;
+  color: white;
+}
+
+#profile-page .voilet-bg {
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  height: 250px;
+  background-color: #5A47F8;
+}
+
+#profile-page .profile-pic {
+  width: 180px;
+  height: 180px;
+  border: 5px solid #5A47F8;
+  margin-top: -100px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#profile-page h1 {
+  margin: 0px 20px;
+  font-family: RobotoMedium;
+  font-size: 24px;
+}
+
+#profile-page h4 {
+  font-size: 16px;
+  margin: 10px 20px;
+}
+
+#profile-page h4 span {
+  margin-left: 40px;
+}
+
+#profile-page h4 mat-icon {
+  position: absolute;
+  color: white;
+  margin: 0px -05px;
+}
+
+#profile-page .label {
+  color: white;
+}
+
+#profile-page mat-icon {
+  color: #5A47F8;
+  margin: 0px 10px;
+}

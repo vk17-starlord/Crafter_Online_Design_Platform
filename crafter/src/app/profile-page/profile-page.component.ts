@@ -2,6 +2,7 @@ import { Component, OnInit,Inject } from '@angular/core';
 import {ProfileUploadService } from '../services/profile-upload.service'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ProfileformComponent } from '../profileform/profileform.component';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -10,7 +11,7 @@ import { ProfileformComponent } from '../profileform/profileform.component';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(private profileService: ProfileUploadService,private dialog:MatDialog) { }
+  constructor(private blogService:BlogService,private profileService: ProfileUploadService,private dialog:MatDialog) { }
 
   UserInfo:any='';
 
@@ -18,17 +19,24 @@ export class ProfilePageComponent implements OnInit {
   profilepic: string;
    bio: string;
    desc:string;
-
+   BlogPosts:any;
 
   ngOnInit(): void {
  this.GetUser()
+
   }
 
   GetUser(){
     this.profileService.GetUser().subscribe((user)=>{
-      console.log(user[0])
+      
       this.UserInfo=user[0];
-    });
+
+      this.blogService.getUserBlog(this.UserInfo._id).subscribe((res)=>{
+        
+        this.BlogPosts=res;
+         console.log(this.BlogPosts)
+      })
+    });    
   }
 
   openForm(){

@@ -14,5 +14,13 @@ export class BlogService {
 return this.http.get(this.ApiUrl)
 
   }
+   
 
+  PostBlogs(Blog){
+  return this.http.post(this.ApiUrl,{Blog})
+  }
+
+  getUserBlog(id){
+    return this.http.get(`http://localhost:3000/b_user_prof/${id}`)
+  }
 }

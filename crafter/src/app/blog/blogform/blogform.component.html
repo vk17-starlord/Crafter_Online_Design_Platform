@@ -2,43 +2,58 @@
 
     <div class="container">
         <h1>Publish Your Blog</h1>
-        <form id="publish-blog">
-           
+        
+        <form id="publish-blog" *ngIf="firstForm">
+     
             <label>Enter Your Title</label>
-            <input type="text"  >
+            <input required type="text" name="b_title" placeholder=""  [(ngModel)]="b_title" >
               
             <label>Upload Cover Photo</label>
-            <input type="file" class="custom-file-input">  
-           <div class="button-wrap">
-            <label class ="new-button" for="upload"> Upload Cover Photo</label>
-            <input id="upload" type="file"  />
-            
-           </div>    
-           
+           <input required id="upload" type="file" name="b_coverPhoto"   (change)="onchange($event)" />
+          
+           <p *ngIf="currentFilename">{{currentFilename}}</p>
            <label>Enter Blog Description</label>
-           <input type="text">
+           <input required type="text" placeholder=""  name="b_desc" [(ngModel)]="b_desc">
           
 
+ 
+           <label id="example-radio-group-label">Pick your Blog Category</label>
+           <mat-radio-group
+             aria-labelledby="example-radio-group-label"
+             class="example-radio-group"
+             [(ngModel)]="b_category"
+             name="b_category" (change)="onRadioInput()">
+             <mat-radio-button value="Design"> Design</mat-radio-button>
+             <mat-radio-button value="UI/UX">UI UX</mat-radio-button>
+             <mat-radio-button value="Graphic Design">Graphic Design</mat-radio-button>
+             <mat-radio-button value="Illustration">Illustration</mat-radio-button>
+             <mat-radio-button value="Web Design">Web Design</mat-radio-button>
+             <mat-radio-button value="Coding">Coding</mat-radio-button>
+             <mat-radio-button value="Other">Other</mat-radio-button>
 
-           <div class="para-section">
+            </mat-radio-group>
           
-            <label>Enter Section Heading</label>
-            <input type="text">
-            <div class="button-wrap">
-                <label class ="new-button" for="upload"> Upload Section Photo</label>
-                <input id="upload" type="file"  />
-                
-               </div>
-           <label>Enter Paragraph</label>
-          <textarea  cols="30" rows="10"></textarea>
-         
-             
-            
-           <button mat-raised-button color="primary">Primary</button>
-           </div>
 
-
+            <button mat-raised-button class="btn" color="primary" (click)="SubmitHalf()">Next</button>
         </form>
+
+        <form *ngIf="nextForm">
+            <label>Enter Section Heading</label>
+            <input required type="text" name="CurrentHeading" [(ngModel)]="CurrentHeading" >
+              
+            <label>Enter Your Section Text</label>
+            <textarea matInput placeholder="Ex. It makes me feel..."name="CurrentPara" [(ngModel)]="CurrentPara"></textarea>
+              
+      
+                <input required type="file" name="b_sectionimage"   [(ngModel)]="CurrentImage" (change)="onsectionchange($event)" />
+               
+               <p *ngIf="CurrentImagename">{{CurrentImagename}}</p>
+
+               <button mat-raised-button class="btn" color="primary" (click)="AddSection()">Add Section</button>
+               <button mat-raised-button class="btn" color="primary" (click)="PostBlog()">Post</button>
+        </form>
+        
+
     </div>
  
 

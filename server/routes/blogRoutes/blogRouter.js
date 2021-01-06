@@ -16,10 +16,8 @@ router.get('/blog', requireLogin, async (req,res)=>{
 
 router.post('/blog', requireLogin, async (req,res)=>{
     try {
-        const {b_coverPhoto, b_title, b_desc, b_body, b_post, b_category} = req.body;
-        if(!b_coverPhoto || !b_post){
-            return res.status(401).json({error: "No Images Selected"});
-        } 
+        const {b_coverPhoto, b_title, b_desc, b_body, b_post, b_category} = req.body.Blog;
+		console.log(req.body);
 
         if(!b_title || !b_body || !b_category){
             return res.status(401).json({error: "Please Enter the required Fields"});
@@ -225,9 +223,9 @@ router.get('/b_search', requireLogin, async (req,res)=>{
 //To find User by Profile
 router.get('/b_user_prof/:id', requireLogin, async(req,res)=>{
     try {
-        const user = await User.findOne({_id: req.params.id}).select('-password');
+        const user = await User.find({_id: req.params.id}).select('-password');
         if(user){
-            await Blog.findOne({postedBy: req.params.id}).populate('postedBy','userName  profilePic').exec((err,posts)=>{
+            await Blog.find({postedBy: req.params.id}).populate('postedBy','userName  profilePic').exec((err,posts)=>{
                 if(err) throw err;
                 res.json({user, posts});
             });

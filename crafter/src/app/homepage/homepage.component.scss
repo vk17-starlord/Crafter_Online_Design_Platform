@@ -8,7 +8,14 @@
     color: #000000!important;
 background-color: white;
 }
-
+#profile-pic{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position:center;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px #ccc;
+}
 .navbar{
     width:100%;
     background-attachment: fixed;
@@ -33,11 +40,11 @@ background-color: white;
      .right{
          a{
              font-family: RobotoMedium;
-             
+              color: black !important;
              font-size: 20px;
-             margin: 10px;
+             margin: 10px 15px;
              cursor: pointer;
-         
+            
           &:hover{
               color: #cccccc;
           }
@@ -99,7 +106,7 @@ transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 
 &:hover{
-    transform:scale(1.2,1.2);
+    transform:scale(0.8,0.8);
 }
 }
 
@@ -112,7 +119,7 @@ transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     &:hover{
-        transform:scale(1.2,1.2);
+        transform:scale(0.8,0.8);
     }
    }
 
@@ -123,8 +130,41 @@ transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     width: 100%;
 background-color: #000;
     min-height: 100vh;
+    color: #fff;
+  padding: 10px;
+  .container{
+      width: 85% !important;
+  }
+    h1{
+        margin: 100px auto;
+        text-align: center;
+        font-size: 64px ;
+    }
+    .row{
+        width: 100%;
+    }
+    .blogcard{
+        height: auto;
+        width: auto;
+     
+        .img{
+            width: 100%;
+            border-radius: 20px;
+            height: 300px;
+         object-fit: cover;
+           box-shadow: 1px 1px 10px rgb(24, 23, 23);    
+        }
+        h4{
+            padding: 10px;
+            font-size: 18px;
+        }transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover{
+            transform: scale(1.2,1.2);
+        }
+    }
 
 }
+
 
 @keyframes rotate-me-in {
     /* You could think of as "step 1" */
@@ -160,7 +200,8 @@ font-size: 14px;
         }
     }
 
-    #image-1{
+    #landing section > div{
+        min-height: 50vh !important;
         background-size: contain !important;
         background-repeat: no-repeat;
         
