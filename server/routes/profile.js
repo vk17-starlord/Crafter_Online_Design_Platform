@@ -22,6 +22,9 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
         const newUserProfile = new Profile({
             bio,
             desc,
+            p_coverphoto,
+            p_contact,
+            p_links,
             postedBy: req.user
         })
 
