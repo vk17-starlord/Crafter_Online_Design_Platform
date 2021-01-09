@@ -17,12 +17,12 @@ router.get('/getProfileInfo', requireLogin, async (req,res)=>{
 
 router.post('/postProfileInfo', requireLogin, async (req,res)=>{
     try {
-        const {bio,desc} = req.body;
+        const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body;
         
         const newUserProfile = new Profile({
             bio,
             desc,
-            p_coverphoto,
+            p_coverPhoto,
             p_contact,
             p_links,
             postedBy: req.user
@@ -40,7 +40,7 @@ router.put('/updateProfile/:id', requireLogin, async (req,res)=>{
     try {
         const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body
 
-        const updateProfile = await User.findOneAndUpdate({_id: req.params.id}, {
+        const updateProfile = await Profile.findOneAndUpdate({_id: req.params.id}, {
             bio, desc, p_coverPhoto, p_contact, p_links, postedBy: req.user
         });
         
