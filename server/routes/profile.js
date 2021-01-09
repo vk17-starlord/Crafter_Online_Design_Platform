@@ -36,6 +36,21 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
     }
 })
 
+router.put('/updateProfile/:id', requireLogin, async (req,res)=>{
+    try {
+        const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body
+
+        const updateProfile = await User.findOneAndUpdate({_id: req.params.id}, {
+            bio, desc, p_coverPhoto, p_contact, p_links, postedBy: req.user
+        });
+        
+        res.json({updateProfile});
+
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
 router.get('/getUserProfile', requireLogin, async (req,res)=>{
         const userProfile = await Profile.find({postedBy: req.user._id}).populate('postedBy','_id')
     try {
