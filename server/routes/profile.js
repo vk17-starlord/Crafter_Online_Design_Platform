@@ -23,7 +23,6 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
         const prof_data1 = await Profile.findOne({desc});
         if(prof_data1) return res.status(200).json({err: "Desc already exists"})
 
-        if(prof_data){
             const newUserProfile = new Profile({
                 bio,
                 desc,
@@ -36,9 +35,6 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
             await newUserProfile.save();
 
             res.json({message: "Profile Info Updated Successfully"});
-        }else{
-            return res.status(401).json({err: "Error"})
-        } 
     } catch (err) {
         return res.status(500).json({err: err.message});
     }
@@ -47,12 +43,6 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
 router.put('/updateProfile/:id', requireLogin, async (req,res)=>{
     try {
         const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body
-
-        const prof_data = await Profile.findOne({bio});
-        if(prof_data) return res.status(200).json({err: "Bio already exists"})
-
-        const prof_data1 = await Profile.findOne({desc});
-        if(prof_data1) return res.status(200).json({err: "Desc already exists"})
 
         await Profile.findOneAndUpdate({_id: req.params.id}, {
             bio, desc, p_coverPhoto, p_contact, p_links, postedBy: req.user
