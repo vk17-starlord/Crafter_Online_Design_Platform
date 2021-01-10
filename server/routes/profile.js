@@ -13,24 +13,32 @@ router.get('/getProfileInfo', requireLogin, async (req,res)=>{
     }
 })
 
-
-
 router.post('/postProfileInfo', requireLogin, async (req,res)=>{
     try {
         const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body;
-        
-        const newUserProfile = new Profile({
-            bio,
-            desc,
-            p_coverPhoto,
-            p_contact,
-            p_links,
-            postedBy: req.user
-        })
 
-        await newUserProfile.save();
+        const prof_data = await Profile.findOne({bio});
+        if(prof_data) return res.status(200).json({err: "Bio already exists"})
 
-        res.json({message: "Profile Info Updated Successfully"});
+        const prof_data1 = await Profile.findOne({desc});
+        if(prof_data1) return res.status(200).json({err: "Desc already exists"})
+
+        if(prof_data){
+            const newUserProfile = new Profile({
+                bio,
+                desc,
+                p_coverPhoto,
+                p_contact,
+                p_links,
+                postedBy: req.user
+            })
+            
+            await newUserProfile.save();
+
+            res.json({message: "Profile Info Updated Successfully"});
+        }else{
+            return res.status(401).json({err: "Error"})
+        } 
     } catch (err) {
         return res.status(500).json({err: err.message});
     }
@@ -40,8 +48,23 @@ router.put('/updateProfile/:id', requireLogin, async (req,res)=>{
     try {
         const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body
 
-        const updateProfile = await Profile.findOneAndUpdate({_id: req.params.id}, {
+        const prof_data = await Profile.findOne({bio});
+        if(prof_data) return res.status(200).json({err: "Bio already exists"})
+
+        const prof_data1 = await Profile.findOne({desc});
+        if(prof_data1) return res.status(200).json({err: "Desc already exists"})
+
+        await Profile.findOneAndUpdate({_id: req.params.id}, {
             bio, desc, p_coverPhoto, p_contact, p_links, postedBy: req.user
+        }, (err, prof)=>{
+            if(err) throw err;
+
+            if(prof.postedBy._id.toString() === req.user._id.toString()){
+                const update_prof = prof.update()
+                if(update_prof){
+                    res.json({msg: "Profile Updated Successfully"})
+                }
+            }
         });
         
         res.json({updateProfile});
@@ -51,8 +74,17 @@ router.put('/updateProfile/:id', requireLogin, async (req,res)=>{
     }
 })
 
+router.delete('/del_prof/:id', requireLogin, async (req,res)=>{
+    try {
+        await Profile.findByIdAndDelete(req.params.id);
+        res.json({msg: "Profile Deleted Successfully"})
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
 router.get('/getUserProfile', requireLogin, async (req,res)=>{
-        const userProfile = await Profile.find({postedBy: req.user._id}).populate('postedBy','_id')
+    const userProfile = await Profile.find({postedBy: req.user._id}).populate('postedBy','_id')
     try {
         res.json(userProfile);
     } catch (err) {

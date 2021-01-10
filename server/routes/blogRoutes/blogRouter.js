@@ -232,9 +232,10 @@ router.get('/b_user_prof/:id', requireLogin, async(req,res)=>{
             //     if(err) throw err;
             //     res.json({user, posts});
             // });
+            const profile = await Profile.find({postedBy: req.params.id}).populate("postedBy", "userName profilePic")
             const blog = await Blog.find({postedBy: req.params.id}).populate("postedBy", "userName profilePic");
             const dribbble = await Dribbble.find({postedBy: req.params.id}).populate("postedBy", "userName profilePic")
-            res.json({user, blog, dribbble})
+            res.json({user, profile, blog, dribbble})
         }
     } catch (err) {
         return res.status(500).json({err: err.message});
