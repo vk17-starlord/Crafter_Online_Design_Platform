@@ -5,7 +5,7 @@ import {BlogService} from '../../services/blog.service'
 import {UserInfoService} from '../../services/user-info.service';
 import {BlogreactionService} from '../../services/blogreaction.service';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-blogdetail',
   templateUrl: './blogdetail.component.html',
@@ -15,7 +15,10 @@ export class BlogdetailComponent implements OnInit {
   allblogs:any;
   CurrentUser:any;
   panelOpenState=false
-  CurrentBlog:any="";
+  CurrentBlog:any={
+
+    postedBy:""
+  };
   Likes:any;
   likeColor="rgba(44, 44, 44, 0.514)"
   dislikeColor="rgba(44, 44, 44, 0.514)"
@@ -27,12 +30,13 @@ export class BlogdetailComponent implements OnInit {
         return false;
       }
   };
-  constructor(private route: ActivatedRoute,private _bottomSheet: MatBottomSheet,
+  constructor(private route: ActivatedRoute,private _bottomSheet: MatBottomSheet,private _snackBar: MatSnackBar,
     private location: Location,private blogService :BlogService,private UserService:UserInfoService,private Blogreaction:BlogreactionService) { }
   ngOnInit(): void {
     this.getCurrentBlog();
 
     this.getCurrentUser();
+
   }
    comment:String=null;
 
@@ -40,7 +44,6 @@ export class BlogdetailComponent implements OnInit {
     this.UserService.GetUserInfo().subscribe((user)=>{
 
       this.CurrentUser = user[0]
-      console.log(this.CurrentUser._id);
       
      },(err)=>{
        console.log(err)
@@ -52,10 +55,11 @@ export class BlogdetailComponent implements OnInit {
    
     const present=likesarray.some((like)=>{
      return like.postedBy._id===this.CurrentUser._id
-    })
-    
+    }) 
 if(present){
-
+  this._snackBar.open('You have already Liked This Post', 'X',{
+    duration: 2000
+  });
 }else{
   this.Blogreaction.PutLike(this.CurrentBlog._id).subscribe((res)=>{
     this.getCurrentBlog();
@@ -83,8 +87,10 @@ if(present){
        return blog._id==id;
   })[0]
 
-   this.Likes=this.CurrentBlog.b_likes.length;
-   console.log(this.CurrentBlog.postedBy._id)
+console.log(this.CurrentUser._id)
+this.CurrentBlog.b_likes.forEach((ele)=>{
+  console.log(ele.postedBy._id)
+})
 
     })
   }  
