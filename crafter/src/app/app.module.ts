@@ -41,12 +41,13 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {AngularFireStorageModule} from "@angular/fire/storage"
 import {AngularFireModule } from '@angular/fire';
 import { ProfilePageComponent } from './profile-page/profile-page.component'
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { BloghomeComponent } from './blog/bloghome/bloghome.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { BlogformComponent } from './blog/blogform/blogform.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ProfilePicComponent } from './profile-pic/profile-pic.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
     BlogdetailComponent,
     BlogformComponent,
     AboutMeComponent,
+    EditprofileComponent,
+    ProfilePicComponent,
   ],
   imports: [
 AngularFireModule.initializeApp({
@@ -103,7 +106,6 @@ AngularFireStorageModule,
     MatDialogModule,
     MatExpansionModule,
 
-    CarouselModule 
   ],
   providers: [AuthGuardGuard,{
     provide:HTTP_INTERCEPTORS  ,
@@ -112,6 +114,8 @@ AngularFireStorageModule,
     }],
     entryComponents: [
      ProfileformComponent,
+     AboutMeComponent,
+     ProfilePicComponent
 ],
   bootstrap: [AppComponent]
 })

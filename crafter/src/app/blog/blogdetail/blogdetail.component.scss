@@ -12,13 +12,24 @@ overflow-x:hidden !important;
 
 }
 
+.container{
+    text-align: center;
+
+    h4,h1{
+        text-align: left;
+    }
+}
 
 
 #coverpic{
     width:100%;
-    height: 80vh;
+    max-height: 100vh;
+    object-fit: cover;
+    object-position: top center;
+    height: auto;
     background-size: cover;
-    margin-bottom: 50px;
+  margin: 0 auto ;
+      margin-bottom: 50px;
     background-position: top center;
 }
 h1{
@@ -37,10 +48,13 @@ font-family: JosefinSansBold;
         line-height: 35px;
     }
     img{
-        width:auto;
-        max-height: 800px;
+        width:100%;
+        max-width:100%;
+        height: auto;
         text-align: center;
 margin: 30px auto;
+object-fit: cover;
+object-position: top center;
     }
     p{ 
         line-height: 28px;
@@ -105,6 +119,7 @@ margin: 20px auto;
 mat-expansion-panel,mat-expansion-panel-header{
     background-color: $darkyellow !important;
     color: white;
+   
   h4{
       padding:40px;
       color: white !important;
@@ -119,10 +134,17 @@ mat-expansion-panel,mat-expansion-panel-header{
         background-color: lighten($color: $darkyellow, $amount: 5);
         color: whitesmoke;
         margin: 20px auto;
+        .row > div{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
         .profile-picture{
             width:60px;
             border-radius: 50%;
             height: 60px;
+            object-fit:cover;
+            object-position: top center;
         }
         p{
             font-size: 16px;
@@ -138,14 +160,58 @@ mat-expansion-panel,mat-expansion-panel-header{
         width:90% !important;
         
     }
+    .comment-container{
+        margin-top: 20px;
+        #read{
+            font-size: 12px !important;
+            .mat-icon{
+                font-size: 18px;
+            }
+        }
+    }
+    .mat-expansion-panel{
+        width: 100% !important;
+    }
+    
+    .comment-card{
+        .row .col{
+            padding: 10px 5px;
+        }
+        .button{
+            max-width: 20px;
+            max-height: 20px ;
+        }
+    }
     #coverpic{
-
-        height: 400px !important;
+            max-width: 100%;
+        
+         height: 400px !important;
         object-fit:cover;
 
     }
     #blog-detail{
         padding:10px;
 
+    }
+    .container h1{
+        font-size:34px!important;
+        line-height:36px !important;
+     text-align:left;
+     margin-bottom:45px;
+    }
+    .section {
+        overflow-wrap: break-word;
+        text-rendering: optimizeLegibility;
+        p{
+            overflow-wrap: break-word !important;
+
+            font-size:18px !important;
+             line-height:26px !important;
+             text-align:left!important;
+             letter-spacing: -0.003em !important;
+             word-break: break-word !important;
+             font-style: normal !important;
+
+        }
     }
 }

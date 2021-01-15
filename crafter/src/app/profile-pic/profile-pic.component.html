@@ -1,0 +1,23 @@
+<div class="profile-container">
+  <div class="card">
+
+        <img [src]='ProfileUrl' class="avatar" alt="">
+
+    
+    <div class="row">
+
+
+        <div class="col-sm-12 col-lg-12">
+            <input type="file" (change)="onchange($event)">
+          </div>
+        <br>  
+          <div class="col-sm-12 col-lg-12">
+            <button mat-raised-button color="primary" [disabled]="show" (click)="onProfileUpload()">Update</button>
+            <button mat-raised-button color="warn" [mat-dialog-close]="true" cdkFocusInitial>cancel</button>  
+        </div>
+          
+    </div>
+
+  </div>
+
+</div>

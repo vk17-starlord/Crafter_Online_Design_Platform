@@ -10,6 +10,9 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { BloghomeComponent } from './blog/bloghome/bloghome.component';
 import { BlogformComponent } from './blog/blogform/blogform.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ProfilePicComponent } from './profile-pic/profile-pic.component';
+
 const routes: Routes = [
 
   {path:'homepage',component:HomepageComponent, canActivate:[AuthGuardGuard]},
@@ -17,8 +20,10 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'profileform',component:ProfileformComponent ,canActivate:[AuthGuardGuard]},
-  {path:'profilepage',component:ProfilePageComponent ,canActivate:[AuthGuardGuard]},
+  {path:'Editprofile',component:EditprofileComponent ,canActivate:[AuthGuardGuard]},
+  {path:'ProfilePic',component:ProfilePicComponent ,canActivate:[AuthGuardGuard]},
 
+  {path:'profilepage/:id',component:ProfilePageComponent ,canActivate:[AuthGuardGuard]},
 
   {path:'blog',component:BloghomeComponent,canActivate:[AuthGuardGuard]},
   {path:'blogform',component:BlogformComponent,canActivate:[AuthGuardGuard]},

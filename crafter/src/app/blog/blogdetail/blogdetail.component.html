@@ -31,12 +31,14 @@
         <h4 style="float:right"><mat-icon matBadge="{{Likes}}"  matBadgeColor="accent" [style.color]="likeColor" matBadgeOverlap="false" style="cursor:pointer" (click)="likeBlog()" >thumb_up</mat-icon></h4>
      
       
+    <div class="comment-container">
+
         <mat-expansion-panel (opened)="panelOpenState = true"
         (closed)="panelOpenState = false">
 <mat-expansion-panel-header>
 <mat-panel-title>
    
-<h4><mat-icon style="   position: absolute;
+<h4 id="read"><mat-icon style="   position: absolute;
     margin: 0px -40px;">comment</mat-icon>Read Comments</h4>
 </mat-panel-title>
 
@@ -60,7 +62,7 @@
 
         </div>
         <div class="col-sm-2">
-            <button  (click)="deleteComment(comment.b_text)" class="btn btn-"*ngIf="comment.postedBy.userName===CurrentUser.userName" class="btn btn-"mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            <button  (click)="deleteComment(comment.b_text)" *ngIf="comment.postedBy.userName===CurrentUser.userName" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
                 <mat-icon  >delete</mat-icon>
               </button>
         </div>
@@ -70,6 +72,7 @@
 </mat-card>
 
 </mat-expansion-panel>
+    </div>
 
 
     

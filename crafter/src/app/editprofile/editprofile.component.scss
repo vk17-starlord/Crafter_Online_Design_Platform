@@ -1,0 +1,109 @@
+
+
+@import "../app.component.scss";
+
+$input:rgba(44, 43, 43, 0.678);
+
+.edit-profile{
+    width: 100%;height: auto;
+    background-color: $darkyellow;
+    border: 1px solid black;
+    color: white;
+    h2{
+        font-size: 30px;
+        font-family: JosefinSansBold;
+        width: 100%;
+        margin: 25px auto;
+        text-align: center;
+    }
+}
+#portfolio-form{
+    padding: 20px auto;
+    mat-spinner{
+        margin: 0 auto !important;
+    }
+    width: 100%;
+    h4{
+      text-align: left !important;
+      font-size: 20px;
+      margin: 20px auto !important; 
+    }
+    text-align: left;
+    input,textarea{
+      width: 100%;
+      border: none !important;
+      padding: 10px;
+      color: white;
+      border-radius: 10px;
+      background-color: rgb(44, 44, 44);
+    }
+    .btn-container{
+      width:100%;
+     padding: 20px auto;
+      text-align: center;
+    }
+    .icon{
+      width: 35px;
+      height: 35px;
+      object-fit:cover;
+      object-position: center;
+    }
+    button{
+        margin: 30px auto !important; 
+    }
+   
+  }
+  
+  .links{
+    .row{
+      width: 75%;
+      margin: 0 auto;
+  div{
+    margin: 10px auto;
+  }
+    }
+  }
+  /* If you put this css in your component then you would be able to use angular material inputs through out that component and if you put this in your style.css or style.scss then you would be able to use it through out your application */
+  mat-form-field input {
+      border: none;
+      height: initial !important;
+      width:100%;
+      color: white;
+    }
+    strong{
+      color: rgba(255, 255, 255, 0.452) !important;
+    }
+    
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #ccc;
+      opacity: 0.5; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #ccc;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #ccc;
+    }
+    mat-label{
+      color: white;
+    }
+    mat-form-field input:focus {
+      border: none;
+      box-shadow: none;
+      height: initial !important;
+    }
+    #portfolio-form{
+        width: 50%;
+        margin: 0 auto !important;
+      }
+  
+  @media only screen and (max-width: 900px) {
+    #portfolio-form{
+        width: 90%;
+        margin: 0 auto !important;
+      }
+  
+  }
+  

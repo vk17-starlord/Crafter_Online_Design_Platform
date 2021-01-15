@@ -20,7 +20,6 @@ export class BlogdetailComponent implements OnInit {
   likeColor="rgba(44, 44, 44, 0.514)"
   dislikeColor="rgba(44, 44, 44, 0.514)"
   
-  
   mycomment=(id)=>{
       if(id===this.CurrentUser._id){
         return true;
@@ -32,6 +31,7 @@ export class BlogdetailComponent implements OnInit {
     private location: Location,private blogService :BlogService,private UserService:UserInfoService,private Blogreaction:BlogreactionService) { }
   ngOnInit(): void {
     this.getCurrentBlog();
+
     this.getCurrentUser();
   }
    comment:String=null;
@@ -40,7 +40,7 @@ export class BlogdetailComponent implements OnInit {
     this.UserService.GetUserInfo().subscribe((user)=>{
 
       this.CurrentUser = user[0]
-      console.log(this.CurrentUser);
+      console.log(this.CurrentUser._id);
       
      },(err)=>{
        console.log(err)
@@ -84,6 +84,8 @@ if(present){
   })[0]
 
    this.Likes=this.CurrentBlog.b_likes.length;
+   console.log(this.CurrentBlog.postedBy._id)
+
     })
   }  
 

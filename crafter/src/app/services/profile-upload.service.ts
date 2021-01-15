@@ -12,8 +12,9 @@ export class ProfileUploadService {
 return this.http.put(`${this.URL}/updateProfilePic`,{profilePic});
   }
   
- PostProfile(bio,desc){
-    return this.http.post(`${this.URL}/postProfileInfo`,{bio,desc})
+ PostProfile(bio,desc,p_coverPhoto,p_contact,p_links){
+    return this.http.post(`${this.URL}/postProfileInfo`,{bio,desc,p_coverPhoto,p_contact,p_links});
+
   }
 
   GetProfile(){
@@ -23,4 +24,17 @@ return this.http.put(`${this.URL}/updateProfilePic`,{profilePic});
   GetUser(){
     return this.http.get(`${this.URL}/getUser`);
   }
+
+  GetProfilePostById(id){
+    return this.http.get(`${this.URL}/b_user_prof/${id}`);    
+  }
+
+  GetProfileById(id){
+    return this.http.get(`${this.URL}/getUserProfile/${id}`);    
+  }
+
+  UpdateProfilePost(id,bio,desc,p_coverPhoto,p_contact,p_links){
+    return this.http.put(`${this.URL}/updateProfile/${id}`,{bio,desc,p_coverPhoto,p_contact,p_links});   
+  }
+
 }

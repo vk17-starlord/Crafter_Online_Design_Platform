@@ -61,7 +61,6 @@ color:white;
           display: inline-block;
           padding: 12px 20px; 
           cursor: pointer;
-          box-shadow: 2px 2px 12px #000;
           border-radius: 4px;
           font-size: 16px !important;
           background-color: lighten($color: (#000000), $amount: 10);
@@ -83,6 +82,5 @@ mat-radio-button,.myclass{
   padding: 3px 40px;
   background-color:$primary;
   font-size: 18px;
-  box-shadow: 2px 2px 2px #1b1b1b;
   margin: 30px !important;
 }

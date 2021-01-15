@@ -1,8 +1,10 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import {ProfileUploadService } from '../services/profile-upload.service'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { ProfileformComponent } from '../profileform/profileform.component';
 import { BlogService } from '../services/blog.service';
+import { Params, ActivatedRoute } from '@angular/router';
+import { AboutMeComponent } from '../about-me/about-me.component';
+import { ProfilePicComponent } from '../profile-pic/profile-pic.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,40 +13,76 @@ import { BlogService } from '../services/blog.service';
 })
 export class ProfilePageComponent implements OnInit {
 
-  constructor(private blogService:BlogService,private profileService: ProfileUploadService,private dialog:MatDialog) { }
+  constructor(private route: ActivatedRoute,private blogService:BlogService,private profileService: ProfileUploadService,private dialog:MatDialog) { }
+ Edit=false;
+ Upload=false;
+ BlogDiv=false;
+ DribbleDiv=false;
 
-  UserInfo:any='';
+  profileUser:any={
+    user:"",
+    blog:"",
+    dribbble:"",
+    profile:""
+  };
 
-  
-  profilepic: string;
-   bio: string;
-   desc:string;
-   BlogPosts:any;
 
+EmptyDiv=false;
+EmptyDivBlog=false;
   ngOnInit(): void {
- this.GetUser()
 
+let id=this.route.snapshot.params['id'].toString();
+this.profileService.GetProfilePostById(id).subscribe((res)=>{
+  this.profileUser=res;
+console.log(res)
+
+
+  if(this.profileUser.blog.length>0){
+this.BlogDiv=true;
+  this.EmptyDivBlog=false;  
+}
+else{
+  this.EmptyDivBlog=true;  
+}
+
+if(this.profileUser.dribbble.length>0){
+  this.EmptyDiv=false;
+  this.DribbleDiv=true;
+}else{
+  this.EmptyDiv=true;
+}
+
+
+if(this.profileUser.profile.length>0){
+this.profileUser.profile=this.profileUser.profile[0];
+this.Upload=false;
+this.Edit=true;
+}else{
+  this.Upload=true;
+  this.Edit=false;
+}
+
+
+
+})
   }
 
-  GetUser(){
-    this.profileService.GetUser().subscribe((user)=>{
-      
-      this.UserInfo=user[0];
-
-      this.blogService.getUserBlog(this.UserInfo._id).subscribe((res)=>{
-        
-        this.BlogPosts=res;
-         console.log(this.BlogPosts)
-      })
-    });    
-  }
-
-  openForm(){
-  const dialogRef = this.dialog.open(ProfileformComponent,{width: '500px', height: '450px'})
-  dialogRef.afterClosed().subscribe(result => {
-this.GetUser()   
+  openDialog() {
+    this.dialog.open(AboutMeComponent,{width:'65%',height:"75vh", data: {
+      Profile: this.profileUser.user,
+    }    
   });
   }
+
+  openProfile()
+{
+  this.dialog.open(ProfilePicComponent,{width:'65%',height:"75vh", data: {
+    Profile: this.profileUser.user,
+           
+  }    
+});
+
+}
 
 
 

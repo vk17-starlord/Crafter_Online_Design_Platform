@@ -34,7 +34,7 @@
             </mat-radio-group>
           
 
-            <button mat-raised-button class="btn" color="primary" (click)="SubmitHalf()">Next</button>
+            <button mat-raised-button class="btn" color="primary" [disabled]="halfsubmit" (click)="SubmitHalf()">Next</button>
         </form>
 
         <form *ngIf="nextForm">

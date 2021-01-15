@@ -1,37 +1,85 @@
 <div id="profile-page">
 
-<div class="row">
-<div class="col-sm-12 col-lg-7">
-  <div class="nav">
-    <a href="#">My Posts</a>
-    <a href="#">About Me</a>
-    <a href="#">Edit</a>
+  <div class="welcome">
+     <h1>Hey !! <br>I am {{profileUser.user.firstName}}</h1>
+  </div>
+    
+  
+
+  <div class="profile-container">
+        <div class="row" id="main-row">
+
+          <div class="col-sm-12 col-lg-6" id="profile-bg"  [ngStyle]="{'background-image': 'url(' + profileUser.profile.p_coverPhoto + ')'}">
+
+<h1>{{profileUser.user.firstName}}<br>{{profileUser.user.lastName}}</h1>
+<p>{{profileUser.profile.bio}}</p>
+<button (click)="openDialog()">View Profile</button>
+          </div>
+          <div class="col-sm-12 col-lg-6" id="profile-content">
+          <div class="nav">
+       
+            <a *ngIf="Edit" routerLink="/Editprofile"><mat-icon>edit</mat-icon></a>
+            <a *ngIf="Upload" routerLink="/profileform"><mat-icon>add_photo_alternate</mat-icon></a>
+          
+         <div>
+           
+          <a ><mat-icon>bubble_chart</mat-icon></a>
+          <img [src]="profileUser.user.profilePic" (click)="openProfile()" class="profile-pic" alt="">
+          <a ><mat-icon>bubble_chart</mat-icon></a>
+
+        </div>
+          
+
+          </div>
+          
+          <div class="blog-container" >
+            <h1> Blogs</h1>
+            
+          <div class="empty" *ngIf="EmptyDivBlog" routerLink="/blogform">
+            <div class="bg"></div>
+            <h1>You Have Not Posted Anything</h1>
+          </div>
+          <div class="row" *ngIf="BlogDiv">
+            <div class="blog-card col-sm-12 col-lg-5" *ngFor="let blog of profileUser.blog" [routerLink]="['/blogdetail', blog._id]" >
+              <div class="row">
+              
+                <div class="content" style="background-image: url('{{blog.b_coverPhoto}}')">
+                  <p>{{blog.b_title}}</p>
+                </div>
+              </div>
+            </div> 
+         
+            
+          </div>
+          </div>
+          
+
+        
+          <div class="blog-container" >
+            <h1> UI Collection</h1>
+          <div class="row" *ngIf="DribbleDiv">
+            <div class="blog-card col-sm-12 col-lg-5" *ngFor="let blog of profileUser.blog" [routerLink]="['/blogdetail', blog._id]" >
+              <div class="row">
+              
+                <div class="content" style="background-image: url('{{blog.b_coverPhoto}}')">
+                  <p>{{blog.b_title}}</p>
+                </div>
+              </div>
+            </div> 
+        
+          </div>
+
+          <div class="empty" *ngIf="EmptyDiv">
+            <div class="bg"></div>
+            <h1>You Have Not Posted Anything</h1>
+          </div>
+          </div>
+          
+
+          </div>
+
+        </div>
 
   </div>
-  <h1 class="heading">ASHTON <br> TURNER</h1>
-  <p>Designers are made by passion and serinity</p>
 
-  <h4 class="view">Read More</h4>
-
-</div>
-<div class="col-sm-12 col-lg-4" id="cover-photo">
-<img src="https://images.pexels.com/photos/4320362/pexels-photo-4320362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="cover-photo">
-</div>
-<div class="col-sm-12 col-lg-1" id="orange-card">
-
-</div>
-</div>
-
-</div>
-<div id="mypost">
-  <div class="row">
-    <div class="col-sm-12  col-lg-3">
-<h4>MY <br> DESIGNS</h4>
-    </div>
-
-    <div class="col-sm-12  col-lg-9">
-
-    </div>
-
-  </div>
 </div>

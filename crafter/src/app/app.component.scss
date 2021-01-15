@@ -12,7 +12,9 @@ $pure-white:#FFFFFF;
   box-sizing: border-box;
 
 }
-
+.mat-dialog-container{
+  padding: 0 !important;
+}
 @font-face {
   font-family: Simonetta;
   src: url("./fonts/Simonetta-Black.ttf");

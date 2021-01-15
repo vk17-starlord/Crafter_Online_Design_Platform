@@ -27,34 +27,55 @@ export class BlogformComponent implements OnInit {
 
     nextForm=false;
     firstForm=true;
-   
+   BlogSchema:any={
+    b_coverPhoto:"",  
+    b_title:"",
+     b_desc:"",
+      b_body:[], 
+      b_post:"..",
+       b_category:""
+   }
   ngOnInit(): void {
 
   }
+  halfsubmit=true;
    currentFilename: any=false;
   selectedFile:any=''
   onchange(ev){
     this.selectedFile = ev.target.files[0];
-    console.log(this.selectedFile.name)
-    this.currentFilename=this.selectedFile.name;
-   }
+    let type:string=this.selectedFile.type.toLocaleString();
+  
+    if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+     this.halfsubmit=false;
+   
+   }else{
+     this.halfsubmit=true;
+     this._snackBar.open("Please Choose jpeg/png/svg/jpg file format", 'X',{
+       duration: 2000
+     });
+    }
+
+
+  }
 
   onSectionUpload(){
-    let userId=localStorage.getItem('id');
-   var filepath=`BlogImage/${userId}/BlogCover${this.b_title}`;
-   const fileRef=this.AF.ref(filepath)
+    var file:File = this.selectedFile; 
+    var myReader:FileReader = new FileReader();
+    myReader.readAsDataURL(file);
+    myReader.onload=()=>{
+     console.log(myReader.result)
+     this.b_coverPhoto=myReader.result;
+     this.BlogSchema.b_category=this.b_category;
+     this.BlogSchema.b_coverPhoto=this.b_coverPhoto;
+     this.BlogSchema.b_desc=this.b_desc;
+     this.BlogSchema.b_title=this.b_title;
+     console.log(this.BlogSchema)
+     this.nextForm=true;
+     this.firstForm=false;
+     
+     
+    }
 
-   this.AF.upload(filepath,this.selectedFile).then((res)=>{
-    
-     fileRef.getDownloadURL().subscribe((url)=>{
-   this.b_coverPhoto=url;
-console.log(this.b_coverPhoto)
-this.nextForm=true;
-this.firstForm=false;
-    } ,(err)=>{
-      console.log(err,'this is err')
-    })
-   }).catch(err => console.log(err))
   }
  
   onRadioInput(){
@@ -67,7 +88,7 @@ this.firstForm=false;
   SubmitHalf(){
    if(this.b_title && this.selectedFile &&this.b_desc &&this.b_category){
     this.onSectionUpload()
-  
+    
    }else{
     this._snackBar.open('Please Enter all Fields', 'X',{
       duration: 2000
@@ -84,98 +105,99 @@ CurrentImagename:any=false;
   selectedFileimage:any=''
   onsectionchange(ev){
     this.selectedFileimage = ev.target.files[0];
-     this.CurrentImagename=this.selectedFileimage.name; 
-     console.log(this.CurrentImagename,'err');
+    this.selectedFile = ev.target.files[0];
+    console.log(this.selectedFile.type)
+    let type:string=this.selectedFile.type.toLocaleString();
+ 
+    if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+
+   }else{
+     this._snackBar.open("Please Choose jpeg/png/svg/jpg file format", 'X',{
+       duration: 2000
+     });
+    }
   }
 
 
-  onSectionImageUpload(){
-    let userId=localStorage.getItem('id');
-   var filepath=`BlogSectionImage/${userId}/${this.b_title}/${this.CurrentHeading}`;
-   const fileRef=this.AF.ref(filepath)
-   this.AF.upload(filepath,this.selectedFileimage).then((res)=>{
-     fileRef.getDownloadURL().subscribe((url)=>{
-   this.CurrentImage=url;
-console.log(this.CurrentImage)
-this.b_body.push( {
-  heading:this.CurrentHeading,
-  para:this.CurrentPara,
-  image:this.CurrentImage
- }
-
- )
  
- this.CurrentHeading ="";
- this.CurrentPara ={
-   text:""
- };
 
-let Blog={
-  b_title:this.b_title ,
-  b_coverPhoto:this.b_coverPhoto ,
-  b_desc:this.b_desc ,
-  b_body:this.b_body,
 
-  b_post: '..',
- b_category: this.b_category,
-}
-this.Blog=Blog;
-console.log(Blog)
-this.selectedFileimage=null;
-this.CurrentImage=null;
-} ,(err)=>{
-      console.log(err,'this is err')
-    })
-   }).catch(err => console.log(err))
-  }
-
- 
   PostBlog(){
-  this.blogService.PostBlogs(this.Blog).subscribe((res)=>{
+console.log(this.BlogSchema)
+    this.blogService.PostBlogs(this.BlogSchema).subscribe((res)=>{
     console.log('res',res)
     this._snackBar.open('Wooh!! Your Blog was successfully posted', 'X',{
       duration: 2000
     });
     this.router.navigateByUrl('/blog')
-  },(err)=>{console.log(err)})  
+  },(err)=>{
+
+    this._snackBar.open(err.error.error, 'X',{
+      duration: 2000
+    });
+  })  
   }
   
 Error:any=false;
    
   AddSection(){
-    if(this.CurrentPara==null){
-      this._snackBar.open('Please Enter Your Section Details', 'X',{
-        duration: 2000
+// check if Para is Null or not
+if(this.CurrentPara==="" || this.CurrentPara==null){
+  this._snackBar.open('Please Enter Section Para', 'X',{
+    duration: 2000
+  });
+}else{
+  this.CurrentPara=this.CurrentPara.split('\n');
+  this.CurrentPara= this.CurrentPara.filter(function (el) {
+    return el != "" ;
+  });
+   let para= this.CurrentPara.map((ele)=>{
+     return {text:ele}
+   })
+   let heading:any="";
+   let image:any="";
+  //  check for heading
+   if(this.CurrentHeading!==""){
+heading=this.CurrentHeading;
+   }
+  //  check for image 
+  if(this.CurrentImage!=null){
+
+    var file:File = this.selectedFileimage; 
+    var myReader:FileReader = new FileReader();
+    myReader.readAsDataURL(file);
+    myReader.onload=()=>{
+     console.log(myReader.result);
+     image=myReader.result;
+     this.BlogSchema.b_body.push({heading,para,image});
+     console.log(this.BlogSchema.b_body)
+     this.CurrentImage="";
+     this.CurrentPara='';
+     this.CurrentHeading=""
+     this.selectedFileimage=null;
+     this.CurrentImage=null;
+      console.log(this.BlogSchema.b_body,"with image")
+      this._snackBar.open('Added Section Successfully', 'X',{
+        duration: 500
       });
     }
-let paragraphArray =this.CurrentPara.split('\n')
-this.CurrentPara=paragraphArray.map((para)=>{
-  return {text:para};
-})
 
-if(this.CurrentImage!=null ){
-  this.onSectionImageUpload()
-}else{
-  this.b_body.push( {
-    heading:this.CurrentHeading,
-    para:this.CurrentPara,
-    image:""
-   })
-  console.log(this.b_body)
-}
+  }else{
+    this.BlogSchema.b_body.push({heading,para,image});
+    console.log(this.BlogSchema.b_body,"without image")
+    this.CurrentImage="";
+    this.CurrentPara='';
+    this.CurrentHeading=""
+    this.selectedFileimage=null;
+    this.CurrentImage=null;
+    this._snackBar.open('Added Section Successfully', 'X',{
+      duration: 500
+    });
+  }
+   
 
-console.log(this.b_body)
-let Blog={
-  b_title:this.b_title ,
-  b_coverPhoto:this.b_coverPhoto ,
-  b_desc:this.b_desc ,
-  b_body:this.b_body,
 
-  b_post: '..',
- b_category: this.b_category,
-}
-this.Blog=Blog;
-this.CurrentHeading=""; 
-this.CurrentPara ="";
+
+  }
   }
 }

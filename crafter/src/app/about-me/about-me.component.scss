@@ -1,0 +1,116 @@
+.mat-dialog-container{
+    padding: 0 !important;
+}
+
+.about-me{
+    width: 100%;
+    background-color: #5B3DFF ;
+    height: 100%;
+    .profile{
+        width: 150px;
+        border-radius: 50%;
+        height: 150px;
+        object-fit: cover;
+        object-position:top center;
+        position: relative;
+
+    }
+    .card{
+        h1{
+            width: 100%;
+            font-size: 20px;
+            padding: 10px 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h2{
+            margin: 10px auto;
+            width: 100%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 18px;
+            mat-icon{
+                position: absolute;;
+            margin-top: 05px;              
+            }
+            span{
+                position: relative;
+                margin-left: 40px;
+            }
+            
+        }
+      &::before{
+          width: 100px;
+          height: 200px;
+           border-radius: 5px 30px 30px 5px;
+          top: 25px;
+          box-shadow: 2px 2px 4px #00130977;
+        background-color: #3114db ;
+          position: absolute;
+          right:-50px;
+      }
+        width: 30%;
+      margin: 0 auto;
+      left: 35%;
+      right: 35%;
+ top: 25%;
+      min-height: 250px;
+height:auto;
+      z-index: 2;
+        background-color: white;
+        position: absolute;
+        padding: 10px;
+        border-radius: 20px;
+        display: flex;
+     flex-direction: column;
+        justify-content:flex-start;
+        align-items:center;
+    box-sizing: 2px 2px 12px #1b1b1b70;
+    }
+    .row{
+        width: 100%;
+        padding:0;
+        margin: 0 !important;
+        height: 100%;
+        #white{
+            background-color: #1b1b1b;
+        }
+        >div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+mat-icon{
+    font-size: 35px;
+    color: white;
+}
+            height: 50%;
+            background-color:transparent;
+            padding:0;
+ 
+        
+        }
+
+    }
+}
+
+
+@media screen and (max-width:900px){
+    .about-me .card{
+        width:100%;
+        position: relative !important;
+        margin-left: 0 !important;
+       left: 0 !important;
+      top: 0;
+     h2{
+         font-size:16px !important;
+     }
+    } 
+    .about-me{
+        background-color: transparent;
+    }
+
+    .about-me     .row{
+
+        display: none !important;
+    }
+
+}

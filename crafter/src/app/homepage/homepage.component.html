@@ -13,7 +13,7 @@
   <button mat-button routerLink="/login">Login</button>
 </mat-menu>
 
-      <img [src]="CurrentUser.profilePic" alt="" id="profile-pic" routerLink="/profilepage">
+      <img [src]="CurrentUser.profilePic" alt="" id="profile-pic" [routerLink]="['/profilepage', this.CurrentUser._id]">
     </div>
   </div>
  <div class="row" id="landing-section">

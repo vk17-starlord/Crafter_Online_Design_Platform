@@ -3,3 +3,18 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:hidden !important;
     }
+    .mat-dialog-container{
+        padding: 0 !important;
+      }
+
+      @media (max-width: 900px){
+
+        .mat-dialog-container{
+          padding: 0 !important;
+          border-radius: 10px;
+         height: max-content !important;
+         width: 95% !important;
+         background-color:transparent !important;
+        }
+   
+      }

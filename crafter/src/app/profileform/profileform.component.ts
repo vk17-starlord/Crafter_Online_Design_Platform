@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileUploadService} from '../services/profile-upload.service';
 import {AngularFireStorage} from  '@angular/fire/storage';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-profileform',
   templateUrl: './profileform.component.html',
@@ -9,54 +11,119 @@ import {AngularFireStorage} from  '@angular/fire/storage';
 
 export class ProfileformComponent implements OnInit {
 
-  constructor(private profileupload:ProfileUploadService,private AF:AngularFireStorage) { }
+  constructor(private router:Router, private _snackBar: MatSnackBar,private profileupload:ProfileUploadService,private AF:AngularFireStorage) { }
+
 
   ngOnInit(): void {
   }
+ 
 
-bio:''
-desc:''
-   
+	  bio:any=null
+	desc:any=null
+    p_coverPhoto:any=null;
+     p_contact:any=null;
+  
+    facebook={
+      link_type:"facebook",
+       link_url:null
+   }
+   instagram={
+    link_type:"instagram",
+    link_url:null
+ }
+ behance={
+  link_type:"behance",
+  link_url:null
+}
+website={
+  link_type:"website",
+  link_url:null
+}
+pinterest={
+  link_type:"pinterest",
+  link_url:null
+}
+p_links:any="";
+selectedCover:any=""
+show:any=true;
+  onCoverchange(ev){
+    this.selectedCover = ev.target.files[0];
+    let type:string=this.selectedCover.type.toLocaleString();
+     console.log(type);
+    if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+     this.show=false;
+   }else{
+     this.show=true;
+     this._snackBar.open("Please Choose jpeg/png/svg/jpg file format", 'X',{
+       duration: 2000
+     });
+    }
 
-   Profileurl=``
-selectedFile
-  onchange(ev){
-   this.selectedFile = ev.target.files[0];
   }
 
-
-  Myprofile={
-    firstName:'',
-    lastName:''
-  }
-
-  ProfileUrl='https://i.pinimg.com/originals/86/b9/4c/86b94c56b28e6bd8533320241440ddef.gif'
-isLinear=true;
-  onProfileUpload(){
-    let userId=localStorage.getItem('id');
-   var filepath=`ProfileImage/${userId}/profilepic`;
-   const fileRef=this.AF.ref(filepath)
-
-   this.AF.upload(filepath,this.selectedFile).then((res)=>{
+  Upload(){
+    let Feilds=[this.bio,this.desc,this.p_coverPhoto,this.p_contact]
+    let p_links =[this.facebook,this.instagram,this.website,this.pinterest,this.behance]
     
-     fileRef.getDownloadURL().subscribe((url)=>{
-      console.log(url);
-      this.ProfileUrl=url;
-
-      this.profileupload.UpdateProfile(this.ProfileUrl).subscribe((res:any)=>{
-        console.log(res,'this is res')
-      },(error)=>{
-        console.log(error,'this is error')
-      })
-
-    } ,(err)=>{
-      console.log(err,'this is err')
+    p_links=p_links.filter((ele)=>{
+      if( ele.link_url!=null){
+         if(ele.link_url!=""){
+          return ele;
+         }
+      }
     })
-   }).catch(err => console.log(err))
+    
+    const result=Feilds.every((ele)=>{
+
+     return ele!==null && ele!="";
+
+    })
+    
+    if(result){
+     if(p_links.length>0){
+   this.p_links=p_links;
+this.UploadCover()
+     }else{
+      this._snackBar.open("Please Enter All The Feilds", 'X',{
+        duration: 2000
+      });
+  
+     }
+    }else{
+      this._snackBar.open("Please Enter All The Feilds", 'X',{
+              duration: 2000
+            });
+    }
+
+
   }
 
 
-  // save profile
+
+UploadCover(){
+  var file:File = this.selectedCover; 
+  var myReader:FileReader = new FileReader();
+  myReader.readAsDataURL(file); 
+  myReader.onload=()=>{
+    console.log(myReader.result)
+  let p_coverPhoto=myReader.result;
+  console.log(p_coverPhoto);
+  this.profileupload.PostProfile(this.bio,this.desc,p_coverPhoto,this.p_contact,this.p_links).subscribe((res)=>{
+    let response:any = res
+    this._snackBar.open(response.msg, 'X',{
+      duration: 2000
+    });
+    this.router.navigateByUrl('/homepage');
+  },(err)=>{
+    this._snackBar.open("Sorry!! We had Problem Posting Your Profile", 'X',{
+      duration: 2000
+    });
+
+  });
+  }
+
+}
+
 
 
   
