@@ -57,6 +57,7 @@ export class BlogdetailComponent implements OnInit {
      return like.postedBy._id===this.CurrentUser._id
     }) 
 if(present){
+  this.getCurrentBlog();
   this._snackBar.open('You have already Liked This Post', 'X',{
     duration: 2000
   });
@@ -86,10 +87,14 @@ if(present){
      this.CurrentBlog=this.allblogs.filter((blog)=>{
        return blog._id==id;
   })[0]
-
+this.Likes=this.CurrentBlog.b_likes.length;
 console.log(this.CurrentUser._id)
 this.CurrentBlog.b_likes.forEach((ele)=>{
-  console.log(ele.postedBy._id)
+
+  if(this.CurrentUser._id===ele.postedBy._id){
+    this.likeColor="#fff"
+    this.dislikeColor="rgba(44, 44, 44, 0.514)"
+  }
 })
 
     })
@@ -118,4 +123,5 @@ this.Blogreaction.DeleteComment(comment,this.CurrentBlog._id).subscribe((result)
 },(err)=>{console.log(err)})
   }
 
+  
 }

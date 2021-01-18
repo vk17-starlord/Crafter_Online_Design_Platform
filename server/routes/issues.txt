@@ -1,0 +1,57 @@
+theme 11
+upper dors remove-done
+no image strech-done
+circle size strech-done
+past work text white
+past work dots remove
+cursor:pointer;
+send message hand cursor;
+column center
+column center icons center even if one
+
+
+10th all font same
+send capitialize
+remove strip side of 
+name on top
+about-me bottom padding
+
+
+9th circle image no streach reduce width
+remove about me bg
+VIDEO BG BLACK
+SEND MESSAGE SECTION
+SCROLL RIGHT ISSUE
+DEVELOPER KE NICHE ICONS
+BIODATA TITLE UP AND FONT
+PAST WORK RIGHT
+9 ISSUE 
+				
+
+8TH
+8TH IMAGE WIDTH 10% LESS
+ABOUT BG WHITE
+ARROW HIDE
+FONT ON POPUP
+REMOVE 
+NAME CENTER
+SEND MSG
+
+
+7TH
+CIRCLE WIDTH LESS
+SEND MSG BLOCK
+HEADING UP
+POINTER
+CHANGE TEXTAREA
+
+MOBILE
+NAME-UP->IMAGE->WORK->ICONS
+BIODATA DOUBLE
+MSGFORM->BLOCK
+TITLE-UP
+COVER-PHOTO LESS SIZE 450PX
+HEIGHT LESS AND MARGIN TOP:50PX;
+ICONS HAND CURSOR
+
+10TH 11TH FOLLLOW	
