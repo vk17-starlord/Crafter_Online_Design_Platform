@@ -54,7 +54,7 @@ background-color: white;
 }
 #landing-section{
     width: 100%;
-   min-height:90vh;
+   min-height:90vh ;
    margin: 0 auto;
    border: 1px solid inherit;
    background-attachment: fixed !important; 
@@ -133,7 +133,7 @@ background-color: #000;
     color: #fff;
   padding: 10px;
   .container{
-      width: 85% !important;
+      width: 85% ;
   }
     h1{
         margin: 100px auto;
@@ -147,7 +147,7 @@ background-color: #000;
     .blogcard{
         height: auto;
         width: auto;
-     
+       margin:0 auto;
         .img{
             width: 100%;
             border-radius: 20px;
@@ -157,10 +157,20 @@ background-color: #000;
         }
         h4{
             padding: 10px;
+            position:relative;
+            margin-top:-30%;
+            opacity:0;
             font-size: 18px;
         }transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
         &:hover{
             transform: scale(1.2,1.2);
+        img{
+            opacity: 0.3;
+            object-fit: cover;
+        }
+            h4{
+                opacity: 1;
+            }
         }
     }
 
@@ -207,11 +217,14 @@ font-size: 14px;
         }
     }
 
-    #landing section > div{
-        min-height: 50vh !important;
-        background-size: contain !important;
-        background-repeat: no-repeat;
-        
+    #landing-section > div{
+min-height:400px !important;
     }
+    #featured-section .container,#featured-section .row{
+        width:100% !important;
+        margin:0 !important;
+    }
+
 }
+
 
