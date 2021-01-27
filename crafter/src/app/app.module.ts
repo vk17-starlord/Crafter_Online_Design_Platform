@@ -48,6 +48,11 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ProfilePicComponent } from './profile-pic/profile-pic.component';
 import { ExploreComponent } from './explore/explore/explore.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ExploredetailComponent } from './explore/exploredetail/exploredetail.component';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import { ProjectComponent } from './project/project/project.component';
+import { ProjectdetailComponent } from './project/projectdetail/projectdetail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,18 +70,13 @@ import { ExploreComponent } from './explore/explore/explore.component';
     EditprofileComponent,
     ProfilePicComponent,
     ExploreComponent,
+    ExploredetailComponent,
+    ProjectComponent,
+    ProjectdetailComponent,
+    
   ],
   imports: [
-AngularFireModule.initializeApp({
-    apiKey: "AIzaSyBURMnlC8N3HEABhm0YsDDWVJALhBvRLG8",
-    authDomain: "majorprojecr.firebaseapp.com",
-    projectId: "majorprojecr",
-    storageBucket: "majorprojecr.appspot.com",
-    messagingSenderId: "585567558613",
-    appId: "1:585567558613:web:c5e697643417c21cd77b5c",
-    measurementId: "G-KV63S85BTN"
-}),
-AngularFireStorageModule,
+
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -88,6 +88,7 @@ AngularFireStorageModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
     MatIconModule,
+    ClipboardModule,
     MatRippleModule,MatListModule,
     MatSliderModule,
     MatMenuModule,
@@ -105,7 +106,7 @@ AngularFireStorageModule,
     MatGridListModule,
     MatDialogModule,
     MatExpansionModule,
-
+    CarouselModule 
   ],
   providers: [AuthGuardGuard,{
     provide:HTTP_INTERCEPTORS  ,

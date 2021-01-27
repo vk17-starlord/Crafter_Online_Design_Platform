@@ -14,9 +14,9 @@ border: 1px solid rgba(204, 204, 204, 0);
     font-family: JosefinSansBold;
     font-size: 64px;
     line-height:65px;
-    margin:50px auto;
+    margin:25px auto;
     text-align: center;
-    margin-bottom: 20px !important; 
+    margin-bottom: 0px !important; 
     
 
 }
@@ -35,7 +35,7 @@ color: $primary !important;
 
 #poster{
     width:100%;
-    min-height: 100vh;
+    min-height: 90vh;
   display:flex;
   justify-content:center;
   align-items:center;

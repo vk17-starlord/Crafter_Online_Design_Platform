@@ -93,28 +93,22 @@ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 margin-top: 100px;
             }
             .blog-container{
-                width: 80%;
+                width: 95%;
                 margin: 50px auto;
+                padding:10px;
                 h1{
                     color:#5B3DFF ;
                     font-size: 20px;
                 
                 }
                 .blog-card{
+                    width:auto;
+                  
                   cursor:pointer;
-                    height: 18vh;
-                    margin: 15px auto;
-                    box-shadow:
-                    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                    0 12.5px 10px rgba(0, 0, 0, 0.06),
-                    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-                    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-                    0 100px 80px rgba(0, 0, 0, 0.12)
-                  ;
+                    height:250px;
                   transition:2s cubic-bezier(0.075, 0.82, 0.165, 1);
                   overflow: hidden;
-              
+                  text-overflow: ellipsis;
                 border-radius: 10px;
                 .content{
                     width: 100%;
@@ -123,18 +117,20 @@ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     margin: 0 auto;
                     justify-content:center;
                     align-items:center;
-                    height: 18vh;
+                    height:250px;
              background-color: #EEF2F7;
                     flex-direction: column;
                     transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-               background-position: top center;
-               background-size: cover;
+               background-position: center center;
+               background-size: contain;
+               background-repeat: no-repeat;
                     p{
                         opacity: 0;
                         color:white;
-                        font-size: 18px;
+                        font-size:20px;
                         padding: 10px;
-                        text-align: justify;
+                        width:75%;
+                        text-align: center;
                         text-transform: capitalize ;
                        }
                 }
@@ -243,3 +239,4 @@ h1{
          display:none !important;
      }
 }
+

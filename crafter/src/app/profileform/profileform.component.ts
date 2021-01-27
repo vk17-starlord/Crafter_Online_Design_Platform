@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileUploadService} from '../services/profile-upload.service';
-import {AngularFireStorage} from  '@angular/fire/storage';
+
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
 @Component({
@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 
 export class ProfileformComponent implements OnInit {
 
-  constructor(private router:Router, private _snackBar: MatSnackBar,private profileupload:ProfileUploadService,private AF:AngularFireStorage) { }
+  constructor(private router:Router, private _snackBar: MatSnackBar,private profileupload:ProfileUploadService) { }
 
 
   ngOnInit(): void {

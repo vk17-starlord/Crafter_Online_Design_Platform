@@ -58,28 +58,17 @@
             <img src="{{comment.postedBy.profilePic}}" class="profile-picture" alt="">
         </div>
         <div class="col-sm-8">
-            <p>" {{comment.b_text}} "</p>
-
+        <p>" {{comment.b_text}} "</p>
         </div>
         <div class="col-sm-2">
-            <button  (click)="deleteComment(comment.b_text)" *ngIf="comment.postedBy.userName===CurrentUser.userName" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+        <button  (click)="deleteComment(comment.b_text)" *ngIf="comment.postedBy.userName===CurrentUser.userName" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
                 <mat-icon  >delete</mat-icon>
               </button>
         </div>
-
-
     </div>
 </mat-card>
-
 </mat-expansion-panel>
     </div>
-
-
-    
     </div>
-
-
-
-
 </div>
 

@@ -1,0 +1,163 @@
+.nav{
+    width: 100%;
+    background-color: #eee;
+}
+
+.nav-bar{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    justify-content: space-between;
+}
+
+.nav-bar a{
+    font-size: 2rem;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#chal{
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-bar i{
+    font-size: 2.1rem;
+    margin-right: 5px;
+    justify-self: first baseline;
+}
+
+.cards{
+    width: 100%;
+}
+
+.card{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+.card-image{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 12px 20px;
+}
+
+.card-image img{
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.desk-view{
+    margin-top: 10px;
+    color: #333;
+}
+
+.mob-view{
+    margin-top: 10px;
+    color: #333;
+}
+
+@media all and (max-width: 480px){
+
+    .card-image{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .desk-view{
+        margin-top: 10px;
+    }
+
+    .mob-view{
+        margin-top: 20px;
+    }
+
+    .card-image h1{
+        font-size: 1.4rem;
+    }
+}
+
+.card-body{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card-labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card-title h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;   
+    font-weight: 700;
+    color: #333;
+}
+
+.card-para p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.card-button{
+    margin: 30px auto;
+    width: 90%;
+    text-align: center; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+}
+
+.card-button a{
+    width: 90%;
+    padding: 10px 20px;
+    background-color: #FF0000;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 auto;
+    border-radius: 25px;
+    opacity: 0.9;
+}
+
+.card-button a:hover{
+    opacity: 1;
+}
+
+@media all and (max-width: 480px){
+    .card-labels{
+        font-size: 1.1rem;
+    }
+
+    .card-title h1{
+        font-size: 2.3rem;
+    }
+
+    .card-para p{
+        font-size: 1.1rem;
+    }
+
+    .card-button a{
+        font-size: 1.2rem;
+    }
+}

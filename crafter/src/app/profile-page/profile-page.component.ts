@@ -5,7 +5,7 @@ import { BlogService } from '../services/blog.service';
 import { Params, ActivatedRoute } from '@angular/router';
 import { AboutMeComponent } from '../about-me/about-me.component';
 import { ProfilePicComponent } from '../profile-pic/profile-pic.component';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -29,6 +29,49 @@ export class ProfilePageComponent implements OnInit {
 
 EmptyDiv=false;
 EmptyDivBlog=false;
+
+
+
+customOptions: OwlOptions = {
+  loop:false,
+  margin:10,
+  responsive:{
+      0:{
+          items:1,
+                  },
+      500:{
+          items:2,
+        
+      },
+      1000:{
+          items:3,
+          
+          loop:false
+      }
+  }
+}
+
+customOptions2: OwlOptions = {
+  loop:false,
+  margin:10,
+  responsive:{
+      0:{
+          items:1,
+                  },
+      500:{
+          items:2,
+        
+      },
+      1000:{
+          items:3,
+          
+          loop:false
+      }
+  }
+}
+
+
+
   ngOnInit(): void {
 
 let id=this.route.snapshot.params['id'].toString();

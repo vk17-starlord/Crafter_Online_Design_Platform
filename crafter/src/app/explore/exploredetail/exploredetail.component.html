@@ -1,0 +1,69 @@
+<div  #explorecontainer class="explore-detail">
+
+    <div class="container">
+<div class="profile-container">
+    <img [src]="CurrentPost.postedBy.profilePic" [routerLink]="['/profilepage', CurrentPost.postedBy._id]"alt="profile-pic" class="profile-pic">
+     <mat-icon  class="verify">verified</mat-icon>
+     <table>
+         <tr id="title">{{CurrentPost.d_title}}</tr>
+  
+         <tr id="name"> {{CurrentPost.postedBy.userName}}</tr>
+         
+         <tr id="date">Posted On : {{CurrentPost.createdAt}}</tr>
+
+        </table>
+</div>
+<img [src]="CurrentPost.d_pic" class="post" alt="">
+
+<div class="color-pallete" matTooltip="Click on color to copy Hex Code" matTooltipPosition="above">
+    <button mat-icon-button  class="color-btn" aria-label="Example icon button with a home icon">
+        <mat-icon >palette</mat-icon>
+      </button>
+     
+<div *ngFor="let color of CurrentPost.d_color">
+    <mat-icon [style.color]="color" [cdkCopyToClipboard]="color" (click)="copiedColor()"    [matTooltip]="color"
+    aria-label="Button that displays a tooltip with a custom message">lens</mat-icon>
+</div>
+
+</div>
+<h4 class="desc">{{CurrentPost.d_desc}}</h4>
+
+<div class="profile-card">
+    <mat-icon>align_horizontal_right</mat-icon>
+    <img [src]="CurrentPost.postedBy.profilePic" alt="profile-pic" class="profile-pic">
+    <mat-icon>align_horizontal_left</mat-icon> 
+</div>
+<div class="author-container">
+    <h1>More by {{CurrentPost.postedBy.userName}}</h1>
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-template carouselSlide *ngFor="let post of AuthorPosts" >
+            <div class="item"  (click)="GetCurrentPost(post._id)">
+             <img [src]="post.d_pic" class="item-bg" alt="">
+             <img [src]="post.d_pic" class="item-overlay" alt="">
+<div class="title">
+    <h4>{{post.d_title}}</h4>
+</div>
+            </div>                    
+        </ng-template>      
+    </owl-carousel-o>
+</div>
+
+<div class="author-container">
+    <h1>You Might Also Like </h1>
+    <owl-carousel-o [options]="customOptions2">
+
+        <ng-template carouselSlide *ngFor="let post of SamePosts" >
+            <div class="item" (click)="GetCurrentPost(post._id)" >
+             <img [src]="post.d_pic" class="item-bg" alt="">
+             <img [src]="post.d_pic" class="item-overlay" alt="">
+<div class="title">
+    <h4>{{post.d_title}}</h4>
+</div>
+            </div>                    
+        </ng-template>      
+    </owl-carousel-o>
+</div>
+
+    </div>
+</div>

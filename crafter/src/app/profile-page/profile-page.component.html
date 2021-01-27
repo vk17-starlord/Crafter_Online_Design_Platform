@@ -1,8 +1,8 @@
 <div id="profile-page">
 
-  <div class="welcome">
+  <!-- <div class="welcome">
      <h1>Hey !! <br>I am {{profileUser.user.firstName}}</h1>
-  </div>
+  </div> -->
     
   
 
@@ -39,16 +39,24 @@
             <div class="bg"></div>
             <h1>You Have Not Posted Anything</h1>
           </div>
-          <div class="row" *ngIf="BlogDiv">
-            <div class="blog-card col-sm-12 col-lg-5" *ngFor="let blog of profileUser.blog" [routerLink]="['/blogdetail', blog._id]" >
-              <div class="row">
-              
-                <div class="content" style="background-image: url('{{blog.b_coverPhoto}}')">
-                  <p>{{blog.b_title}}</p>
-                </div>
-              </div>
-            </div> 
-         
+          <div  *ngIf="BlogDiv">
+            <owl-carousel-o [options]="customOptions">
+
+              <ng-template carouselSlide *ngFor="let blog of profileUser.blog" >
+                  <div class="item"  >
+                    <div class="blog-card "  [routerLink]="['/blogdetail', blog._id]" >
+                      <div class="row">
+                      
+                        <div class="content" style="background-image: url('{{blog.b_coverPhoto}}')">
+                          <p>{{blog.b_title}}</p>
+                        </div>
+                      </div>
+                    </div> 
+                 
+                  
+                  </div>                    
+              </ng-template>      
+          </owl-carousel-o>
             
           </div>
           </div>
@@ -57,17 +65,26 @@
         
           <div class="blog-container" >
             <h1> UI Collection</h1>
-          <div class="row" *ngIf="DribbleDiv">
-            <div class="blog-card col-sm-12 col-lg-5" *ngFor="let blog of profileUser.blog" [routerLink]="['/blogdetail', blog._id]" >
-              <div class="row">
+            <div  *ngIf="DribbleDiv">
+              <owl-carousel-o [options]="customOptions2">
+  
+                <ng-template carouselSlide *ngFor="let post of profileUser.dribbble" >
+                    <div class="item" [routerLink]="['/Exploredetail',post._id]" >
+                      <div class="blog-card ">
+                        <div class="row">
+                        
+                          <div class="content" style="background-image: url('{{post.d_pic}}')" >
+                            <p>{{post.d_title}}</p>
+                          </div>
+                        </div>
+                      </div> 
+                   
+                    
+                    </div>                    
+                </ng-template>      
+            </owl-carousel-o>
               
-                <div class="content" style="background-image: url('{{blog.b_coverPhoto}}')">
-                  <p>{{blog.b_title}}</p>
-                </div>
-              </div>
-            </div> 
-        
-          </div>
+            </div>
 
           <div class="empty" *ngIf="EmptyDiv">
             <div class="bg"></div>

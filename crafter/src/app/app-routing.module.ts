@@ -12,6 +12,10 @@ import { BlogformComponent } from './blog/blogform/blogform.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ProfilePicComponent } from './profile-pic/profile-pic.component';
+import { ExploreComponent } from './explore/explore/explore.component';
+import { ExploredetailComponent } from './explore/exploredetail/exploredetail.component';
+import { ProjectComponent } from './project/project/project.component';
+import { ProjectdetailComponent } from './project/projectdetail/projectdetail.component';
 
 const routes: Routes = [
 
@@ -22,12 +26,17 @@ const routes: Routes = [
   {path:'profileform',component:ProfileformComponent ,canActivate:[AuthGuardGuard]},
   {path:'Editprofile',component:EditprofileComponent ,canActivate:[AuthGuardGuard]},
   {path:'ProfilePic',component:ProfilePicComponent ,canActivate:[AuthGuardGuard]},
+  {path:'Explore',component:ExploreComponent ,canActivate:[AuthGuardGuard]},
+  {path:'Project',component:ProjectComponent ,canActivate:[AuthGuardGuard]},
 
   {path:'profilepage/:id',component:ProfilePageComponent ,canActivate:[AuthGuardGuard]},
-
+  
   {path:'blog',component:BloghomeComponent,canActivate:[AuthGuardGuard]},
   {path:'blogform',component:BlogformComponent,canActivate:[AuthGuardGuard]},
   {path:'blogdetail/:id',component:BlogdetailComponent,canActivate:[AuthGuardGuard]},
+  {path:'Exploredetail/:id',component:ExploredetailComponent,canActivate:[AuthGuardGuard]},
+  {path:'Projectdetail/:id',component:ProjectdetailComponent,canActivate:[AuthGuardGuard]},
+  
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
 ];

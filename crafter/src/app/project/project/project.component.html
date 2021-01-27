@@ -1,0 +1,24 @@
+<section class="nav">
+    <div class="nav-bar">
+        <a href="/"><i class="material-icons">dashboard</i>Projects</a>
+        <a href="/" id="chal">Challenges</a> 
+    </div>
+</section>
+<section class="cards">
+    <div class="card" *ngFor="let p of Projects">
+        <img src="{{p.image}}" alt="card1" />
+        <div class="card-heading">
+            <p style="color: rgb(129, 192, 212);">HTML</p>
+            <p style="color: rgb(90, 90, 236)">CSS</p>
+            <p style="color: rgb(231, 133, 149)">JS</p>
+        </div>
+        <div class="card-body">
+            <h1>{{p.title}}</h1>
+            <p>{{p.para}}</p>
+            <p style="color: #46a506; font-weight: 600;">Difficulty: {{p.diff}}</p>
+        </div>
+        <div class="card-button">
+            <button [routerLink]="['/Projectdetail', p.id]">View Challenge</button>
+        </div>
+    </div>
+</section>
