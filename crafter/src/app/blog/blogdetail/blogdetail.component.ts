@@ -109,6 +109,10 @@ this.CurrentBlog.b_likes.forEach((ele)=>{
   this.Blogreaction.PutComment(this.comment,this.CurrentBlog._id).subscribe((res)=>{
     console.log(res)
     this.getCurrentBlog()
+    this._snackBar.open('Comment Posted Successfully  🎉','x',{
+      duration:1000
+    })
+    this.comment=""
   })
  }
   }

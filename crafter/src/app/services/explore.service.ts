@@ -13,4 +13,20 @@ export class ExploreService {
   GetPosts(){
     return this.http.get(`${this.URL}/dribbble`)
   }
+
+  AddComment(text,postId){
+    return this.http.put(`${this.URL}/d_comment`,{text,postId})
+  }
+
+  Post(post){
+    return this.http.post(`${this.URL}/dribbble`,post)
+  }
+
+  LikePost(id){
+    return this.http.put(`${this.URL}/d_like`,{postId:id})
+  }
+  
+  DisLikePost(id){
+    return this.http.put(`${this.URL}/d_unlike`,{postId:id})
+  }
 }

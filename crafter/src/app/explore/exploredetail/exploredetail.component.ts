@@ -4,8 +4,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import {ExploreService} from '../../services/explore.service';
 import {ProfileUploadService} from '../../services/profile-upload.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
 import { Params, ActivatedRoute } from '@angular/router';
+import { UserInfoService } from 'src/app/services/user-info.service';
 @Component({
   selector: 'app-exploredetail',
   templateUrl: './exploredetail.component.html',
@@ -15,7 +15,8 @@ export class ExploredetailComponent implements OnInit {
 
   isShow: boolean;
   topPosToStartShowing = 100;
-
+  C_Id:any;
+CurrentUser:any
   @HostListener('window:scroll')
   checkScroll() {
       
@@ -24,7 +25,7 @@ export class ExploredetailComponent implements OnInit {
 
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    console.log('[scroll]', scrollPosition);
+
     
     if (scrollPosition >= this.topPosToStartShowing) {
       this.isShow = true;
@@ -79,22 +80,65 @@ export class ExploredetailComponent implements OnInit {
         }
     }
   }
-  constructor(private _snackBar: MatSnackBar,private Profile:ProfileUploadService,private route:ActivatedRoute,private exploreService:ExploreService) { }
+
+  customOptions3: OwlOptions = {
+    loop:true,
+    margin:10,
+    responsive:{
+        0:{
+            items:1,
+                    },
+        500:{
+            items:3,
+          
+        },
+        1000:{
+            items:3,
+            loop:false
+        }
+    }
+  }
+  constructor(private router:Router,private UserService: UserInfoService,private _snackBar: MatSnackBar,private Profile:ProfileUploadService,private route:ActivatedRoute,private exploreService:ExploreService) { }
   Allposts:any
   CurrentPost:any
   AuthorPosts:any;
   SamePosts:any;
-  
+  comment:any=null;
+  Likes:any;
+  likeColor="rgba(204, 204, 204, 0.452)"
+  dislikeColor="rgba(204, 204, 204, 0.452)"
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'].toString();
+    this.C_Id=id;
 this.GetCurrentPost(id)
-   
-
-    
+  this.getCurrentUser()
   }
- CopyAllcolors(){
 
- } 
+  AddComment(){
+
+if(this.comment!=="" && this.comment!==null){
+this.exploreService.AddComment(this.comment, this.CurrentPost._id).subscribe((res)=>{
+console.log(res)
+let response:any=res;
+this._snackBar.open(response.msg, 'X',{
+  duration: 2000
+});
+this.comment=""
+this.GetCurrentPost(this.C_Id);
+},(err)=>{
+  this._snackBar.open('Sorry We couldnt Post Your Comment', 'X',{
+    duration: 2000
+  });
+})
+}
+
+  }
+
+  DeleteComment(){
+
+  }
+
+ 
 copiedColor(){
   this._snackBar.open("Color Code Copied Successfully", 'X',{
     duration: 2000
@@ -102,11 +146,11 @@ copiedColor(){
 }
 GetAuthorPosts(id)
 {
-  console.log('called',id)
+
   this.Profile.GetProfilePostById(id).subscribe((res) =>{
   
     let Posts:any=res;
-    console.log(Posts.dribbble)
+
     this.AuthorPosts=Posts.dribbble;
   })
 
@@ -122,7 +166,7 @@ this.SamePosts=this.getRandom(SimilarPosts,4);
 }else{
 this.SamePosts=SimilarPosts;
 }
-console.log(this.SamePosts)
+
 }
 
  getRandom(arr, n) {
@@ -139,6 +183,15 @@ console.log(this.SamePosts)
   return result;
 }
 
+getCurrentUser(){
+  this.UserService.GetUserInfo().subscribe((user)=>{
+
+    this.CurrentUser = user[0]
+    
+   },(err)=>{
+     console.log(err)
+   })
+ }
 
 GetCurrentPost(id){
   this.exploreService.GetPosts().subscribe((res)=>{
@@ -146,7 +199,25 @@ GetCurrentPost(id){
     this.CurrentPost = this.Allposts.filter((ele)=>{
       return ele._id === id;
     })[0];
-    console.log(this.CurrentPost);
+
+console.log(this.CurrentPost);
+this.Likes=this.CurrentPost.d_likes.length;
+// liked post check
+let likesarray=this.CurrentPost.d_likes;
+  
+const present=likesarray.some((like)=>{
+ return like.postedBy._id===this.CurrentUser._id
+}) 
+
+if(present){
+  this.likeColor="#fff";
+  this.dislikeColor="rgba(204, 204, 204, 0.452)"
+}else{
+  this.likeColor="rgba(204, 204, 204, 0.452)";
+  this.dislikeColor="rgba(204, 204, 204, 0.452)"
+}
+
+console.log(present,'present')
     this.GetAuthorPosts(this.CurrentPost.postedBy._id.toString())
    this.GetSimilarPosts()
     let year,month,dt
@@ -167,4 +238,53 @@ this.CurrentPost.createdAt =year+'-' + month + '-'+dt;
   this.gotoTop()
 }
 
+
+LikePost(){
+  let likesarray=this.CurrentPost.d_likes;
+  
+  const present=likesarray.some((like)=>{
+   return like.postedBy._id===this.CurrentUser._id
+  }) 
+  console.log(present)
+  if(present){
+    console.log('present')
+    this._snackBar.open("You Have Already Liked This Post", 'X',{
+      duration: 1000
+    });
+
+  }else{
+    this.exploreService.LikePost(this.CurrentPost._id).subscribe((data) =>{
+      console.log(data)
+      this.likeColor="#fff",
+      this.dislikeColor="rgba(204, 204, 204, 0.452)";
+      this.GetCurrentPost(this.C_Id)
+    });
+  }
+
+}
+
+DisLikePost(){
+  let likesarray=this.CurrentPost.d_likes;
+  
+  const present=likesarray.some((like)=>{
+   return like.postedBy._id===this.CurrentUser._id
+  }) 
+  console.log(present)
+  if(present){
+    this.exploreService.DisLikePost(this.CurrentPost._id).subscribe((data) =>{
+      console.log(data)
+      this.likeColor="rgba(204, 204, 204, 0.452)"
+      this.dislikeColor="#fff";
+      this.GetCurrentPost(this.C_Id)
+    });
+  }else{
+
+  }
+}
+
+ChangeRoute(id){
+  this.router.navigate(['/Exploredetail', id])
+  this.GetCurrentPost(id);
+  let likesarray=this.CurrentPost.d_likes;  
+}
 }

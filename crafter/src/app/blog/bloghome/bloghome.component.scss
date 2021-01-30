@@ -4,7 +4,7 @@
 #blog-home{
 width:100%;
 min-height: 100vh;
-background-color: $darkyellow;
+background-color: $darkblue;
 color: white;
 border: 1px solid rgba(204, 204, 204, 0);
 }
@@ -177,13 +177,27 @@ img{
     border: none;
     color: white;
     box-shadow: 5px5px 8px rgb(48, 48, 48);
-    background-color: lighten($color:rgba(17, 17, 17, 0.459), $amount: 10);
+    background-color: $light-blue;
     border-radius: 20px;
 }
 
 @media only screen and (max-width: 700px) {
+    .heading{
+        font-size:26px !important;
+        line-height: 30px;
+    }
+    .card-container{
+        margin: 0 auto !important;
 
-    #poster .poster-card{
+    }
+    .card-container .blog-card{
+height: auto !important;
+img{
+    height: 150px !important;
+    object-fit: cover !important;
+}
+    }
+    #poster .poster-card,#search{
         width:90% !important;
     }
     

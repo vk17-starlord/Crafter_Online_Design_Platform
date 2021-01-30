@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireStorage} from  '@angular/fire/storage';
+
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { BlogService } from 'src/app/services/blog.service';
 import {Router} from '@angular/router';
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class BlogformComponent implements OnInit {
 
   categories:['UI/UX','Graphic Design','Animation']
-  constructor(private AF:AngularFireStorage,private router: Router,private _snackBar: MatSnackBar,private blogService:BlogService) { }
+  constructor(private router: Router,private _snackBar: MatSnackBar,private blogService:BlogService) { }
  Blog:any
   b_title=null
      b_coverPhoto=null

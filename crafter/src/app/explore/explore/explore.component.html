@@ -87,16 +87,16 @@
                  <tr> <span>{{post.d_title}}</span></tr>
              </table>   
         </div>
-            <img [src]="post.d_pic" alt="">
-            <div class="title">
-                <h4 class="heading">{{post.d_title}}</h4>
-            </div>
+  <div class="image-container">
+    <img [src]="post.d_pic" alt="" class="post">
+
+  </div>      
             </div>
 
         </div>
 
     </div>
-    <button class="add-post" mat-fab   aria-label="Example icon button with a delete icon">
+    <button class="add-post" routerLink="/Exploreform" mat-fab   aria-label="Example icon button with a delete icon">
         <mat-icon>add</mat-icon>
       </button>
 </div>

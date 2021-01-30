@@ -16,7 +16,8 @@ import { ExploreComponent } from './explore/explore/explore.component';
 import { ExploredetailComponent } from './explore/exploredetail/exploredetail.component';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectdetailComponent } from './project/projectdetail/projectdetail.component';
-
+import { ExploreformComponent } from './explore/exploreform/exploreform.component';
+import { UploadpostComponent } from './explore/uploadpost/uploadpost.component';
 const routes: Routes = [
 
   {path:'homepage',component:HomepageComponent, canActivate:[AuthGuardGuard]},
@@ -24,6 +25,9 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'profileform',component:ProfileformComponent ,canActivate:[AuthGuardGuard]},
+  {path:'Exploreform',component:ExploreformComponent ,canActivate:[AuthGuardGuard]},
+  {path:'Uploadpost',component:UploadpostComponent ,canActivate:[AuthGuardGuard]},
+  
   {path:'Editprofile',component:EditprofileComponent ,canActivate:[AuthGuardGuard]},
   {path:'ProfilePic',component:ProfilePicComponent ,canActivate:[AuthGuardGuard]},
   {path:'Explore',component:ExploreComponent ,canActivate:[AuthGuardGuard]},
@@ -36,7 +40,7 @@ const routes: Routes = [
   {path:'blogdetail/:id',component:BlogdetailComponent,canActivate:[AuthGuardGuard]},
   {path:'Exploredetail/:id',component:ExploredetailComponent,canActivate:[AuthGuardGuard]},
   {path:'Projectdetail/:id',component:ProjectdetailComponent,canActivate:[AuthGuardGuard]},
-  
+
   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
 ];

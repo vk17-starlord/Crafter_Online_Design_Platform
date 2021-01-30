@@ -5,12 +5,13 @@ $opacity:0.5;
 $light-blue:rgb(30, 30, 34);
 $yellowhite:#FFF6C2;
 $darkyellow:#030303;
-$primary:#5A47F8;
+$primary:lighten(#5A47F8,1);
 $light-grey:#474A58;
 $pure-black:#000000;
 $text-color:#EFEEF7;
 $pure-white:#FFFFFF;
-
+$gradient-bg: rgb(90,71,248);
+$background: linear-gradient(90deg, rgba(90,71,248,1) 0%, rgba(19,19,23,0.5607376739758403) 49%); 
 
 *{
   box-sizing: border-box;

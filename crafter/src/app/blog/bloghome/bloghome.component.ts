@@ -33,12 +33,13 @@ colorpallete:any={
          {bg:'#ffafcc',color:'#f1faee'},
          {bg:'#6930c3',color:'#f1faee'},
          {bg:'#d00000',color:'#f1faee'},
-         {bg:'560bad',color:'#fff'}
+         {bg:'#560bad',color:'#fff'}
      ]
      let randomColor =Math.floor(Math.random() * colors.length);
        this.colorpallete.bg=colors[randomColor].bg;
      this.colorpallete.color=colors[randomColor].color;
    console.log(this.colorpallete,'pallete')
+ 
        console.log(this.Qoutes[todaysQoutes],'today qoite') 
        this.TodaysQoutes=this.Qoutes[todaysQoutes];
     

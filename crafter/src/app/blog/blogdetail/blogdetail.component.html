@@ -1,20 +1,18 @@
 
 <div id="blog-detail">
     <div class="container">
-
-        <img [src]="CurrentBlog.b_coverPhoto" id="coverpic" alt="">
-        <h1>{{CurrentBlog.b_title}}</h1>
-        <h4 style="opacity: 0.8;">{{CurrentBlog.b_desc}}</h4>
-
-        <table>
-            <th>
-                <img src='{{CurrentBlog.postedBy.profilePic}}' alt="" class="profile-pic">
-            </th>
-            <th>
-                <h4>{{CurrentBlog.postedBy.userName}}</h4>
-            </th>
-
-        </table>
+        <h1 class="heading" style="text-align:center;margin:25px auto !important">{{CurrentBlog.b_title}}</h1>
+        <div class="profile-container">
+            <img [src]="CurrentBlog.postedBy.profilePic" [routerLink]="['/profilepage', CurrentBlog.postedBy._id]"alt="profile-pic" class="profile-pic">
+             <mat-icon  class="verify">verified</mat-icon>
+             <table>
+   
+                 <tr id="name"> {{CurrentBlog.postedBy.userName}}</tr>
+                 
+                 <tr id="date">Posted On : {{CurrentBlog.createdAt}}</tr>
+        
+                </table>
+        </div>
      
 
 

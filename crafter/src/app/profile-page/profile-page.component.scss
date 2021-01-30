@@ -12,7 +12,7 @@
         padding: 0px;
         height: 100vh;
      background-color: #5B3DFF;
-     color: white;
+
        background-position: center;
        background-size: contain;
        display: flex;
@@ -54,8 +54,8 @@ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   .profile-container{
       width: 100%;
       min-height: 100vh;
-      background-color: whitesmoke;
-      
+      background-color: $darkblue;
+      color: white !important;
       #main-row{
           margin: 0;
           >div{
@@ -73,7 +73,7 @@ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 align-items:center;
                 a{
                     font-size: 20px;
-                    color: #1b1b1b !important;
+                    color: #fff !important;
                 }
            mat-icon{
                color: #5B3DFF;
@@ -109,11 +109,11 @@ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
                   transition:2s cubic-bezier(0.075, 0.82, 0.165, 1);
                   overflow: hidden;
                   text-overflow: ellipsis;
-                border-radius: 10px;
+            
                 .content{
                     width: 100%;
                     display:flex;
-                    border-radius: 10px;
+                  
                     margin: 0 auto;
                     justify-content:center;
                     align-items:center;
@@ -122,7 +122,7 @@ animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     flex-direction: column;
                     transition:0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
                background-position: center center;
-               background-size: contain;
+               background-size: cover;
                background-repeat: no-repeat;
                     p{
                         opacity: 0;
@@ -215,7 +215,7 @@ align-items: flex-end;
 h1{
     width:100%;
     text-align: center;
-    color: black !important;
+    color: white!important;
 }
 }
 

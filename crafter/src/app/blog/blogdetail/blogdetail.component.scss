@@ -4,7 +4,7 @@
 #blog-detail{
 width:100%;
 min-height: 100vh;
-background-color: $darkyellow;
+background-color: $darkblue;
 color: white;
 border: 1px solid rgba(204, 204, 204, 0);
 overflow-x:hidden !important;
@@ -65,17 +65,69 @@ object-position: top center;
     text-align: center;  
 }
 
-.profile-pic{
-    width:50px;
-    border: 3px solid $primary;
-    border-radius: 50%;
-    height: 50px;
-    object-fit: cover;
-}
-
-th{
-    padding:20px;
-}
+.profile-container{
+    margin:25px auto;
+    width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    
+    .profile-pic{
+       width: 75px;
+       height: 75px;
+       border-radius: 50%;
+       object-fit: cover;
+       object-position: center center;
+       text-align: left;
+    }
+    .verify{
+        color: rgb(26, 75, 235);
+        position: relative;
+        background-color: white;
+        padding:5px;
+        border-radius: 50%;
+   display: flex;
+   font-size: 35px;
+   justify-content:center;
+   align-items: center;
+        margin-left: -20px;
+   margin-top: 54px;
+   box-sizing: border-box;
+   
+   }
+   
+   table{
+       margin:0px 25px;
+   
+       tr{
+       cursor: pointer;
+           text-align: left !important;
+           padding:10px 0px;
+           border:none !important;
+           color:white;
+           height: auto !important;
+           
+       }
+       #title{
+           margin:10px auto;
+           font-size:52px;
+           line-height: 30px;
+           font-family: JosefinSansBold;
+       }
+       #name{
+           opacity: 0.8;
+           font-size:20px;
+           line-height:30px;
+       }
+       #date{
+           margin:10px auto;
+           font-family: RobotoLight;
+       opacity: 0.5;
+       line-height: 24px;
+       }
+      
+   }
+   }
 p{
     font-size: 20px;
     line-height:28px;
@@ -95,7 +147,7 @@ margin: 20px auto;
     width:100% !important;
     textarea{
         width:100% !important;
-        background-color: black;
+        background-color:$light-blue;
         border: 1px solid $primary;
         border-radius: 10px;
         color: white;font-size: 16px !important;
@@ -117,7 +169,7 @@ margin: 20px auto;
 }
 
 mat-expansion-panel,mat-expansion-panel-header{
-    background-color: $darkyellow !important;
+    background-color: $darkblue!important;
     color: white;
    
   h4{
@@ -131,7 +183,7 @@ mat-expansion-panel,mat-expansion-panel-header{
     }
     .comment-card{
         width: 60%;
-        background-color: lighten($color: $darkyellow, $amount: 5);
+        background-color: $light-blue;
         color: whitesmoke;
         margin: 20px auto;
         .row > div{

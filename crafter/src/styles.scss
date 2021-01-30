@@ -1,27 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:hidden !important;
+body {
+  background-color:#13131760 ;
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:hidden !important;
     }
     .mat-dialog-container{
         padding: 0 !important;
-      }
+        color: white;
+        background-color: #030303;
 
+      }
+      .cdk-overlay-dark-backdrop{
+        background-color:#13131760 !important;
+    
+        background-color: #030303;
+      }
       @media (max-width: 900px){
 
         .mat-dialog-container{
           padding: 0 !important;
           border-radius: 10px;
-         height: max-content !important;
          width: 95% !important;
          background-color:transparent !important;
         }
    
       }
       .mat-expansion-panel-body ,.mat-expansion-panel-content {
-        padding: 5px 0px !important;
+        padding: 0px 0px !important;
       div{
-        padding: 5px 0px !important;
+        padding: 0px 0px !important;
       
       }
+      }
+      *{
+        outline:none !important;
+      }
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #ccc;
+        opacity: 0.5; /* Firefox */
       }

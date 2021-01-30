@@ -1,0 +1,391 @@
+@import "../../app.component.scss";
+
+.exploreform-container{
+    width: 100%;
+    background-color: $darkblue;
+     min-height: 100vh;
+
+     display:flex;
+justify-content:center;
+align-items:flex-start;
+flex-direction: column;
+    }
+
+.heading{
+    font-family: JosefinSansBold;
+    text-align: center;
+    width: 60%;
+text-align:right;
+  margin:50px auto;
+    font-size: 42px;
+    line-height: 45px;
+    color: white;
+}
+
+
+    .form{
+                width:100%;
+ 
+        .row{
+        margin: 20px auto !important;
+        #col-1,#col-2{
+            display: flex;
+            flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+margin: 50px auto;
+text-align: left;
+#container{width: 100%;
+
+}
+        }
+        .input-field,.input{
+            width: 70%;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 12px;
+            resize: vertical;
+color: #fff;
+margin-bottom:25px;
+margin-top: 5px;
+            background-color: $light-blue;
+border:none !important;
+        }
+
+
+        p{
+            width:70%;
+        color: white;
+        font-family: RobotoMedium;
+    font-size: 20px;    
+    }
+     
+    }
+    }
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+ button{
+    
+     color: white;
+  margin: 30px 0px;
+     font-size: 16px;
+     background-color: $primary;
+     font-size: 16px;
+     transition:0.5s ease-in-out;
+     &:hover{
+         background: rgb(90,71,248);
+         background: linear-gradient(90deg, rgba(90,71,248,1) 0%, rgba(19, 19, 23, 0.89) 49%);  
+     
+     }
+ }
+ *{
+    transition:all 1 cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
+
+ .chiplist{
+     width: 70%;
+
+     padding: 20px auto !important;
+    
+ }
+ .mat-chip.mat-standard-chip{
+     background: $primary !important;
+ color: white !important;
+
+    }
+
+ ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ccc;
+    opacity: 0.5; /* Firefox */
+  }
+
+  .new-button {
+    display: inline-block;
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: $primary;
+    font-size: 16px;
+    transition:0.5s ease-in-out;
+    &:hover{
+        background: rgb(90,71,248);
+        background: linear-gradient(90deg, rgba(90,71,248,1) 0%, rgba(19,19,23,0.5607376739758403) 49%);  
+    
+    }
+    color: #fff;
+}input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  top: 6px;
+  left: 0;
+  font-size: 15px;
+  color: rgb(153,153,153);
+}.button-wrap {
+  position: relative;
+}
+
+h4{
+    margin-top: 20px !important;
+    font-size: 18px;
+    color: white;
+    font-family: RobotoMedium;
+    margin-bottom: 5px;
+}
+.mat-radio-button,.mat-radio-label-content{
+    text-transform: capitalize;
+    font-size: 18px;
+    padding:0px 15px;
+   
+    color: white !important;
+}
+
+// loader
+
+.load-container
+{
+    width:100% !important;
+        display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    h1{
+color: #10c15c;
+text-transform: capitalize;
+font-family: JosefinSansBold;
+font-size: 30px;
+        margin-top: 100px;
+    }
+}
+
+.loader {
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    
+
+	.bar {
+		width: 10px;
+		height: 10px;
+		background: #10c15c;
+		margin: 2px;
+		animation: bar 1s infinite linear;
+
+		&:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		&:nth-child(2) {
+			animation-delay: 0.25s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 0.5s;
+		}
+	}
+}
+
+@keyframes bar {
+	0% {
+		transform: scaleY(1) scaleX(0.5);
+	}
+
+	50% {
+		transform: scaleY(10) scaleX(1);
+	}
+
+	100% {
+		transform: scaleY(1) scaleX(0.5);
+	}
+}
+
+// preview
+.preview{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+flex-direction: column;
+}
+.preview-card{
+    width:50vw;
+    min-height:75vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+
+flex-direction: column;
+.post-image{
+border-radius: 10px;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin:50px auto;
+}
+.desc{
+font-size: 20px;
+line-height: 26px;
+font-family: RobotoLight;
+    width: 100%;
+
+}
+ .profile-container{
+     width:100%;
+     display: flex;
+      align-items: center;
+      flex-direction: flex-start;
+     img{
+     margin:0px 10px;
+        width:100px;height: 100px;
+         border-radius: 50%;
+         object-fit: cover;
+     }
+     table{
+        margin:0px 25px;
+    
+        tr{
+        cursor: pointer;
+            text-align: left !important;
+            padding:10px 0px;
+            border:none !important;
+            color:white;
+            height: auto !important;
+            
+        }
+        #title{
+            margin:10px auto;
+            font-size:28px;
+            line-height: 30px;
+            font-family: JosefinSansBold;
+        }
+        #name{
+            opacity: 0.8;
+            font-size:20px;
+            line-height:30px;
+        }
+        #date{
+            margin:10px auto;
+            font-family: RobotoLight;
+        opacity: 0.5;
+        line-height: 24px;
+        }
+       
+        }
+    
+ }
+}
+
+.color-pallete{
+    width:max-content;
+    background-color: white;
+    margin:25px auto;
+    box-shadow: 2px 2px 2px rgba(24, 23, 23, 0.295);
+    border-radius: 40px;
+    padding:5px 10px;
+    height: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    .color-btn{
+margin:5px !important;
+        background-color: royalblue;
+        cursor: pointer ;
+
+    }
+    mat-icon{
+        margin: 0 5px;
+     cursor: pointer ;
+    }
+ 
+}
+
+.float{
+    position: fixed;
+    top: 50%;
+    right: 90px;   
+}
+
+// video
+
+#Container {
+    position: relative;
+    height: 110vh;
+    top: 0;
+    margin-top: -25vh;    
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://cdn.dribbble.com/users/15687/screenshots/14055483/media/ca02aefddf894fe965d73a1fbab79176.png?compress=1&resize=1000x750');
+}
+
+
+@media screen and (max-width: 900px){
+    #Container{
+        display:none;
+    }
+    .exploreform-container{
+        height: auto !important;
+    }
+    .form .row p{
+        width:100% !important;
+        text-align: left;
+        max-width: 90%;
+        padding-left:5%;
+    }
+    .form .row #col-1{
+        margin: 0 auto!important;
+    }
+    .chiplist ,.form .row .input-field{
+        width: 85% !important;
+    }
+    .form .row #col-2{
+        margin:0  !important;
+        justify-content:center !important;
+        align-items:center !important;
+text-align: center !important;
+#container{
+    text-align: center;
+    display: flex;
+    justify-content:center !important;
+    align-items:center;
+    flex-direction: column;
+}
+    }
+}
+
+.typewriter{
+    width:max-content;
+    text-align: center;
+    
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+      text-align: center ;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }

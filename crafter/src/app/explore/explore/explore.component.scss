@@ -65,33 +65,33 @@ padding:10px 20px;
         cursor: pointer;
     overflow: hidden;
     padding:0 !important;
+    .image-container{
+        max-width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow: hidden !important;
+        border-radius: 10px;
+        }
  &:hover{
 .blur-bg{
     filter: drop-shadow(16px 16px 10px $darkblue) blur(20px) opacity(0.5) brightness(1);
+    overflow: hidden !important;
 
-}     
-.title{
-    display:flex;
+}    
+.blur{
+    overflow: hidden !important;
+}
+
+.blur .post{
+    position: relative;
+    object-fit:cover !important;
+    transform:scale(1.2, 1.2);
 }
 }
- .title{
-     width:100%;
-     display:none;
-     height:75px;
-     margin-top:5px;
-     position: relative;
-     background-color:rgba(0, 0, 0, 0.500);
-     border-radius: 0 0 10px 10px;
-     justify-content: center;
-     align-items:center;
-
- .heading{
-
-    color:white;
-     font-size:20px;
-     font-family: RobotoLight;
- }
-    }
+ 
 
     height: 375px;
     background-color:$light-blue;
@@ -116,6 +116,7 @@ box-shadow: none !important;
        border-radius: 10px;
         width: 100%;
         height: 375px;
+    
         display:flex;
         justify-content:flex-start;
         flex-direction: column;
@@ -278,6 +279,7 @@ mat-icon{
 }
 @media (max-width: 768px){
     .post{
+        margin:20px !important;
         .title{
             display:flex !important;
         }
@@ -288,6 +290,8 @@ mat-icon{
             }
             .profile .profile-pic{
                 height:50px !important;
+                margin:0 ;
+                margin-left: 5% !important;
             }
         }
     }
@@ -333,7 +337,7 @@ p{
 .image{
     width:70%;
     height:50vh;
-    background-image: url('./undraw_empty_xct9\(2\).svg');
+    background-image: url('./undraw_empty_xct9\(3\).svg');
     background-size: contain;
     margin:0 auto;
     background-position: center;
@@ -357,3 +361,4 @@ div{
  background: $primary;
  color:white;
 }
+

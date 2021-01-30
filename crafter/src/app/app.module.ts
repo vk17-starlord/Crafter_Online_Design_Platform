@@ -53,6 +53,9 @@ import { ExploredetailComponent } from './explore/exploredetail/exploredetail.co
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectdetailComponent } from './project/projectdetail/projectdetail.component';
+import { ExploreformComponent } from './explore/exploreform/exploreform.component';
+import {MatChipsModule} from '@angular/material/chips';
+import { UploadpostComponent } from './explore/uploadpost/uploadpost.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,10 +76,12 @@ import { ProjectdetailComponent } from './project/projectdetail/projectdetail.co
     ExploredetailComponent,
     ProjectComponent,
     ProjectdetailComponent,
+    ExploreformComponent,
+    UploadpostComponent,
     
   ],
   imports: [
-
+    MatChipsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -112,11 +117,16 @@ import { ProjectdetailComponent } from './project/projectdetail/projectdetail.co
     provide:HTTP_INTERCEPTORS  ,
     useClass:TokenInterceptorService,
     multi: true
-    }],
+    }
+  
+  ]
+    
+    ,
     entryComponents: [
      ProfileformComponent,
      AboutMeComponent,
-     ProfilePicComponent
+     ProfilePicComponent,
+   UploadpostComponent
 ],
   bootstrap: [AppComponent]
 })

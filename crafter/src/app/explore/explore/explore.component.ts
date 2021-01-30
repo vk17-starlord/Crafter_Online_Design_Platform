@@ -15,15 +15,15 @@ export class ExploreComponent implements OnInit {
 
   Categories:any=[
     {
-      img:"https://cdn.dribbble.com/users/2227807/screenshots/14543126/media/1fb90d3db799552e42104f4cf52ccd5e.png?compress=1&resize=1000x750",
+      img:"https://cdn.dribbble.com/users/512167/screenshots/11965015/media/c619e6f4c9d666c840dd8abc02eb7f9d.png?compress=1&resize=1000x750",
       category:"All"
     },
 {
-  img:"https://cdn.dribbble.com/users/2227807/screenshots/14543126/media/1fb90d3db799552e42104f4cf52ccd5e.png?compress=1&resize=1000x750",
+  img:"https://cdn.dribbble.com/users/702789/screenshots/14160476/media/73be226f4990a451cfc905b0217f2d88.png?compress=1&resize=1000x750",
   category:"web design"
 },
 {
-  img:"https://cdn.dribbble.com/users/1475931/screenshots/9837144/media/1dc3c9d6609dc1efba0a7f005582ae2e.png?compress=1&resize=1000x750",
+  img:"https://cdn.dribbble.com/users/2481233/screenshots/9836130/media/91800a1366c4b87cc591814c9341ffb4.jpg?compress=1&resize=1000x750",
   category:"mobile design"
 },
 {
