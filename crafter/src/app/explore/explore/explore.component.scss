@@ -8,11 +8,12 @@
 }
 .filter-container{
     width:80%;
+    color: white;
     margin:20px auto;
     margin-bottom:50px;
-
+   
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
 }
 .mat-expansion-panel-header{
@@ -351,6 +352,17 @@ p{
     background-position: center;
     background-repeat: no-repeat;
 }
+}
+.mat-chip.mat-standard-chip{
+    background-color: $light-blue !important;
+color: white !important;
+}
+.mat-chip.mat-standard-chip .mat-chip-remove{
+    color: $primary !important;
+}
+.example-chip-list{
+    min-width:70%;
+  
 }
 
 .mat-expansion-panel-body ,.mat-expansion-panel-content {

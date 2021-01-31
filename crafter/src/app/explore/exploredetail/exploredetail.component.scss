@@ -54,6 +54,7 @@ font-family: RobotoLight;
 
 
 .profile-container{
+
     width:100%;
     display:flex;
     justify-content:flex-start;
@@ -116,16 +117,20 @@ font-family: RobotoLight;
    }
    }
 .image-container{
+    width:100%;
+
+    margin: 0 auto;
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
     cursor: pointer !important;
     .post{
         margin:25px  auto;
         border-radius: 10px;
-        width:auto;
+        width:100%;
         max-width: 100%;
         max-height: 100vh;
         height: auto;
-        object-fit: contain;
+        object-fit: cover;
+        object-position: top center;
         transition: all 1s ease-in-out;
     }  
 .color-pallete{
@@ -256,14 +261,11 @@ h4{
    
     .author-container h1{
         font-size:20px;
+        padding-left: 5%;
     }
     .profile-container{
-        flex-direction: column;
-        .verify{
-            margin-top: -30px;
-            margin-right: -90px;
-
-        }
+        flex-direction: row;
+       
         table{
             margin: 0 10px;
             margin-top:20px;

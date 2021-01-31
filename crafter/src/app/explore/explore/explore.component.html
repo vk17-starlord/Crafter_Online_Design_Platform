@@ -8,6 +8,23 @@
     </div>
     <div class="filter-container">
 
+        <mat-form-field class="example-chip-list">
+        
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip *ngFor="let Tag of Tags" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(Tag)">
+                {{Tag}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input 
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+          
+
         <div class="mat-expansion">
             <mat-expansion-panel hideToggle>
                           <mat-expansion-panel-header>

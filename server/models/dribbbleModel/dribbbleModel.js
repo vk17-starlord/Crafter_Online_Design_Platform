@@ -21,18 +21,16 @@ const dribbbleSchema = new mongoose.Schema({
         type: Array,
         required: true
     },
-    d_tags: [
-        {
-            type: Array,
-            required: true
-        }
-    ],
-    d_link: [
-        {
-            type: Array,
-            required: true
-        }
-    ],
+    d_tags: {
+         type: Array,
+        required: true
+    },
+    d_link: {
+       
+           type: Array,
+        required: true
+      
+    },
     d_likes: [
         {
             postedBy: {

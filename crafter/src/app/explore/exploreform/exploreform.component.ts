@@ -98,7 +98,7 @@ CurrentUser:any=null;
     const chipInputCtrl = event.input;
     let value = event.value;    if ((value || "").trim()) {
       value = value.trim();
-      if (value.substr(0, 1) != "#") value = "#" + value;      this.d_tags.push(value.trim());
+      if (value.substr(0, 1) != "") value = "" + value;      this.d_tags.push(value.trim());
     }    chipInputCtrl.value = "";
     console.log(this.d_tags)
   }
@@ -111,7 +111,7 @@ CurrentUser:any=null;
     if(this.urlValidator(value)) {
       if ((value || "").trim()) {
         value = value.trim();
-        if (value.substr(0, 1) != "#") value = "#" + value;   
+        if (value.substr(0, 1) != "") value = "" + value;   
        this.d_link.push(value.trim());
       }    chipInputCtrl.value = "";
       console.log(this.d_link)

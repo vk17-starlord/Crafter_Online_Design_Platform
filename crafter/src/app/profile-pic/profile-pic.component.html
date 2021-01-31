@@ -8,11 +8,19 @@
 
 
         <div class="col-sm-12 col-lg-12">
-            <input type="file" (change)="onchange($event)">
+          
+        <div class="button-wrap">
+          <label class ="new-button" for="upload"> 
+           Change  
+        </label>
+      
+        <input type="file" (change)="onchange($event)" id="upload">
+      
+        </div>
           </div>
         <br>  
           <div class="col-sm-12 col-lg-12">
-            <button mat-raised-button color="primary"  mat-dialog-close [disabled]="show" (click)="onProfileUpload()">Update</button>
+            <button mat-raised-button  color="primary"  mat-dialog-close [disabled]="show" (click)="onProfileUpload()">Update</button>
             <button mat-raised-button color="warn"  mat-dialog-close cdkFocusInitial>cancel</button>  
         </div>
           

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import {ExploreService} from '../../services/explore.service';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
@@ -8,10 +10,14 @@ import {ExploreService} from '../../services/explore.service';
 })
 export class ExploreComponent implements OnInit {
 
+
+
   constructor(private exploreService:ExploreService) { }
   SelectedColor:boolean = false;
   Default:any="#"
   HexValue:any
+
+
 
   Categories:any=[
     {
@@ -70,12 +76,57 @@ BasicPallete:any=[
   '#ffffff',
   '#000000'
 ]
+
+
+visible = true;
+selectable = true;
+removable = true;
+addOnBlur = true;
+readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+Tags:any= [
+ 'UI/UX',
+ 'Design'
+];
+
+
+add(event: MatChipInputEvent): void {
+  const input = event.input;
+  const value = event.value;
+
+  // Add our Tag
+  if ((value || '').trim()) {
+    this.Tags.push(value.trim());
+  }
+
+  // Reset the input value
+  if (input) {
+    input.value = '';
+  }
+  console.log('here')
+  this.SortByTags()
+}
+
+remove(tag): void {
+  const index = this.Tags.indexOf(tag);
+
+  if (index >= 0) {
+    this.Tags.splice(index, 1);
+  }
+}
+
  ngOnInit(): void {
 this.exploreService.GetPosts().subscribe((res)=>{
 this.Posts=res;
 this.Allposts=res;
 console.log(this.Posts)
 })
+if(this.Allposts.length===0){
+  this.NotFound=true;
+
+}else{
+  this.NotFound=false;
+
+}
   }
   CurrentColor:any;
   NotFound:boolean = false;
@@ -153,6 +204,27 @@ this.NotFound=false;
   }
  
   
+  SortByTags(){
+    
+    if(this.Tags===0){
+      
+    }else{
+
+      let checker = (arr, target) => target.some(v => arr.includes(v));
+
+
+      this.Posts=this.Posts.filter((ele)=>{
+         
+      if(checker(this.Tags,ele.d_tags) ){
+   return ele;
+      }
+   
+       })
+   
+    }
+    
+  }
+
   sortbyCategory(category:any){
 let newPosts=this.Allposts.map((ele)=>{
 if(ele.d_category===category){

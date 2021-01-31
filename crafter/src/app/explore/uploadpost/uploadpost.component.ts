@@ -20,9 +20,12 @@ export class UploadpostComponent implements OnInit {
   Upload(){
     console.log(this.data.post)
     this.exploreService.Post(this.data.post).subscribe((res)=>{
-    this._snackBar.open('Post Uploaded Successfully !!')
-    this.router.navigateByUrl('/explore')
+    this._snackBar.open('Post Uploaded Successfully !!','x',{
+      duration:500
+    })
+    this.router.navigateByUrl('/Explore')
     },(err)=>{
+      this.router.navigateByUrl('/Explore')
       console.log(err)
     })
 
