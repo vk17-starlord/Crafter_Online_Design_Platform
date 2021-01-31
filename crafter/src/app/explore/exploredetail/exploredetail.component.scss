@@ -175,11 +175,11 @@ display: none;
     }
     .item{
         width: 100%;
-        
+        max-width: 300px;
+        margin: 0 auto;
         height: 300px;
 &::before{
     content:'';
-    background-color: rgba($color: #000000, $alpha: 1);
     bottom: 0;
     position: absolute;
     width:100%;
@@ -207,6 +207,7 @@ display: none;
         .item-bg{
            width: 100%;
             height: 100%;
+border-radius: 10px;
             object-fit: cover;
             object-position: top center;
             filter: drop-shadow(16px 16px 10px $darkblue) blur(20px) opacity(0.5) brightness(1);

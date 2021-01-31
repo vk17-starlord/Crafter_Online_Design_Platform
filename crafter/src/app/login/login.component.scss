@@ -57,3 +57,14 @@ button{
     background-size: cover;
     background-position: center center;
 }
+
+@media only screen and (max-width:900px){
+    .container .row{
+        width: 100% !important;
+    }
+    .container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+}

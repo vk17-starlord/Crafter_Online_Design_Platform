@@ -9,8 +9,11 @@
             <input required type="text" name="b_title" placeholder=""  [(ngModel)]="b_title" >
               
             <label>Upload Cover Photo</label>
-           <input required id="upload" type="file" name="b_coverPhoto"   (change)="onchange($event)" />
-          
+            <div class="button-wrap">
+                <label class ="new-button" for="upload"> Upload </label>
+                    <input required id="upload" type="file" name="b_coverPhoto"   (change)="onchange($event)" />
+                   
+            </div>
            <p *ngIf="currentFilename">{{currentFilename}}</p>
            <label>Enter Blog Description</label>
            <input required type="text" placeholder=""  name="b_desc" [(ngModel)]="b_desc">
@@ -38,14 +41,19 @@
         </form>
 
         <form *ngIf="nextForm">
-            <label>Enter Section Heading</label>
+            <label>Enter Section Heading <span>optional*</span></label>
             <input required type="text" name="CurrentHeading" [(ngModel)]="CurrentHeading" >
               
             <label>Enter Your Section Text</label>
             <textarea matInput placeholder="Ex. It makes me feel..."name="CurrentPara" [(ngModel)]="CurrentPara"></textarea>
               
+            <label>Upload Your Section Image <span>optional*</span></label>
+            <div class="wrap">
+    <label class ="new" for="upload"> Upload </label>
+    <input required type="file" name="b_sectionimage"   [(ngModel)]="CurrentImage" (change)="onsectionchange($event)" id="upload-2" />
+
+</div>
       
-                <input required type="file" name="b_sectionimage"   [(ngModel)]="CurrentImage" (change)="onsectionchange($event)" />
                
                <p *ngIf="CurrentImagename">{{CurrentImagename}}</p>
 

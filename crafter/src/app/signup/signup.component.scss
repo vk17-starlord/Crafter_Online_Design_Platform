@@ -59,3 +59,16 @@ button{
     background-size: cover;
     background-position: center center;
 }
+
+
+@media screen and (max-width: 900px){
+    #signup{
+        padding:25px 0;
+    }
+    .container .row{
+        width:100% !important; 
+    }
+    #image{
+        margin-top: 25px;
+    }
+}

@@ -23,7 +23,11 @@ color:white;
    label{
        text-align: left;
        margin-top: 30px;
-
+span{
+  color: rosybrown;
+  margin: 0px 25px;
+  font-size:14px !important;
+}
        display:block;
         color: white;
         font-size: 18px;
@@ -31,8 +35,10 @@ color:white;
     form{
         width: 70%;
         margin: 20px auto;
+        margin: 20px auto;
+text-align: left;
     }
-    input,textarea{
+    input[type="text"],textarea{
      background-color: transparent;
      border: none;
      border-bottom: 2px solid $primary !important;
@@ -82,5 +88,33 @@ mat-radio-button,.myclass{
   padding: 3px 40px;
   background-color:$primary;
   font-size: 18px;
-  margin: 30px !important;
+  margin: 30px 0!important;
+  margin-right: 25px !important;
+}
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  border-bottom:2px solid transparent !important;
+  top: -10px;
+  left: 0px;
+  font-size: 15px;
+  border: 1px solid red;
+  color: rgb(153,153,153);
+}
+
+.button-wrap ,.wrap{
+  position: relative;
+}
+
+.new-button,.new {
+    display: inline-block;
+    padding: 8px 12px; 
+    width: max-content !important;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 4px;
+    font-family: RobotoLight;
+    background-color: $light-blue !important;
+    font-size: 16px;
+    color: #fff;
 }

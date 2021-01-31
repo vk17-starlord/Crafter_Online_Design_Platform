@@ -9,34 +9,32 @@
       <a >Guide </a>
       <a [matMenuTriggerFor]="menu">Log </a> 
 <mat-menu #menu="matMenu">
-  <button mat-button (click)="onlogout()">Logout</button> <br>
-  <button mat-button routerLink="/login">Login</button>
+  <button class="btn-link" mat-button (click)="onlogout()">Logout</button> <br>
+  <button mat-button class="btn-link" routerLink="/login">Login</button>
 </mat-menu>
 
       <img [src]="CurrentUser.profilePic" alt="" id="profile-pic" [routerLink]="['/profilepage', this.CurrentUser._id]">
     </div>
   </div>
  <div class="row" id="landing-section">
-  <div class="col-sm-12 col-lg-4"  id="image-1">
 
-  </div>
-  <div class="col-sm-12 col-lg-4" id="text-card">
-<h4>
-  EXPLORE <br>
-THE INSIGHT <br>
-OF DESIGN <br>
+  <div class="col-sm-12 col-lg-5" id="text-card">
+<div>
+  <h4>
+    EXPLORE 
+  THE<br> INSIGHT OF  <br>
+  DESIGN WITH US <br>  
 </h4>
-<div class="row" style="width: 100%;">
-  <div class="col-sm-12 col-lg-4">
-    <button mat-raised-button>Learn More</button>
-  </div>
-  <div class="col-sm-12 col-lg-4">
+<p></p>
 
-  </div>
+  
+  <a href="#" class="btn">
+    Learn More 
+  </a> 
+</div>
 
 </div>
-  </div>
-  <div class="col-sm-12 col-lg-4" id="image-2">
+  <div class="col-sm-12 col-lg-7" id="hero-section">
     
   </div>
 

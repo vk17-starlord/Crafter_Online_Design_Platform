@@ -1,12 +1,12 @@
 
 @import "../app.component.scss";
-
+@import '../button.scss';
 #home-page{
     width:100%;
     min-height: 100vh;
     overflow-x: hidden;
-    color: #000000!important;
-background-color: white;
+    color: #fff!important;
+background-color:$darkyellow;
 }
 #profile-pic{
     width: 45px;
@@ -14,9 +14,15 @@ background-color: white;
     object-fit: cover;
     object-position:center;
     border-radius: 50%;
-    box-shadow: 2px 2px 10px #ccc;
+
+    margin-top: -10px !important;
+position: relative;
 }
 .navbar{
+   .btn-link{
+        width:100%;min-width:100% !important;
+    }
+    z-index: 2;
     width:100%;
     background-attachment: fixed;
     position: -webkit-sticky; /* Required for Safari */
@@ -40,13 +46,13 @@ background-color: white;
      .right{
          a{
              font-family: RobotoMedium;
-              color: black !important;
+              color: #fff !important;
              font-size: 20px;
              margin: 10px 15px;
              cursor: pointer;
-            
+            transition: 0.5s ease-in-out;
           &:hover{
-              color: #cccccc;
+              color: #000;
           }
             }
          
@@ -66,20 +72,31 @@ border: 1px solid inherit;
 #text-card{
     display: flex;
     justify-content:center;
-    align-items:flex-start;
+
+    align-items:center;
     flex-direction: column;
     h4{
-        
+        width: 100%;
         font-family:RobotoMedium;
         text-align: left;
         line-height: 60px;
         font-weight: 100;
          font-size: 52px !important;
     }
-    button{
-        background-color:#000;
+    .btn{
+        width:50%;
+        font-size:20px;
+        padding:5px 10px;
+        font-family: RobotoLight;
+        background-color:$primary;
         color: white;
+        transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover{
+  background-color: transparent;
+        }
+        margin: 10px 0;
     }
+    
     .img{
         background-image: url('../images/card-image.jpg');
         width: 200px;
@@ -98,37 +115,15 @@ border: 1px solid inherit;
     }
 }
 
-   #image-1{
-       background-image: url('../images/s0f04wah.png');
-       background-size: cover;
-       background-position: center center;
-transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-
-&:hover{
-    transform:scale(0.8,0.8);
-}
-}
 
 
    
-   #image-2{
-    background-image: url('../images/Collage\ series\ 06.png');
-    background-size: cover;
-    background-position: center center;
-    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-    &:hover{
-        transform:scale(0.8,0.8);
-    }
-   }
-
    
 }
 
 #featured-section{
     width: 100%;
-background-color: #000;
     min-height: 100vh;
     color: #fff;
   padding: 10px;
@@ -175,29 +170,54 @@ background-color: #000;
     }
 
 }
+#hero-section{
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    margin-top: -12vh;
+    animation-name: changeBg;
+    animation-duration: 8s ;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
-
-@keyframes rotate-me-in {
+@keyframes changeBg {
     /* You could think of as "step 1" */
     0% {
-        transform: rotateZ(90deg);
+        background-image: url('./DESIGN\ DIGEST\ 123.png');
+       transform: scale(0.7, 0.7);
+       border-radius: 0%;
+
     }
 
      50%{
-        transform: rotateZ(180deg);
-        
-     }
+        background-image: url('./Asan-\ Yin\ Yao\ on\ Behance.png');        
+        transform: scale(1, 1);
+        border-radius: 50%;
+
+    }
      75%{
-        transform: scale(1.2,1.2);
-     }
-    /* You could think of as "step 2" */
+        background-image: url('./Google\ Partner\ -\ Stickers.jpg');        
+        transform: scale(0.7, 0.7);
+        border-radius: 25%;
+    }
     100% {
-        transform: rotateZ(0deg);
+        background-image: url('./DESIGN\ DIGEST\ 123.png');
+        transform: scale(1, 1);
+        border-radius: 50%;
+
     }
   }
 @media only screen and (max-width: 900px) {
    #featured-section h1{
        font-size: 42px;
+   }
+
+   #hero-section{
+       margin-top: 0 !important;
+      
    }
     .navbar{
         img{
@@ -226,5 +246,8 @@ min-height:400px !important;
     }
 
 }
+
+
+
 
 

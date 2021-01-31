@@ -47,7 +47,9 @@ export class BlogformComponent implements OnInit {
   
     if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
      this.halfsubmit=false;
-   
+     this._snackBar.open("Image Added Successfully!", 'X',{
+      duration: 2000
+    });
    }else{
      this.halfsubmit=true;
      this._snackBar.open("Please Choose jpeg/png/svg/jpg file format", 'X',{

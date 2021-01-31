@@ -262,6 +262,9 @@ color:white;
         height: auto;
         margin-top:20px;
         background-color: $light-blue;
+        mat-icon{
+            margin:10px 0px;
+        }
      .row{
          width:100%;
          margin:10px auto;
@@ -277,7 +280,12 @@ mat-icon{
 }
     }
 }
+
 @media (max-width: 768px){
+    .search-container{
+        padding: 10px;
+        background-color: transparent !important;
+    }
     .post{
         margin:20px !important;
         .title{
