@@ -28,7 +28,7 @@ export class ProfilePicComponent implements OnInit {
      console.log(this.selectedFile.type)
      let type:string=this.selectedFile.type.toLocaleString();
   
-     if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+     if(type.includes('image/jpeg')||type.includes('image/webp') || type.includes('image/svg+xml')|| type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
       this.show=false;
  
     }else{

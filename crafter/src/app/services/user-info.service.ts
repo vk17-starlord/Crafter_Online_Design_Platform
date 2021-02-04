@@ -14,4 +14,8 @@ export class UserInfoService {
   GetUserInfo(){
  return this.http.get(this.apiURL+"/getUser")
   }
+  getMemeType(type){
+    let Types= ['image/gif','image/png','image/svg+xml','image/svg','image/webp','image/jpeg','image/png'];
+ return Types.includes(type);
+  }
 }

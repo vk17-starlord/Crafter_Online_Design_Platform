@@ -31,7 +31,7 @@ position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-end;
     align-items:center;
     flex-direction: row;
     min-height: 10vh;
@@ -41,7 +41,7 @@ position: relative;
 
         font-family: HighTowerText;
          font-size: 42px !important;
-           
+           margin-left:50px;
     }
      .right{
          a{
@@ -75,13 +75,18 @@ border: 1px solid inherit;
 
     align-items:center;
     flex-direction: column;
+    p{
+        font-size:24px;
+        opacity:0.5;
+        line-height: 110% !important;
+    }
     h4{
         width: 100%;
-        font-family:RobotoMedium;
+        font-family:$heading-font;
         text-align: left;
-        line-height: 60px;
+        line-height: 74px;
         font-weight: 100;
-         font-size: 52px !important;
+         font-size: 62px !important;
     }
     .btn{
         width:50%;
@@ -135,6 +140,10 @@ border: 1px solid inherit;
         text-align: center;
         font-size: 64px ;
         line-height: 68px;
+    font-family: JosefinSansBold;
+    background: -webkit-linear-gradient(rgb(46, 233, 124), $primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
     .row{
         width: 100%;
@@ -148,12 +157,11 @@ border: 1px solid inherit;
             border-radius: 20px;
             height: 300px;
          object-fit: cover;
-           box-shadow: 1px 1px 10px rgb(24, 23, 23);    
         }
         h4{
             padding: 10px;
             position:relative;
-            margin-top:-30%;
+            margin-top:-70%;
             opacity:0;
             font-size: 18px;
         }transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -171,50 +179,88 @@ border: 1px solid inherit;
 
 }
 #hero-section{
-    background-size: cover;
-    background-position: top center;
-    position: relative;
-    margin-top: -5vh;
-    animation-name: changeBg;
-    animation-duration: 8s ;
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
 }
 
 @keyframes changeBg {
     /* You could think of as "step 1" */
     0% {
         background-image: url('./DESIGN\ DIGEST\ 123.png');
-       transform: scale(0.7, 0.7);
+       transform: scale(0.5, 0.5);
        border-radius: 0%;
 
     }
 
      50%{
         background-image: url('./Asan-\ Yin\ Yao\ on\ Behance.png');        
-        transform: scale(1, 1);
-        border-radius: 50%;
+        transform: scale(0.7,0.7);
+        border-radius: 10%;
 
     }
      75%{
         background-image: url('./Google\ Partner\ -\ Stickers.jpg');        
-        transform: scale(0.7, 0.7);
-        border-radius: 25%;
+        transform: scale(0.5, 0.5);
+        border-radius: 50%;
     }
     100% {
-        background-image: url('./DESIGN\ DIGEST\ 123.png');
-        transform: scale(1, 1);
-        border-radius: 50%;
+        background-image: url('./2020\ Design\ Movements\ -\ Wide\ Angle\ Portraits\ -\ 20\ Beautiful\ Examples.png');
+        transform: scale(0.7,0.7);
+        border-radius: 10%;
 
     }
   }
+ @media only screen and (max-width:350px){
+    #landing-section #text-card h4{
+font-size:36px !important;
+line-height: 40px !important;
+    }
+    #profile-pic{
+        position: absolute;
+        top:10px;
+        right: 10px;
+        margin-top: 10px !important;
+    }
+ } 
 @media only screen and (max-width: 900px) {
+    .mob-hero{
+        display:flex !important;
+    }
+    .large-hero{
+        display:none !important;
+    }
    #featured-section h1{
-       font-size: 42px;
+       font-size: 30px;
+   }
+   #featured-section .blogcard h4{
+opacity: 1;
+margin-top:10px !important;
+   }
+   .navbar h1{
+       margin-left:auto !important;
+       margin-right: auto !important;
+
    }
 
+   #landing-section >div{
+    width:100% !important;
+    padding-left:0px !important;
+}
+#featured-section h1{
+    margin:20px auto !important;
+}
+#landing-section #text-card{
+    padding:20px !important;
+    h4{
+        font-size: 30px !important;
+        line-height:41px !important;
+    }
+    .btn{
+        width:max-content !important;
+    }
+}
+#featured-section .blogcard{
+margin: 20px auto !important;
+   }
    #hero-section{
        margin-top: 0 !important;
       
@@ -251,3 +297,26 @@ min-height:400px !important;
 
 
 
+
+.linear-wipe {
+    text-align: center;
+    
+    background: linear-gradient(to right, #FFF 20%, rgb(78, 255, 152) 40%, rgba(47, 255, 255, 0.623) 60%, #FFF 80%);
+    background-size: 200% auto;
+    
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shine 2s linear infinite;
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+  }
+  .mob-hero{
+      display: none;
+  }

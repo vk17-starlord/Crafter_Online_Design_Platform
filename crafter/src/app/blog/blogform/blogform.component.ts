@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { BlogService } from 'src/app/services/blog.service';
 import {Router} from '@angular/router';
-
+import { UserInfoService } from 'src/app/services/user-info.service';
 @Component({
   selector: 'app-blogform',
   templateUrl: './blogform.component.html',
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class BlogformComponent implements OnInit {
 
   categories:['UI/UX','Graphic Design','Animation']
-  constructor(private router: Router,private _snackBar: MatSnackBar,private blogService:BlogService) { }
+  constructor(private userService: UserInfoService,private router: Router,private _snackBar: MatSnackBar,private blogService:BlogService) { }
  Blog:any
   b_title=null
      b_coverPhoto=null
@@ -44,8 +44,9 @@ export class BlogformComponent implements OnInit {
   onchange(ev){
     this.selectedFile = ev.target.files[0];
     let type:string=this.selectedFile.type.toLocaleString();
-  
-    if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+    console.log(type);
+
+    if(this.userService.getMemeType(type)){
      this.halfsubmit=false;
      this._snackBar.open("Image Added Successfully!", 'X',{
       duration: 2000
@@ -111,9 +112,10 @@ CurrentImagename:any=false;
     console.log(this.selectedFile.type)
     let type:string=this.selectedFile.type.toLocaleString();
  
-    if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+    if(type.includes('image/jpeg')||type.includes('image/webp')|| type.includes('image/svg+xml') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
 
    }else{
+     console.log(type);
      this._snackBar.open("Please Choose jpeg/png/svg/jpg file format", 'X',{
        duration: 2000
      });

@@ -118,6 +118,13 @@ remove(tag): void {
 this.exploreService.GetPosts().subscribe((res)=>{
 this.Posts=res;
 this.Allposts=res;
+
+this.Allposts.forEach((ele)=>{
+  if(ele.d_title.length>45){
+ele.d_title=ele.d_title.slice(0,40).concat('...');
+  }
+})
+
 console.log(this.Posts)
 })
 if(this.Allposts.length===0){

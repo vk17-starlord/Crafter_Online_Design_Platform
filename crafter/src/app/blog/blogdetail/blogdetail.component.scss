@@ -15,7 +15,12 @@ overflow-x:hidden !important;
 .container{
     text-align: center;
 
+    .heading{
+        width:75%;
+        text-align: left !important;
+    }
     h4,h1{
+        
         text-align: left;
     }
 }
@@ -37,18 +42,54 @@ h1{
 line-height:50px;
 font-family: JosefinSansBold;
 }
+.r-container{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: row !important;
 
+}
+.mat-expansion-panel-header.mat-expanded{
+    width:100% !important;
+}
+.mat-expansion-panel:not([class*="mat-elevation-z"]){
+    box-shadow: none !important;
+}
+.r-container h4{
+   padding:15px auto;
+   margin-left:20px !important;
+   margin-right:20px !important; 
+   margin-right: 20px;
+    width: max-content !important;
+    text-align: left !important;
+    mat-icon{
+        margin-left:0px !important;
+    }
+
+}
+.reaction{
+    width:75% ;
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start;
+
+
+    
+}
 .section{
+    width:75%;
+    margin:0 auto;
     h4{
-        font-size: 30px;
-        line-height:28px;
+        font-size: 24px;
+        line-height:35px;
         color: white;
-        margin: 15px auto;
+        margin: 8px auto;
         text-align: left !important;
         line-height: 35px;
     }
     img{
-        width:100%;
+        width: auto;
         max-width:100%;
         height: auto;
         text-align: center;
@@ -56,10 +97,15 @@ margin: 30px auto;
 object-fit: cover;
 object-position: top center;
     }
+    p::first-letter{
+        text-transform: capitalize !important;
+    }
     p{ 
-        line-height: 28px;
+       
+        font-size:18px;
+        line-height: 29px;
 
-        margin:20px auto;
+        margin:8px auto;
     }
     
     text-align: center;  
@@ -67,7 +113,7 @@ object-position: top center;
 
 .profile-container{
     margin:25px auto;
-    width:100%;
+    width:75%;
     display:flex;
     justify-content:flex-start;
     align-items: center;
@@ -115,7 +161,6 @@ object-position: top center;
            font-family: JosefinSansBold;
        }
        #name{
-           opacity: 0.8;
            font-size:20px;
            line-height:30px;
        }
@@ -136,9 +181,25 @@ p{
     opacity: 0.9;
     font-family: RobotoLight;
 }
-
+.comment-container{
+    width:100%!important;
+    margin:0 auto;
+    height: auto;
+    padding:10px 0px !important;
+    margin-right: 0;
+    #read{
+        text-align: right !important;
+        width:100% !important;
+        padding:0 !important; 
+        padding-right: 0 !important;
+        span{
+            font-size:18px !important;
+        }
+    }
+  
+}
 .comment-box{
-    width:50%;
+ 
 
 height: auto;
 margin: 20px auto;
@@ -170,10 +231,11 @@ margin: 20px auto;
 
 mat-expansion-panel,mat-expansion-panel-header{
     background-color: $darkblue!important;
+    background: $darkblue !important;
     color: white;
    
   h4{
-      padding:40px;
+
       color: white !important;
   }
     
@@ -182,17 +244,20 @@ mat-expansion-panel,mat-expansion-panel-header{
         
     }
     .comment-card{
-        width: 60%;
-        background-color: $light-blue;
-        color: whitesmoke;
-        margin: 20px auto;
-        .row > div{
+        background: $light-blue !important;
+        min-width:300px;
+width: 100% !important;
+        margin:0 auto;
+        padding:10px;
+        border-radius: 30px;
+     .row > div{
             display: flex;
             justify-content:center;
             align-items:center;
         }
         .profile-picture{
             width:60px;
+            float: left;
             border-radius: 50%;
             height: 60px;
             object-fit:cover;
@@ -200,7 +265,8 @@ mat-expansion-panel,mat-expansion-panel-header{
         }
         p{
             font-size: 16px;
-
+text-align: left;
+width:100%;
             font-family: RobotoMedium;
         }
     }
@@ -208,18 +274,47 @@ mat-expansion-panel,mat-expansion-panel-header{
 
 
 @media only screen and (max-width: 900px) {
+    .reaction{
+        flex-direction: column !important;
+    }
+    .comment-container #read{
+        text-align: left !important;
+    }
+    .desc{
+        width: 100% !important;
+    }
+    .profile-container table{
+        margin:15px !important;
+        #name{
+            font-size: 16px !important;
+             line-height: 27px !important;
+        }
+    }
     .comment-box,    .comment-card{
         width:90% !important;
         
     }
+
+    .comment-container #read span{
+        display:none !important;
+    }
+    .comment-container #read .mat-icon{
+margin-top:10px !important;
+    }
+    mat-expansion-panel h4, mat-expansion-panel-header h4{
+        padding-top: 50px !important;
+    }
+
     .coverpic{
      height:auto;
         object-fit: contain !important;
     }
     .comment-container{
+     padding:0 !important;
+    margin: 0 auto !important;
         margin-top: 20px;
         #read{
-            font-size: 12px !important;
+            font-size: 18px !important;
             .mat-icon{
                 font-size: 18px;
             }
@@ -227,6 +322,19 @@ mat-expansion-panel,mat-expansion-panel-header{
     }
     .mat-expansion-panel{
         width: 100% !important;
+    }
+    .comment-container{
+        width: 100% !important;
+        margin:0 auto !important;
+    }
+     .profile-container{
+         width:100% !important;
+     }
+    .container h1{
+        font-size: 32px !important;
+        line-height: 43px !important;
+        text-align: left !important;
+        width:100% !important;
     }
     
     .comment-card{
@@ -244,14 +352,21 @@ mat-expansion-panel,mat-expansion-panel-header{
 
     }
     .container h1{
+        width:75%;
+        margin:0 auto;
         font-size:34px!important;
         line-height:36px !important;
      text-align:left;
      margin-bottom:45px;
     }
     .section {
+        width: 100% !important;
         overflow-wrap: break-word;
         text-rendering: optimizeLegibility;
+        h4{
+            font-size:20px;
+            line-height:31px !important;
+        }
         p{
             overflow-wrap: break-word !important;
 
@@ -265,3 +380,34 @@ mat-expansion-panel,mat-expansion-panel-header{
         }
     }
 }
+
+.cmnt-input{
+    width:100%;
+    padding:12px;
+    border-radius: 10px;
+    background-color: $light-blue;
+    border: 1px solid $primary;
+    font-size:20px;
+    font-family: RobotoLight;
+    color: white;
+   }
+   label{
+       width:100%;
+       text-align: left;
+       margin:20px auto;
+   font-size: 24px;
+   
+    }
+    
+    .reaction #read{
+        margin-right: 0 !important;
+        padding-right:0 !important;
+    }
+    .desc{
+        width:75%;
+        margin:25px auto;
+margin-top:30px;
+        font-size:18px;
+        color: #ccc;
+
+    }

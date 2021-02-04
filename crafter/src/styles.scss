@@ -24,7 +24,7 @@ body {
          width: 95% !important;
          background-color:transparent !important;
         }
-   
+    
       }
       .mat-expansion-panel-body ,.mat-expansion-panel-content {
         padding: 0px 0px !important;
@@ -44,4 +44,10 @@ body {
       .mat-form-field-appearance-legacy .mat-form-field-underline{
         background-color: rgb(90,71,248) !important;
         background:rgb(90,71,248) !important;
+    }
+
+    .fixed-heading{
+      position: absolute;
+      left:15%;
+      top:25px;
     }

@@ -1,7 +1,9 @@
 <div id="home-page">
+  <h1 class="fixed-header">Crafter</h1>
   <div class="navbar">
-    <h1>Crafter</h1>
+    
     <div class="right">
+      
       <a routerLink="/blog">Blog</a>
       <a routerLink='/Explore'>Explore</a>
       <a routerLink='/Project'>Projects</a>
@@ -17,14 +19,16 @@
     </div>
   </div>
  <div class="row" id="landing-section">
-
+  <div class="mob-hero col-sm-12" id="hero-section">
+    
+  </div>
   <div class="col-sm-12 col-lg-5" id="text-card">
 <div>
-  <h4>
-    EXPLORE 
-  THE<br> INSIGHT OF  <br>
-  DESIGN WITH US <br>  
+  <h4 >
+   Every thing you need 
+  to be  <span class="linear-wipe" >Designer</span><span style="font-size:42px;padding-left:20px;">❤️</span> <br> is here !! <br>
 </h4>
+<p> </p>
 <p></p>
 
   
@@ -34,23 +38,9 @@
 </div>
 
 </div>
-  <div class="col-sm-12 col-lg-7" id="hero-section">
+  <div id="hero-section"class="col-sm-12 col-lg-7 large-hero d-flex justify-content-center " >
     
   </div>
 
  </div>
 
- <div id="featured-section">
-   <h1>Featured Blogs</h1>
-   <div class="container">
-<div class="row">
-
-  
-<div class="col-sm-12 col-lg-3 blogcard"  *ngFor="let blog of FeaturedBlogs"  [routerLink]="['/blogdetail', blog._id]">
-<img [src]="blog.b_coverPhoto" class="img" alt="">
-<h4>{{blog.b_title}}</h4>
-</div>
-     
-   </div>
- </div>
-</div>

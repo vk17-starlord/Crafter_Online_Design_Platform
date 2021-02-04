@@ -130,16 +130,21 @@ align-items: center;
        height:250px;
             background-size: contain;
         }
+    
 tr{
+
+    max-width: 80% !important; 
     font-family: RobotoMedium;
     font-size: 20px;
     color: white;
     line-height:24px;
 text-align: left;
-span{
-      font-size: 14px !important;
-        opacity: 0.6;
-    }
+font-size: 14px !important;
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis; 
+opacity: 0.6;
+
 }
 table{
     margin-left: 10px;
@@ -313,7 +318,7 @@ mat-icon{
     }
     .mat-expansion{
         position: relative;
-    width: 150% !important;
+    width: 100% !important;
 margin:0 auto !important;
 }
 .color-input{
@@ -380,5 +385,29 @@ div{
  background-color: $primary ;
  background: $primary;
  color:white;
+}
+
+
+@media screen and (max-width: 900px){
+    .filter-container{
+        flex-direction: column !important;
+        justify-content:center;
+        align-items:center; 
+    }
+   
+    .post{
+        height: 300px !important;
+    
+        .blur{
+            margin-top: -300px !important;
+        }
+
+        .post .image-container{
+width: 100%;
+        }
+    }
+    .search-container .search-input{
+width:70% !important;
+    }
 }
 

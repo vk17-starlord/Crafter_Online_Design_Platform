@@ -14,5 +14,6 @@ export class BlogqouteService {
   GetBlogQoute(){
     return this.http.get(this.ApiUrl);
   }
+ 
 
 }

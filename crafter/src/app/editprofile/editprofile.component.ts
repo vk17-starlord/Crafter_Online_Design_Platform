@@ -50,7 +50,7 @@ selectedCover:any=""
     this.selectedCover = ev.target.files[0];
     let type:string=this.selectedCover.type.toLocaleString();
   
-    if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+    if(type.includes('image/jpeg')||type.includes('image/webp') || type.includes('image/svg+xml')|| type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
      this.show=false;
 
    }else{

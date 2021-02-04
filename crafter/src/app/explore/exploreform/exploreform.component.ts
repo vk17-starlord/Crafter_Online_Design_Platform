@@ -167,7 +167,7 @@ OnImageChange(ev){
   this.selectedImage = ev.target.files[0];
   let type:string=this.selectedImage.type.toLocaleString();
 
-  if(type.includes('image/jpeg') || type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
+  if(this.userService.getMemeType(type)){
 this.SetImage();   
  }else{
    this._snackBar.open("Please Choose jpeg/png/svg/jpg file format", 'X',{

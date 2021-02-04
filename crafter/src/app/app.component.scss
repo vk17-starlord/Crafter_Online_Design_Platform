@@ -20,6 +20,12 @@ $background: linear-gradient(90deg, rgba(90,71,248,1) 0%, rgba(19,19,23,0.560737
 .mat-dialog-container{
   padding: 0 !important;
 }
+$heading-font:Vester;
+
+@font-face{
+  font-family:Vester;
+  src: url("./fonts/TRYVesterbro-Bold.otf");
+}
 @font-face {
   font-family: Simonetta;
   src: url("./fonts/Simonetta-Black.ttf");
@@ -58,4 +64,20 @@ $background: linear-gradient(90deg, rgba(90,71,248,1) 0%, rgba(19,19,23,0.560737
     text-decoration: none;
 }
 
-
+@media only screen and (max-width:900px){
+  .fixed-header{
+    float: none;
+    margin-left:auto !important;
+    position:  relative !important;
+    text-align: center !important;
+    width:100% !important;
+  }
+}
+.fixed-header{
+  float: left !important;
+  font-family: HighTowerText;
+  position: absolute !important;
+  top:20px;
+  left:5%;
+  font-size: 42px !important;
+}
