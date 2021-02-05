@@ -1,46 +1,117 @@
-<div id="home-page">
-  <h1 class="fixed-header">Crafter</h1>
-  <div class="navbar">
+<div id="homepage">
+  <div class="container">
+    <div  id="menu-container">
+<h1 class="title linear-wipe">
+  Crafter
+</h1>
+<div class="menu">
+  <a routerLink="/Explore"><mat-icon>public</mat-icon> <span>Explore</span> </a>
+  <a routerLink="/blog"><mat-icon>feed</mat-icon> <span>Blogs</span></a>
+  <a routerLink="/Project"><mat-icon>design_services</mat-icon> <span>Projects</span></a> 
+  <a routerLink=""><mat-icon>architecture</mat-icon><span> Guide</span></a>
+
+</div>
+
+<div class="bottom">
+  <button mat-raised-button (click)="onlogout()" class="btn">Logout</button>
+</div>
+
+</div>
+    <div class="profile-block mob">
+      <img [src]="CurrentUser.profilePic" [routerLink]="['/profilepage', CurrentUser._id]"alt="profile-pic" class="profile-pic">
+       <!-- <mat-icon  class="verify">verified</mat-icon> -->
+       <table>
+           
+           <tr id="name"> {{CurrentUser.userName}}</tr>
+           <tr id="date"> {{CurrentUser.createdAt}}</tr>
+           
+          </table>
+  </div>
+    <div id="main-container">
     
-    <div class="right">
+      <div class="menu-slider">
+        <owl-carousel-o [options]="customOptions2" >
+          <ng-template carouselSlide *ngFor="let card of Cards" >
+            <div class="item">
+         <div class="blur">
+
+         </div>
+          <div class="blur-overlay">
+         <div class="row">
+           <div class="col-sm-6 col-lg-6">
+             <h1>{{card.heading}}</h1>
+             <h4>{{card.desc}}</h4>
+             <button class="button">View More <mat-icon>arrow_right</mat-icon></button>
       
-      <a routerLink="/blog">Blog</a>
-      <a routerLink='/Explore'>Explore</a>
-      <a routerLink='/Project'>Projects</a>
+            </div>
+           <div class="col-sm-6 col-lg-6">
+           <img [src]="card.img" alt="" class="photo">
+            </div>
 
-      <a >Guide </a>
-      <a [matMenuTriggerFor]="menu">Log </a> 
-<mat-menu #menu="matMenu">
-  <button class="btn-link" mat-button (click)="onlogout()">Logout</button> <br>
-  <button mat-button class="btn-link" routerLink="/login">Login</button>
-</mat-menu>
+          </div>
+          </div>
+            </div>                    
+        </ng-template>      
+        </owl-carousel-o>
+      
+      </div>
 
-      <img [src]="CurrentUser.profilePic" alt="" id="profile-pic" [routerLink]="['/profilepage', this.CurrentUser._id]">
+      <div class="recent-blogs">
+        <h1 style="padding-left:2.5%;">Recent Blogs</h1>
+
+     <div class="row">
+       <div class="col-sm-12 col-lg-3" [routerLink]="['/blogdetail', blog._id]" *ngFor="let blog of RecentBlogs">
+       <div class="recent-card">
+      <img [src]="blog.b_coverPhoto" alt="">
+      <p>{{blog.b_title}}</p>
+       </div>
+       </div>
+     </div>
+
+      </div>
+
+      <div class="recent-blogs">
+        <h1 style="padding-left:2.5%;">Recent Posts</h1>
+
+     <div class="row">
+       <div class="col-sm-12 col-lg-3" [routerLink]="['/Exploredetail', blog._id]" *ngFor="let blog of RecentPosts">
+       <div class="recent-card">
+      <img [src]="blog.d_pic"  alt="">
+      <p>{{blog.d_title}}</p>
+       </div>
+       </div>
+     </div>
+
+      </div>
+
+      <div class="recent-blogs">
+        <h1 style="padding-left:2.5%;">Recent Users</h1>
+
+     <div class="row">
+       <div class="text-center col-sm-12 col-lg-3" [routerLink]="['/profilepage', user._id]" *ngFor="let user of RecentUsers">
+     <img [src]="user.postedBy.profilePic" alt="" class="recent-profile">
+<h4 id="uname">{{user.postedBy.userName}}</h4>
     </div>
-  </div>
- <div class="row" id="landing-section">
-  <div class="mob-hero col-sm-12" id="hero-section">
-    
-  </div>
-  <div class="col-sm-12 col-lg-5" id="text-card">
-<div>
-  <h4 >
-   Every thing you need 
-  to be  <span class="linear-wipe" >Designer</span><span style="font-size:42px;padding-left:20px;">❤️</span> <br> is here !! <br>
-</h4>
-<p> </p>
-<p></p>
 
-  
-  <a href="#" class="btn">
-    Learn More 
-  </a> 
+
+      </div>
+    </div>
+    <div  id="profile-container">
+      <div class="profile-block large">
+        <img [src]="CurrentUser.profilePic" [routerLink]="['/profilepage', CurrentUser._id]"alt="profile-pic" class="profile-pic">
+         <!-- <mat-icon  class="verify">verified</mat-icon> -->
+         <table>
+             
+             <tr id="name"> {{CurrentUser.userName}}</tr>
+             <tr id="date"> {{CurrentUser.createdAt}}</tr>
+             
+            </table>
+    </div>
+  <div class="project-container">
+    <h4><mat-icon>new_releases</mat-icon> New Projects</h4>
+ 
+   <p  [routerLink]="['/Projectdetail', project.id]" *ngFor="let project of NewProjects">{{project.title}}</p>
+  </div> 
+  </div>
+  </div>
 </div>
-
-</div>
-  <div id="hero-section"class="col-sm-12 col-lg-7 large-hero d-flex justify-content-center " >
-    
-  </div>
-
- </div>
-

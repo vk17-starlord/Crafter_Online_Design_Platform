@@ -16,6 +16,10 @@ body {
     
         background-color: #030303;
       }
+      mat-icon{
+        display: inline-flex;
+        vertical-align: top;
+      }
       @media (max-width: 900px){
 
         .mat-dialog-container{

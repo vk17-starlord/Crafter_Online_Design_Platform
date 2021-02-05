@@ -24,6 +24,10 @@ return this.http.put(`${this.URL}/updateProfilePic`,{profilePic});
   GetUser(){
     return this.http.get(`${this.URL}/getUser`);
   }
+  GetUserList(){
+    return this.http.get(`${this.URL}/getProfileInfo`);
+
+  }
 
   GetProfilePostById(id){
     return this.http.get(`${this.URL}/b_user_prof/${id}`);    
