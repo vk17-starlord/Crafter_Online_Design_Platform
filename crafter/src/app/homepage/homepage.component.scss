@@ -6,7 +6,7 @@
     min-height: 100vh;
     overflow-x: hidden;
     color: #fff!important;
-background-color:$darkyellow;
+background-color:#1C1A26;
 
 }
 .container{
@@ -19,20 +19,24 @@ background-color:$darkyellow;
     min-height: 100vh;
 }
 #main-container{
-width:70%;
+width:65%;
 margin: 0 auto;
 }
 #menu-container{
-width:15%;
+width:20%;
 left: 0;
-background-color: $light-blue;
+// background-color: #252836;
 position: fixed;
     top: 0;
     padding:10px 0px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
  .title{
      width:100%;
+     padding:10px 0;
      text-align: center;
-     font-size:36px !important;
+     font-size:52px !important;
      line-height: 45px !important;
      font-family: HighTowerText;
      color: white;
@@ -50,14 +54,16 @@ position: fixed;
          text-align: left;
          padding-top:10px;
          padding-bottom: 10px;
-         padding-left: 25%;
          color: white;
+        padding-left: 15%;
          font-size: 20px;
          font-family: RobotoMedium;
          margin: 20px auto;
          transition:1s ease-in-out;
+         width:80%;
     &:hover{
-background-color: $primary;
+
+        background-color: $primary;
     }
         }
  } 
@@ -67,7 +73,7 @@ background-color: $primary;
 }
 .bottom{
     text-align: center;
-    margin-top: 100px;
+  margin-bottom: 8vh;
 }
 .btn{
     padding:0;
@@ -75,44 +81,58 @@ background-color: $primary;
     background-color: $primary;
     width:80%;
 }
-.project-container{
-    width: 100%;
-    mat-icon{
-        color: royalblue;
-    }
+.profile-container{
+    width: 90%;
+   
+    height:auto;
+
+    margin:20px 2.5%;
+    background-color:#1C1A26;
+    border-radius: 10px;
+    box-shadow:
+  0 2.5px 3.9px -7px rgba(0, 0, 0, 0.061),
+  0 10.1px 12.1px -7px rgba(0, 0, 0, 0.065),
+  0 30.9px 30.6px -7px rgba(0, 0, 0, 0.063),
+  0 81px 80px -7px rgba(0, 0, 0, 0.07)
+;
+p{
+    text-align: center;
+    padding:10px;
+    word-wrap: break-word;
+    font-size:14px !important;
+}
     h4{
-        font-size: 20px !important;
-        line-height: 20px !important;
-        color: #fff !important;
+        margin:20px;
+        margin-bottom: 0;
+        font-size:18px;
+font-family:RobotoMedium;
     }
-
-    p{
-        width:80%;
-        font-size: 14px !important;
-        padding: 10px;
-
-        &:hover{
-            background-color:$primary;
+    .row{
+        padding:20px;
+        div{
+            overflow: hidden;
+            // border: 1px solid green
+            overflow-wrap: break-word;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction: column;
+            margin:10px auto;
+            text-align: center;
         }
     }
-}
-.recent-profile{
-    margin:0 auto;
-    position: relative;
-    width:100px !important;
-    height: 100px !important;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 50%;
-}
-.recent-users{
-    width:85%;
-    margin:0 auto;
-    .item{
-        width:auto !important;
-        height:auto;
+    img{
+        width:40px;
+        height:40px;
+        object-fit: cover;
+object-position: top center;
+
+        border-radius: 50%;
     }
+    
 }
+
+
 #uname{
     margin:10px auto;
     font-family: RobotoLight;
@@ -122,8 +142,9 @@ background-color: $primary;
     width:100%;
 }
 .recent-blogs{
-    width:85%;
-margin: 20px auto;
+    width: 95%;
+
+margin: 10px;
 h1{
     font-family: RobotoMedium;
     font-size: 24px ;
@@ -146,7 +167,7 @@ margin: 0;
     0 165.9px 149.4px rgba(0, 0, 0, 0.075),
     0 311px 280px rgba(0, 0, 0, 0.07)
   ;
-    background-color: $light-blue;
+    // background-color: #252836;
     img{
         background: whitesmoke;
         width: 100%;
@@ -155,6 +176,7 @@ margin: 0;
         height: 150px;
     }
     p{
+        word-wrap: break-word;
         opacity: .7;
         margin:10px auto;
         padding:0px 10px;
@@ -177,43 +199,43 @@ margin: 0;
 
     }
 #profile-container{
-    width:15%;
+    width:20%;
     right: 0;
+    background-color: #252836;
 position: fixed;
     top: 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-direction: column;
 
  }
  .profile-block{
-    margin:20px 0;
+    margin:20px 5%;
     width: 100%;
-    height: 100px;
+    height: auto;
     display: flex;
+    flex-direction: column;
     padding:10px ;
-     justify-content:flex-start;
-     align-items:flex-start;
-     #date{
-         padding: 10px 0;
-         opacity:0.4;
-         font-size:14px;
-     }
-     #name{
-         text-align: left;
-        font-size:20px;
-        font-family: RobotoMedium;
-    }
+
+     justify-content:center;
+     align-items:center;
     img{
-margin: 0px 10px;
-        width: 50px;
-        height: 50px;
+
+        width: 50px !important;
+        height: 50px !important;
         border-radius: 50%;
     }
-
+#name{
+    margin:0;
+    font-family: RobotoMedium;
+padding: 10px;
+}
 }
 
  .menu-slider{
-    width: 85%;
-    margin: 0 auto;
-    margin: 25px auto;
+    width: 95%;
+    margin: 25px 10px;
     .photo{
         transform:rotate(10deg);
         width:90%;
@@ -222,34 +244,44 @@ margin: 0px 10px;
         background-color: white;
     }
   .item{
-      background-image: url('https://images.pexels.com/photos/3527795/pexels-photo-3527795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+      width:95%;
+      margin:0 auto;
+      background-image: url('./pexels-photo-281260.jpeg');
       background-size: cover;
   overflow: hidden;
-      height: 350px;
+  >div{
+    border-radius: 25px;
+  }   
+  height: 350px;
       border-radius: 25px;
   }
   .blur{
-      width:100%;
-      background-image: url('https://images.pexels.com/photos/3527795/pexels-photo-3527795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    border-radius: 25px;
+
+    width:100%;
+      background-image: url('./pexels-photo-281260.jpeg');
       background-size: cover;
   overflow: hidden;
 
-      height: 300px;
+      height: 350px;
      filter: blur(8px);
   -webkit-filter: blur(8px);
   }
   .blur-overlay{
-      border-radius: 25px;
       position: relative;
+      border-radius: 25px;
+
       margin: 0 auto;
 border: 0.5px solid white;
-      margin-top: -275px;
       h1{
     font-family: Vester;   
-font-size:52px !important;
+font-size:42px !important;
 text-align: left;
+text-transform: capitalize;
 }
 h4{
+    text-transform: capitalize;
+
     margin:15px 0;
     font-size: 20px;
     opacity: .7;
@@ -314,6 +346,7 @@ margin: 0 !important;
     }
 }
     width:70%;
+    margin-top: -325px;
       height: 300px;
       color: white !important;
       box-shadow:
@@ -337,6 +370,13 @@ border: none;
 }
 
 @media screen and (max-width: 900px){
+    .profile-container .row>div{
+        max-width: 30%;
+    }
+    .bottom{
+        margin:20px auto !important;
+        display:none;
+    }
     .profile-block.mob{
         display:flex !important;
         width:90% !important;
@@ -345,15 +385,16 @@ border: none;
         display:none;
         
     }
+    .recent-blogs,.menu-slider{
+        margin: 20px auto !important;
+    }
     #menu-container .menu{
 margin:5px 0 !important;
 a span{
     display: none;
 }
     }
-    #menu-container{
-        background-color: $darkblue;
-    }
+   
     .menu-slider .item{
         height: 250px;
         }
@@ -378,7 +419,7 @@ a span{
       font-size:14px !important;
 padding:5px 10px !important;
     }
-  margin-top:-300px;
+  margin-top:-350px;
   background-color: rgba(0, 0, 0, 0.200);
 .row >div{
     width:50% !important;
@@ -437,3 +478,39 @@ padding:5px 10px !important;
       margin:0px 5px !important;
   }
 
+.tip-container{
+    width: 90%;
+    height: 20vh;
+    margin: 20px auto;
+    color: White;
+    margin-bottom: 8vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding:10px;
+    flex-direction: column;
+    p{
+        width:80%;
+          white-space: nowrap;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+        text-align: center;
+        font-size:20px;
+        line-height: 25px;
+        font-family: JosefinSansBold;
+    }
+    h4{
+        font-size:24px;
+        font-family: Vester;
+    }
+    border-radius: 10px;
+    background-color: #ee9617;
+    background-image: linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+    
+} 
+
+
+img{
+    object-fit: cover;
+}

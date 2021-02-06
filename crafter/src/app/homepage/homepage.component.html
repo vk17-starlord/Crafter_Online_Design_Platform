@@ -23,7 +23,7 @@
        <table>
            
            <tr id="name"> {{CurrentUser.userName}}</tr>
-           <tr id="date"> {{CurrentUser.createdAt}}</tr>
+         
            
           </table>
   </div>
@@ -31,7 +31,7 @@
     
       <div class="menu-slider">
         <owl-carousel-o [options]="customOptions2" >
-          <ng-template carouselSlide *ngFor="let card of Cards" >
+          <ng-template carouselSlide  *ngFor="let card of Cards" >
             <div class="item">
          <div class="blur">
 
@@ -41,7 +41,7 @@
            <div class="col-sm-6 col-lg-6">
              <h1>{{card.heading}}</h1>
              <h4>{{card.desc}}</h4>
-             <button class="button">View More <mat-icon>arrow_right</mat-icon></button>
+             <button routerLink="/{{card.link}}" class="button">View More <mat-icon>arrow_right</mat-icon></button>
       
             </div>
            <div class="col-sm-6 col-lg-6">
@@ -84,34 +84,35 @@
 
       </div>
 
-      <div class="recent-blogs">
-        <h1 style="padding-left:2.5%;">Recent Users</h1>
-
-     <div class="row">
-       <div class="text-center col-sm-12 col-lg-3" [routerLink]="['/profilepage', user._id]" *ngFor="let user of RecentUsers">
-     <img [src]="user.postedBy.profilePic" alt="" class="recent-profile">
-<h4 id="uname">{{user.postedBy.userName}}</h4>
-    </div>
-
-
-      </div>
+  
     </div>
     <div  id="profile-container">
       <div class="profile-block large">
         <img [src]="CurrentUser.profilePic" [routerLink]="['/profilepage', CurrentUser._id]"alt="profile-pic" class="profile-pic">
-         <!-- <mat-icon  class="verify">verified</mat-icon> -->
-         <table>
-             
-             <tr id="name"> {{CurrentUser.userName}}</tr>
-             <tr id="date"> {{CurrentUser.createdAt}}</tr>
-             
-            </table>
-    </div>
-  <div class="project-container">
-    <h4><mat-icon>new_releases</mat-icon> New Projects</h4>
+        
+        <h2 id="name"> {{CurrentUser.userName}}</h2>
+        
+        
  
-   <p  [routerLink]="['/Projectdetail', project.id]" *ngFor="let project of NewProjects">{{project.title}}</p>
-  </div> 
+        <!-- <mat-icon  class="verify">verified</mat-icon> -->
+    </div>
+   <div class="profile-container">
+     <h4>Recent Users</h4>
+     <div class="row">
+       <div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let profile of RecentUsers">
+         <img [routerLink]="['/profilepage', profile.postedBy._id]" [src]="profile.postedBy.profilePic" alt="">
+     <p>{{profile.postedBy.userName}}</p>
+        </div>
+     </div>
+   </div>
+    
+
+   <div class="tip-container">
+  <h4>Tip of the Day</h4>
+   <p>Make your interfaces easy to learn</p>
+
+  </div>
+
   </div>
   </div>
 </div>

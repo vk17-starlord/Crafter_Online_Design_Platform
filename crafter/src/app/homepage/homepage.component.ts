@@ -19,22 +19,27 @@ export class HomepageComponent implements OnInit {
       heading:"Explore",
       desc:"Trending Design To Inspire You !! ",
       img:"https://i.pinimg.com/564x/37/22/3d/37223dfaa6b4c108d287b6bee61e9948.jpg"
+      ,link:"/Explore",    
+
     },
     {
       heading:"Blogs",
       desc:"Where Good Ideas Find You ",
 img:"https://i.pinimg.com/564x/e5/6a/e9/e56ae9a5ddaef82a110f357ab12f6b26.jpg"
-    },
+,link:"/blog",    
+},
     {
       heading:"Guide",
       desc:"Learn Basic Of Design with us !!",
-      img:"https://miro.medium.com/max/1000/1*wR-tA_eqG9tBC3EObUG_5A.png"
-
+      img:"https://i.pinimg.com/564x/9e/00/55/9e005544f786ea57d88d0b9f368f731c.jpg"
+      ,
+      link:"/Guide",
     },
    {
      heading:"Projects",
      desc:"start your Journey As Designer !",
-     img:"https://i.pinimg.com/564x/2f/da/e3/2fdae3be164a06f85fed750b8f180ada.jpg"
+     img:"https://i.pinimg.com/564x/8f/60/83/8f608388e3f6b47a223c752305968d06.jpg"
+     ,link:"/Project",
 
     }
 
@@ -130,13 +135,20 @@ this.NewProjects=projects.slice(0,4);
      Date(val1.createdAt).getTime()}
      )
   
-     if(Sorted.length<4){
+     if(Sorted.length<6){
               this.RecentUsers=Sorted.slice(0,Sorted.length)
      }else{
-            this.RecentUsers=Sorted.slice(0,4);
+            this.RecentUsers=Sorted.slice(0,6);
      }
     if(this.RecentUsers.length>0){
       console.log(this.RecentUsers)
+      this.RecentUsers.forEach((ele)=>{
+
+        if(ele.postedBy.userName.length>10){
+ele.postedBy.userName=ele.postedBy.userName.trim().slice(0,10).concat('..');
+
+        }
+      })
       this.ShowUsers=true;
 
     }else{
