@@ -60,7 +60,8 @@ position: fixed;
          font-family: RobotoMedium;
          margin: 20px auto;
          transition:1s ease-in-out;
-         width:80%;
+         width:65%;
+         border-radius: 10px;
     &:hover{
 
         background-color: $primary;
@@ -457,7 +458,7 @@ padding:5px 10px !important;
 .linear-wipe {
     text-align: center;
     
-    background: linear-gradient(to right, #FFF 20%, rgb(78, 255, 152) 40%, rgba(47, 255, 255, 0.623) 60%, #FFF 80%);
+    background: linear-gradient(to right, #FFF 20%, rgb(78, 255, 152) 40%, rgba(231, 245, 219, 0.623) 60%, rgb(241, 238, 219) 80%);
     background-size: 200% auto;
     
     color: #000;
@@ -491,10 +492,7 @@ padding:5px 10px !important;
     flex-direction: column;
     p{
         width:80%;
-          white-space: nowrap;
-  overflow: hidden;
-
-  text-overflow: ellipsis;
+        
         text-align: center;
         font-size:20px;
         line-height: 25px;

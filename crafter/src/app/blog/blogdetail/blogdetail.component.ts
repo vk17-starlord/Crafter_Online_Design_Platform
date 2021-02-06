@@ -91,6 +91,7 @@ if(present){
      this.CurrentBlog=this.allblogs.filter((blog)=>{
        return blog._id==id;
   })[0]
+  console.log(this.CurrentBlog)
   let year,month,dt
   var date = new Date(this.CurrentBlog.createdAt);
   year = date.getFullYear();

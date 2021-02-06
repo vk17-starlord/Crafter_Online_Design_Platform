@@ -411,3 +411,31 @@ margin-top:30px;
         color: #ccc;
 
     }
+    .cmnt-card{
+        background-color:$light-blue;
+        div{
+
+        }
+        p{
+            margin:0 auto;
+            width:95%;
+            font-size: 18px;
+        }
+        img{
+            width:100%;
+            height:100%;
+            max-width:40px;
+            min-height:40px;
+            max-height: 40px;
+            border-radius: 50%;
+        }
+        margin: 20px auto;
+       width: 75%;
+       padding: 20px !important;
+mat-icon{
+    cursor: pointer;
+    &:hover{
+        color:rgb(241, 49, 49);
+    }
+}
+    }

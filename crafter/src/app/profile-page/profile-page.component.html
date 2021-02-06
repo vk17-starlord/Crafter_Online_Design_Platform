@@ -43,10 +43,9 @@
             <owl-carousel-o [options]="customOptions">
 
               <ng-template carouselSlide *ngFor="let blog of profileUser.blog" >
-                  <div class="item"  >
+                  <div class="item">
                     <div class="blog-card "  [routerLink]="['/blogdetail', blog._id]" >
                       <div class="row">
-                      
                         <div class="content" style="background-image: url('{{blog.b_coverPhoto}}')">
                           <p>{{blog.b_title}}</p>
                         </div>

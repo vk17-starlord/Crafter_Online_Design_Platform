@@ -1,42 +1,54 @@
 
-<div id="blog-home" *ngIf="Qoutes">
-    <mat-icon routerLink="/homepage" style="cursor: pointer;margin: 20px;">navigate_before</mat-icon>    
-    <h1 class="heading" >Quote Of the Day ! <br></h1>
-    
-<div id="poster">
-   <div class="poster-card" (click)="RandomeQoute()" [style.background-color]="colorpallete.bg">
-       <div class="content">
-        <h1>{{TodaysQoutes.b_qoute}}</h1>
-        <span>~ {{TodaysQoutes.postedBy.userName}}</span>
+<div id="blog-home" >
+    <mat-icon routerLink="/homepage" style="cursor: pointer;margin: 20px;position: absolute;top:0;">navigate_before</mat-icon>    
+
+    <div class="recent-container" style="background-image: url('{{RecentBlog.b_coverPhoto}}')">
+   <div class="row">
+       <div class="col-sm-12 col-lg-6">
+        <div class="text-container">
+            <h4>{{RecentBlog.b_title}}</h4>
+            <p>{{RecentBlog.b_desc}}</p>
+                   <button  [routerLink]="['/blogdetail', RecentBlog._id]" >Read Now <mat-icon>play_circle</mat-icon></button>
+        </div>
+       </div>
+       <div class="col-sm-12 col-lg-6 profile-container">
+           <div class="profile d-flex">
+      <h1>Posted By {{RecentBlog.postedBy.userName}}</h1>
+           </div>
        </div>
    </div>
-   
-   
-</div>
-
-
-<div id="blog-container">
-<h1 class="heading">Lets Read Some Articles</h1>
-
-<div style="width:90%;margin: 0 auto;text-align: center;">
-    <div class="search-container">
-        <input type="text" id="search" [(ngModel)]="searchquery" (keyup)="SearchBlog()" placeholder="Search Your Favorite Topic">
+ 
     </div>
-
-
-    <div class="card-container row">
-        <div class="blog-card col-sm-12 col-lg-3" *ngFor="let blog of Blogs"  [routerLink]="['/blogdetail', blog._id]">
-  <img [src]='blog.b_coverPhoto' alt="blog-image">
-  <div class="content">
-      <h1>{{blog.b_title}}</h1>
+ 
+    <div class="welcome container">
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <h1>Courtside : <br> The Crafter's <span>Blog</span></h1>
+    </div>
+    <div class="col-sm-12 col-lg-6 d-flex justify-content-center ">
+     <div class="search-container">
+<input type="text" name="q" placeholder="Search .." [(ngModel)]="searchquery">
+  <button (click)="SearchBlog()">   <i class="fas fa-search"></i></button>     
 </div>
+  
+    </div>
+</div>
+    </div>
+ 
+    <div class="post-container container row">
+        <div class="post col-sm-12 col-lg-6" [routerLink]="['/blogdetail', blog._id]"  *ngFor="let blog of Blogs">
+           <div class="b-card row">
+              <div class="col-sm-12 col-lg-5" style="margin: 0 auto;">
+                 <div class="img-container">
+                    <img [src]="blog.b_coverPhoto" alt="">
+                 </div>
+              </div>  
+              <div class="col-sm-12 col-lg-7 d-flex justify-content-start align-item-center flex-column">
+                <h4>{{blog.b_title}}</h4>
+                <p>{{blog.b_desc}}</p>
+              </div>  
+           
+            </div>
         </div>
-
     </div>
-     
-    <button routerLink="/blogform" mat-mini-fab color="primary" matTooltip="Create Your Blog" matTooltipHideDelay="100000" style="position:fixed;bottom:40px;right:40px;" aria-label="Example icon button with a home icon">
-        <mat-icon>add</mat-icon>
-      </button>
-</div>
-</div>
 </div>

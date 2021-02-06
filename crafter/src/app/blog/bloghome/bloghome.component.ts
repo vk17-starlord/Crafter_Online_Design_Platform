@@ -1,79 +1,78 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogqouteService } from '../../services/blogqoute.service'
 import {BlogService} from '../../services/blog.service'
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 @Component({
   selector: 'app-bloghome',
   templateUrl: './bloghome.component.html',
   styleUrls: ['./bloghome.component.scss']
 })
 export class BloghomeComponent implements OnInit {
+ class:any="";
 
   constructor(private BlogQoute:BlogqouteService ,private BlogService: BlogService    ) { }
 searchquery:any=""
-  Qoutes:any=false;
-TodaysQoutes:any={
-  b_qoute:"Design is where science and art break even.",
-  postedBy:{
-    userName:"Robin Mathew"
-  }
-};
-colorpallete:any={
-  bg:'',
-  color:''
-};
+Categories:any=[
+"All",
+"Design",
+"UI/UX",
+"Graphic Design",
+"Illustration",
+"Coding"
+]
+sortbyCategory(item){
 
-  RandomeQoute(){
-    if(this.Qoutes.length>0){
-      let todaysQoutes=Math.floor(Math.random() * this.Qoutes.length);
-      let colors=[
-         {bg:'#e63946',color:'#f1faee'},
-         {bg:'#d69f7e',color:'#f1faee'},
-         {bg:'#003049',color:'#f1faee'},
-         {bg:'#f77f00',color:'#f1faee'},
-         {bg:'#ffafcc',color:'#f1faee'},
-         {bg:'#6930c3',color:'#f1faee'},
-         {bg:'#d00000',color:'#f1faee'},
-         {bg:'#560bad',color:'#fff'}
-     ]
-     let randomColor =Math.floor(Math.random() * colors.length);
-       this.colorpallete.bg=colors[randomColor].bg;
-     this.colorpallete.color=colors[randomColor].color;
-   console.log(this.colorpallete,'pallete')
- 
-       console.log(this.Qoutes[todaysQoutes],'today qoite') 
-       this.TodaysQoutes=this.Qoutes[todaysQoutes];
-    
-    }else{
-      this.TodaysQoutes.b_qoute="Design is where science and art break even."
-    } }
-
-
+}
 Blogs:any;
 AllBlog:any;
-getOnlythree(n=0){
-
-  console.log(this.Blogs.slice(n,n+3))
+RecentBlog:any
+customOptions: OwlOptions = {
+  loop:true,
+  margin:10,
+  responsive:{
+      0:{
+          items:2,
+                  },
+      600:{
+          items:3,
+          nav:false
+      },
+      1000:{
+          items:7,
+          
+          loop:false
+      }
+  }
 }
 
-
   ngOnInit(): void {
-  
-  
-    this.BlogQoute.GetBlogQoute().subscribe((res)=>{
-    
-      this.Qoutes=res;
-      this.RandomeQoute()
-    })
 
+  
+  
 
     this.BlogService.getallBlogs().subscribe((res)=>{
       this.Blogs=res
+    
 console.log(this.Blogs); 
 this.AllBlog=res; 
-    })
+this.AllBlog.forEach((ele)=>{
+  
+  console.log(ele.b_desc.length);
+  if(ele.b_desc.length>50){
+ ele.b_desc=ele.b_desc.slice(0,70).concat('...')
+  }
+})
+let Sorted=this.AllBlog.sort((val1, val2)=>
+{return new Date(val2.createdAt).getTime() - new 
+ Date(val1.createdAt).getTime()}
+ )
+this.RecentBlog=Sorted[0];
+})
    
     
   }
+
 
 
   SearchBlog(){
