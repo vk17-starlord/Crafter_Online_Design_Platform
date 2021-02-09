@@ -1,24 +1,96 @@
-<section class="nav">
-    <div class="nav-bar">
-        <a href="/"><i class="material-icons">dashboard</i>Projects</a>
-        <a href="/" id="chal">Challenges</a> 
+<div class="project-container">
+
+<div class="cover-container">
+  <div>
+    
+</div>
+</div>
+<div class="sort-container">
+
+  <div class="row">
+<div class="col-sm-12 col-lg-4 ">
+  <p>Choose Level 
+    <mat-slider   thumbLabel
+  (input)="ChangeLevel($event)"
+    tickInterval="1"
+    min="1"
+    value="5"
+
+    max="12"></mat-slider>
+</p>
+   </div>
+   <div class="col-sm-12 col-lg-4 ">
+
+      <mat-form-field  color="accent"  appearance="fill">
+        <mat-label>Languages</mat-label>
+        <mat-select  multiple>
+          <mat-option  *ngFor="let category of categories" [value]="category" (onSelectionChange)="SortBylanguage($event)">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+ 
+ 
+</div>    
+
+ 
+<div class="col-sm-12 col-lg-4">
+  <div class="chart">
+    <canvas baseChart [style.height.px]="dynHeight"
+      [data]="pieChartData" 
+      [labels]="pieChartLabels" 
+      [chartType]="pieChartType"
+      [options]="pieChartOptions"
+      [plugins]="pieChartPlugins"
+      [legend]="pieChartLegend"
+      [colors]="pieChartColor">
+    </canvas>
+  </div>
+</div>    
+ 
+</div>
+   <div >
     </div>
-</section>
-<section class="cards">
-    <div class="card" *ngFor="let p of Projects">
-        <img src="{{p.image}}" alt="card1" />
-        <div class="card-heading">
-            <p style="color: rgb(129, 192, 212);">HTML</p>
-            <p style="color: rgb(90, 90, 236)">CSS</p>
-            <p style="color: rgb(231, 133, 149)">JS</p>
+
+   
+</div>
+<div class="row" style="margin-top:75px">
+  <div class="fixed-div col-sm-12 col-lg-6 d-flex flex-column align-items-center justify-content-center">
+  <div class="card-container ">
+<div class="blur-bg"  style="background-image: url('{{projdetails.image}}')">
+
+</div>
+<div class="blur-overlay">
+<img [src]="projdetails.image" alt="">
+<h1>{{projdetails.title}}</h1>
+<mat-chip-list aria-label="Fish selection">
+
+  <mat-chip  *ngFor="let item of projdetails.lang" selected>{{item}}</mat-chip>
+</mat-chip-list>
+
+<p>{{projdetails.para}}</p>
+<button (click)="DownloadFile(projdetails.linkURL)">Download <mat-icon>download</mat-icon></button>
+</div>
+  </div>
+  </div>
+  <div class="proj-container col-sm-12 col-lg-6">
+    <h4>Projects</h4>
+    <div class="list-cards" *ngFor="let project of Projects" (click)="ShowCard(project.id)">
+      <div class="row">
+        <div class="col-sm-5 col-lg-5" id="img-container">
+          <img [src]="project.image" alt="">
         </div>
-        <div class="card-body">
-            <h1>{{p.title}}</h1>
-            <p>{{p.para}}</p>
-            <p style="color: #46a506; font-weight: 600;">Difficulty: {{p.diff}}</p>
+        <div class="col-sm-7 col-lg-7 d-flex flex-column align-items-start justify-content-start">
+         <h1>{{project.title}}</h1> 
+          <p>{{project.diff}}</p>
+          <h5>
+            <span *ngFor="let language of project.lang" [class]="language">
+              {{language}}
+            </span>
+          </h5>
         </div>
-        <div class="card-button">
-            <button [routerLink]="['/Projectdetail', p.id]">View Challenge</button>
-        </div>
-    </div>
-</section>
+  
+      </div>
+  </div>
+  
+</div>
+
+</div>

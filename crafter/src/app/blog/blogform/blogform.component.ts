@@ -45,7 +45,6 @@ export class BlogformComponent implements OnInit {
     this.selectedFile = ev.target.files[0];
     let type:string=this.selectedFile.type.toLocaleString();
     console.log(type);
-
     if(this.userService.getMemeType(type)){
      this.halfsubmit=false;
      this._snackBar.open("Image Added Successfully!", 'X',{

@@ -2,19 +2,17 @@
 
 html, body { height: 100%; }
 body {
-  background-color:#13131760 ;
+  background-color:transparent ;
   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:hidden !important;
     }
     .mat-dialog-container{
         padding: 0 !important;
         color: white;
-        background-color: #030303;
-
       }
       .cdk-overlay-dark-backdrop{
-        background-color:#13131760 !important;
+        background-color:transparent !important;
     
-        background-color: #030303;
+
       }
       mat-icon{
         display: inline-flex;
@@ -55,3 +53,63 @@ body {
       left:15%;
       top:25px;
     }
+
+    .nav-btn{
+      color: white;
+      position: fixed;
+      cursor: pointer;
+      left: 50px;
+      top: 5%;
+  }
+  
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb{
+  border-color: #03e5b7 ;
+}
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover .mat-slider-thumb, .mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused .mat-slider-thumb {
+  border-color: #03e5b7 ;
+
+}
+mat-slider-horizontal .mat-slider-ticks{
+  background-color: #03e5b7 !important;
+  background-image: linear-gradient(5deg, #03e5b7 0%, #037ade 74%);    color: #fff !important;
+}
+div.mat-checkbox-frame {
+  border-color: #03e5b7;
+}
+
+span.mat-checkbox-label {
+  color: #03e5b7;
+}
+
+.mat-form-field-underline {
+  background-color: blue !important;
+} 
+
+.mat-form-field-ripple {
+  background-color: #03e5b7 !important;
+
+} .mat-form-field-label{
+  color: #03e5b7 !important;
+}
+
+.mat-select-value{
+color:#ffc107 !important; 
+padding:5px !important;
+}
+.mat-option.mat-active{
+  color:#ffc107 !important; 
+}
+.mat-pseudo-checkbox{
+  color: white !important;
+}
+.mat-pseudo-checkbox{
+  margin-left: 35% !important;
+}
+.mat-option{
+  color:white !important;
+
+}
+.mat-select-panel{
+  background-color:#0A0A0F !important;
+  
+}

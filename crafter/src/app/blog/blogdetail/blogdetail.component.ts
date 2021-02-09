@@ -97,7 +97,6 @@ if(present){
   year = date.getFullYear();
 month = date.getMonth()+1;
 dt = date.getDate();
-
 if (dt < 10) {
 dt = '0' + dt;
 }
@@ -106,7 +105,6 @@ month = '0' + month;
 }
 
 this.CurrentBlog.createdAt =year+'-' + month + '-'+dt;
-
 this.Likes=this.CurrentBlog.b_likes.length;
 console.log(this.CurrentUser._id)
 this.CurrentBlog.b_likes.forEach((ele)=>{

@@ -56,6 +56,7 @@ import { ProjectdetailComponent } from './project/projectdetail/projectdetail.co
 import { ExploreformComponent } from './explore/exploreform/exploreform.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { UploadpostComponent } from './explore/uploadpost/uploadpost.component'; 
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +112,8 @@ import { UploadpostComponent } from './explore/uploadpost/uploadpost.component';
     MatGridListModule,
     MatDialogModule,
     MatExpansionModule,
-    CarouselModule 
+    CarouselModule, 
+    ChartsModule
   ],
   providers: [AuthGuardGuard,{
     provide:HTTP_INTERCEPTORS  ,

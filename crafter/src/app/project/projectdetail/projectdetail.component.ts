@@ -11,10 +11,7 @@ export class ProjectdetailComponent implements OnInit {
   constructor(private route:ActivatedRoute,private projectService:ProjectService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params['id'].toString();
-console.log(this.projectService.GetProjectById(2))
-   this.project=this.projectService.GetProjectById(id)
-console.log(this.project)
+
   }
 
 }

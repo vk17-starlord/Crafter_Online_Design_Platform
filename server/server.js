@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
-const fileUpload = require('express-fileupload');
 
 
 var bodyParser = require('body-parser')
@@ -16,9 +15,7 @@ app.use(bodyParser.urlencoded({
   }));
   app.use(bodyParser.json({limit: "50mb"}));
   app.use(cors());
-app.use(fileUpload({
-    useTempFiles: true
-}))
+
 
 require('./models/user');
 require('./models/blogModel/blogmodel');
@@ -36,7 +33,7 @@ app.use(require('./routes/blogRoutes/blogQouteRouter'));
 app.use(require('./routes/profile'));
 app.use(require('./routes/dribbbleRoutes/dribbbleRouter'));
 app.use(require('./routes/dribbbleRoutes/dribbbleCategoryRouter'));
-
+app.use(require('./routes/project'));
 mongoose.connect(process.env.MONGO_URL, {
     useCreateIndex: true,
     useFindAndModify: false,

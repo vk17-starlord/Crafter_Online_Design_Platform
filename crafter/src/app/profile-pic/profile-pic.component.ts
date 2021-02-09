@@ -25,9 +25,9 @@ export class ProfilePicComponent implements OnInit {
   selectedCover:any=""
     onchange(ev){
      this.selectedFile = ev.target.files[0];
-     console.log(this.selectedFile.type)
+    
      let type:string=this.selectedFile.type.toLocaleString();
-  
+          
      if(type.includes('image/jpeg')||type.includes('image/webp') || type.includes('image/svg+xml')|| type.includes('image/png') || type.includes('image/jpg') || type.includes('image/svg')){
       this.show=false;
  
@@ -46,7 +46,14 @@ export class ProfilePicComponent implements OnInit {
     myReader.onload=()=>{
      console.log(myReader.result)
      this.ProfileUrl=myReader.result;
-     this.profileupload.UpdateProfile(this.ProfileUrl).subscribe((res)=>{
+     const size = (base64) => {
+      const stringLength = base64.length 
+      const sizeInBytes = 4 * Math.ceil(stringLength / 3) * 0.5624896334383812;
+      const sizeInKb = sizeInBytes / 1000;
+      return sizeInKb;
+    }
+console.log(    size(this.ProfileUrl))
+    this.profileupload.UpdateProfile(this.ProfileUrl).subscribe((res)=>{
        console.log(res)
        this._snackBar.open("Profile Pic Updated Successfully!!", 'X',{
         duration: 2000
