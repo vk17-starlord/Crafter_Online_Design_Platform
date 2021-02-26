@@ -1,3 +1,4 @@
+
 # Major-Project-
 
 
@@ -40,10 +41,44 @@ This project focuses 🎯 on 4 major parts
   
   
   
+  ⭐  Landing Page
+  
+  
 ![Screenshot_2021-02-26 Crafter](https://user-images.githubusercontent.com/53342781/109319220-a1bd2880-7874-11eb-9f61-14c88efaab77.png)
 
- 
- 
+⭐ Signup 
+![Screenshot_2021-02-26 Crafter(1)](https://user-images.githubusercontent.com/53342781/109319796-48a1c480-7875-11eb-84fc-3f9b4d83f886.png)
+
+⭐ Sign in
+![Screenshot_2021-02-26 Crafter(3)](https://user-images.githubusercontent.com/53342781/109320026-8ef72380-7875-11eb-9902-01a3f87dc680.png)
+
+⭐ Homepage
+View-1
+
+![Screenshot_2021-02-26 Crafter(4)](https://user-images.githubusercontent.com/53342781/109320177-bea62b80-7875-11eb-94b8-6e2378105356.png)
+
+View-2 
+
+![Screenshot_2021-02-26 Crafter(5)](https://user-images.githubusercontent.com/53342781/109320382-f614d800-7875-11eb-9ba0-230c002613f6.png)
+
+⭐ Create Your Portfolio 
+
+![Screenshot_2021-02-26 Crafter(6)](https://user-images.githubusercontent.com/53342781/109320998-a97dcc80-7876-11eb-981b-2c8f2ce8a4c3.png)
+
+⭐ Portfolio 
+![Screenshot_2021-02-26 Crafter(8)](https://user-images.githubusercontent.com/53342781/109321431-24df7e00-7877-11eb-9b64-4a131c3fe651.png)
+
+⭐ Explore Design Section
+
+![Screenshot_2021-02-26 Crafter(9)](https://user-images.githubusercontent.com/53342781/109321647-6cfea080-7877-11eb-9f99-9cdb94629d08.png)
+
+⭐ Explore Design Section With Color Search 
+![Screenshot_2021-02-26 Crafter(10)](https://user-images.githubusercontent.com/53342781/109321809-991a2180-7877-11eb-8edf-d44102f77264.png)
+
+⭐ Explore Design Detail Page with feedback
+![Screenshot_2021-02-26 Crafter(10)](https://user-images.githubusercontent.com/53342781/109321809-991a2180-7877-11eb-8edf-d44102f77264.png)
+
+
                                                    
  
   
