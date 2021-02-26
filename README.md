@@ -75,10 +75,12 @@ View-2
 
 ⭐ Explore Design Section With Color Search 
 
+![Screenshot_2021-02-26 Crafter(14)](https://user-images.githubusercontent.com/53342781/109324028-26f70c00-787a-11eb-8958-31bf2bd4e333.png)
 
 
 ⭐ Explore Design Detail Page with feedback
 
+![Screenshot_2021-02-26 Crafter(15)](https://user-images.githubusercontent.com/53342781/109324093-3b3b0900-787a-11eb-8693-9abbd39e4180.png)
 
 
 ⭐ Blog Homepage
@@ -89,6 +91,20 @@ View-2
 
 ![Screenshot_2021-02-26 Crafter(13)](https://user-images.githubusercontent.com/53342781/109323598-a59f7980-7879-11eb-814a-ce3b54edf69d.png)
 
+⭐ Project Section
+
+![Screenshot_2021-02-26 Crafter(16)](https://user-images.githubusercontent.com/53342781/109324378-9a991900-787a-11eb-9274-da6418a25149.png)
+
+
+![Screenshot_2021-02-26 Crafter(17)](https://user-images.githubusercontent.com/53342781/109324312-7c331d80-787a-11eb-8370-6fd7277c1b1f.png)
+
+
+⭐ Project Section
+
+This section is under development will update section asap !!
+
+
+Thanks a lot !!
 
 
 
