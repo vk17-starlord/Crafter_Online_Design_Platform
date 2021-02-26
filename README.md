@@ -43,10 +43,10 @@ This project focuses 🎯 on 4 major parts
   
   ⭐  Landing Page
   
-  
 ![Screenshot_2021-02-26 Crafter](https://user-images.githubusercontent.com/53342781/109319220-a1bd2880-7874-11eb-9f61-14c88efaab77.png)
 
 ⭐ Signup 
+
 ![Screenshot_2021-02-26 Crafter(1)](https://user-images.githubusercontent.com/53342781/109319796-48a1c480-7875-11eb-84fc-3f9b4d83f886.png)
 
 ⭐ Sign in
@@ -66,6 +66,7 @@ View-2
 ![Screenshot_2021-02-26 Crafter(6)](https://user-images.githubusercontent.com/53342781/109320998-a97dcc80-7876-11eb-981b-2c8f2ce8a4c3.png)
 
 ⭐ Portfolio 
+
 ![Screenshot_2021-02-26 Crafter(8)](https://user-images.githubusercontent.com/53342781/109321431-24df7e00-7877-11eb-9b64-4a131c3fe651.png)
 
 ⭐ Explore Design Section
@@ -73,10 +74,24 @@ View-2
 ![Screenshot_2021-02-26 Crafter(9)](https://user-images.githubusercontent.com/53342781/109321647-6cfea080-7877-11eb-9f99-9cdb94629d08.png)
 
 ⭐ Explore Design Section With Color Search 
-![Screenshot_2021-02-26 Crafter(10)](https://user-images.githubusercontent.com/53342781/109321809-991a2180-7877-11eb-8edf-d44102f77264.png)
+
+
 
 ⭐ Explore Design Detail Page with feedback
-![Screenshot_2021-02-26 Crafter(10)](https://user-images.githubusercontent.com/53342781/109321809-991a2180-7877-11eb-8edf-d44102f77264.png)
+
+
+
+⭐ Blog Homepage
+
+![Screenshot_2021-02-26 Crafter(12)](https://user-images.githubusercontent.com/53342781/109323302-55281c00-7879-11eb-8fec-0f341c7af575.png)
+
+⭐ Blog Detail
+
+![Screenshot_2021-02-26 Crafter(13)](https://user-images.githubusercontent.com/53342781/109323598-a59f7980-7879-11eb-814a-ce3b54edf69d.png)
+
+
+
+
 
 
                                                    
