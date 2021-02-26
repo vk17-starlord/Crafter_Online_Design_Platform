@@ -17,7 +17,9 @@ export class ExploreService {
   AddComment(text,postId){
     return this.http.put(`${this.URL}/d_comment`,{text,postId})
   }
-
+  DeleteComment(c_text,id){
+    return this.http.put(`${this.URL}/d_uncomment`,{text:c_text,postId:id})
+  }
   Post(post){
     return this.http.post(`${this.URL}/dribbble`,post)
   }

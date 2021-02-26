@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "./app/app.component.scss";
+@import "../node_modules/animate.css/animate.min.css";
 html, body { height: 100%; }
 body {
-  background-color:transparent ;
+  color: #fff;
+  background-color:$darkblue ;
   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x:hidden !important;
     }
     .mat-dialog-container{
@@ -62,16 +64,16 @@ body {
       top: 5%;
   }
   
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb{
-  border-color: #03e5b7 ;
+  .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color:#0056ff !important;//Your color
 }
-.mat-slider-min-value:not(.mat-slider-thumb-label-showing):hover .mat-slider-thumb, .mat-slider-min-value:not(.mat-slider-thumb-label-showing).cdk-focused .mat-slider-thumb {
-  border-color: #03e5b7 ;
-
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: #0056ff !important;//Your color
 }
 mat-slider-horizontal .mat-slider-ticks{
   background-color: #03e5b7 !important;
-  background-image: linear-gradient(5deg, #03e5b7 0%, #037ade 74%);    color: #fff !important;
+  background-image: linear-gradient(5deg, #03e5b7 0%, #037ade 74%);   
+   color: #fff !important;
 }
 div.mat-checkbox-frame {
   border-color: #03e5b7;
@@ -91,7 +93,9 @@ span.mat-checkbox-label {
 } .mat-form-field-label{
   color: #03e5b7 !important;
 }
-
+.mat-tab-label, .mat-tab-link {
+  color:white !important;
+}
 .mat-select-value{
 color:#ffc107 !important; 
 padding:5px !important;
@@ -112,4 +116,32 @@ padding:5px !important;
 .mat-select-panel{
   background-color:#0A0A0F !important;
   
+}
+.mat-slider-track-background{
+  background-color:white !important;
+}
+
+.mat-bottom-sheet-container{
+  padding: 0 !important;
+  overflow: hidden !important;
+
+}
+.example-tab-icon{
+  margin: 0px 5px;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background:#308D46;
+  color:white;
+}
+
+::selection {
+  background:#308D46;
+  color:white;
+}
+.mat-progress-bar-buffer{
+  background-color: $light-blue;
+}
+.mat-progress-bar-fill::after{
+  background-color:$primary;
 }

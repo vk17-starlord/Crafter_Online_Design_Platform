@@ -18,8 +18,13 @@ import { ProjectComponent } from './project/project/project.component';
 import { ProjectdetailComponent } from './project/projectdetail/projectdetail.component';
 import { ExploreformComponent } from './explore/exploreform/exploreform.component';
 import { UploadpostComponent } from './explore/uploadpost/uploadpost.component';
-const routes: Routes = [
+import {GuideComponent} from './guidemodule/guide/guide.component';
+import {ResourceComponent} from './guidemodule/resource/resource.component';
+import {StatsComponent} from './guidemodule/stats/stats.component';
+import {ToolsComponent} from './guidemodule/tools/tools.component'
 
+const routes: Routes = [
+ 
   {path:'homepage',component:HomepageComponent, canActivate:[AuthGuardGuard]},
   {path:'landingpage',component:LandingpageComponent},
   {path:'signup',component:SignupComponent},
@@ -41,7 +46,13 @@ const routes: Routes = [
   {path:'Exploredetail/:id',component:ExploredetailComponent,canActivate:[AuthGuardGuard]},
   {path:'Projectdetail/:id',component:ProjectdetailComponent,canActivate:[AuthGuardGuard]},
 
-  { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
+
+   {path:"Guide" ,component:GuideComponent,canActivate:[AuthGuardGuard]},
+   {path:"Resource" ,component:ResourceComponent,canActivate:[AuthGuardGuard]},
+   {path:"Tools" ,component:ToolsComponent,canActivate:[AuthGuardGuard]},
+   {path:"Stats" ,component:StatsComponent,canActivate:[AuthGuardGuard]},
+
+   { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 
 ];
 

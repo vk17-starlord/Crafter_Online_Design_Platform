@@ -1,0 +1,83 @@
+<div class="stat-container">
+    <div class="row geometry">
+     <div class="col-sm-12 col-lg-6 d-flex justify-content-center flex-column align-items-start" id="text">
+         <h1>2020 UI UX SURVEY</h1>
+         <h4><span>T</span>his UI/UX survey is free open source data analysis of UI/UX feilds and covers the important aspects of design with users through the medium of infographics . Following Data has been collected from various internet sources and Medium Articles   </h4>
+     </div>
+     <div class="col-sm-12 col-lg-6" id="img">
+     </div>
+    </div>
+    <div class="country-container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4"  id="col1">
+               
+                <div class="btn-6 survey d-flex justify-content-center flex-column align-items-center">
+                    <p>   Total Reviews</p>
+                    <span>
+                    
+                    3146
+                </span> <br>
+            </div>
+            </div>
+            <div class="col-sm-12 col-lg-8" id="col2">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-3 country " *ngFor="let country of  Countries">
+                        <img [src]="country.img" alt="">
+                      <h4><span>{{country.response}}</span> {{country.country}}   </h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="sort-card">
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip (click)="selectionChange(chip.id)" [color]="selected" *ngFor="let chip of Data " >{{chip.title}}</mat-chip>
+        </mat-chip-list>
+          
+    </div>
+
+    <div class="current-data-container">
+        <div class="row">
+
+            <div class="col-sm-12 col-lg-12" id="chart">
+
+                
+                <h1>{{Currentdata.title}}</h1>
+
+                <div style="display: block;" id="chart-container">
+                    <canvas baseChart 
+                      [datasets]="Currentdata.Dataset"
+                      [labels]="Currentdata.label"
+                      [options]="barChartOptions"
+                      [plugins]="barChartPlugins"
+                      [colors]="barChartColors"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+                    </canvas>
+                  </div>
+                  
+
+            </div>
+            <div  id="info">
+
+                <h2>Whats this ? <span>{{Currentdata.title}}</span></h2>
+                
+                <p>{{Currentdata.info}}</p>
+
+                <div class="key-insights d-flex flex-column justify-content-between align-items-center" >
+              <h3><i class="fas fa-star"></i> Key Insights</h3>
+
+      <li *ngFor="let key of Currentdata.insights">
+ <h4>        <i class="fas fa-hand-point-right"></i> {{key}} </h4>
+    </li>
+     
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

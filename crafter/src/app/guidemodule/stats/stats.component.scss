@@ -1,0 +1,320 @@
+@import "../../app.component";
+.stat-container{
+    width:100%;
+    min-height: 100vh;
+   background-color: #030303;
+    .geometry{
+        width: 80%;
+        margin: 0 auto;
+        div{
+            min-height: 100vh;
+        }
+        h4{
+ 
+            width: 80%;
+            opacity:.8;
+            margin:20px 0 !important; 
+            text-align: justify;
+            font-family: RobotoLight;
+          line-height: 125% !important;
+             font-size: 24px;
+           &::first-letter{
+               font-weight: 800;
+               font-size: 2.5em;
+font-weight: 700;
+float: left;
+margin-top: .1em;
+margin-right: 4px;
+line-height: 1;
+           }
+        }
+        h1{
+            font-size: 72px;
+            line-height: 110%;
+             font-family: Vester;
+        }
+    }
+    #img{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+background-image: url('./undraw_hologram_fjwp\(1\).svg');
+    }
+
+}
+
+
+// media
+.country-container{
+    width:80%;
+    margin:0 auto;
+#col1,#col2{
+    height:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
+}
+.country{
+    text-align:center;
+   img{
+       height:20vh;
+       object-fit:contain;
+       max-width: 100%;
+   }
+    h4{
+        margin: 20px auto;
+        font-family: JosefinSansBold;
+        font-size: 20px;
+  
+        span{
+            color: #ffba08;
+            font-family: Vester;
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+}
+.survey{
+    display: inline-block;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+     line-height: 30px;
+      padding: 20px 0;
+    cursor: pointer;
+    margin: 20px 30px;
+    background: rgba(0,0,0,0.09);
+    span{
+        font-size: 52px;
+        color: #ffba08;
+        font-family: JosefinSansBold;
+        display: block;
+        padding: 25px 80px;
+      }
+  }
+
+  .survey::before, .survey::after{
+    content:"";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: $primary;
+  }
+  
+  span::before, span::after{
+    content:"";
+    width:2px;
+    height:0;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: $primary;
+  }
+  .survey:hover::before, .survey:hover::after{
+    width: 100%;
+  }
+  .survey:hover span::before, .survey:hover span::after{
+    height: 100%;
+  }
+/*----- button 6 -----*/
+.btn-6::before{
+    left: 50%;
+    top: 0;
+    transition-duration: 0.4s;
+  }
+  .btn-6::after{
+    left: 50%;
+    bottom: 0;
+    transition-duration: 0.4s;
+  }
+  .btn-6 span::before{
+    left: 0;
+    top: 50%;
+    transition-duration: 0.4s;
+  }
+  .btn-6 span::after{
+    right: 0;
+    top: 50%;
+    transition-duration: 0.4s;
+  }
+  .btn-6:hover::before, .btn-6:hover::after{
+    left: 0;
+  }
+  .btn-6:hover span::before, .btn-6:hover span::after{
+    top: 0;
+  }
+
+
+
+
+.table-container{
+  width:80%;
+  margin: 50px auto;
+  height:auto;
+  h1{
+    font-size: 52px;
+    color: whitesmoke;
+    font-family: JosefinSansBold;
+    margin: 10px auto;
+    line-height: 52px;
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+    padding:20px;
+    background-color: $light-blue;
+  }
+
+  h4{
+    width: 70%;
+    
+    margin:15px auto !important;
+    font-size: 24px;
+    font-family: Vester;
+    i{
+      background-color: #20bf55;
+      background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+      
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 20px !important;
+      margin-right: 2rem !important;
+    }
+  }
+}
+
+.sort-card{
+  width:80%;
+  border-radius: 20px;
+  display:flex;
+  justify-content:center !important;
+  align-items:center !important;
+  height:auto;
+  padding:50px 20px ;
+  margin:25px auto;
+  background-color: lighten($light-blue,5);
+}
+.mat-chip-list-wrapper{
+  justify-content:center !important;
+  align-items:center !important;
+}
+
+@media screen and (max-width: 900px){
+  #chart-container{
+    width: 100% !important;
+  }
+  .current-data-container,.current-data-container .key-insights{
+    width: 100% !important;
+    h1{
+      text-align: center !important;
+    }
+  }
+    .stat-container{
+.geometry{
+    width: 90% !important;
+    h4{
+        width: 100% !important;
+    }
+    div{
+        min-height: auto !important;
+    }
+    #img{
+        height: 50vh !important;
+    }
+}
+
+    }
+}
+.mat-chip.mat-standard-chip{
+  color: white;
+  padding: 10px 20px;
+  background-color: #7f31c3 !important;
+}
+.mat-chip{
+  font-size: 16px !important;
+}
+.mat-chip-list-wrapper input.mat-input-element, .mat-chip-list-wrapper .mat-standard-chip{
+margin:10px 8px !important;
+}
+
+.current-data-container{
+  width:80%;
+  margin:1em auto;
+  // border: 1px solid red;
+
+  h1{
+     margin: 20px auto !important;
+    text-align: left; 
+    font-size: 30px;
+    font-family: Vester;
+    
+  }
+  .key-insights{
+    width: 50%;
+    min-height: 50vh;
+    padding: 10px !important;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #7f31c3;
+    h3{
+      text-align: center;
+      font-size: 24px;
+      margin: 10px auto;
+       font-family: Vester;
+       i{
+         color: #ffba08;
+       }
+    }
+    h4{
+      font-size: 18px !important;
+      i{
+        margin: 0 5px;
+        color: black;
+      }
+    }
+
+    li{
+      width:90%;
+      margin: 0 auto;
+      list-style: none;
+    
+    }
+  }
+  #info{
+    width: 70%;
+    margin: 20px auto !important;
+    h2{
+      font-size: 24px !important;
+     font-family: JosefinSansBold;
+     span{
+       color: lighten($color: #ffba08, $amount: 5);
+       font-weight:bolder;
+     }
+    }
+    p{
+      font-size: 18px;
+    line-height: 125%;
+    }
+  }
+  
+}
+
+#info,#chart{
+ 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+ 
+}
+
+#chart-container{
+  width:70%;
+  margin:0 auto;
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit ,Inject} from '@angular/core';
 import { MatChipInputEvent } from "@angular/material/chips";
 import { COMMA, ENTER } from "@angular/cdk/keycodes";
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { UserInfoService } from 'src/app/services/user-info.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';

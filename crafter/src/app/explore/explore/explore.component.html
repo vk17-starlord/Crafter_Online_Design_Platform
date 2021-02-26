@@ -89,7 +89,7 @@
 
         <div class="dribble-container row">
 
-        <div class="post col-sm-12 col-lg-3" [routerLink]="['/Exploredetail', post._id]" *ngFor="let post of Posts">
+        <div cdkDrag  class="post col-sm-12 col-lg-3" [routerLink]="['/Exploredetail', post._id]" *ngFor="let post of Posts">
 
             <div class="blur-bg" style="background-image: url('{{post.d_pic}}')">
         

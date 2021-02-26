@@ -1,0 +1,227 @@
+@import '../../app.component.scss';
+
+.guide-container{
+    width: 100%;
+    min-height: 100vh;
+    background: $darkblue;
+    color: #fff;
+
+    .row{
+        width: 100%;
+        margin: 0 !important;
+    }
+}
+
+#menu , #main-page , #featured{
+
+    
+    padding:0 !important;
+    min-height: 100vh;
+}
+
+#menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    padding: 20px 0 !important;
+    flex-direction: column;
+div{
+    margin-top: 25vh;
+    
+    width: 100%;
+    text-align: left !important;
+    display:flex;
+
+ a{
+     width:40px;
+     height: 40px;
+     border-radius: 50%;
+     background-color: lighten($color: $primary, $amount: 10);
+     display: inline-flex;
+     justify-content:center;
+     align-items:center;
+     text-align: center;
+     margin: 20px auto;
+&:hover{
+    background-color: $primary;
+}
+ }
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;   
+}
+  
+}
+
+#menu,#featured{
+    position:sticky;
+    top: 0 ;
+}
+
+.hero-card{
+    width:90%;
+    height:40vh;
+    background-color:lighten($color: $light-blue, $amount: 7);
+    box-shadow: 2px 2px 8px #07070e3f ;
+    margin: 20px auto;
+   padding:10px 0px;
+    .row{
+        margin: 0 !important;
+        height: 100%;
+        padding:0 !important;
+        >div{
+            height:100% !important;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+             padding-left: 5% !important;
+            button{
+                box-shadow: 1px 1px 8px #01010242 ;
+                color: white;
+                font-size: 16px !important;
+                i{
+                    margin: 0px 5px;
+                }
+                background-color: lighten($color: $primary, $amount: 0);
+                padding:10px;
+                border: none !important;
+                transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+                &:hover{
+                    background-color: lighten($color: $primary, $amount: 15);
+         
+                }
+            }
+            h1{
+                font-size: 42px;
+             line-height: 115%;
+                font-family: RobotoMedium;
+            }
+        }
+    }
+
+    #img{
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('./undraw_visual_data_b1wx\(1\).svg');
+     
+    }
+}
+
+.charts{
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    i{
+        color: $primary;
+        margin: 0 10px;
+    }
+    h1{
+        text-transform: capitalize;
+    }
+}
+.salary-chart{
+    background-color: $darkblue;
+    display:block;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: 50vh;
+    canvas{
+        width: 100%;
+        height: 50vh;
+    }
+}
+
+.course{
+    width: 100%;
+    height:auto !important;
+    min-height: 50vh;
+    background-color: lighten($light-blue,10);
+    padding: 10px !important;
+    border-radius: 10px ;
+   display:flex;
+   justify-content:space-evenly;
+   align-items:center;
+   flex-direction: column;
+    .title{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        img{
+            width: 50px;
+             height: 50px;
+             
+             object-fit: contain;
+        }
+        h1{
+            font-size: 24px;
+            font-family: JosefinSansBold;
+            color: snow;
+            line-height: 24px;
+            margin: 0px 20px ;
+        }
+    }
+
+    a{
+
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+        background: $primary;
+    color: white;
+    margin: 20px auto !important;
+ 
+    }
+text-align: center;
+    .coverphoto{
+        opacity:.9;
+        width: 100%;
+        height: 25vh;
+        object-fit: contain;
+    }
+}
+
+.top-tools {
+    
+    margin: 0  auto!important;
+    width:90%;
+    padding: 10px 0;
+     .row>div{
+        padding: 0px 0;
+
+     }
+}
+
+.tool{
+    strong{
+        background-color: #08e1ae;
+        background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    padding: 10px 10px;
+    .row{
+    div{
+        min-height: 10vh;
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        font-size: 20px;
+        margin:0 auto;
+        text-align: left !important;
+        font-family: RobotoMedium;
+        line-height: 20px !important;
+    }
+    padding: 20px;
+    width:100%;
+    
+}
+}
+
+.cover-slider{
+    
+}

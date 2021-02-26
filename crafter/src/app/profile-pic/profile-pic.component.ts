@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileUploadService} from '../services/profile-upload.service';
-
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+
 @Component({
   selector: 'app-profile-pic',
   templateUrl: './profile-pic.component.html',
@@ -10,7 +11,7 @@ import {Router} from '@angular/router';
 })
 export class ProfilePicComponent implements OnInit {
 
-  constructor(private router:Router, private _snackBar: MatSnackBar,private profileupload:ProfileUploadService) { }
+  constructor(private _bottomSheetRef:MatBottomSheetRef,private router:Router, private _snackBar: MatSnackBar,private profileupload:ProfileUploadService) { }
 
   show:any=true;
   ProfileUrl:any=""
@@ -58,7 +59,7 @@ console.log(    size(this.ProfileUrl))
        this._snackBar.open("Profile Pic Updated Successfully!!", 'X',{
         duration: 2000
       });
-
+      this.openLink()
       this.router.navigateByUrl('/homepage')
      }) 
     }
@@ -66,5 +67,10 @@ console.log(    size(this.ProfileUrl))
       console.log(myReader.result)
     }
     
+  }
+
+  openLink(): void {
+    this._bottomSheetRef.dismiss();
+  
   }
 }

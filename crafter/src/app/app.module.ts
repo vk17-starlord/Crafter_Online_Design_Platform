@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
@@ -33,6 +35,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component'; 
 import {MatIconModule} from '@angular/material/icon'; 
 import { FormsModule } from '@angular/forms'; 
+import {DragDropModule} from '@angular/cdk/drag-drop'; 
 import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AuthGuardGuard} from './auth-guard.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
@@ -57,6 +60,10 @@ import { ExploreformComponent } from './explore/exploreform/exploreform.componen
 import {MatChipsModule} from '@angular/material/chips';
 import { UploadpostComponent } from './explore/uploadpost/uploadpost.component'; 
 import { ChartsModule } from 'ng2-charts';
+import { GuideComponent } from './guidemodule/guide/guide.component';
+import { StatsComponent } from './guidemodule/stats/stats.component';
+import { ResourceComponent } from './guidemodule/resource/resource.component';
+import { ToolsComponent } from './guidemodule/tools/tools.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,11 +86,15 @@ import { ChartsModule } from 'ng2-charts';
     ProjectdetailComponent,
     ExploreformComponent,
     UploadpostComponent,
+    GuideComponent,
+    StatsComponent,
+    ResourceComponent,
+    ToolsComponent,
     
   ],
   imports: [
     MatChipsModule,
-    FormsModule,
+    FormsModule,MatProgressBarModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -98,9 +109,11 @@ import { ChartsModule } from 'ng2-charts';
     MatRippleModule,MatListModule,
     MatSliderModule,
     MatMenuModule,
+    MatTabsModule,
     MatRadioModule,
     MatProgressSpinnerModule,
     MatSelectModule,
+    
     MatBadgeModule,
     MatBottomSheetModule,
     MatSnackBarModule,
@@ -113,7 +126,9 @@ import { ChartsModule } from 'ng2-charts';
     MatDialogModule,
     MatExpansionModule,
     CarouselModule, 
-    ChartsModule
+    ChartsModule,
+    DragDropModule,
+    
   ],
   providers: [AuthGuardGuard,{
     provide:HTTP_INTERCEPTORS  ,

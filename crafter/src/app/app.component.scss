@@ -1,12 +1,12 @@
-$darkblue:#0A0A0F;
+$darkblue:lighten(#010102,1);
 $blur-amount:40;
 $brightness:10;
 $opacity:0.5;
-$light-blue:rgba(27,23,48,0.2);
+$light-blue:lighten(#010102,3);
 $yellowhite:#FFF6C2;
-$darkyellow:#0A0A0F;
-$primary: #2478ffd5;
-$light-grey:#474A58;
+$darkyellow:lighten(#010102,1);
+$primary: #1e74ffdc;
+$light-grey:lighten(#010102,3);
 $pure-black:#000000;
 $text-color:#EFEEF7;
 $pure-white:#FFFFFF;

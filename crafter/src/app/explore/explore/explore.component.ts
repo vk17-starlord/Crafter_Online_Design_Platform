@@ -65,7 +65,9 @@ category:"illustration"
  Allposts:any   
  SearchQuery:any=""
 BasicPallete:any=[
-  '#f44336',
+ 
+  
+  '#DD2036',
   '#e91e63',
   '#673ab7',
   '#2196f3',

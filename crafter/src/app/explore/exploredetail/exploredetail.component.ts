@@ -4,6 +4,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import {ExploreService} from '../../services/explore.service';
 import {ProfileUploadService} from '../../services/profile-upload.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { Params, ActivatedRoute } from '@angular/router';
 import { UserInfoService } from 'src/app/services/user-info.service';
 @Component({
@@ -15,8 +16,16 @@ export class ExploredetailComponent implements OnInit {
 
   isShow: boolean;
   topPosToStartShowing = 100;
+
   C_Id:any;
 CurrentUser:any
+mycomment=(id)=>{
+  if(id===this.CurrentUser._id){
+    return true;
+  }else{
+    return false;
+  }
+};
   @HostListener('window:scroll')
   checkScroll() {
       
@@ -98,7 +107,7 @@ CurrentUser:any
         }
     }
   }
-  constructor(private router:Router,private UserService: UserInfoService,private _snackBar: MatSnackBar,private Profile:ProfileUploadService,private route:ActivatedRoute,private exploreService:ExploreService) { }
+  constructor(private _bottomSheet: MatBottomSheet,private router:Router,private UserService: UserInfoService,private _snackBar: MatSnackBar,private Profile:ProfileUploadService,private route:ActivatedRoute,private exploreService:ExploreService) { }
   Allposts:any
   CurrentPost:any
   AuthorPosts:any;
@@ -110,8 +119,9 @@ CurrentUser:any
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'].toString();
     this.C_Id=id;
+    this.getCurrentUser()
 this.GetCurrentPost(id)
-  this.getCurrentUser()
+
   }
 
   AddComment(){
@@ -134,8 +144,17 @@ this.GetCurrentPost(this.C_Id);
 
   }
 
-  DeleteComment(){
-
+  DeleteComment(text,postId){
+ this.exploreService.DeleteComment(text,postId).subscribe((res)=>{
+  this._snackBar.open('Comment Deleted Successfully !!', 'X',{
+    duration: 2000
+  });
+ this.GetCurrentPost(this.C_Id);
+  },(err)=>{
+    this._snackBar.open('Sorry We couldnt Delete this Comment', 'X',{
+      duration: 2000
+    });
+ })
   }
 
  
@@ -187,7 +206,6 @@ getCurrentUser(){
   this.UserService.GetUserInfo().subscribe((user)=>{
 
     this.CurrentUser = user[0]
-    
    },(err)=>{
      console.log(err)
    })

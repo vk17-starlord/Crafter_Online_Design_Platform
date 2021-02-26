@@ -7,22 +7,20 @@
     <div class="row">
 
 
-        <div class="col-sm-12 col-lg-12">
+        <div class="col-sm-12 col-lg-12 d-flex " >
           
-        <div class="button-wrap">
-          <label class ="new-button" for="upload"> 
-           Change  
-        </label>
-      
-        <input type="file" (change)="onchange($event)" id="upload">
-      
-        </div>
+          <div class="button-wrap">
+            <label class ="new-button" for="upload"> 
+             Change  
+          </label>
+        
+          <input type="file" (change)="onchange($event)" id="upload">
+        
           </div>
-        <br>  
-          <div class="col-sm-12 col-lg-12">
-            <button mat-raised-button  color="primary"  mat-dialog-close [disabled]="show" (click)="onProfileUpload()">Update</button>
-            <button mat-raised-button color="warn"  mat-dialog-close cdkFocusInitial>cancel</button>  
+          <button class="upload"      [disabled]="show" (click)="onProfileUpload()">Update</button>
+
         </div>
+     
           
     </div>
 

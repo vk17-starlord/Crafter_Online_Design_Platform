@@ -1,52 +1,44 @@
+@import "../app.component.scss";
 .profile-container{
     width:100%;
-    height:100%;
+    height:50vh !important;
+    overflow:hidden !important;
     background-color:transparent;
     box-shadow: none;
     display:flex;
     justify-content:center;
     align-items:center;
-
+    background-color: $light-blue;
+    img{
+        width:20vh;
+        height:20vh;
+        border-radius: 50%;
+        object-fit:cover !important
+        
+    }
     .card{
-        width:50vh;
-display:flex;
-justify-content:center;
-flex-direction:column;
-border-radius:10px;
-align-items: center;
-button{
-    margin:20px 30px;
-}
-div,img{
-    text-align: center !important;
-
-}
-        height:50vh;
-        background-color:black;
-        box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 100px 80px rgba(0, 0, 0, 0.12)
-      ;
-color:white;      
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color:transparent !important;
     }
+  }
 
-    .avatar{
-        width:150px;
-        height:150px;
-        border-radius:50%;
-         margin:20px auto;
-        object-position: top center;
-    }
+.upload{
+   margin:10px 20px;
+    color:white !important;    
+    font-size: 16px !important;
+    padding: 6px 20px !important;
+    line-height:16px !important; 
+    background-color: $darkblue;
+    border: none !important;
 }
-
 
 .new-button {
+    margin:10px 20px;
     display: inline-block;
-    padding: 8px 12px; 
+    padding: 6px 12px; 
     cursor: pointer;
     border-radius: 4px;
     background-color: rgb(90,71,248);

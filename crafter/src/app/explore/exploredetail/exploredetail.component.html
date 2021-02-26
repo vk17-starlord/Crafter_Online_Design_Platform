@@ -1,4 +1,6 @@
 <div  #explorecontainer class="explore-detail">
+  
+    <mat-icon class="nav-btn" routerLink="/homepage">chevron_left</mat-icon>
 
     <div class="container">
 <div class="profile-container">
@@ -65,11 +67,11 @@
     <tr>    <h4 style="color: royalblue;font-size:36px;">"</h4>    </tr>
     <tr>    <h4 style="font-size: 20px;text-align:left;">{{post.text}}</h4>    </tr>
     <tr>    <h4 style="font-size: 20px;opacity:0.5;">{{post.postedBy.userName}}</h4>    </tr>
-
+    
 </table>
     <img src="{{post.postedBy.profilePic}}" alt="" class="profile-pic">
-
-
+    <tr *ngIf="post.postedBy.userName===CurrentUser.userName"  style="text-align:right !important">   <mat-icon (click)="DeleteComment(post.text,CurrentPost._id)">delete</mat-icon>   </tr>
+    
 </div>
                          </div>
                     </ng-template>      
@@ -93,10 +95,11 @@
             <div class="item"  (click)="ChangeRoute(post._id)">
              <img [src]="post.d_pic" class="item-bg" alt="">
              <img [src]="post.d_pic" class="item-overlay" alt="">
-<div class="title">
-    <h4>{{post.d_title}}</h4>
-</div>
-            </div>                    
+
+            </div>      
+            <div class="title">
+                <h4>{{post.d_title}}</h4>
+            </div>                  
         </ng-template>      
     </owl-carousel-o>
 </div>
@@ -109,10 +112,11 @@
             <div class="item" (click)="ChangeRoute(post._id)" >
              <img [src]="post.d_pic" class="item-bg" alt="">
              <img [src]="post.d_pic" class="item-overlay" alt="">
-<div class="title">
-    <h4>{{post.d_title}}</h4>
-</div>
-            </div>                    
+         
+            </div> 
+            <div class="title">
+                <h4>{{post.d_title}}</h4>
+            </div>               
         </ng-template>      
     </owl-carousel-o>
 </div>

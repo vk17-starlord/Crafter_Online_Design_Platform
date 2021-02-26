@@ -4,11 +4,11 @@
 <h1 class="title linear-wipe">
   Crafter
 </h1>
-<div class="menu">
+<div class="menu ">
   <a routerLink="/Explore"><mat-icon>public</mat-icon> <span>Explore</span> </a>
   <a routerLink="/blog"><mat-icon>feed</mat-icon> <span>Blogs</span></a>
   <a routerLink="/Project"><mat-icon>design_services</mat-icon> <span>Projects</span></a> 
-  <a routerLink=""><mat-icon>architecture</mat-icon><span> Guide</span></a>
+  <a routerLink="/Guide"><mat-icon>architecture</mat-icon><span> Guide</span></a>
 
 </div>
 
@@ -56,8 +56,9 @@
       
       </div>
 
+
       <div class="recent-blogs">
-        <h1 style="padding-left:2.5%;">Recent Blogs</h1>
+        <h1 style="padding-left:2.5%;"><i class="fas fa-cube"></i> Recent Blogs</h1>
 
      <div class="row">
        <div class="col-sm-12 col-lg-3" [routerLink]="['/blogdetail', blog._id]" *ngFor="let blog of RecentBlogs">
@@ -71,7 +72,7 @@
       </div>
 
       <div class="recent-blogs">
-        <h1 style="padding-left:2.5%;">Recent Posts</h1>
+        <h1 style="padding-left:2.5%;"><i class="fas fa-cube"></i> Recent Posts</h1>
 
      <div class="row">
        <div class="col-sm-12 col-lg-3" [routerLink]="['/Exploredetail', blog._id]" *ngFor="let blog of RecentPosts">
@@ -84,6 +85,18 @@
 
       </div>
 
+      <div class="course-container">
+        <h4><i class="fab fa-youtube"></i> Best Freebies</h4>
+          <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <iframe  src="https://www.youtube.com/embed/C72WkcUZvco?list=PLXC_gcsKLD6n7p6tHPBxsKjN5hA_quaPI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <iframe width="949" height="534" src="https://www.youtube.com/embed/8Qux2Zqk6aQ?list=PLzKJi2GjpkEHB0CuR7JP-rARjkqnzRM2x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        </div>
   
     </div>
     <div  id="profile-container">

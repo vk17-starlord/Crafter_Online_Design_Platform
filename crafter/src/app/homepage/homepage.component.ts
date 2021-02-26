@@ -105,8 +105,22 @@ PostOptions: OwlOptions = {
   NewProjects:any=[]
   ngOnInit(): void {
 
-   let projects= this.Projects.GetAllProjects()
-this.NewProjects=projects.slice(0,4);
+    this.blogService.getallBlogs().subscribe((res)=>{
+      let Blogs:any=[];
+      Blogs=res;
+      
+  
+      let Sorted=Blogs.sort((val1, val2)=>
+       {return new Date(val2.createdAt).getTime() - new 
+        Date(val1.createdAt).getTime()}
+        )
+  
+        if(Sorted.length<4){
+                 this.RecentBlogs=Sorted.slice(0,Sorted.length)
+        }else{
+               this.RecentBlogs=Sorted.slice(0,4);
+        }
+    })
 
    this.Profile.GetUser().subscribe((res)=>{
    
@@ -177,22 +191,7 @@ ele.postedBy.userName=ele.postedBy.userName.trim().slice(0,10).concat('..');
         })
      
 
-    this.blogService.getallBlogs().subscribe((res)=>{
-    let Blogs:any=[];
-    Blogs=res;
-    
-
-    let Sorted=Blogs.sort((val1, val2)=>
-     {return new Date(val2.createdAt).getTime() - new 
-      Date(val1.createdAt).getTime()}
-      )
-
-      if(Sorted.length<4){
-               this.RecentBlogs=Sorted.slice(0,Sorted.length)
-      }else{
-             this.RecentBlogs=Sorted.slice(0,4);
-      }
-  })
+   
   }
   onlogout(){
     this.authentication.logout();
