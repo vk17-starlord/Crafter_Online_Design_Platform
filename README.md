@@ -7,7 +7,7 @@ This project focuses 🎯 on 4 major parts
 
 1 Learn - Its important to  learn a thing throughly and grasp the basics of the things . we will ensure that you will geta good overview of ui ux designing in general .
 
-2 Apply - We Make Sure You Apply the things you learn so we will be providing you with some mini projects to boost you confience(as in web projects for now)..
+2 Apply - We Make Sure You Apply the things you learn so we will be providing you with some mini projects to boost you confidence(as in web projects for now)..
 
 3 Share - Its important to share your skillset and knowledge to people around you . Your Contrubution to design community is important as it will enhance your confidence and will help out people as much as possible
  
