@@ -33,7 +33,7 @@ This project focuses 🎯 on 4 major parts
 
 8 Guide of UI UX design
 
-  a Stats on UI UX Design - Data analytics on UI UX Design with https://www.npmjs.com/package/ng2-charts
+  a Stats on UI UX Design 
   
   b Tools Used for UI UX design
   
