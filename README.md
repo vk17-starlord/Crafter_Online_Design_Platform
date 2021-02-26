@@ -40,8 +40,7 @@ This project focuses 🎯 on 4 major parts
   
   
   
-
-https://user-images.githubusercontent.com/53342781/109319220-a1bd2880-7874-11eb-9f61-14c88efaab77.png
+![Screenshot_2021-02-26 Crafter](https://user-images.githubusercontent.com/53342781/109319220-a1bd2880-7874-11eb-9f61-14c88efaab77.png)
 
  
  
