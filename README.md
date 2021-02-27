@@ -40,9 +40,9 @@ This project focuses 🎯 on 4 major parts
   c Resources Guide for ui ux design
   
   
-  ---- UI of Crafter Website !
+   ✒️ UI of Crafter Website !
   
-  Tech Stack - MEAN STACK
+  ⚙️ Tech Stack - MEAN STACK
   
   
   
@@ -58,11 +58,8 @@ This project focuses 🎯 on 4 major parts
 ![Screenshot_2021-02-26 Crafter(3)](https://user-images.githubusercontent.com/53342781/109320026-8ef72380-7875-11eb-9902-01a3f87dc680.png)
 
 ⭐ Homepage
-View-1
 
 ![Screenshot_2021-02-26 Crafter(4)](https://user-images.githubusercontent.com/53342781/109320177-bea62b80-7875-11eb-94b8-6e2378105356.png)
-
-View-2 
 
 ![Screenshot_2021-02-26 Crafter(5)](https://user-images.githubusercontent.com/53342781/109320382-f614d800-7875-11eb-9ba0-230c002613f6.png)
 
