@@ -101,7 +101,7 @@ This project focuses 🎯 on 4 major parts
 ![Screenshot_2021-02-26 Crafter(17)](https://user-images.githubusercontent.com/53342781/109324312-7c331d80-787a-11eb-8370-6fd7277c1b1f.png)
 
 
-⭐ Project Section
+⭐ Design Guide Section
 
 This section is under development will update section asap !!
 
