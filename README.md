@@ -6,7 +6,7 @@ Hello Guys !! This Webapp is a unique platform developed for a young and creativ
 
 This project focuses 🎯 on 4 major parts
 
-1 Learn - Its important to  learn a thing throughly and grasp the basics of the things . we will ensure that you will geta good overview of ui ux designing in general .
+1 Learn - Its important to  learn a thing throughly and grasp the basics of the things . we will ensure that you will get a good overview of ui ux designing in general .
 
 2 Apply - We Make Sure You Apply the things you learn so we will be providing you with some mini projects to boost you confidence(as in web projects for now)..
 
