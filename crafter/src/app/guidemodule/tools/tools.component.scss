@@ -1,0 +1,165 @@
+@import "../../app.component";
+.tool-container{
+    width: 100% !important;
+  height:auto;
+ min-height: 100vh;
+}
+.hero-container{
+    width:100%;
+
+        animation:backInLeft;
+        animation-duration:3s;
+   
+    min-height:75vh;
+    background-size: contain;
+    background-attachment: fixed;
+    background:white;
+    background-color: rgba($color: #20232A, $alpha: 2);
+    #img{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+            background-image: url('https://cdn.dribbble.com/users/837170/screenshots/10834242/media/990e0fd562dc38a361ee25147b8029fd.png?compress=1&resize=1000x750');
+        
+            
+    }
+    #img,#t-container{
+        // border: 1px solid red;
+        min-height: 75vh;
+   
+    }
+    h4{
+        width: 80%;
+        margin:10px 0;
+        padding: 0 10px ;
+        opacity:.7;
+        font-family: JosefinSans;
+        font-size: 30px;
+        line-height: 110%;
+    }
+    h1{
+        margin: 10px 0;
+        padding: 0 10px!important;
+        font-size: 52px;
+        line-height:110%;
+        color:white;
+font-family: Vester;
+i{
+color: rgb(255, 166, 0);
+font-size: 40px;    
+}    
+} 
+   
+}
+.tab-content{
+    width: 100%;
+    min-height: 100vh;
+    .row{
+        width: 85%;
+        margin: 20px auto;
+    }
+
+}
+.tab-container{
+    width:100%;
+    min-height: 100vh;
+    i{
+        margin:0px 10px;
+        color: white !important;
+    }
+}
+
+
+.card-container{
+    padding: 10px;
+    height: auto;
+    min-height: 450px;
+}
+.app{
+
+
+    border: 1px solid black;
+    width:100%;
+    height:100%;
+    border-radius: 20px;
+    text-align: center;
+    h4{
+        font-size: 18px;
+        font-family:RobotoLight;
+        text-align: left;
+        margin:20px auto;
+
+    }
+    h3{
+        margin: 10px auto;
+        line-height:100%;
+        font-size: 20px ;
+        color: rgb(212, 248, 236);
+        font-family: JosefinSansBold;
+        
+    }
+    a{
+        margin: 10px auto;
+        color: white;
+        padding: 10px 20px;
+        transition:2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        background-color: $primary;
+         &:hover{
+            background-color: white;
+            color: $primary;
+
+         }
+    }
+#logo{
+    width: 10vh;
+    object-fit: cover;
+    position: relative;
+    margin: 0 auto;
+    margin-top: -5vh;
+    margin-bottom: 10px;
+    height:10vh;
+    border-radius: 50%;
+}
+    .bg-image{
+    overflow:hidden;
+    position: relative;
+    width:100%;
+    height:200px;
+    
+    img{
+        background-color: white;
+        width:100%;
+        height:100%;
+        object-position: center;
+        object-fit: cover;
+        &:hover{
+            animation:zoomOut;
+            animation-duration:2s;
+        }
+    }
+    border-radius: 20px 20px 0 0;
+     
+
+}
+}
+
+.web-card{
+    width: 100%;
+    border-radius: 20px;
+    background-color: #000000;
+   min-height: 550px;    
+}
+
+.row{
+    margin: 0 auto!important;
+    padding: 0 !important;
+}
+
+div{
+    max-width: 100% !important;
+}
+
+.tab-container{
+    max-width: 100% !important;
+    overflow-x: hidden !important
+}

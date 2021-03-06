@@ -128,7 +128,8 @@ import { ToolsComponent } from './guidemodule/tools/tools.component';
     CarouselModule, 
     ChartsModule,
     DragDropModule,
-    
+
+
   ],
   providers: [AuthGuardGuard,{
     provide:HTTP_INTERCEPTORS  ,
