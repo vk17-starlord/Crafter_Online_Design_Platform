@@ -49,14 +49,14 @@ export class StatsComponent implements OnInit {
     ]
   }
   Countries:any=[
-    {country: 'India' , response:123 , img:"https://uxtools.co/images/survey-2019/country-india.svg"},
-    {country: 'USA' , response:648 , img:"https://uxtools.co/images/survey-2019/country-usa.svg"},
-    {country: 'Germany' , response:118 , img:"https://uxtools.co/images/survey-2019/country-germany.svg"},
-    {country: 'France' , response:80 , img:"https://uxtools.co/images/survey-2019/country-france.svg"},
-    {country: 'Canada' , response:143 , img:"https://uxtools.co/images/survey-2019/country-canada.svg"},
-    {country: 'Israel' , response:77 , img:"https://uxtools.co/images/survey-2019/country-israel.svg"},
-    {country:"UK", response:133, img:"https://uxtools.co/images/survey-2019/country-uk.svg"},
-    {country: 'Other' , response:123 , img:"https://uxtools.co/images/survey-2019/country-globe.svg"},
+    {country: 'India' , response:123 , img:"https://uxtools.co/survey-assets/survey-2019/country-india.svg"},
+    {country: 'USA' , response:648 , img:"https://uxtools.co/survey-assets/survey-2019/country-india.svg"},
+    {country: 'Germany' , response:118 , img:"https://uxtools.co/survey-assets/survey-2019/country-germany.svg"},
+    {country: 'France' , response:80 , img:"https://uxtools.co/survey-assets/survey-2019/country-france.svg"},
+    {country: 'Canada' , response:143 , img:"https://uxtools.co/survey-assets/survey-2019/country-canada.svg"},
+    {country: 'Israel' , response:77 , img:"https://uxtools.co/survey-assets/survey-2019/country-israel.svg"},
+    {country:"UK", response:133, img:"https://uxtools.co/survey-assets/survey-2019/country-uk.svg"},
+    {country: 'Other' , response:123 , img:"https://uxtools.co/survey-assets/survey-2019/country-globe.svg"},
 
   ]
 

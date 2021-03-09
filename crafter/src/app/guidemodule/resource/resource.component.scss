@@ -1,0 +1,172 @@
+@import '../../app.component.scss';
+.r-container{
+    width:100%;
+    border: 1px solid $darkyellow;
+    min-height:100vh;
+
+    background-color: lighten($color: $darkyellow, $amount: 02);
+}
+
+.hero-container{
+    width: 90%;
+    min-height: auto;
+    margin: 12.5vh auto;
+
+    background-color: #FCC207;
+    border-radius: 20px;
+#img,#text{
+    
+    min-height: 75vh;
+    button{
+        border: none;
+        padding:15px 25px;
+        font-size: 20px;
+        font-family: JosefinSansBold;
+        background-color: $darkyellow;
+        color: white;
+        &:hover{
+            background-color:lighten($darkyellow,10);
+        }
+    }
+    h1{
+        width:70%;
+        
+        font-size: 42px;
+        line-height: 110%;
+        text-align: left;
+        font-family: Vester;
+    }
+}
+#img{
+    border-radius: 20px 0px 0px 20px;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('./pexels-gabby-k-6238133.jpg');
+}
+}
+
+#c-container{
+    width:90%;
+    margin: 0 auto;
+    min-height: 100vh;
+
+}
+
+.y-container{
+    width:100%;
+    padding: 0 !important;
+    margin: 0 !important;
+   
+
+}
+
+.y-card{
+    width: 100%;
+    padding: 10px;
+    padding-top: 0 !important;
+    a,#name{
+        width:70% !important;
+        i{
+            margin: 0 5px;
+        }
+    }
+    #name{
+
+        width: 100%;
+        margin: 10px auto;
+        font-family: RobotoLight;
+        font-size:16px;
+        line-height: 20px;
+        text-align: left;
+        padding: 0px 20px;
+
+    }
+    #channel{
+width: 100%;
+padding: 0px 20px;
+text-align: left;
+        i{
+            color: red;
+        }
+        font-family: JosefinSansBold;
+        font-size: 20px;
+        line-height: 110%;
+        margin: 5px auto;
+    }
+    .i-card{
+        width:100%;
+        height: 100%;
+       background-color: $darkblue;
+        min-height: auto;
+        padding: 10px 0;
+text-align: center;
+        border-radius: 20px;
+
+    }
+    .bg{
+        border-radius: 20px;
+         
+        width:100%;
+        min-height: 20vh;
+        background-size: cover;
+         background-image: url('./Thur.png');
+  
+    }
+    img{
+        margin: 10px auto;
+margin-top: -7.5vh;
+        width: 15vh;
+        height: 15vh;
+        border-radius: 50%;
+    }
+
+}
+
+#title{
+    font-size: 28px;
+    font-family: JosefinSansBold;
+    text-align: center;
+}
+
+.d-container{
+    width:100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-size: cover;
+    background-color: $darkblue;
+    #menu{
+        h1{
+            font-family: JosefinSansBold;
+            text-align: center;
+     padding:10px ;
+     margin: 20px auto;
+        }
+    }
+    #menu,#detail{
+        min-height: 70vh;
+
+
+
+        padding: 0 !important;
+    }
+}
+
+.menu{
+  font-size:20px ;
+    display:block ;
+    text-align:center;
+
+}
+
+.product{
+    width: 100%;
+
+    min-height: 70vh;
+}
+.slider{
+background-image: url('https://image.freepik.com/free-vector/microchip-processor-background-realistic-design_52683-58315.jpg');
+background-size: cover;
+    width:100%;
+    min-height: 30vh;
+    background-position: center;
+}

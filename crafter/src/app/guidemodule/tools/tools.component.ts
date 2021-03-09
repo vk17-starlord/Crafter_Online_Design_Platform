@@ -90,31 +90,84 @@ websites:any=[
       link:'https://color.adobe.com/create/color-wheel'
       ,name:'Adobe color'
       ,img:'https://www.videomaker.com/wp-content/uploads/2020/09/Adobe-Color-Explore.gif',
-       desc:'try out, create and save various colour schemes, each of which consists of a set of five colours." ... Users can export a color scheme straight into Adobe Photoshop, Adobe Illustrator and Adobe InDesign'
+       desc:'try out, create and save various colour schemes consists of a set of five colours.',
   },
   {
-    img:'https://www.pexels.com/assets/pexels-stock-photos-6c3d5eb0cbed47e1bdf44ff85ebd9cd4669f50b895b3c6e76a23a4fd43852099.jpg',
-    name:'Pexels',
-    desc:'Download and use the best free stock photos and videos. ✓ High-quality ✓ 100% free ✓ No attribution needed.'
-      ,link:'https://www.pexels.com/'
+    link:'https://www.canva.com/colors/color-palette-generator/'
+    ,name:'Canva '
+    ,img:'https://static-cse.canva.com/blob/139430/09.-Refreshing-_-Pretty.png',
+     desc:' create color combinations in seconds. Simply upload a photo',
+},
 
-  },
   {
-    img:'https://www.pexels.com/assets/pexels-stock-photos-6c3d5eb0cbed47e1bdf44ff85ebd9cd4669f50b895b3c6e76a23a4fd43852099.jpg',
-    name:'Pexels',
-    desc:'Download and use the best free stock photos and videos. ✓ High-quality ✓ 100% free ✓ No attribution needed.'
-    , link:'https://pixabay.com/'
-
-  },
+    img:'https://media.flaticon.com/share/flaticon-generic.jpg',
+    link:'https://www.flaticon.com/',
+    desc:'  Thousands of free icons in the largest database of free vector icons!'
+    ,name:'Flaticon'
+  }
+  ,
 
  {
    img:'https://lh3.googleusercontent.com/-Bdu5yhyynw-Npepw3ERkztP_HRUfJurPpeVwK7zTmZncjE4p3h2bMfV9ao7SWPMNVZ5RWe1XZTQfHeHLj5_69BSXl0uueeaeUVd=w1064-v0',
    link:'https://material.io/icons/',
-   desc:'Material icons are delightful, beautifully crafted symbols for common actions and items. Download on desktop to use them in your digital products for Android, iOS, and web.'
+   desc:'Material icons are delightful, beautifully crafted symbols for common actions and items.'
    ,name:'Material Icons'
  }
+ ,
+ {
+  img:'https://fontawesome.com/images/open-graph.png',
+  link:'https://fontawesome.com/',
+  desc:'The next generation of our icon library + toolkit is coming,'
+  ,name:'Fontawesome'
+}
+,
+{
+  img:'https://www.pexels.com/assets/pexels-stock-photos-6c3d5eb0cbed47e1bdf44ff85ebd9cd4669f50b895b3c6e76a23a4fd43852099.jpg',
+  name:'Pexels',
+  desc:'Download and use the best free stock photos and videos. ✓ High-quality ✓ 100% free '
+    ,link:'https://www.pexels.com/'
 
+}
+,
+{
+  img:'https://s3-alpha-sig.figma.com/plugins/738454987945972471/224/7504091c-8b74-4c6a-a471-b1d2d06cec46-cover?Expires=1615766400&Signature=hCwUW62zern7jccmylv4FoHGYTgJa5igwogUFRuJHE-2tWrW06FhCdt7xcrgnwOD9UCZY~ZKE-mLDyTc9NP8LmyTObGw1snDdzRB2l0yvpIU845-agVH3miKt0sdtTOcZahSmIoUsKLLLPxT5QbkvHqAkwBKJgVPTFVzJdMH376JbjRQJQA4W31YbXKnIEzeKBywVCaVtzghdWy3lVeh-mbUlhqDu~5rZmzGEanNYcq0S6-GAMZ9oxGsvbk09FMTbymKvcDfVZlEAbalLS3bPxxtAWWLVnNBZYHju-QJ2yyt1RbCmVUNDceeiTioppNQl5yFmbBrn166ssE80c~BDg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+  name:'Unsplash',
+  desc:'Beautiful, free images and photos that you can download and use for any project.'
+    ,link:'https://unsplash.com/'
 
+}
+,
+{
+  img:'https://play-lh.googleusercontent.com/jKXCdv5Q_65sl1HriQh7sEDLNhx10ExLOjmMIW0sPW8BF9G9M_H5-PjkPkLP3Cmt1nM',
+  name:'Shutterstock',
+  desc:'Over 200,000 New Images Added Daily. Discover Our Beautiful Collection'
+    ,link:'https://www.shutterstock.com'
+
+}
+,
+{
+  img:'https://cdn.dribbble.com/assets/pro/landing-page/profile-desktop-x2-01baa8faad0be1942d913c0751648e13cc4d19228dcbb0d4e3abb2cb8f26b90a.png',
+  name:'Dribbble',
+  desc:'Dribbble is where designers gain inspiration, feedback, community, and jobs .'
+    ,link:'https://dribbble.com/'
+
+}
+,
+{
+  img:'https://cdn.mos.cms.futurecdn.net/azUHp3WBrAGumLLiVu5KXf-1200-80.jpg',
+  name:'Behance',
+  desc:'Behance is the worlds largest creative network for showcasing and discovering creative work..'
+    ,link:'https://www.behance.net/'
+
+}
+,
+{
+  img:'https://s.pinimg.com/images/facebook_share_image.png',
+  name:'Pinterest',
+  desc:'Discover recipes, home ideas, style inspiration and other ideas to try.'
+    ,link:'https://in.pinterest.com/'
+
+}
 ]
 
 }

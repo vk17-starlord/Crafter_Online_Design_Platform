@@ -42,6 +42,9 @@ div{
      align-items:center;
      text-align: center;
      margin: 20px auto;
+     i{
+         color: white !important;
+     }
 &:hover{
     background-color: $primary;
 }
