@@ -17,27 +17,27 @@ export class HomepageComponent implements OnInit {
   Cards:any=[
     {
       heading:"Explore",
-      desc:"Trending Design To Inspire You !! ",
+      desc:"Trending Design To Inspire You !! Find your design inspiration with us and share..",
       img:"https://i.pinimg.com/564x/37/22/3d/37223dfaa6b4c108d287b6bee61e9948.jpg"
       ,link:"/Explore",    
 
     },
     {
       heading:"Blogs",
-      desc:"Where Good Ideas Find You ",
+      desc:"The best ideas can change who we are. Medium is where those ideas take shape.. ",
 img:"https://i.pinimg.com/564x/e5/6a/e9/e56ae9a5ddaef82a110f357ab12f6b26.jpg"
 ,link:"/blog",    
 },
     {
       heading:"Guide",
-      desc:"Learn Basic Of Design with us !!",
+      desc:"Learn  adaptable system of guidelines, components, and tools that support the best practices ...!!",
       img:"https://i.pinimg.com/564x/9e/00/55/9e005544f786ea57d88d0b9f368f731c.jpg"
       ,
       link:"/Guide",
     },
    {
      heading:"Projects",
-     desc:"start your Journey As Designer !",
+     desc:"Learn different techniques by seeing how other people have approached challenges..",
      img:"https://i.pinimg.com/564x/8f/60/83/8f608388e3f6b47a223c752305968d06.jpg"
      ,link:"/Project",
 
@@ -118,7 +118,7 @@ PostOptions: OwlOptions = {
         if(Sorted.length<4){
                  this.RecentBlogs=Sorted.slice(0,Sorted.length)
         }else{
-               this.RecentBlogs=Sorted.slice(0,4);
+               this.RecentBlogs=Sorted.slice(0,3);
         }
     })
 
@@ -155,16 +155,15 @@ PostOptions: OwlOptions = {
             this.RecentUsers=Sorted.slice(0,6);
      }
     if(this.RecentUsers.length>0){
-      console.log(this.RecentUsers)
       this.RecentUsers.forEach((ele)=>{
 
         if(ele.postedBy.userName.length>10){
-ele.postedBy.userName=ele.postedBy.userName.trim().slice(0,10).concat('..');
+ele.postedBy.userName=ele.postedBy.userName.trim().slice(0,20).concat('..');
 
         }
       })
       this.ShowUsers=true;
-
+ console.log(this.RecentUsers)
     }else{
       this.ShowUsers=false;
     }

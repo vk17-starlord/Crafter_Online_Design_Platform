@@ -1,131 +1,101 @@
-<div id="homepage">
-  <div class="container">
-    <div  id="menu-container">
-<h1 class="title linear-wipe">
-  Crafter
-</h1>
-<div class="menu ">
-  <a routerLink="/Explore"><mat-icon>public</mat-icon> <span>Explore</span> </a>
-  <a routerLink="/blog"><mat-icon>feed</mat-icon> <span>Blogs</span></a>
-  <a routerLink="/Project"><mat-icon>design_services</mat-icon> <span>Projects</span></a> 
-  <a routerLink="/Guide"><mat-icon>architecture</mat-icon><span> Guide</span></a>
+<div class="homepage-container row">
+  <div class="col-sm-12 col-lg-2" id="menu">
+    <div class="navbar">
+      <h1>Crafter</h1>
+      
+        </div>
+      <div class="menu">
+        <a routerLink='/blog'> <i class="fab fa-blogger-b"></i> Blog</a>
+        <a routerLink='/Explore'> <i class="far fa-compass"></i> Explore</a>
+        <a routerLink='/Guide'><i class="fas fa-graduation-cap"></i> Guide </a>
+        <a routerLink='/Project'> <i class="fas fa-project-diagram"></i> Project </a>
 
-</div>
+      </div>
 
-<div class="bottom">
-  <button mat-raised-button (click)="onlogout()" class="btn">Logout</button>
-</div>
+      <button (click)="onlogout()">Log Out</button>
 
-</div>
-    <div class="profile-block mob">
-      <img [src]="CurrentUser.profilePic" [routerLink]="['/profilepage', CurrentUser._id]"alt="profile-pic" class="profile-pic">
-       <!-- <mat-icon  class="verify">verified</mat-icon> -->
-       <table>
-           
-           <tr id="name"> {{CurrentUser.userName}}</tr>
-         
-           
-          </table>
   </div>
-    <div id="main-container">
+  
+  <div class="col-sm-12 col-lg-8">
+   <div class="container">
+
+
+    <div class="slide-container d-flex justify-content-center align-items-center ">
+      <div class="slider">   
+        <owl-carousel-o [options]=" customOptions2">
+  
+          <ng-template carouselSlide *ngFor="let post of   Cards" >
+              <div class="slider-card row">
+  
+                <div class="col-sm-6 " id="desc">
+                  <h3>{{post.heading}}</h3>
+                  <p>{{post.desc}}</p>
+  <button [routerLink]='post.link'> View </button>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center align-items-center" id="img">
+                  <img src="{{post.img}}" alt="">
+                </div>
+  
+              </div>    
+          </ng-template>      
+      </owl-carousel-o>
     
-      <div class="menu-slider">
-        <owl-carousel-o [options]="customOptions2" >
-          <ng-template carouselSlide  *ngFor="let card of Cards" >
-            <div class="item">
-         <div class="blur">
+      </div>   
+     
 
-         </div>
-          <div class="blur-overlay">
-         <div class="row">
-           <div class="col-sm-6 col-lg-6">
-             <h1>{{card.heading}}</h1>
-             <h4>{{card.desc}}</h4>
-             <button routerLink="/{{card.link}}" class="button">View More <mat-icon>arrow_right</mat-icon></button>
       
-            </div>
-           <div class="col-sm-6 col-lg-6">
-           <img [src]="card.img" alt="" class="photo">
-            </div>
 
-          </div>
-          </div>
-            </div>                    
-        </ng-template>      
-        </owl-carousel-o>
-      
-      </div>
-
-
-      <div class="recent-blogs">
-        <h1 style="padding-left:2.5%;"><i class="fas fa-cube"></i> Recent Blogs</h1>
-
-     <div class="row">
-       <div class="col-sm-12 col-lg-3" [routerLink]="['/blogdetail', blog._id]" *ngFor="let blog of RecentBlogs">
-       <div class="recent-card">
-      <img [src]="blog.b_coverPhoto" alt="">
-      <p>{{blog.b_title}}</p>
-       </div>
-       </div>
-     </div>
-
-      </div>
-
-      <div class="recent-blogs">
-        <h1 style="padding-left:2.5%;"><i class="fas fa-cube"></i> Recent Posts</h1>
-
-     <div class="row">
-       <div class="col-sm-12 col-lg-3" [routerLink]="['/Exploredetail', blog._id]" *ngFor="let blog of RecentPosts">
-       <div class="recent-card">
-      <img [src]="blog.d_pic"  alt="">
-      <p>{{blog.d_title}}</p>
-       </div>
-       </div>
-     </div>
-
-      </div>
-
-      <div class="course-container">
-        <h4><i class="fab fa-youtube"></i> Best Freebies</h4>
-          <div class="row">
-          <div class="col-sm-12 col-lg-6">
-            <iframe  src="https://www.youtube.com/embed/C72WkcUZvco?list=PLXC_gcsKLD6n7p6tHPBxsKjN5hA_quaPI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
-          </div>
-          <div class="col-sm-12 col-lg-6">
-            <iframe width="949" height="534" src="https://www.youtube.com/embed/8Qux2Zqk6aQ?list=PLzKJi2GjpkEHB0CuR7JP-rARjkqnzRM2x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-        </div>
-  
     </div>
-    <div  id="profile-container">
-      <div class="profile-block large">
-        <img [src]="CurrentUser.profilePic" [routerLink]="['/profilepage', CurrentUser._id]"alt="profile-pic" class="profile-pic">
-        
-        <h2 id="name"> {{CurrentUser.userName}}</h2>
-        
-        
- 
-        <!-- <mat-icon  class="verify">verified</mat-icon> -->
+    <h1 id="h-title">Recent Articles</h1>
+    <div class="blog-container row" *ngFor="let blog of RecentBlogs; let indexOfelement=index">
+
+      <div class="col-sm-12 col-lg-5" id='img' *ngIf="indexOfelement % 2==0">
+        <img [src]="blog.b_coverPhoto" alt="">
+      </div>
+      <div class="col-sm-12 col-lg-7" id='txt'>
+
+        <h4> {{indexOfelement+1}} : {{blog.b_title}}</h4>
+<p>{{blog.b_desc}}</p>
+<button [routerLink]="['/blogdetail', blog._id]" > Read More </button>
+      </div>
+
+      <div class="col-sm-12 col-lg-5" id='img' *ngIf="indexOfelement % 2!=0">
+        <img [src]="blog.b_coverPhoto" alt="">
+      </div>
     </div>
-   <div class="profile-container">
-     <h4>Recent Users</h4>
-     <div class="row">
-       <div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let profile of RecentUsers">
-         <img [routerLink]="['/profilepage', profile.postedBy._id]" [src]="profile.postedBy.profilePic" alt="">
-     <p>{{profile.postedBy.userName}}</p>
-        </div>
-     </div>
+
+    <div class=" b-container">
+<h2 id="h-title">Latest Design</h2>
+<div class=" row">
+  <div  [routerLink]="['/Exploredetail', design._id]" class="col col-sm-12 col-lg-6" *ngFor="let design of  RecentPosts" >
+    <img [src]="design.d_pic" alt="">
+  </div>
+
+
+</div>
+
+
+</div>
+
    </div>
-    
-
-   <div class="tip-container">
-  <h4>Tip of the Day</h4>
-   <p>Make your interfaces easy to learn</p>
-
+   
   </div>
 
-  </div>
-  </div>
+  
+  <div class="col-sm-12 col-lg-2" id="users">
+   <div class="profile-bg">
+
+   </div>
+      <img [routerLink]="['/profilepage',CurrentUser._id]" [src]="CurrentUser.profilePic" alt="" id="profile-pic">
+          <p>{{CurrentUser.userName}}</p>
+
+          <div class="userlist">
+<h4>Recent Users</h4>
+            <div *ngFor="let user of RecentUsers">
+<p [routerLink]="['/profilepage',user.postedBy._id]"> <img [src]="user.postedBy.profilePic" alt="" id="u-pic"> <span>{{user.postedBy.userName}}</span></p>
+            </div>
+
+          </div>
+
+    </div>
 </div>
