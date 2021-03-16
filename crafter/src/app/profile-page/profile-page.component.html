@@ -34,7 +34,17 @@
       <span id="label"> Blog </span>
     </ng-template>
 
-    <div class="row blog-container">
+    <div class="n-container" *ngIf="this.profileUser.blog.length<1">
+      <div class="not-posted">
+
+      </div>
+       <h4>
+        You haven’t uploaded any Article yet
+       </h4>
+       <button routerLink='/blogform'>Upload </button>
+    </div>
+ 
+    <div class="row blog-container" >
     <div  class="col-sm-12 col-lg-4 col" *ngFor="let blog of profileUser.blog">
       <div class="blog" [routerLink]="['/blogdetail', blog._id]">
       <img [src]="blog.b_coverPhoto" alt="txt">
@@ -51,6 +61,15 @@
     <i class="fas fa-image"></i>
     <span id="label"> Designs </span>
   </ng-template>
+  <div class="n-container" *ngIf="this.profileUser.blog.length<1">
+    <div class="not-posted">
+
+    </div>
+     <h4>
+      You haven’t uploaded any Post yet
+     </h4>
+     <button routerLink='/Exploreform'>Upload </button>
+  </div>
   <div class="d-container row">
     <div class="col-sm-12 col-lg-4 post-card" *ngFor="let post of profileUser.dribbble">
 

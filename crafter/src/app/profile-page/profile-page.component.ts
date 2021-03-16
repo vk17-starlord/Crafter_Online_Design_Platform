@@ -108,7 +108,7 @@ if(this.profileUser.profile.length<1){
   this.profileUser.profile.p_coverPhoto="https://images.pexels.com/photos/2775196/pexels-photo-2775196.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 }
 
-console.log(this.profileUser.dribbble)
+console.log(this.profileUser.blog.length)
 
 
 if(this.profileUser.profile.length>0){

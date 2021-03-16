@@ -128,6 +128,7 @@ p{
 
 .post-card{
     padding: 10px;
+margin: 10px auto;
 }
 
 .post{
@@ -167,5 +168,38 @@ img{
          line-height: 150%;
      }
     }
+
+}
+
+.n-container{
+    width:100%;
+    text-align: center !important;
+    h4{
+        margin-top: 20px;
+        padding: 20px;
+        font-size: 20px;
+        padding: 0 !important;
+        font-family: JosefinSansBold;
+    }
+    button{
+
+        margin:10px auto;
+        border-radius: 20px;
+        padding: 10px 30px;
+        background-color: $primary;
+        color: white;
+        font-size: 20px;
+     border: none;
+
+    }
+}
+.not-posted{
+    width: 100%;
+    min-height: 25vh;
+    background-image: url('./undraw_Appreciation_re_p6rl.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5vh ;
 
 }
