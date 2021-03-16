@@ -1,115 +1,74 @@
-<div id="profile-page">
-<div class="cover-photo" style="background-image:url('{{profileUser.profile.p_coverPhoto}}')">
-</div>
-<div class="fixed-div">
-  <img  (click)="openBottomSheet()" [src]="profileUser.user.profilePic" alt="" class="profile-pic">
-</div>
-<div class="profile-info " data-aos="fade-right">
-<div class="row">
-  <div class="col-sm-4" id="info">
-    <h4>
-      {{profileUser.user.firstName}}
-      {{profileUser.user.lastName}}
+ 
+<div class="profile-container">
 
-    </h4>
+  <div class="container">
+    <div class="cover-photo" style="background-image:url('{{profileUser.profile.p_coverPhoto}}')">
 
-    <h3>
-      {{profileUser.user.userName}}
-    </h3>
-     
-    <h2><i class="fas fa-briefcase"></i>  {{profileUser.user.whoAreYou}}</h2>
-    <h2><i class="fas fa-envelope"></i>  {{profileUser.user.email}}</h2>
-   <div *ngIf="this.Viewer===this.profileUser.user._id">
-    <button routerLink="/Editprofile" class="btn"*ngIf="Edit">Edit</button>
-    <button  routerLink="/profileform" class="btn" *ngIf="Upload">Create </button>
+    </div>
+  <div class="profile-box row">
+    <div class="col-sm-12 col-lg-3 col d-flex justify-content-start align-items-center flex-column">
+      <img [src]="profileUser.profile.postedBy.profilePic" (click)="openBottomSheet()" alt="">
+    </div>
+    <div class="col-sm-12 col-lg-9 col">
 
-   </div>
-  
+      <h4>{{profileUser.user.firstName}} {{profileUser.user.lastName}}</h4>
+       <p><i class="fas fa-briefcase"></i> {{profileUser.user.whoAreYou}}</p>
+       <p><i class="fas fa-briefcase"></i> {{profileUser.user.email}}</p>
+   <p><i class="fas fa-biohazard"></i>{{profileUser.profile.bio}}</p>
+  <div *ngIf="this.Viewer===this.profileUser.user._id">
+    <button *ngIf="Edit" routerLink='/Editprofile'>Edit </button>
+    <button *ngIf="Upload" routerLink='/Uploadpost'>Upload </button>
+
   </div>
-  <div class="col-sm-12 col-lg-8 " id="about-container" >
-    <div class="row about-row" >
-      <div class="col-sm-12 col-lg-4 ">
-        <div class="about-card">
-          <h1><i class="fas fa-biohazard"></i></h1>
-          <p>{{profileUser.profile.desc}}</p>
-       
-        </div>
- 
-      </div>
-      <div class=" col-sm-12 col-lg-4">
-     <div class="about-card">
-      <h1><i class="fas fa-quote-left"></i> </h1>
-      <p>{{profileUser.profile.bio}}</p>
-                
-      <div *ngFor="let icon of  profileUser.profile.p_links">
-        <p ><a href="{{icon.link_url}}" target="_blank">
-          <i class="fab  fa-{{icon.link_type}}"></i>
-        </a></p>
-      </div>
-    </div>
 
-         </div>
+   
+  </div>
 
-    </div>
- 
-    </div>
+  </div>
+
   
-  
-
-</div>
-</div>
-
-<div class="work-contanier">
+<div class="tab-container">
   <mat-tab-group mat-align-tabs="center">
-    <mat-tab >
-      <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">auto_awesome_mosaic</mat-icon>
-         
-      </ng-template>
-  
-    <div *ngIf=" this.profileUser.dribbble.length<1" class="not-found">
-      
+    <mat-tab> <ng-template mat-tab-label>
+      <i class="fab fa-blogger-b"></i>
+      <span id="label"> Blog </span>
+    </ng-template>
 
-    </div>
- 
-    <div cdkDropList class="row " (cdkDropListDropped)="drop($event)">
-      <div   cdkDrag class="col-sm-12 col-lg-4 card-container" *ngFor="let post of profileUser.dribbble">
-       <div class="post " >
-           <div class="img" [routerLink]="['/Exploredetail', post._id]">
-            <img [src]="post.d_pic" alt="" >
-
-           </div>
-        <h4>{{post.d_title}}</h4>
-       </div>
+    <div class="row blog-container">
+    <div  class="col-sm-12 col-lg-4 col" *ngFor="let blog of profileUser.blog">
+      <div class="blog" [routerLink]="['/blogdetail', blog._id]">
+      <img [src]="blog.b_coverPhoto" alt="txt">
+      <div class="txt">
+        <h4>{{blog.b_title}}</h4>
+        <p>{{blog.b_body[0].para[0].text}}</p>
+      </div>
       </div>
     </div>
+    </div>
 
-    </mat-tab>
-    <mat-tab >
-      <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">article</mat-icon>
-         
-      </ng-template>
-      <div *ngIf="this.profileUser.blog.length<1" class="not-found">
-      </div>
-      <div   class="row " >
-        <div class="col-sm-12 col-lg-4 card-container" [routerLink]="['/blogdetail', post._id]"  *ngFor="let post of profileUser.blog">
-         <div class="post">
-             <div class="img" >
-              <img [src]="post.b_coverPhoto" alt="">
-  
-             </div>
-<div class="desc">
-  <h4>{{post.b_title}}</h4>
-</div>
+  </mat-tab>
+  <mat-tab> <ng-template mat-tab-label>
+    <i class="fas fa-image"></i>
+    <span id="label"> Designs </span>
+  </ng-template>
+  <div class="d-container row">
+    <div class="col-sm-12 col-lg-4 post-card" *ngFor="let post of profileUser.dribbble">
 
-         </div>
-        </div>
+      <div class="post" [routerLink]="['/Exploredetail', post._id]">
+
+        <img [src]="post.d_pic" alt="">
+
       </div>
-    </mat-tab>
+
+    </div>
+  </div>
+</mat-tab>
 
   </mat-tab-group>
-</div>
-
 
 </div>
+
+</div>
+
+</div>
+  <!-- style="background-image:url('{{profileUser.profile.p_coverPhoto}}')" -->

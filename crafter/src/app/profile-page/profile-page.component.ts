@@ -20,7 +20,7 @@ export class ProfilePageComponent implements OnInit {
   constructor(private snack:MatSnackBar, private UserInfo:UserInfoService,private _bottomSheet: MatBottomSheet,private route: ActivatedRoute,private blogService:BlogService,private profileService: ProfileUploadService) { }
  Edit=false;
  Upload=false;
-
+ myProfile=false;
 
   profileUser:any={
     user:"",
@@ -30,6 +30,7 @@ export class ProfilePageComponent implements OnInit {
   };
 
   openBottomSheet(): void {
+
     if(this.Viewer===this.profileUser.user._id){
       this._bottomSheet.open(ProfilePicComponent);
 
@@ -40,6 +41,10 @@ export class ProfilePageComponent implements OnInit {
     }
   }
 
+  openprofileform(): void {
+
+
+  }
 
 
 
@@ -90,7 +95,13 @@ customOptions2: OwlOptions = {
 let id=this.route.snapshot.params['id'].toString();
 this.profileService.GetProfilePostById(id).subscribe((res)=>{
   this.profileUser=res;
-console.log(res)
+
+  
+
+this.profileUser.blog.forEach((blog) => {
+  let txt=blog.b_body[0].para[0].text
+  blog.b_body[0].para[0].text=txt.slice(0,120).concat('...');
+})
 
 if(this.profileUser.profile.length<1){
   console.log(this.profileUser.profile)
@@ -110,9 +121,11 @@ this.Edit=true;
 }
 
 })
-this.UserInfo.GetUserInfo().subscribe((res)=>{
-  this.Viewer=res[0]._id;
-  
+this.UserInfo.GetUserInfo().subscribe((resp)=>{
+  this.Viewer=resp[0]._id;
+
+ 
+
 })
   }
 
@@ -123,7 +136,15 @@ this.UserInfo.GetUserInfo().subscribe((res)=>{
     moveItemInArray(this.profileUser.dribbble, event.previousIndex, event.currentIndex);
   }
 
-
+openProfile(){
+  if(this.Viewer===this.profileUser.user._id){
+           this.myProfile=true;
+  }else{
+        this.snack.open("You cannot update this profile picture", 'X',{
+          duration: 2000
+        });
+  }
+}
 
 }
 
