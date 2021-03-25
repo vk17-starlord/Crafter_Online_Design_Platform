@@ -1,101 +1,84 @@
 <div class="homepage-container row">
-  <div class="col-sm-12 col-lg-2" id="menu">
-    <div class="navbar">
-      <h1>Crafter</h1>
-      
-        </div>
-      <div class="menu">
-        <a routerLink='/blog'> <i class="fab fa-blogger-b"></i> Blog</a>
-        <a routerLink='/Explore'> <i class="far fa-compass"></i> Explore</a>
-        <a routerLink='/Guide'><i class="fas fa-graduation-cap"></i> Guide </a>
-        <a routerLink='/Project'> <i class="fas fa-project-diagram"></i> Project </a>
+  <div class="sidenav col-sm-12 col-lg-2">
+   <h1 class="title">crafter</h1>
+<div class="menu">
+  <a class="menu-item" routerLink='/Guide'><i class="fas fa-graduation-cap"></i> <span>  Guide </span></a>
+  <a class="menu-item" routerLink='/Explore'><i class="fas fa-image"></i> <span>  Explore </span></a>
+  <a class="menu-item" routerLink='/blog'><i class="fas fa-feather-alt"></i> <span>  Blog </span></a>
+  <a class="menu-item" routerLink='/Project'><i class="fas fa-graduation-cap"></i> <span>  Projects </span></a>
 
-      </div>
+</div>
 
-      <button (click)="onlogout()">Log Out</button>
-
+<button class="logout" (click)="onlogout()">Log out <i class="fas fa-sign-out-alt"></i></button>
   </div>
-  
-  <div class="col-sm-12 col-lg-8">
-   <div class="container">
+  <div class="main-page col-sm-12 col-lg-7">
+  <h1 class="heading"><i class="fas fa-dice-d6"></i> Discover</h1>
+<div class="d-container">
+  <owl-carousel-o [options]="customOptions2" >
 
+    <ng-template carouselSlide *ngFor="let item of Cards" >
+                        <div class="d-card row">
+                          <div class="col-sm-6">
+                            <h4>{{item.heading}}</h4>
+                            <p>{{item.desc}}</p>
+                            <button [routerLink]='item.link'> View </button>
 
-    <div class="slide-container d-flex justify-content-center align-items-center ">
-      <div class="slider">   
-        <owl-carousel-o [options]=" customOptions2">
-  
-          <ng-template carouselSlide *ngFor="let post of   Cards" >
-              <div class="slider-card row">
-  
-                <div class="col-sm-6 " id="desc">
-                  <h3>{{post.heading}}</h3>
-                  <p>{{post.desc}}</p>
-  <button [routerLink]='post.link'> View </button>
-                </div>
-                <div class="col-sm-6 d-flex justify-content-center align-items-center" id="img">
-                  <img src="{{post.img}}" alt="">
-                </div>
-  
-              </div>    
-          </ng-template>      
-      </owl-carousel-o>
+                          </div>
+                          <div class="col-sm-6">
+                            <img [src]="item.img" alt="">
+                          </div>
+
+                        </div>
+    </ng-template>      
+</owl-carousel-o>
+</div>
+<div class="blog-container" >
+  <div class="b-card row" *ngFor="let blog of  RecentBlogs">
+    <div class=" col col-sm-12 col-lg-4">
+      <img [src]="blog.b_coverPhoto" alt="">
+    </div>
+    <div class=" col col-sm-10 col-lg-8 ">
+      <h4>{{blog.b_title}}</h4>
+      <p>{{blog.b_body[0].para[0].text}}</p>
+      <div class="b-profile">
+        <img [src]="blog.postedBy.profilePic" alt="">
+        <span>{{blog.postedBy.userName}}</span>
+      </div>
+      
+    </div>
     
-      </div>   
-     
+    
+    </div>
+    <div class="skeleton row" *ngIf="b_skeleton">
 
+      <div class=" col col-sm-12 col-lg-4 " >
+     <div class="loading"></div>
+      </div>
+      <div class=" col col-sm-10 col-lg-8 ">
+      <div class="title-block">
+        <div class=" loading">
+    
+        </div>
+      </div>
+        <div class="para">
+          <div class="loading"></div>
+        </div>
+      </div>
       
-
-    </div>
-    <h1 id="h-title">Recent Articles</h1>
-    <div class="blog-container row" *ngFor="let blog of RecentBlogs; let indexOfelement=index">
-
-      <div class="col-sm-12 col-lg-5" id='img' *ngIf="indexOfelement % 2==0">
-        <img [src]="blog.b_coverPhoto" alt="">
-      </div>
-      <div class="col-sm-12 col-lg-7" id='txt'>
-
-        <h4> {{indexOfelement+1}} : {{blog.b_title}}</h4>
-<p>{{blog.b_desc}}</p>
-<button [routerLink]="['/blogdetail', blog._id]" > Read More </button>
-      </div>
-
-      <div class="col-sm-12 col-lg-5" id='img' *ngIf="indexOfelement % 2!=0">
-        <img [src]="blog.b_coverPhoto" alt="">
+      
       </div>
     </div>
-
-    <div class=" b-container">
-<h2 id="h-title">Latest Design</h2>
-<div class=" row">
-  <div  [routerLink]="['/Exploredetail', design._id]" class="col col-sm-12 col-lg-6" *ngFor="let design of  RecentPosts" >
-    <img [src]="design.d_pic" alt="">
-  </div>
-
+    
 
 </div>
-
-
-</div>
-
+  <div class="recent-container col-sm-12 col-lg-3">
+   <div class="profile">
+    <div class="circle" *ngIf="p_skeleton">
+      <div class="loading"></div>
+     </div>
+   <img [routerLink]="['/profilepage', CurrentUser._id]" *ngIf="p_skeleton==false" [src]="CurrentUser.profilePic" alt="" class="profile-pic">
+   <p>{{CurrentUser.userName}}</p>
    </div>
-   
+
   </div>
-
-  
-  <div class="col-sm-12 col-lg-2" id="users">
-   <div class="profile-bg">
-
-   </div>
-      <img [routerLink]="['/profilepage',CurrentUser._id]" [src]="CurrentUser.profilePic" alt="" id="profile-pic">
-          <p>{{CurrentUser.userName}}</p>
-
-          <div class="userlist">
-<h4>Recent Users</h4>
-            <div *ngFor="let user of RecentUsers">
-<p [routerLink]="['/profilepage',user.postedBy._id]"> <img [src]="user.postedBy.profilePic" alt="" id="u-pic"> <span>{{user.postedBy.userName}}</span></p>
-            </div>
-
-          </div>
-
-    </div>
 </div>

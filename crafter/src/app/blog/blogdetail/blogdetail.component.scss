@@ -413,6 +413,7 @@ margin-top:30px;
     }
     .cmnt-card{
         background-color:$light-blue;
+        border-radius: 8px;
         div{
 
         }
@@ -427,6 +428,7 @@ margin-top:30px;
             max-width:40px;
             min-height:40px;
             max-height: 40px;
+            object-fit: cover;
             border-radius: 50%;
         }
         margin: 20px auto;

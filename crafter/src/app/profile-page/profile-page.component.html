@@ -38,10 +38,13 @@
       <div class="not-posted">
 
       </div>
-       <h4>
+       <h4 *ngIf="this.Viewer===this.profileUser.user._id">
         You haven’t uploaded any Article yet
        </h4>
-       <button routerLink='/blogform'>Upload </button>
+       <h4 *ngIf="this.Viewer!==this.profileUser.user._id">
+       User haven’t uploaded any Article yet
+       </h4>
+       <button *ngIf="this.Viewer===this.profileUser.user._id" routerLink='/blogform'>Upload </button>
     </div>
  
     <div class="row blog-container" >
@@ -65,10 +68,13 @@
     <div class="not-posted">
 
     </div>
-     <h4>
-      You haven’t uploaded any Post yet
+    <h4 *ngIf="this.Viewer===this.profileUser.user._id">
+      You haven’t uploaded any  post yet
      </h4>
-     <button routerLink='/Exploreform'>Upload </button>
+     <h4 *ngIf="this.Viewer!==this.profileUser.user._id">
+      User haven’t uploaded any  post yet
+      </h4>
+     <button *ngIf="this.Viewer===this.profileUser.user._id" routerLink='/Exploreform'>Upload </button>
   </div>
   <div class="d-container row">
     <div class="col-sm-12 col-lg-4 post-card" *ngFor="let post of profileUser.dribbble">

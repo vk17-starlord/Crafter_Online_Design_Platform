@@ -103,6 +103,8 @@ PostOptions: OwlOptions = {
 
   constructor(private authentication:AuthenticationService,private _snackBar: MatSnackBar,private Profile:    ProfileUploadService  ,private blogService:BlogService ,private exploreService:ExploreService,private Projects:ProjectService ) { }
   NewProjects:any=[]
+   b_skeleton=true;
+   p_skeleton=true
   ngOnInit(): void {
 
     this.blogService.getallBlogs().subscribe((res)=>{
@@ -115,16 +117,24 @@ PostOptions: OwlOptions = {
         Date(val1.createdAt).getTime()}
         )
   
-        if(Sorted.length<4){
+        if(Sorted.length<5){
                  this.RecentBlogs=Sorted.slice(0,Sorted.length)
         }else{
-               this.RecentBlogs=Sorted.slice(0,3);
+               this.RecentBlogs=Sorted.slice(0,4);
+               this.RecentBlogs.forEach((ele)=>{
+                ele.b_body[0].para[0].text=ele.b_body[0].para[0].text.slice(0,150).concat('...')
+    console.log( ele.b_body[0].para[0].text)
+              })
+              this.b_skeleton=false;
+               
         }
     })
 
    this.Profile.GetUser().subscribe((res)=>{
-   
+     
       this.CurrentUser=res[0];
+      this.p_skeleton=false;
+      console.log(this.CurrentUser)
       let year,month,dt
       var date = new Date(this.CurrentUser.createdAt);
       year = date.getFullYear();

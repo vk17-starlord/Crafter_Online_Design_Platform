@@ -151,8 +151,10 @@ img{
 }
 
 @media screen and (max-width:718px){
-    .blog-container{
+ .tab-container   .blog-container{
         width: 100%;
+display:block !important;
+        height:auto !important;
     }
     
     .container{
@@ -170,7 +172,9 @@ img{
     }
 
 }
-
+.col{
+    width: 90% !important;
+}
 .n-container{
     width:100%;
     text-align: center !important;
@@ -203,3 +207,4 @@ img{
     margin-top: 5vh ;
 
 }
+

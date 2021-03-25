@@ -16,7 +16,7 @@ export class StatsComponent implements OnInit {
     responsive: true,
   };
   public barChartColors: Color[] = [
-    { backgroundColor: '#7b2cbf ' }
+    { backgroundColor: '#045de9'}
   ]
   public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   public barChartType: ChartType = 'bar';

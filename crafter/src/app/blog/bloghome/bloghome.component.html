@@ -4,17 +4,15 @@
 
     <div class="recent-container" style="background-image: url('{{RecentBlog.b_coverPhoto}}')">
    <div class="row">
-       <div class="col-sm-12 col-lg-6">
+       <div class="col-sm-12 col-lg-10">
         <div class="text-container">
             <h4>{{RecentBlog.b_title}}</h4>
             <p>{{RecentBlog.b_desc}}</p>
                    <button  [routerLink]="['/blogdetail', RecentBlog._id]" >Read Now <mat-icon>play_circle</mat-icon></button>
         </div>
        </div>
-       <div class="col-sm-12 col-lg-6 profile-container">
-           <div class="profile d-flex">
-      <h1>Posted By {{RecentBlog.postedBy.userName}}</h1>
-           </div>
+       <div class="col-sm-12 col-lg-2 profile-container">
+      
        </div>
    </div>
  
