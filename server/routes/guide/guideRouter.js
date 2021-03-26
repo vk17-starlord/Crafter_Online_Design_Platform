@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
    
 var upload = multer({ storage: storage })
 
-router.get('/guide', requireLogin, async (req,res)=>{
+router.get('/guide', async (req,res)=>{
     try {
         const guide = await Guide.find()
         if(guide){
@@ -28,7 +28,7 @@ router.get('/guide', requireLogin, async (req,res)=>{
     }
 })
 
-router.post('/guide', requireLogin, async (req,res)=>{
+router.post('/guide', upload.single('file'), async (req,res)=>{
     try {
         const {title, cover_photo, link, category, description} = req.body
         if(!title || !cover_photo || !link || !category || !description){
@@ -53,7 +53,7 @@ router.post('/guide', requireLogin, async (req,res)=>{
             postedBy: req.user
         })
 
-        await newUser.save()
+        await newGuide.save()
 
         res.status(201).json({msg: "Posted Successfully"})
 
@@ -62,7 +62,7 @@ router.post('/guide', requireLogin, async (req,res)=>{
     }
 })
 
-router.delete('/guide/:id', requireLogin, async (req,res)=>{
+router.delete('/guide/:id', async (req,res)=>{
     try {
         const guide = await Guide.findByIdAndDelete(req.params.id)
         res.status(200).json({msg: "Deleted Successfully"})
@@ -70,20 +70,5 @@ router.delete('/guide/:id', requireLogin, async (req,res)=>{
         return res.status(500).json({err: err.message})
     }
 })
-
-router.post('/guide_photo_upload', upload.single('file'), (req, res) => {
-    if (!req.file) {
-      console.log("No file received");
-      return res.send({
-        success: false
-      });
-  
-    } else {
-      console.log('file received');
-      return res.send({
-        success: true
-      })
-    }
-});
 
 module.exports = router
