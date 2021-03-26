@@ -1,0 +1,84 @@
+$darkblue:lighten(#08080D,1);
+$blur-amount:40;
+$brightness:10;
+$opacity:0.5;
+$light-blue:lighten(#191b20,3);
+$yellowhite:#FFF6C2;
+$darkyellow:lighten(#08080D,1);
+$primary: #1e74ffdc;
+$light-grey:lighten(#242731,3);
+$pure-black:#000000;
+$text-color:#EFEEF7;
+$pure-white:#FFFFFF;
+$gradient-bg: rgb(90,71,248);
+$background: linear-gradient(90deg, rgba(90,71,248,1) 0%, rgba(19,19,23,0.5607376739758403) 49%); 
+
+*{
+  box-sizing: border-box;
+
+}
+.mat-dialog-container{
+  padding: 0 !important;
+}
+$heading-font:Vester;
+
+@font-face{
+  font-family:Vester;
+  src: url("./fonts/TRYVesterbro-Bold.otf");
+}
+@font-face {
+  font-family: Simonetta;
+  src: url("./fonts/Simonetta-Black.ttf");
+}
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url("./fonts/JosefinSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: HighTowerText;
+    src: url("./fonts/HTOWERT.TTF");
+  }
+  @font-face {
+    font-family: FranklinGothic;
+    src: url("./fonts/FranklinGothic.woff");
+  }
+  
+  @font-face {
+    font-family:RobotoMedium;
+    src: url("./fonts/Roboto-Medium.ttf");
+  }
+
+  @font-face {
+    font-family:RobotoLight;
+    src: url("./fonts/Roboto-Light.ttf");
+  }
+
+  @font-face {
+    font-family:Robotobold;
+    src: url("./fonts/Roboto-Bold.ttf");
+  }
+
+
+  a{
+    text-decoration: none;
+}
+
+@media only screen and (max-width:900px){
+  .fixed-header{
+    float: none;
+    margin-left:auto !important;
+    position:  relative !important;
+    text-align: center !important;
+    width:100% !important;
+  }
+}
+.fixed-header{
+  float: left !important;
+  font-family: HighTowerText;
+  position: absolute !important;
+  top:20px;
+  left:5%;
+  font-size: 42px !important;
+}

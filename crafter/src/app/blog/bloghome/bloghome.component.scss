@@ -1,0 +1,308 @@
+@import "../../app.component.scss";
+
+
+#blog-home{
+width:100%;
+min-height: 100vh;
+background-color: $darkblue;
+color: white;
+overflow-x: hidden !important; 
+border: 1px solid rgba(204, 204, 204, 0);
+}
+.container{
+    width: 75%;
+    margin: 25px auto;
+    padding:0 !important;
+}
+.recent-blogs-container .item{
+    height: 10vh;
+    
+}
+.overlay.active{
+    background-color :#9921e8;
+background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+    
+}
+.overlay{
+    width: 100%;
+    border-radius: 7px;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+    flex-direction: column;
+    &::before{
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        width: 100%;height: 100%;
+        top: 0;
+        filter: blur(40px);
+        bottom: 0;
+        content:"";
+        position: absolute;
+    }    
+    &:hover{
+        opacity: .3;
+    }
+    h4{
+        line-height: 20px;
+        padding:0px;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        margin: 0 auto;
+        font-size: 20px;
+        font-family: JosefinSansBold;
+    }
+    transition:1s ease-in-out;
+ 
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+.sub-heading{
+   text-align: left;
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: left;
+    font-family: JosefinSansBold;
+    color: #fff;
+}
+.heading{
+    font-family: JosefinSansBold;
+    font-size: 64px;
+    line-height:65px;
+    margin:25px auto;
+    text-align: center;
+    margin-bottom: 0px !important; 
+    
+
+}
+.recent-container{
+
+    &::after{
+        width:100%;
+        height:100%;
+        top: 0;
+        bottom: 0;
+        content: '';
+        position: absolute;
+        background: rgb(90,71,248);
+        background: radial-gradient(circle, rgba(90,71,248,0) 0%, rgba(8, 8, 17, 0.872) 80%); 
+    }
+    width:75%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    height: 60vh;
+    margin: 5px auto;
+    margin-bottom: 50px !important;
+    background-size: cover;
+    
+    background-image: url('https://images.pexels.com/photos/2471235/pexels-photo-2471235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    .profile-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      
+        padding: 0px 25px;
+        position: relative;
+        z-index:2;
+        
+     h1{
+         position: relative;
+         transform: translate(0px, 50px);
+         font-size: 14px;
+         opacity: .7;
+         margin:0;
+         padding:0;
+     }
+    }
+    .text-container{
+        width: 100%;
+        padding: 0px 25px;
+        position: relative;
+        z-index:2;
+    }
+    p{
+        font-family: RobotoMedium;
+        font-size: 24px;
+        opacity: .7;
+        line-height: 30px;
+    }
+    button{
+        width:200px;
+        padding: 10px 30px;
+        border:none;
+        color: white;
+        font-size: 20px;
+        margin: 20px auto;
+        background-color: #03e5b7;
+        transition:.5s ease-in-out;
+background-image: linear-gradient(315deg, #03e5b7 0%, #037ade 74%);
+&:hover{
+    transform: scale(1.1, 1.1);
+    background-color: #118ab2;
+background-image: linear-gradient(319deg, #118ab2 0%, #06d6a0 37%, #ffd166 100%);
+
+}    
+}
+   
+    h4{
+        font-size: 42px;
+        font-family: Vester;
+        color: white;
+     
+      z-index:2;
+      width: 100%;
+      line-height: 50px;
+    }
+}
+.post-container{
+    .post{
+      margin: 20px 0;
+        padding: 20px;
+        min-height: 225px;
+        .b-card{
+            background-color:darken($color:  #252836, $amount: 5);
+
+       transition: all .5s ease-in-out;
+       &:hover{
+        background-color: #252836;
+
+       }
+       width: 100%;
+        height:100%;
+        box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+;
+border-radius: 8px;
+padding: 15px 0px;
+div{
+    overflow: hidden !important;
+}
+.img-container{
+    width:100% !important;
+    height:100% !important;
+ overflow: hidden !important;
+
+ 
+ border-radius: 8px;
+}
+div img{
+    background: white;
+    width: 100%;
+    border-radius: 8px;
+    height: 100%;
+    
+    object-fit: cover;
+    object-position: center;
+    transition:0.5s ease-in-out;
+&:hover{
+transform: scale(1.2, 1.2);
+}
+}
+h4{
+    padding: 10px 0px;
+   padding-bottom: 0 ;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 25px;&:hover{
+      color: $primary;
+    }
+}
+p{
+    font-size: 16px;
+    line-height: 20px;
+    opacity: .7;
+}
+        }
+    }
+}
+.welcome{
+  
+    min-height: 220px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    h1{
+        font-size: 54px;
+        line-height: 62px;
+        color: whitesmoke;
+        font-family: Vester;
+        span{
+            color: #03e5b7;
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    .welcome{
+        h1{
+            font-size: 36px !important;
+            line-height: 42px !important;
+        }
+    }
+    .row{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .recent-container{
+        width:95%;
+        margin:0 auto !important;
+        .text-container{
+            width:90%;
+            margin: 0 auto !important;
+        } 
+        h4{
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    .search-container{
+        margin: 20px auto;
+        justify-content:flex-start !important;
+    }
+}
+.search-container{
+    height:auto!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width:100%;
+    button{
+        margin: 0 5px;
+        background: $primary;
+        border:none;
+        border-radius: 50%;
+        width:35px;
+        height: 35px;
+        color: white;
+    }
+    input{
+        width:75%;
+        padding:10px 20px;
+        border-radius: 10px;
+        border: none !important;
+        font-size: 18px;
+         color: white !important;
+        background-color:#252836bd;
+    }
+}
+.add-post{
+    position: fixed;
+ 
+    right: 50px;
+    top: 85%;
+ background-color: $primary ;
+ background: $primary;
+ color:white;
+}

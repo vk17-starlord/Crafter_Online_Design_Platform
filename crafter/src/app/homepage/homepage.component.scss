@@ -1,0 +1,377 @@
+
+@import '../app.component.scss';
+.sidenav,.main-page,.recent-container{
+    min-height: 100vh;
+ overflow-x: hidden;
+  padding: 20px 0;
+}
+
+.main-page{
+    padding:1em 2.5%;
+}
+
+.title{
+    font-family: HighTowerText;
+    text-align: center;
+    padding: 20px;
+    font-size: 42px;
+}
+.sidenav{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    max-height: 100vh !important;
+}
+.logout{
+    width: 70%;
+    padding: 10px;
+color:white;
+font-size: 16px;
+border-radius: 12px;
+display: inline-flex;
+justify-content:space-evenly;
+align-items:center;
+background-color: $primary;
+    border: none;
+}
+.menu{
+    width:100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    a{
+      width: 70%;
+      text-align: left;
+        color:#ccc ;
+        font-size: 20px;
+        margin: 10px auto;
+        i{
+            background-color: $light-blue;
+            width: 45px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 45px;
+    border-radius: 5px 15px;
+            font-size: 16px;
+            margin-right: 10px;
+            color: #ccc;
+        }
+        transition:all 2s ease-in-out;
+    &:hover{
+        color: $primary;
+        transition:all 0.2s ease-in-out;
+        i{
+            color: $primary;
+        }
+    }    
+    }
+}
+
+.heading{
+    padding: 30px 0px;
+    font-size: 24px;
+   letter-spacing: 0.1em;
+    color: white;    width: 95%;
+    font-family: Vester;
+    margin: 0 auto;
+}
+.d-container{
+  
+   overflow: hidden;
+   width: 95%;
+  
+    margin: 10px auto;
+    .d-card{
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            
+        }
+        border-radius: 12px;
+        min-height:300px;
+        background-color: $primary;
+        width: 100%;
+margin:0 auto;
+padding:1em 1em;
+    }
+   
+    img{
+       margin: 1em 0;
+        width: 100%;
+        object-fit: cover;
+        height:270px;
+        border-radius: 12px;
+    }
+    h4{
+        text-align: left;
+        width: 100%;
+        font-size:42px;
+        font-family:vester;
+        margin:20px auto;
+    }
+    button{
+        padding:10px 25px;
+
+        border:none;
+border-radius: 8px;
+        background-color:black;
+        color: white;
+        &:hover{
+            opacity:.7;
+        }
+    }
+    p{
+        opacity: 0.8;
+        width: 80%;
+        line-height: 150%;
+        font-size: 16px;
+    }
+}
+.blog-container{
+    width: 100%;
+    margin: 10px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+
+    .b-card{
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px 10px!important;
+       background-color:darken($color:  $light-blue, $amount: 05);
+  
+        border-radius: 12px;
+    }
+    .col{
+        min-height: 220px;
+    }
+h4{
+    margin: 10px auto;
+    font-family: RobotoMedium;
+    font-weight: bold;
+    letter-spacing: 110%;
+    letter-spacing: 0.1em;
+    font-size: 24px;
+}
+p{
+    font-size: 16px;
+    font-family: RobotoLight;
+    line-height: 150%;
+    margin: 20px auto;
+    opacity: .9;
+}
+.b-profile{
+    width: 100%;
+    margin: 10px auto;
+
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+   flex-wrap: wrap;
+img{
+    border: 2px dashed $primary;
+    width:50px;
+    
+    height:50px;
+    border-radius: 50%;
+}
+span{
+    padding: 10px;
+    font-size:14px;
+    margin:10px 0;
+}
+}
+
+    img{
+    
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+        border-radius: 12px;
+    }
+}
+.profile{
+    text-align:center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    flex-direction: column;
+}
+.profile-pic,.circle{
+    margin: 10px 0;
+    width:10vh;
+    height:10vh;
+    overflow: hidden;
+    object-fit: cover !important;
+    object-position: center;
+    border-radius:50%;
+    .loading{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (max-width:900px){
+    .blog-container .col , .skeleton .col{
+        flex-basis: 1 !important;
+min-width: 100% !important;
+padding-bottom:10px;
+    }
+    .row{
+        margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .sidenav{
+        min-height: auto !important;
+        width: 100%;
+        justify-content:flex-start;
+        position: relative !important;
+    }   
+    .menu{
+        width: auto;
+        margin:20px auto;
+        flex-direction: row;
+        a{
+            margin: 0 10px;
+        }
+    span{
+        display:none !important;
+    }}
+}
+
+
+.skeleton{
+    border-radius: 12px;
+    background-color: darken($color: $light-blue, $amount: 5);
+    width: 95%;
+    padding:20px 10px;
+    position: relative !important;
+  overflow: hidden !important;
+ 
+    .col{
+        overflow: hidden;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+flex-direction: column;
+    
+        min-height: 230px;
+    }
+    .title,.para{
+        .loading{
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    .title-block{
+        width: 100% !important;
+        height: 25px;
+        background: -webkit-gradient(linear, left top,
+        right top, from(transparent), 
+        color-stop(rgba(255, 255, 255, 0.2)),
+        to(transparent));
+          
+background: linear-gradient(90deg, transparent,
+    rgba(255, 255, 255, 0.2), transparent);
+    }
+    .title{
+      overflow: hidden;
+         
+      animation: loading 1.8s infinite !important;
+
+        width: 100%;
+        height: 25px;
+        background: -webkit-gradient(linear, left top,
+        right top, from(transparent), 
+        color-stop(rgba(255, 255, 255, 0.2)),
+        to(transparent));
+          
+background: linear-gradient(90deg, transparent,
+    rgba(255, 255, 255, 0.2), transparent);
+    }
+    .para{
+        overflow: hidden !important;
+     
+ 
+margin: 20px auto;
+width: 100%;
+height: 100px;
+background: -webkit-gradient(linear, left top,
+right top, from(transparent), 
+color-stop(rgba(255, 255, 255, 0.2)),
+to(transparent));
+  
+background: linear-gradient(90deg, transparent,
+rgba(255, 255, 255, 0.2), transparent);
+    }
+    img{
+        overflow: hidden;
+        animation: loading 1.8s infinite !important;
+ 
+        background: -webkit-gradient(linear, left top,
+right top, from(transparent), 
+color-stop(rgba(255, 255, 255, 0.2)),
+to(transparent));
+  
+background: linear-gradient(90deg, transparent,
+rgba(255, 255, 255, 0.2), transparent);
+    }
+    span{
+        overflow: hidden;
+  
+ 
+        margin: 10px 20px;
+        width: 120px;
+        height: 16px;background: -webkit-gradient(linear, left top,
+        right top, from(transparent), 
+        color-stop(rgba(255, 255, 255, 0.2)),
+        to(transparent));
+          
+        background: linear-gradient(90deg, transparent,
+        rgba(255, 255, 255, 0.2), transparent);
+    }
+}
+.loading {
+    overflow: hidden;
+    
+    border-radius: 12px;
+    width: 95%;
+    height: 90%;
+    position: relative;
+
+}
+
+/* The moving element */
+.loading::after   {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: -webkit-gradient(linear, left top,
+                right top, from(transparent), 
+                color-stop(rgba(255, 255, 255, 0.2)),
+                to(transparent));
+                  
+    background: linear-gradient(90deg, transparent,
+            rgba(255, 255, 255, 0.2), transparent);
+
+    /* Adding animation */
+    animation: loading 0.8s infinite;
+}
+
+/* Loading Animation */
+@keyframes loading {
+    100% {
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,55 @@
+
+<div id="blog-home" >
+    <mat-icon routerLink="/homepage" style="cursor: pointer;margin: 20px;position: absolute;top:0;">navigate_before</mat-icon>    
+
+    <div class="recent-container" style="background-image: url('{{RecentBlog.b_coverPhoto}}')">
+   <div class="row">
+       <div class="col-sm-12 col-lg-10">
+        <div class="text-container">
+            <h4>{{RecentBlog.b_title}}</h4>
+            <p>{{RecentBlog.b_desc}}</p>
+                   <button  [routerLink]="['/blogdetail', RecentBlog._id]" >Read Now <mat-icon>play_circle</mat-icon></button>
+        </div>
+       </div>
+       <div class="col-sm-12 col-lg-2 profile-container">
+      
+       </div>
+   </div>
+ 
+    </div>
+ 
+    <div class="welcome container">
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <h1>Courtside : <br> The Crafter's <span>Blog</span></h1>
+    </div>
+    <div class="col-sm-12 col-lg-6 d-flex justify-content-center ">
+     <div class="search-container">
+<input type="text" name="q" placeholder="Search .." [(ngModel)]="searchquery">
+  <button (click)="SearchBlog()">   <i class="fas fa-search"></i></button>     
+</div>
+  
+    </div>
+</div>
+    </div>
+ 
+    <div class="post-container container row">
+        <div class="post col-sm-12 col-lg-6" [routerLink]="['/blogdetail', blog._id]"  *ngFor="let blog of Blogs">
+           <div class="b-card row">
+              <div class="col-sm-12 col-lg-5" style="margin: 0 auto;">
+                 <div class="img-container">
+                    <img [src]="blog.b_coverPhoto" alt="">
+                 </div>
+              </div>  
+              <div class="col-sm-12 col-lg-7 d-flex justify-content-start align-item-center flex-column">
+                <h4>{{blog.b_title}}</h4>
+                <p>{{blog.b_desc}}</p>
+              </div>  
+           
+            </div>
+        </div>
+    </div>
+    <button mat-fab routerLink="/blogform" class="add-post" aria-label="Example icon button with a home icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+</div>

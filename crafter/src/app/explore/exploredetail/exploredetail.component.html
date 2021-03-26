@@ -1,0 +1,125 @@
+<div  #explorecontainer class="explore-detail">
+  
+    <mat-icon class="nav-btn" routerLink="/homepage">chevron_left</mat-icon>
+
+    <div class="container">
+<div class="profile-container">
+    <img [src]="CurrentPost.postedBy.profilePic" [routerLink]="['/profilepage', CurrentPost.postedBy._id]"alt="profile-pic" class="profile-pic">
+     <mat-icon  class="verify">verified</mat-icon>
+     <table>
+         <tr id="title">{{CurrentPost.d_title}}</tr>
+  
+         <tr id="name"> {{CurrentPost.postedBy.userName}}</tr>
+         
+         <tr id="date">Posted On : {{CurrentPost.createdAt}}</tr>
+
+        </table>
+</div>
+<div class="image-container">
+
+    <img [src]="CurrentPost.d_pic" class="post" alt="">
+
+<div class="color-pallete" matTooltip="Click on color to copy Hex Code" matTooltipPosition="above">
+    <button mat-icon-button  class="color-btn" aria-label="Example icon button with a home icon">
+        <mat-icon >palette</mat-icon>
+      </button>
+     
+<div *ngFor="let color of CurrentPost.d_color">
+    <mat-icon [style.color]="color" [cdkCopyToClipboard]="color" (click)="copiedColor()"    [matTooltip]="color"
+    aria-label="Button that displays a tooltip with a custom message">lens</mat-icon>
+</div>
+
+</div>
+
+</div>
+
+<h4 class="desc">{{CurrentPost.d_desc}}</h4>
+
+
+<div class="reaction-container">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+         <div class="panel">
+            <mat-icon>add_comment</mat-icon>
+
+            <div style="float:right;" style="padding-top:10px">
+                <mat-icon [matBadge]="Likes" matTooltip="Like Post" (click)="LikePost()" [style.color]="likeColor">thumb_up_alt</mat-icon>
+                <mat-icon matTooltip="Like Post" (click)="DisLikePost()" [style.color]="dislikeColor">thumb_down_alt</mat-icon>
+
+            </div>
+         </div>
+        </mat-expansion-panel-header>
+       
+        <div class="comment-container">
+            <div class="cmnt-form">
+<textarea class="comment-box"[(ngModel)]="comment" name="comment" cols="30" rows="2"></textarea>
+<br>
+<button mat-raised-button class="add-btn" (click)="AddComment()">Add <mat-icon>add</mat-icon></button>
+            </div>
+
+            <div class="comment-cards">
+                <owl-carousel-o [options]="customOptions3">
+
+                    <ng-template carouselSlide *ngFor="let post of this.CurrentPost.d_comments" >
+                        <div class="item" >
+<div class="overlay">
+<table>
+    <tr>    <h4 style="color: royalblue;font-size:36px;">"</h4>    </tr>
+    <tr>    <h4 style="font-size: 20px;text-align:left;">{{post.text}}</h4>    </tr>
+    <tr>    <h4 style="font-size: 20px;opacity:0.5;">{{post.postedBy.userName}}</h4>    </tr>
+    
+</table>
+    <img src="{{post.postedBy.profilePic}}" alt="" class="profile-pic">
+    <tr *ngIf="post.postedBy.userName===CurrentUser.userName"  style="text-align:right !important">   <mat-icon (click)="DeleteComment(post.text,CurrentPost._id)">delete</mat-icon>   </tr>
+    
+</div>
+                         </div>
+                    </ng-template>      
+                </owl-carousel-o>
+            </div>
+        </div>
+
+      </mat-expansion-panel>
+</div>
+
+<div class="profile-card">
+    <mat-icon>align_horizontal_right</mat-icon>
+    <img [src]="CurrentPost.postedBy.profilePic" alt="profile-pic" class="profile-pic">
+    <mat-icon>align_horizontal_left</mat-icon> 
+</div>
+<div class="author-container">
+  
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-template carouselSlide *ngFor="let post of AuthorPosts" >
+            <div class="item"  (click)="ChangeRoute(post._id)">
+             <img [src]="post.d_pic" class="item-bg" alt="">
+             <img [src]="post.d_pic" class="item-overlay" alt="">
+
+            </div>      
+            <div class="title">
+                <h4>{{post.d_title}}</h4>
+            </div>                  
+        </ng-template>      
+    </owl-carousel-o>
+</div>
+
+<div class="author-container">
+    <h1>You Might Also Like </h1>
+    <owl-carousel-o [options]="customOptions2">
+
+        <ng-template carouselSlide *ngFor="let post of SamePosts" >
+            <div class="item" (click)="ChangeRoute(post._id)" >
+             <img [src]="post.d_pic" class="item-bg" alt="">
+             <img [src]="post.d_pic" class="item-overlay" alt="">
+         
+            </div> 
+            <div class="title">
+                <h4>{{post.d_title}}</h4>
+            </div>               
+        </ng-template>      
+    </owl-carousel-o>
+</div>
+
+    </div>
+</div>

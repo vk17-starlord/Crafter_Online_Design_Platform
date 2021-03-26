@@ -1,0 +1,137 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Simonetta;
+  src: url("./fonts/Simonetta-Black.ttf");
+}
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url("./fonts/JosefinSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: HighTowerText;
+  src: url("./fonts/HTOWERT.TTF");
+}
+
+@font-face {
+  font-family: FranklinGothic;
+  src: url("./fonts/FranklinGothic.woff");
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url("./fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: RobotoLight;
+  src: url("./fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: Robotobold;
+  src: url("./fonts/Roboto-Bold.ttf");
+}
+
+a {
+  text-decoration: none;
+}
+
+#blog-form {
+  background-color: #030303;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  height: auto;
+  text-align: center;
+}
+
+#blog-form p {
+  margin: 10px auto;
+  color: #ccc;
+}
+
+#blog-form h1 {
+  text-align: center;
+  font-family: JosefinSansBold;
+  line-height: 42px;
+  padding: 50px 0px;
+  color: white;
+  font-size: 42px;
+}
+
+#blog-form label {
+  text-align: left;
+  margin-top: 30px;
+  display: block;
+  color: white;
+  font-size: 18px;
+}
+
+#blog-form form {
+  width: 70%;
+  margin: 20px auto;
+}
+
+#blog-form input, #blog-form textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #5A47F8 !important;
+  width: 100%;
+  margin-bottom: 40px;
+  color: white;
+  opacity: 0.8;
+  font-size: 16px;
+  padding: 10px;
+}
+
+#blog-form .example-radio-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 15px 0;
+}
+
+#blog-form .example-radio-button {
+  margin: 5px;
+}
+
+#blog-form .new-button {
+  display: inline-block;
+  padding: 12px 20px;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 2px 12px #000;
+          box-shadow: 2px 2px 12px #000;
+  border-radius: 4px;
+  font-size: 16px !important;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+#blog-form .para-section {
+  padding: 30px;
+}
+
+mat-radio-button, .myclass {
+  color: #5A47F8 !important;
+  font-size: 18px;
+}
+
+.btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 3px 40px;
+  background-color: #5A47F8;
+  font-size: 18px;
+  -webkit-box-shadow: 2px 2px 2px #1b1b1b;
+          box-shadow: 2px 2px 2px #1b1b1b;
+  margin: 30px auto !important;
+}

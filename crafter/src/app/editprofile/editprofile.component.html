@@ -1,0 +1,73 @@
+<div class="edit-profile">
+     <form id="portfolio-form">
+        <h4>Enter Your Bio</h4>    
+        <input type="text" [(ngModel)]="bio" name="bio">  
+      
+        <h4>Enter Your Description</h4>    
+        <textarea name="" id="" cols="30" rows="5" name="desc" [(ngModel)]="desc"></textarea>
+      
+        
+        <h4>Upload Your Cover Photo</h4>    
+
+        <div class="button-wrap">
+          <label class ="new-button" for="upload"> 
+            Upload   
+        </label>
+      
+        <input type="file" [(ngModel)]="p_coverPhoto" name="p_coverphoto" (change)="onCoverchange($event)" id="upload" >
+      
+        </div>
+      
+      
+        <h4>Enter Your Contact No</h4>    
+        <input type="text" name="p_contact"  [(ngModel)]="p_contact">  
+        <br>
+        <h4></h4>
+        <div class="links">
+         
+                 <div class="row">
+                
+                  <div class="col-sm-3">
+                    <i class="fab fa-pinterest" style="font-size:36px;color:#e60023;"></i>                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" name="pinterest"  [(ngModel)]="pinterest.link_url">  
+                  </div>
+      
+                  <div class="col-sm-3">
+                    <img src="https://image.flaticon.com/icons/png/128/1384/1384063.png" class="icon" alt="">
+                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" name="instagram"  [(ngModel)]="instagram.link_url">  
+      
+                  </div>
+      
+                  <div class="col-sm-3">
+                    <img src="https://www.flaticon.com/svg/static/icons/svg/1312/1312139.svg" class="icon" alt="">
+                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" name="facebook"  [(ngModel)]="facebook.link_url">  
+                  </div>
+      
+                  <div class="col-sm-3">
+                    <img src="https://www.flaticon.com/svg/static/icons/svg/185/185970.svg" class="icon" alt="">
+                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" name="behance"  [(ngModel)]="behance.link_url">  
+                  </div>
+                  <div class="col-sm-3">
+                    <img src="https://www.flaticon.com/svg/static/icons/svg/841/841364.svg" class="icon" alt="">
+                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" name="website"  [(ngModel)]="website.link_url">  
+                  </div>
+                 </div>
+        </div>
+      <div class="btn-container">
+      <button mat-flat-button color="primary" [disabled]="show" (click)="Upload()">Submit</button>
+      <mat-spinner *ngIf="spin"></mat-spinner>
+
+      </div>
+      </form>   
+
+
+</div>

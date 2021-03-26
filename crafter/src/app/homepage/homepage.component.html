@@ -1,0 +1,84 @@
+<div class="homepage-container row">
+  <div class="sidenav col-sm-12 col-lg-2">
+   <h1 class="title">crafter</h1>
+<div class="menu">
+  <a class="menu-item" routerLink='/Guide'><i class="fas fa-graduation-cap"></i> <span>  Guide </span></a>
+  <a class="menu-item" routerLink='/Explore'><i class="fas fa-image"></i> <span>  Explore </span></a>
+  <a class="menu-item" routerLink='/blog'><i class="fas fa-feather-alt"></i> <span>  Blog </span></a>
+  <a class="menu-item" routerLink='/Project'><i class="fas fa-graduation-cap"></i> <span>  Projects </span></a>
+
+</div>
+
+<button class="logout" (click)="onlogout()">Log out <i class="fas fa-sign-out-alt"></i></button>
+  </div>
+  <div class="main-page col-sm-12 col-lg-7">
+  <h1 class="heading"><i class="fas fa-dice-d6"></i> Discover</h1>
+<div class="d-container">
+  <owl-carousel-o [options]="customOptions2" >
+
+    <ng-template carouselSlide *ngFor="let item of Cards" >
+                        <div class="d-card row">
+                          <div class="col-sm-6">
+                            <h4>{{item.heading}}</h4>
+                            <p>{{item.desc}}</p>
+                            <button [routerLink]='item.link'> View </button>
+
+                          </div>
+                          <div class="col-sm-6">
+                            <img [src]="item.img" alt="">
+                          </div>
+
+                        </div>
+    </ng-template>      
+</owl-carousel-o>
+</div>
+<div class="blog-container" >
+  <div class="b-card row" *ngFor="let blog of  RecentBlogs">
+    <div class=" col col-sm-12 col-lg-4">
+      <img [src]="blog.b_coverPhoto" alt="">
+    </div>
+    <div class=" col col-sm-10 col-lg-8 ">
+      <h4>{{blog.b_title}}</h4>
+      <p>{{blog.b_body[0].para[0].text}}</p>
+      <div class="b-profile">
+        <img [src]="blog.postedBy.profilePic" alt="">
+        <span>{{blog.postedBy.userName}}</span>
+      </div>
+      
+    </div>
+    
+    
+    </div>
+    <div class="skeleton row" *ngIf="b_skeleton">
+
+      <div class=" col col-sm-12 col-lg-4 " >
+     <div class="loading"></div>
+      </div>
+      <div class=" col col-sm-10 col-lg-8 ">
+      <div class="title-block">
+        <div class=" loading">
+    
+        </div>
+      </div>
+        <div class="para">
+          <div class="loading"></div>
+        </div>
+      </div>
+      
+      
+      </div>
+    </div>
+    
+
+</div>
+  <div class="recent-container col-sm-12 col-lg-3">
+   <div class="profile">
+    <div class="circle" *ngIf="p_skeleton">
+      <div class="loading"></div>
+     </div>
+   <img [routerLink]="['/profilepage', CurrentUser._id]" *ngIf="p_skeleton==false" [src]="CurrentUser.profilePic" alt="" class="profile-pic">
+   <p>{{CurrentUser.userName}}</p>
+   </div>
+
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<div r class="explore-container">
+
+    <div class="search-container">
+        <input [(ngModel)]="SearchQuery" name="SearchQuery"  type="text" class="search-input" placeholder="Search">
+        <button mat-mini-fab class="btn" (click)="searchPosts()" aria-label="Example icon button with a menu icon">
+            <mat-icon>search</mat-icon>
+          </button> 
+    </div>
+    <div class="filter-container">
+
+        <mat-form-field class="example-chip-list">
+        
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip *ngFor="let Tag of Tags" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(Tag)">
+                {{Tag}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input 
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+          
+
+        <div class="mat-expansion">
+            <mat-expansion-panel hideToggle>
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                              <button class="color-btn" mat-raised-button aria-label="Example icon-button with a menu">
+          
+                                      <mat-icon style="color:white;">colorize</mat-icon>
+          
+              <mat-icon [style.color]="CurrentColor" *ngIf="SelectedColor" >brightness_1</mat-icon>
+          
+                              </button>
+                            </mat-panel-title>
+                     
+                          </mat-expansion-panel-header>
+                          
+                          <input type="text" class="color-input" [(ngModel)]="Default" name="Default"  >
+                          <button (click)="AddHex()" style="margin:0px 10px;" mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+                              <mat-icon>search</mat-icon>
+                            </button>
+          
+          
+                          <br>
+          
+                          <div class="basic">
+                           <div class="row">
+                               <div class="col-sm-4 color" *ngFor="let color of BasicPallete ">
+                                  <mat-icon [style.color]="color" (click)="BasicColor(color)" >brightness_1</mat-icon>
+                               </div>
+                           </div>
+                          </div>
+          
+                      </mat-expansion-panel>
+          
+                      </div>
+                    
+
+    </div>
+
+    <div class="categories">
+
+            <owl-carousel-o [options]="customOptions" >
+
+                <ng-template carouselSlide *ngFor="let item of Categories" >
+                    <div class="item" (click)="sortbyCategory(item.category)">
+                        <img [src]="item.img" alt="">
+                        <div class="overlay">
+                            <h4>{{item.category}}</h4>
+                        </div>
+                    </div>                    
+                </ng-template>      
+            </owl-carousel-o>
+        </div>
+
+
+        <div class="not-found" *ngIf="NotFound">
+            <h4>No results found</h4>
+            <p>It seems we can’t find any results based on your search.</p>      
+            <div class="image"></div>
+
+
+        </div>
+
+        <div class="dribble-container row">
+
+        <div cdkDrag  class="post col-sm-12 col-lg-3" [routerLink]="['/Exploredetail', post._id]" *ngFor="let post of Posts">
+
+            <div class="blur-bg" style="background-image: url('{{post.d_pic}}')">
+        
+
+
+            </div>
+            <div class="blur">
+              <div class="profile">
+             <img [src]="post.postedBy.profilePic"  class="profile-pic" alt="">
+             <table>
+                 <tr>  {{post.postedBy.userName}}  </tr>
+                 <tr> {{post.d_title}}</tr>
+             </table>   
+        </div>
+  <div class="image-container">
+    <img [src]="post.d_pic" alt="" class="post">
+
+  </div>      
+            </div>
+
+        </div>
+
+    </div>
+    <button class="add-post" routerLink="/Exploreform" mat-fab   aria-label="Example icon button with a delete icon">
+        <mat-icon>add</mat-icon>
+      </button>
+</div>

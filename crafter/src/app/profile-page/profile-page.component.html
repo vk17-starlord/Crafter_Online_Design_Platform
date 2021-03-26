@@ -1,0 +1,99 @@
+ 
+<div class="profile-container">
+
+  <div class="container">
+    <div class="cover-photo" style="background-image:url('{{profileUser.profile.p_coverPhoto}}')">
+
+    </div>
+  <div class="profile-box row">
+    <div class="col-sm-12 col-lg-3 col d-flex justify-content-start align-items-center flex-column">
+      <img [src]="profileUser.profile.postedBy.profilePic" (click)="openBottomSheet()" alt="">
+    </div>
+    <div class="col-sm-12 col-lg-9 col">
+
+      <h4>{{profileUser.user.firstName}} {{profileUser.user.lastName}}</h4>
+       <p><i class="fas fa-briefcase"></i> {{profileUser.user.whoAreYou}}</p>
+       <p><i class="fas fa-briefcase"></i> {{profileUser.user.email}}</p>
+   <p><i class="fas fa-biohazard"></i>{{profileUser.profile.bio}}</p>
+  <div *ngIf="this.Viewer===this.profileUser.user._id">
+    <button *ngIf="Edit" routerLink='/Editprofile'>Edit </button>
+    <button *ngIf="Upload" routerLink='/Uploadpost'>Upload </button>
+
+  </div>
+
+   
+  </div>
+
+  </div>
+
+  
+<div class="tab-container">
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab> <ng-template mat-tab-label>
+      <i class="fab fa-blogger-b"></i>
+      <span id="label"> Blog </span>
+    </ng-template>
+
+    <div class="n-container" *ngIf="this.profileUser.blog.length<1">
+      <div class="not-posted">
+
+      </div>
+       <h4 *ngIf="this.Viewer===this.profileUser.user._id">
+        You haven’t uploaded any Article yet
+       </h4>
+       <h4 *ngIf="this.Viewer!==this.profileUser.user._id">
+       User haven’t uploaded any Article yet
+       </h4>
+       <button *ngIf="this.Viewer===this.profileUser.user._id" routerLink='/blogform'>Upload </button>
+    </div>
+ 
+    <div class="row blog-container" >
+    <div  class="col-sm-12 col-lg-4 col" *ngFor="let blog of profileUser.blog">
+      <div class="blog" [routerLink]="['/blogdetail', blog._id]">
+      <img [src]="blog.b_coverPhoto" alt="txt">
+      <div class="txt">
+        <h4>{{blog.b_title}}</h4>
+        <p>{{blog.b_body[0].para[0].text}}</p>
+      </div>
+      </div>
+    </div>
+    </div>
+
+  </mat-tab>
+  <mat-tab> <ng-template mat-tab-label>
+    <i class="fas fa-image"></i>
+    <span id="label"> Designs </span>
+  </ng-template>
+  <div class="n-container" *ngIf="this.profileUser.blog.length<1">
+    <div class="not-posted">
+
+    </div>
+    <h4 *ngIf="this.Viewer===this.profileUser.user._id">
+      You haven’t uploaded any  post yet
+     </h4>
+     <h4 *ngIf="this.Viewer!==this.profileUser.user._id">
+      User haven’t uploaded any  post yet
+      </h4>
+     <button *ngIf="this.Viewer===this.profileUser.user._id" routerLink='/Exploreform'>Upload </button>
+  </div>
+  <div class="d-container row">
+    <div class="col-sm-12 col-lg-4 post-card" *ngFor="let post of profileUser.dribbble">
+
+      <div class="post" [routerLink]="['/Exploredetail', post._id]">
+
+        <img [src]="post.d_pic" alt="">
+
+      </div>
+
+    </div>
+  </div>
+</mat-tab>
+
+  </mat-tab-group>
+
+</div>
+
+</div>
+
+</div>
+  <!-- style="background-image:url('{{profileUser.profile.p_coverPhoto}}')" -->

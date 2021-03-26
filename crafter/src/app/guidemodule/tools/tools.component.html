@@ -1,0 +1,72 @@
+<div class="tool-container">
+    <div class="hero-container ">
+<div class="row animate__lightSpeedOutRight">
+    <div class="col-sm-12 col-lg-6" id=img>
+
+    </div>
+    <div class="col-sm-12 col-lg-6 flex-column d-flex justify-content-center align-items-start" id="t-container">
+                <h1>Get The Best Design Tools </h1>
+              <h4> Explore out  tons of tools available to enhance optimize and speed up your workflow  </h4>
+            </div>
+
+</div>
+    </div>
+
+    <div class="tab-container">
+        <mat-tab-group mat-align-tabs="center"  animationDuration="2000ms" >
+            <mat-tab >
+                <ng-template mat-tab-label>
+                    <i class="fas fa-desktop"></i>   
+                    
+                    Apps
+                  </ng-template>
+                <div class="tab-content">
+
+                   <div class="row">
+                       <div class="col-sm-12 col-lg-4 card-container" *ngFor="let app of Apps">
+                       <div class="app d-flex justify-content-start align-items-center flex-column">
+                           <div class="bg-image">
+                               <img [src]='app.img' alt="">
+                           </div>
+                           <div class="bg-text">
+                               <img [src]="app.logo" id="logo" alt="">
+                               <h3>{{app.name}}</h3>
+                               <h4>{{app.desc}}</h4>
+                               <a [href]="app.link" target="_blank"> View App </a>
+                            </div>
+                       </div>
+                       </div>
+                   </div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Websites">
+                <ng-template mat-tab-label>
+                    <i class="fab fa-firefox-browser"></i>
+                Websites
+                  </ng-template>
+                <div class="tab-content">
+<div class="row">
+    <div class="col-sm-12 col-lg-4 card-container" *ngFor="let web of websites">
+
+<div class="web-card">
+
+    <h2>{{web.name}}</h2>
+     <img [src]="web.img" alt="">
+     <p>{{web.desc}}</p>
+     <a [href]="web.link" target="_blank">Visit Page <i class="fas fa-external-link-square-alt"></i> </a>
+</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+    </div>                                                                      
+</div>
+                </div>
+
+            </mat-tab>
+   
+     
+
+        </mat-tab-group>
+
+    </div>
+
+
+</div>

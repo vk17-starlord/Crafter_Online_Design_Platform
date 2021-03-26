@@ -1,0 +1,88 @@
+
+<div id="blog-detail">
+    <div class="container">
+        <h1 class="heading" style="text-align:center;margin:25px auto !important">{{CurrentBlog.b_title}}</h1>
+        <div class="profile-container">
+            <img [src]="CurrentBlog.postedBy.profilePic" [routerLink]="['/profilepage', CurrentBlog.postedBy._id]"alt="profile-pic" class="profile-pic">
+             <mat-icon  class="verify">verified</mat-icon>
+             <table>
+   
+                 <tr id="name"> {{CurrentBlog.postedBy.userName}}</tr>
+                 
+                 <tr id="date">Posted On : {{CurrentBlog.createdAt}}</tr>
+        
+                </table>
+
+         
+        </div>
+     
+
+        <p class="desc"> {{CurrentBlog.b_desc}} </p>  
+        <div class="section" *ngFor="let section of  CurrentBlog.b_body"  >
+            <h4>{{section.heading}}</h4>
+            <p *ngFor="let para of section.para" >{{para.text}}</p>
+            
+            <div *ngIf="section.image">
+                <img src='{{section.image}}' alt="" >
+
+            </div>
+        </div>
+      
+        <div class="reaction">
+       
+            <div class="comment-container" >
+     
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="r-container">
+                     
+                 
+                            <h4  ><mat-icon matTooltip="Dislike post" style="cursor:pointer;margin-left: 30px;" [style.color]="dislikeColor" (click)=" dislikeBlog()" >thumb_down</mat-icon></h4>
+                            <h4 ><mat-icon  [matTooltip]="Likes" [style.color]="likeColor" matBadgeOverlap="false" style="cursor:pointer" (click)="likeBlog()" >thumb_up</mat-icon></h4>
+                           
+                    
+                        <h4 ><mat-icon  matTooltip="would like to add comment on blog ?"  matBadgeOverlap="false" style="cursor:pointer">comment</mat-icon></h4>
+                  
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+        
+        <div class="comment-box">
+                <label style="color: white;">Leave a comment</label>
+                <textarea class="cmnt-input" style="color: white;" placeholder="Ex. It makes me feel..." [(ngModel)]="comment" ></textarea>
+        
+              <button mat-raised-button color="accent" style="margin: 20px;" (click)="addComment()">Post</button>
+        
+            </div>
+            <h4 style="width: 75%;margin: 0 auto;font-size:24px;"> Comments</h4> 
+         <div class="cmnt-card row" *ngFor="let comment of   CurrentBlog.b_comments">
+
+         <div class="col-sm-4 col-lg-1">
+             <mat-icon>bubble_chart</mat-icon>
+         </div>    
+         <div class="col-sm-8 col-lg-1">
+             <img [src]="comment.postedBy.profilePic" alt="">
+         </div>    
+         <div class="col-sm-11 col-lg-9">
+             <p>{{comment.b_text}}</p>
+         </div>    
+                      <div class="col-sm-1 col-lg-1">
+                          <mat-icon (click)="deleteComment(comment.b_text)" *ngIf="comment.postedBy.userName===CurrentUser.userName">delete</mat-icon>
+                      </div>
+             
+         </div>
+        </mat-expansion-panel>
+            </div>
+          </div>
+          
+          <div class="author-container">
+
+          </div>
+    </div>
+
+    <mat-icon class="nav-btn" routerLink="/homepage">chevron_left</mat-icon>
+
+</div>
+

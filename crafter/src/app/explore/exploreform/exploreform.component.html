@@ -1,0 +1,139 @@
+<div class="exploreform-container">
+    <div class="load-container" *ngIf="Loader">
+        <div class="loader" >
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        
+        </div>
+        <h1 class="typewriter">Your Shot is Loading ...</h1>
+    </div>
+    <div class="preview" *ngIf="Preview">
+ <div class="preview-card">
+
+<div class="profile-container">
+    <img [src]="CurrentUser.profilePic">
+     <table>
+         <tr id="title">{{CurrentPost.d_title}}</tr>
+  
+         <tr id="name"> {{CurrentUser.userName}}</tr>
+         
+         <tr id="date">Posted On : 15/2/2020</tr>
+
+        </table>
+</div>
+<img [src]="CurrentPost.d_pic"  class="post-image"alt="">
+
+<div class="color-pallete" matTooltip="Click on color to copy Hex Code" matTooltipPosition="above">
+    <button mat-icon-button  class="color-btn" aria-label="Example icon button with a home icon">
+        <mat-icon >palette</mat-icon>
+      </button>
+     
+<div *ngFor="let color of CurrentPost.d_color">
+    <mat-icon [style.color]="color" [cdkCopyToClipboard]="color"     [matTooltip]="color"
+    aria-label="Button that displays a tooltip with a custom message">lens</mat-icon>
+</div>
+
+</div>
+
+<h4 class="desc">{{CurrentPost.d_desc}}</h4>
+ </div>
+ <button class="float" (click)="openDialog()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+    <mat-icon>publish</mat-icon>
+  </button>
+    </div>
+    
+<div class="form" *ngIf="Form">
+<h1 class="heading">Publish Your Shot 🎉</h1> 
+    <div class="row" >
+<div class="col-sm-12 col-lg-4" id="Container">
+  </div>
+        <div class="col-sm-12 col-lg-4" id="col-1">
+    <p>Enter post title</p>
+    <input  type="text" class="input-field" autofocus  name="title" placeholder='Ex. Raphonsy' [(ngModel)]="d_title">
+    
+    <p>Enter post description</p>
+
+    <textarea name="d_desc" placeholder='Tell us how you arrived at this design ?' [(ngModel)]="d_desc"  rows="3" class="input-field"></textarea>
+    <p>Enter Tags related to post</p>     
+ 
+    <div class="chiplist">
+
+        <mat-chip-list #chipList>
+            <mat-chip *ngFor="let hashtag of d_tags" (removed)="remove(hashtag)">
+              {{hashtag}}
+              <mat-icon style="color:white;" matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input class="input" placeholder="Ex: #tag" 
+              [matChipInputFor]="chipList" 
+              (matChipInputTokenEnd)="add($event)"
+              [matChipInputAddOnBlur]="true" 
+              [matChipInputSeparatorKeyCodes]="chipInputKeyCodes">
+          </mat-chip-list>
+        </div>
+       
+        <p>Enter Links Related to Post</p>     
+
+        <div class="chiplist">
+
+            <mat-chip-list #chipLink>
+                <mat-chip *ngFor="let link of d_link" (removed)="removeLink(link)">
+                  {{link}}
+                  <mat-icon style="color:white;" matChipRemove>cancel</mat-icon>
+                </mat-chip>
+                <input class="input" placeholder="https://www.geeksforgeeks.org" 
+                  [matChipInputFor]="chipLink" 
+                  (matChipInputTokenEnd)="addLink($event)"
+                  [matChipInputAddOnBlur]="true" 
+                  [matChipInputSeparatorKeyCodes]="chipInputKeyCodes">
+              </mat-chip-list>
+            </div>
+           
+              
+      
+</div>
+<div class="col-sm-12 col-lg-4" id="col-2">
+   <div id="container">
+       
+    <p>Enter Color Codes Used In UI</p>     
+       
+    <div class="chiplist">
+
+        <mat-chip-list #colorlist>
+            <mat-chip *ngFor="let color of d_color" (removed)="removeColor(color)">
+              {{color}}
+              <mat-icon style="color:white;" matChipRemove>cancel</mat-icon>
+            </mat-chip> 
+            <input class="input"   placeholder="Ex: #fff" 
+              [matChipInputFor]="colorlist" 
+              (matChipInputTokenEnd)="addColor($event)"
+              [matChipInputAddOnBlur]="true" 
+              [matChipInputSeparatorKeyCodes]="chipInputKeyCodes">
+          </mat-chip-list>
+    </div>
+
+
+<div class="button-wrap">
+    <label class ="new-button" for="upload"> 
+        Upload  
+    </label>
+
+        <input id="upload" type="file" [(ngModel)]="selectedImage" name="selectedImage" (change)="OnImageChange($event)" />    
+    <div>
+        <h4>Select Category of your Post</h4>
+ <mat-radio-group
+ class="example-radio-group"
+ [(ngModel)]="d_category">
+ <mat-radio-button class="example-radio-button" *ngFor="let category of Category" [value]="category">
+   {{category}}
+ </mat-radio-button>
+</mat-radio-group>
+<button mat-raised-button (click)="UploadPost()">Preview     Shot</button>
+
+   </div> 
+   
+
+</div>
+</div>
+</div>
+</div>

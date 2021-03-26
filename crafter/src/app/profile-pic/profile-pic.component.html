@@ -1,0 +1,29 @@
+<div class="profile-container">
+  <div class="card">
+
+        <img [src]='ProfileUrl' class="avatar" alt="">
+
+    
+    <div class="row">
+
+
+        <div class="col-sm-12 col-lg-12 d-flex " >
+          
+          <div class="button-wrap">
+            <label class ="new-button" for="upload"> 
+             Change  
+          </label>
+        
+          <input type="file" (change)="onchange($event)" id="upload">
+        
+          </div>
+          <button class="upload"      [disabled]="show" (click)="onProfileUpload()">Update</button>
+
+        </div>
+     
+          
+    </div>
+
+  </div>
+
+</div>

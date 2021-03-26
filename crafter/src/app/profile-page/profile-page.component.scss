@@ -1,0 +1,210 @@
+@import '../app.component.scss';
+.profile-container{
+    width: 100%;
+
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh ;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction: column;
+
+}
+
+.container{
+    width:70%;
+  
+    min-height:auto;
+    margin: 0 auto;
+}
+.profile-box{
+    position: relative;
+    
+    background-color:rgba($color: $light-blue, $alpha: .9);
+    width: 70%;
+    border-radius: 12px;
+    padding: 2em;
+    margin: 0 auto ;
+    margin-top: -10vh;
+      display: flex;
+      justify-content:center;
+    img{
+        width: 20vh;
+        height:20vh;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+  .col-1,.col-2{
+      
+     
+    min-height: 50vh;
+    padding: 1em;
+  }
+  h4{
+      font-size: 24px;
+      
+      text-transform: capitalize;
+      font-family: JosefinSansBold;
+      margin-bottom:25px
+  }
+  button{
+      position: relative;
+         float: right;
+      padding: 05px 25px;
+      border: none;
+      &:hover{
+          background-color: darken($color: $primary, $amount: 5);
+      }
+      margin: 20px auto;
+      margin-bottom: 0px;
+      font-size:16px;
+      color: white;
+      background-color:$primary;
+  }
+  p{
+      opacity: 0.8;
+      font-size: 20px;
+      font-family: RobotoLight;
+      margin: 10px 0;
+      line-height: 125% !important;
+      i{
+          padding-right:15px;
+      }
+  }
+}
+.cover-photo{
+    width:100%;
+    min-height: 30vh;
+    background-size: cover;
+}
+
+.tab-container{
+    width: 100%;
+    margin:0 auto;
+    margin-top: 5vh;
+    .blog-container{
+width: 95%;
+    margin:0 auto;
+}
+.col{
+   margin: 20px auto;
+   padding: 10px;
+}
+.blog{
+border-radius: 12px;
+background-color: rgba($color: $light-blue, $alpha: 0.7);
+img{
+    border-radius: 12px 12px 0 0;
+    height: 25vh;
+    background: white;
+    width:100%;
+}
+.txt{
+    width:100%;
+    padding: 20px;
+}
+h4{
+    font-size: 20px;
+    font-family: JosefinSansBold;
+    line-height: 125%;
+}
+p{
+    font-size: 16px;
+    line-height: 150% !important;
+}
+    min-height: 50vh;
+}
+}
+#label{
+    margin: 0px 15px;
+}
+
+.d-container{
+    width: 95%;
+    margin: 5vh auto;
+}
+
+.post-card{
+    padding: 10px;
+margin: 10px auto;
+}
+
+.post{
+    width: 100%; 
+    background-color: rgba($color: $light-blue, $alpha: 0.5);
+min-height: 250px;
+padding: 5% 0;
+display: flex;
+border-radius: 12px;
+justify-content: center;
+img{
+    margin: 0 auto;
+    max-width:90%;
+    max-width: 90%;
+    min-width: 90%;
+    min-height: 90%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+}
+
+@media screen and (max-width:718px){
+ .tab-container   .blog-container{
+        width: 100%;
+display:block !important;
+        height:auto !important;
+    }
+    
+    .container{
+      padding: 0 !important;
+        width: 100%;
+    }.profile-box{
+        width: 90%;
+     h4{
+         text-align: center !important;
+         margin: 20px auto;
+     }
+     p{
+         line-height: 150%;
+     }
+    }
+
+}
+.col{
+    width: 90% !important;
+}
+.n-container{
+    width:100%;
+    text-align: center !important;
+    h4{
+        margin-top: 20px;
+        padding: 20px;
+        font-size: 20px;
+        padding: 0 !important;
+        font-family: JosefinSansBold;
+    }
+    button{
+
+        margin:10px auto;
+        border-radius: 20px;
+        padding: 10px 30px;
+        background-color: $primary;
+        color: white;
+        font-size: 20px;
+     border: none;
+
+    }
+}
+.not-posted{
+    width: 100%;
+    min-height: 25vh;
+    background-image: url('./undraw_Appreciation_re_p6rl.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5vh ;
+
+}
+

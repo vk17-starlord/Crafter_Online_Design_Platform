@@ -1,0 +1,443 @@
+@import "../../app.component.scss";
+
+
+#blog-detail{
+width:100%;
+min-height: 100vh;
+background-color: $darkblue;
+color: white;
+border: 1px solid rgba(204, 204, 204, 0);
+overflow-x:hidden !important;
+
+
+}
+
+.container{
+    text-align: center;
+
+    .heading{
+        width:75%;
+        text-align: left !important;
+    }
+    h4,h1{
+        
+        text-align: left;
+    }
+}
+
+
+#coverpic{
+    width:100%;
+    max-height: 100vh;
+    object-fit: cover;
+    object-position: top center;
+    height: auto;
+    background-size: cover;
+  margin: 0 auto ;
+      margin-bottom: 50px;
+    background-position: top center;
+}
+h1{
+    font-size: 42px;
+line-height:50px;
+font-family: JosefinSansBold;
+}
+.r-container{
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+
+}
+.mat-expansion-panel-header.mat-expanded{
+    width:100% !important;
+}
+.mat-expansion-panel:not([class*="mat-elevation-z"]){
+    box-shadow: none !important;
+}
+.r-container h4{
+   padding:15px auto;
+   margin-left:20px !important;
+   margin-right:20px !important; 
+   margin-right: 20px;
+    width: max-content !important;
+    text-align: left !important;
+    mat-icon{
+        margin-left:0px !important;
+    }
+
+}
+.reaction{
+    width:75% ;
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start;
+
+
+    
+}
+.section{
+    width:75%;
+    margin:0 auto;
+    h4{
+        font-size: 28px;
+        line-height:110%;
+        color: white;
+        margin: 15px auto;
+        text-align: left !important;
+        line-height: 35px;
+    }
+    img{
+        width: auto;
+        max-width:100%;
+        height: auto;
+        text-align: center;
+margin: 30px auto;
+object-fit: cover;
+object-position: top center;
+    }
+    p::first-letter{
+        text-transform: capitalize !important;
+    }
+    p{ 
+       
+        font-size:18px;
+        line-height: 29px;
+
+        margin:8px auto;
+    }
+    
+    text-align: center;  
+}
+
+.profile-container{
+    margin:25px auto;
+    width:75%;
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    
+    .profile-pic{
+       width: 75px;
+       height: 75px;
+       border-radius: 50%;
+       object-fit: cover;
+       object-position: center center;
+       text-align: left;
+    }
+    .verify{
+        color: rgb(26, 75, 235);
+        position: relative;
+        background-color: white;
+        padding:5px;
+        border-radius: 50%;
+   display: flex;
+   font-size: 35px;
+   justify-content:center;
+   align-items: center;
+        margin-left: -20px;
+   margin-top: 54px;
+   box-sizing: border-box;
+   
+   }
+   
+   table{
+       margin:0px 25px;
+   
+       tr{
+       cursor: pointer;
+           text-align: left !important;
+           padding:10px 0px;
+           border:none !important;
+           color:white;
+           height: auto !important;
+           
+       }
+       #title{
+           margin:10px auto;
+           font-size:52px;
+           line-height: 30px;
+           font-family: JosefinSansBold;
+       }
+       #name{
+           font-size:20px;
+           line-height:30px;
+       }
+       #date{
+           margin:10px auto;
+           font-family: RobotoLight;
+       opacity: 0.5;
+       line-height: 24px;
+       }
+      
+   }
+   }
+p{
+    font-size: 20px;
+    line-height:28px;
+    color: rgb(255, 255, 255);
+    text-align: justify;
+    opacity: 0.9;
+    font-family: RobotoLight;
+}
+.comment-container{
+    width:100%!important;
+    margin:0 auto;
+    height: auto;
+    padding:10px 0px !important;
+    margin-right: 0;
+    #read{
+        text-align: right !important;
+        width:100% !important;
+        padding:0 !important; 
+        padding-right: 0 !important;
+        span{
+            font-size:18px !important;
+        }
+    }
+  
+}
+.comment-box{
+ 
+
+height: auto;
+margin: 20px auto;
+
+.add-comment{
+    width:100% !important;
+    textarea{
+        width:100% !important;
+        background-color:$light-blue;
+        border: 1px solid $primary;
+        border-radius: 10px;
+        color: white;font-size: 16px !important;
+        padding:16px !important;
+    }
+}
+.comment-profile{
+    width:60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 60px;
+}
+.profile{
+    display:flex;
+    padding:20px;
+    flex-direction: row;
+}
+
+}
+
+mat-expansion-panel,mat-expansion-panel-header{
+    background-color: $darkblue!important;
+    background: $darkblue !important;
+    color: white;
+   
+  h4{
+
+      color: white !important;
+  }
+    
+    .full-width{
+        width:70%;
+        
+    }
+    .comment-card{
+        background: $light-blue !important;
+        min-width:300px;
+width: 100% !important;
+        margin:0 auto;
+        padding:10px;
+        border-radius: 30px;
+     .row > div{
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .profile-picture{
+            width:60px;
+            float: left;
+            border-radius: 50%;
+            height: 60px;
+            object-fit:cover;
+            object-position: top center;
+        }
+        p{
+            font-size: 16px;
+text-align: left;
+width:100%;
+            font-family: RobotoMedium;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    .reaction{
+        flex-direction: column !important;
+    }
+    .comment-container #read{
+        text-align: left !important;
+    }
+    .desc{
+        width: 100% !important;
+    }
+    .profile-container table{
+        margin:15px !important;
+        #name{
+            font-size: 16px !important;
+             line-height: 27px !important;
+        }
+    }
+    .comment-box,    .comment-card{
+        width:90% !important;
+        
+    }
+
+    .comment-container #read span{
+        display:none !important;
+    }
+    .comment-container #read .mat-icon{
+margin-top:10px !important;
+    }
+    mat-expansion-panel h4, mat-expansion-panel-header h4{
+        padding-top: 50px !important;
+    }
+
+    .coverpic{
+     height:auto;
+        object-fit: contain !important;
+    }
+    .comment-container{
+     padding:0 !important;
+    margin: 0 auto !important;
+        margin-top: 20px;
+        #read{
+            font-size: 18px !important;
+            .mat-icon{
+                font-size: 18px;
+            }
+        }
+    }
+    .mat-expansion-panel{
+        width: 100% !important;
+    }
+    .comment-container{
+        width: 100% !important;
+        margin:0 auto !important;
+    }
+     .profile-container{
+         width:100% !important;
+     }
+    .container h1{
+        font-size: 32px !important;
+        line-height: 43px !important;
+        text-align: left !important;
+        width:100% !important;
+    }
+    
+    .comment-card{
+        .row .col{
+            padding: 10px 5px;
+        }
+        .button{
+            max-width: 20px;
+            max-height: 20px ;
+        }
+    }
+
+    #blog-detail{
+        padding:10px;
+
+    }
+    .container h1{
+        width:75%;
+        margin:0 auto;
+        font-size:34px!important;
+        line-height:36px !important;
+     text-align:left;
+     margin-bottom:45px;
+    }
+    .section {
+        width: 100% !important;
+        overflow-wrap: break-word;
+        text-rendering: optimizeLegibility;
+        h4{
+            font-size:20px;
+            line-height:31px !important;
+        }
+        p{
+            overflow-wrap: break-word !important;
+
+            font-size:18px !important;
+             line-height:26px !important;
+             text-align:left!important;
+             letter-spacing: -0.003em !important;
+             word-break: break-word !important;
+             font-style: normal !important;
+
+        }
+    }
+}
+
+.cmnt-input{
+    width:100%;
+    padding:12px;
+    border-radius: 10px;
+    background-color: $light-blue;
+    border: 1px solid $primary;
+    font-size:20px;
+    font-family: RobotoLight;
+    color: white;
+   }
+   label{
+       width:100%;
+       text-align: left;
+       margin:20px auto;
+   font-size: 24px;
+   
+    }
+    
+    .reaction #read{
+        margin-right: 0 !important;
+        padding-right:0 !important;
+    }
+    .desc{
+        width:75%;
+        margin:25px auto;
+margin-top:30px;
+        font-size:18px;
+        color: #ccc;
+
+    }
+    .cmnt-card{
+        background-color:$light-blue;
+        border-radius: 8px;
+        div{
+
+        }
+        p{
+            margin:0 auto;
+            width:95%;
+            font-size: 18px;
+        }
+        img{
+            width:100%;
+            height:100%;
+            max-width:40px;
+            min-height:40px;
+            max-height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        margin: 20px auto;
+       width: 75%;
+       padding: 20px !important;
+mat-icon{
+    cursor: pointer;
+    &:hover{
+        color:rgb(241, 49, 49);
+    }
+}
+    }

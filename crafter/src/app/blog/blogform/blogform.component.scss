@@ -1,0 +1,124 @@
+@import "../../app.component.scss";
+
+
+#blog-form{
+background-color: $darkyellow;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    height: auto;
+    p{
+      margin: 10px auto;
+      color: #ccc;
+    }
+    h1{
+        text-align: center;
+        font-family:  JosefinSansBold;
+line-height: 42px;
+padding: 50px 0px;
+color:white;
+        font-size: 42px;
+    }
+    text-align: center;
+   label{
+       text-align: left;
+       margin-top: 30px;
+span{
+  color: rosybrown;
+  margin: 0px 25px;
+  font-size:14px !important;
+}
+       display:block;
+        color: white;
+        font-size: 18px;
+    }
+    form{
+        width: 70%;
+        margin: 20px auto;
+        margin: 20px auto;
+text-align: left;
+    }
+    input[type="text"],textarea{
+     background-color: transparent;
+     border: none;
+     border-bottom: 2px solid $primary !important;
+        width: 100%;
+        margin-bottom: 40px ;
+        color: white;
+        opacity: 0.8;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .example-radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+      }
+      
+      .example-radio-button {
+        margin: 5px;
+      }
+
+
+   
+      
+      .new-button {
+          display: inline-block;
+          padding: 12px 20px; 
+          cursor: pointer;
+          border-radius: 4px;
+          font-size: 16px !important;
+          background-color: lighten($color: (#000000), $amount: 10);
+          color: #fff;
+      }
+
+      .para-section{
+     padding:30px;
+    
+      }
+}
+mat-radio-button,.myclass{
+    color: $primary!important;
+    font-size: 18px;
+}
+.new{
+  font-size:16px !important;
+}
+.btn{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 3px 40px;
+  background-color:$primary;
+  font-size: 16px !important;
+  margin: 30px 0!important;
+  margin-right: 25px !important;
+}
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  border-bottom:2px solid transparent !important;
+  top: -10px;
+  left: 0px;
+  font-size: 15px;
+  border: 1px solid red;
+  color: rgb(153,153,153);
+}
+#upload-2{
+top:0px !important;
+}
+.button-wrap ,.wrap{
+  position: relative;
+}
+
+.new-button,.new {
+    display: inline-block;
+    padding: 8px 12px; 
+    width: max-content !important;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 4px;
+    font-family: RobotoLight;
+    background-color: $light-blue !important;
+    font-size: 16px;
+    color: #fff;
+}

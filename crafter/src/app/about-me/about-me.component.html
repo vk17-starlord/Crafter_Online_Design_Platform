@@ -1,0 +1,23 @@
+<div class="about-me">
+    <div class="card"  *ngIf="Profile">
+    <h1>-----{{Profile.userName}}</h1>    
+   <img [src]="Profile.profilePic" alt="" class="profile">
+      <h2><mat-icon>mail</mat-icon><span>{{Profile.email}}</span></h2>
+      <h2><mat-icon>work</mat-icon><span>{{Profile.whoAreYou}}</span></h2>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6" id="white"></div>
+        <div class="col-sm-12 col-lg-6">
+            
+        </div>
+       
+        <div class="col-sm-12 col-lg-6" >
+            
+
+        </div>
+        <div class="col-sm-12 col-lg-6"  id="white"></div>
+   
+    </div>
+
+</div>
