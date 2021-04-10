@@ -22,10 +22,6 @@ const guideSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true
-    },
-    postedBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
     }
 }, {
     timestamps: true

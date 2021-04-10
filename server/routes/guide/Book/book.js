@@ -6,10 +6,10 @@ const multer = require('multer')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads')
+      cb(null, 'bookupload')
     },
     filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
+      cb(null, file.fieldname + "-" + file.originalname)
     }
 })
    
@@ -28,10 +28,42 @@ router.get('/book', async (req,res)=>{
     }
 })
 
-router.post('/book', upload.single('file'), async (req,res)=>{
+router.post('/book/coverphoto', upload.single('coverphoto'), async(req,res)=>{
     try {
-        const {title, cover_photo, link, pdf_link, description} = req.body
-        if(!title || !cover_photo || !link || !pdf_link || !description){
+        res.send(req.file)
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
+router.post('/book/pdf_link', upload.single('pdf_link'), async(req,res)=>{
+    try {
+        res.send(req.file)
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
+// {
+//     "book": [
+//         {
+//             "_id": "6071abd8766a483f345997e5",
+//             "title": "jlkjlkjk",
+//             "description": "sdasd",
+//             "coverphoto": "server\\upload\\coverphoto-1618061281029",
+//             "pdf_link": "server\\upload\\pdf_link-1618061310390",
+//             "link": "https://github.com/vk17-starlord/Crafter_Online_Design_Platform/tree/resources/server/routes",
+//             "createdAt": "2021-04-10T13:44:56.767Z",
+//             "updatedAt": "2021-04-10T13:44:56.767Z",
+//             "__v": 0
+//         }
+//     ]
+// }
+
+router.post('/book', async (req,res)=>{
+    try {
+        const {title, description, coverphoto, pdf_link, link} = req.body
+        if(!title || !link || !coverphoto || !pdf_link || !description){
             return res.status(401).json({err: "Please Enter all the fields"})
         }
 
@@ -40,17 +72,12 @@ router.post('/book', upload.single('file'), async (req,res)=>{
             return res.status(400).json({err: "Title already exists"})
         }
 
-        if(!cover_photo){
-            return res.status(400).json({err: "No Photos Selected"})
-        }
-
         const newBook = new Book({
             title,
-            cover_photo,
-            link,
-            pdf_link,
             description,
-            postedBy: req.user
+            coverphoto,
+            pdf_link,
+            link
         })
 
         await newBook.save()

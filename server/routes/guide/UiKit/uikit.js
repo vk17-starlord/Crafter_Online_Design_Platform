@@ -6,14 +6,15 @@ const multer = require('multer')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads')
+      cb(null, 'uikitupload')
     },
     filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
+      cb(null, file.fieldname + "-" + file.originalname)
     }
 })
    
 var upload = multer({ storage: storage })
+
 
 router.get('/uikit', async (req,res)=>{
     try {
@@ -28,7 +29,44 @@ router.get('/uikit', async (req,res)=>{
     }
 })
 
-router.post('/uikit', upload.single('file'), async (req,res)=>{
+router.post('/uikit/coverphoto', upload.single('coverphoto'), async (req,res)=>{
+    try {
+        res.send(req.file)
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
+router.post('/uikit/mockup', upload.single('mockup'), async (req,res)=>{
+    try {
+        res.send(req.file)
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
+router.post('/uikit/kit_zip', upload.single('kit_zip'), async (req,res)=>{
+    try {
+        res.send(req.file)
+    } catch (err) {
+        return res.status(500).json({err: err.message})
+    }
+})
+
+// {
+//     "optional_link": "https://afteracademy.com/blog/file-upload-with-multer-in-nodejs-and-express#:~:text=Multer%20is%20a%20node.,handle%20multipart%2Fform%2Ddata.",
+//     "_id": "6071afef6cbe6d4f98b58cee",
+//     "title": "jlkjlkjk",
+//     "cover_photo": "server\\uikitupload\\coverphoto-Nonvegsupreme.jpg",
+//     "mockup": "server\\uikitupload\\mockup-Cheeseandcorn.jpg",
+//     "kit_zip": "server\\uikitupload\\kit_zip-eco.rar",
+//     "description": "sdasd",
+//     "createdAt": "2021-04-10T14:02:23.998Z",
+//     "updatedAt": "2021-04-10T14:02:23.998Z",
+//     "__v": 0
+// }
+
+router.post('/uikit', async (req,res)=>{
     try {
         const {title, cover_photo, mockup, kit_zip, description, optional_link} = req.body
         if(!title || !cover_photo || !mockup || !kit_zip || !description || !optional_link){

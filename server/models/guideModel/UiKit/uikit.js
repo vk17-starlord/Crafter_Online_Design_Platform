@@ -26,10 +26,6 @@ const uiSchema = new mongoose.Schema({
     optional_link: {
         type: String,
         default: "null"
-    },
-    postedBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
     }
 }, {
     timestamps: true

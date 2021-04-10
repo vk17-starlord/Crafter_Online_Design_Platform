@@ -7,19 +7,19 @@ const bookSchema = new mongoose.Schema({
         trim: true,
         unique: true
     },
-    cover_photo: {
-        type: String,
-        required: true
-    },
     description: {
         type: String,
         required: true
     },
-    link: {
+    coverphoto: {
         type: String,
         required: true
     },
     pdf_link: {
+        type: String,
+        required: true
+    },
+    link: {
         type: String,
         required: true
     },
