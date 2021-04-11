@@ -58,14 +58,13 @@ This project focuses 🎯 on 4 major parts
 ![Screenshot_2021-02-26 Crafter(3)](https://user-images.githubusercontent.com/53342781/109320026-8ef72380-7875-11eb-9902-01a3f87dc680.png)
 
 ⭐ Homepage
+![Screenshot_2021-04-11 Crafter](https://user-images.githubusercontent.com/53342781/114298734-6483c180-9ad5-11eb-892e-edc2a2458eea.png)
 
-⭐ Create Your Portfolio 
-
-![Screenshot_2021-02-26 Crafter(6)](https://user-images.githubusercontent.com/53342781/109320998-a97dcc80-7876-11eb-981b-2c8f2ce8a4c3.png)
 
 ⭐ Portfolio 
 
-![Screenshot_2021-02-26 Crafter(8)](https://user-images.githubusercontent.com/53342781/109321431-24df7e00-7877-11eb-9b64-4a131c3fe651.png)
+![Screenshot_2021-04-11 Crafter(3)](https://user-images.githubusercontent.com/53342781/114298728-5fbf0d80-9ad5-11eb-9ff0-007ccec8353d.png)
+![Screenshot_2021-04-11 Crafter(2)](https://user-images.githubusercontent.com/53342781/114298729-60f03a80-9ad5-11eb-9fad-729af1cbca57.png)
 
 ⭐ Explore Design Section
 
@@ -99,7 +98,9 @@ This project focuses 🎯 on 4 major parts
 
 ⭐ Guide Section
 
-This section is under development will update section asap !!
+
+![Screenshot_2021-04-11 Crafter(1)](https://user-images.githubusercontent.com/53342781/114298733-63eb2b00-9ad5-11eb-9ebc-db4776393a17.png)
+
 
 
 Thanks a lot !!
