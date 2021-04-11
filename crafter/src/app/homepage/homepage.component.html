@@ -1,3 +1,6 @@
+
+
+
 <div class="homepage-container row">
   <div class="sidenav col-sm-12 col-lg-2">
    <h1 class="title">crafter</h1>
@@ -33,7 +36,7 @@
 </owl-carousel-o>
 </div>
 <div class="blog-container" >
-  <div class="b-card row" *ngFor="let blog of  RecentBlogs">
+  <div class="b-card row" *ngFor="let blog of  RecentBlogs" [routerLink]="['/blogdetail', blog._id]">
     <div class=" col col-sm-12 col-lg-4">
       <img [src]="blog.b_coverPhoto" alt="">
     </div>
@@ -49,6 +52,7 @@
     
     
     </div>
+    <button class="view" *ngIf="!b_skeleton" routerLink='/blog'>View More</button>
     <div class="skeleton row" *ngIf="b_skeleton">
 
       <div class=" col col-sm-12 col-lg-4 " >
@@ -79,6 +83,33 @@
    <img [routerLink]="['/profilepage', CurrentUser._id]" *ngIf="p_skeleton==false" [src]="CurrentUser.profilePic" alt="" class="profile-pic">
    <p>{{CurrentUser.userName}}</p>
    </div>
+  <div class="recent-users">
+    <h4><i class="fas fa-history"></i> Recent Users </h4>
+
+     <div class="row  ">
+      <div class="col-sm-4 r-img d-flex justify-content-center align-items-center" *ngFor="let user of [1,2,3,4,5,6]">
+        <div class="hidden" *ngIf="loaduser" >
+<div class="img"></div>
+        </div>
+      </div>
+    <div class="col-sm-4 r-img d-flex justify-content-center align-items-center" *ngFor="let user of RecentUsers">
+      <img [src]="user.postedBy.profilePic" [routerLink]="['/profilepage',     user.postedBy._id]"   alt="" >
+    </div>
+      
+     </div>
+
+
+  </div>
+<div class="projects">
+  <div *ngFor="let project of NewProjects" class="p-card">
+<li>{{project.title}}</li>
+<div class="d-flex justify-content-between align-items-center " >
+  <span>{{project.diff}}</span>
+<button (click)="download(project.linkURL)"><i class="fas fa-download" ></i></button>
+
+</div>
+  </div>
+</div>
 
   </div>
 </div>

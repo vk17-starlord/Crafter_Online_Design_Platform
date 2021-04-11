@@ -16,7 +16,7 @@ export class ExploreComponent implements OnInit {
   SelectedColor:boolean = false;
   Default:any="#"
   HexValue:any
-
+loaded=true;
 
 
   Categories:any=[
@@ -61,8 +61,8 @@ category:"illustration"
     }
   }
  
- Posts:any
- Allposts:any   
+ Posts:any=null;
+ Allposts:any="";   
  SearchQuery:any=""
 BasicPallete:any=[
  
@@ -116,11 +116,13 @@ remove(tag): void {
   }
 }
 
+
  ngOnInit(): void {
 this.exploreService.GetPosts().subscribe((res)=>{
+
 this.Posts=res;
 this.Allposts=res;
-
+this.loaded=false;
 this.Allposts.forEach((ele)=>{
   if(ele.d_title.length>45){
 ele.d_title=ele.d_title.slice(0,40).concat('...');
@@ -129,9 +131,8 @@ ele.d_title=ele.d_title.slice(0,40).concat('...');
 
 console.log(this.Posts)
 })
-if(this.Allposts.length===0){
+if(this.Allposts.length===0 && this.Allposts!==""){
   this.NotFound=true;
-
 }else{
   this.NotFound=false;
 

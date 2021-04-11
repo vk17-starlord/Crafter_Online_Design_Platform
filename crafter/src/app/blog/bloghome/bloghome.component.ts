@@ -10,7 +10,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class BloghomeComponent implements OnInit {
  class:any="";
-
+recentLoaded=true;
   constructor(private BlogQoute:BlogqouteService ,private BlogService: BlogService    ) { }
 searchquery:any=""
 Categories:any=[
@@ -68,6 +68,7 @@ let Sorted=this.AllBlog.sort((val1, val2)=>
  Date(val1.createdAt).getTime()}
  )
 this.RecentBlog=Sorted[0];
+this.recentLoaded=false;
 })
    
     

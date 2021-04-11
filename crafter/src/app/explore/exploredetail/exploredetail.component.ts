@@ -16,9 +16,9 @@ export class ExploredetailComponent implements OnInit {
 
   isShow: boolean;
   topPosToStartShowing = 100;
-
-  C_Id:any;
-CurrentUser:any
+dataLoaded=true;
+  C_Id:any=null;
+CurrentUser:any=null;
 mycomment=(id)=>{
   if(id===this.CurrentUser._id){
     return true;
@@ -213,11 +213,11 @@ getCurrentUser(){
 
 GetCurrentPost(id){
   this.exploreService.GetPosts().subscribe((res)=>{
+    this.dataLoaded=false;
     this.Allposts=res;     
     this.CurrentPost = this.Allposts.filter((ele)=>{
       return ele._id === id;
     })[0];
-
 console.log(this.CurrentPost);
 this.Likes=this.CurrentPost.d_likes.length;
 // liked post check
@@ -254,6 +254,8 @@ month = '0' + month;
 this.CurrentPost.createdAt =year+'-' + month + '-'+dt;
   })
   this.gotoTop()
+
+
 }
 
 
@@ -301,6 +303,7 @@ DisLikePost(){
 }
 
 ChangeRoute(id){
+  this.dataLoaded=true;
   this.router.navigate(['/Exploredetail', id])
   this.GetCurrentPost(id);
   let likesarray=this.CurrentPost.d_likes;  

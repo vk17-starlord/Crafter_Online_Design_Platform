@@ -21,7 +21,7 @@ export class ProfilePageComponent implements OnInit {
  Edit=false;
  Upload=false;
  myProfile=false;
-
+ dataLoaded=false;
   profileUser:any={
     user:"",
     blog:"",
@@ -96,7 +96,7 @@ let id=this.route.snapshot.params['id'].toString();
 this.profileService.GetProfilePostById(id).subscribe((res)=>{
   this.profileUser=res;
 
-  
+  this.dataLoaded=true;
 
 this.profileUser.blog.forEach((blog) => {
   let txt=blog.b_body[0].para[0].text
@@ -108,7 +108,6 @@ if(this.profileUser.profile.length<1){
   this.profileUser.profile.p_coverPhoto="https://images.pexels.com/photos/2775196/pexels-photo-2775196.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 }
 
-console.log(this.profileUser.blog.length)
 
 
 if(this.profileUser.profile.length>0){
@@ -126,7 +125,9 @@ this.UserInfo.GetUserInfo().subscribe((resp)=>{
 
  
 
+
 })
+
   }
 
  

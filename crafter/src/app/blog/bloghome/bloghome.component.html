@@ -2,7 +2,7 @@
 <div id="blog-home" >
     <mat-icon routerLink="/homepage" style="cursor: pointer;margin: 20px;position: absolute;top:0;">navigate_before</mat-icon>    
 
-    <div class="recent-container" style="background-image: url('{{RecentBlog.b_coverPhoto}}')">
+    <div class="recent-container" *ngIf="!recentLoaded" style="background-image: url('{{RecentBlog.b_coverPhoto}}')">
    <div class="row">
        <div class="col-sm-12 col-lg-10">
         <div class="text-container">
@@ -15,9 +15,25 @@
       
        </div>
    </div>
- 
+
     </div>
- 
+  
+    <div class="skeleton" *ngIf="recentLoaded">
+       <div class="s-title">
+<div class="loading"></div>
+       </div>
+       <div class="s-desc">
+        <div class="loading"></div>
+   
+
+    </div>
+    <div class="s-btn">
+        <div class="loading"></div>
+
+
+    </div>
+
+    </div>
     <div class="welcome container">
 <div class="row">
     <div class="col-sm-12 col-lg-6">

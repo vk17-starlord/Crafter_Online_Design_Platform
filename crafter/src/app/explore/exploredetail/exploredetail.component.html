@@ -1,4 +1,28 @@
-<div  #explorecontainer class="explore-detail">
+<div class="skeleton container" *ngIf="dataLoaded">
+<div class="s-profile d-flex"  >
+    <div class="circle">
+        <div class="loading"></div>
+    </div>
+  <div>
+    <div class="name">
+        <div class="loading">
+
+        </div>
+    </div>
+    <div class="date">
+        <div class="loading"></div>
+    </div>
+    <div class="date">
+        <div class="loading"></div>
+    </div>
+  </div>
+</div>
+<div class="s-post">
+    <div class="loading"></div>
+</div>
+</div>
+
+<div  #explorecontainer class="explore-detail" *ngIf="!dataLoaded" >
   
     <mat-icon class="nav-btn" routerLink="/homepage">chevron_left</mat-icon>
 

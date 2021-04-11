@@ -1,6 +1,33 @@
 
 <div id="blog-detail">
-    <div class="container">
+
+    <div class="container skeleton" *ngIf="loaded">
+        <div class="s-heading">
+            <div class="loading"></div>
+        </div>
+        <div class="s-profile d-flex">
+       <div class="circle">
+           <div class="loading"></div>
+       </div>
+     <div>
+        <div class="name">
+            <div class="loading"></div>
+        </div>
+        <div class="date">
+            <div class="loading"></div>
+        </div>
+        
+     </div>
+     
+        </div>
+        <div class="desc">
+            <div class="loading"></div>
+        </div>
+        <div class="txt">
+            <div class="loading"></div>
+        </div>
+    </div>
+    <div class="container" *ngIf="!loaded">
         <h1 class="heading" style="text-align:center;margin:25px auto !important">{{CurrentBlog.b_title}}</h1>
         <div class="profile-container">
             <img [src]="CurrentBlog.postedBy.profilePic" [routerLink]="['/profilepage', CurrentBlog.postedBy._id]"alt="profile-pic" class="profile-pic">

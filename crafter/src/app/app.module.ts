@@ -64,6 +64,8 @@ import { GuideComponent } from './guidemodule/guide/guide.component';
 import { StatsComponent } from './guidemodule/stats/stats.component';
 import { ResourceComponent } from './guidemodule/resource/resource.component';
 import { ToolsComponent } from './guidemodule/tools/tools.component';
+import { BooksComponent } from './guidemodule/books/books.component';
+import { CoursesComponent } from './guidemodule/courses/courses.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +92,8 @@ import { ToolsComponent } from './guidemodule/tools/tools.component';
     StatsComponent,
     ResourceComponent,
     ToolsComponent,
+    BooksComponent,
+    CoursesComponent,
     
   ],
   imports: [

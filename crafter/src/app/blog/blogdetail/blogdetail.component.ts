@@ -33,6 +33,7 @@ export class BlogdetailComponent implements OnInit {
         return false;
       }
   };
+  loaded=true;
   constructor(private route: ActivatedRoute,private _bottomSheet: MatBottomSheet,private _snackBar: MatSnackBar,
     private location: Location,private blogService :BlogService,private UserService:UserInfoService,private Blogreaction:BlogreactionService) { }
   ngOnInit(): void {
@@ -92,6 +93,8 @@ if(present){
        return blog._id==id;
   })[0]
   console.log(this.CurrentBlog)
+  this.loaded=false;
+
   let year,month,dt
   var date = new Date(this.CurrentBlog.createdAt);
   year = date.getFullYear();
@@ -115,7 +118,10 @@ this.CurrentBlog.b_likes.forEach((ele)=>{
   }
 })
 
+
+
     })
+
   }  
 
 

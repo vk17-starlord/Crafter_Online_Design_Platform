@@ -1,4 +1,7 @@
-<div r class="explore-container">
+<div class="center-spin" *ngIf="loaded">
+  <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+<div *ngIf='!loaded' class="explore-container">
 
     <div class="search-container">
         <input [(ngModel)]="SearchQuery" name="SearchQuery"  type="text" class="search-input" placeholder="Search">
@@ -6,7 +9,7 @@
             <mat-icon>search</mat-icon>
           </button> 
     </div>
-    <div class="filter-container">
+    <div class="filter-container" >
 
         <mat-form-field class="example-chip-list">
         

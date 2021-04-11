@@ -1,7 +1,31 @@
  
-<div class="profile-container">
+<div class="profile-container" >
+<div class="container skeleton" *ngIf="!dataLoaded">
+  <div class="cover-skeleton">
+    <div class="loading cover-skeleton"></div>
+  </div>
+  <div class="profile-box">
+    <div class="col-sm-12 col-lg-3 col d-flex justify-content-start align-items-center flex-column"> 
+      <div class="s-profile">
+        <div class="loading s-profile"></div>
+      </div>
+    </div>
 
-  <div class="container">
+
+    <div class="col-sm-12 col-lg-9 col">
+      <h4> <div class="loading"></div></h4>
+      <h5> <div class="loading"></div></h5>
+      <h5> <div class="loading"></div></h5>
+      <h5> <div class="loading"></div></h5>
+    </div>
+
+</div>
+
+
+
+</div>
+
+  <div class="container" *ngIf="dataLoaded">
     <div class="cover-photo" style="background-image:url('{{profileUser.profile.p_coverPhoto}}')">
 
     </div>
@@ -13,7 +37,7 @@
 
       <h4>{{profileUser.user.firstName}} {{profileUser.user.lastName}}</h4>
        <p><i class="fas fa-briefcase"></i> {{profileUser.user.whoAreYou}}</p>
-       <p><i class="fas fa-briefcase"></i> {{profileUser.user.email}}</p>
+       <p><i class="fas fa-envelope"></i> {{profileUser.user.email}}</p>
    <p><i class="fas fa-biohazard"></i>{{profileUser.profile.bio}}</p>
   <div *ngIf="this.Viewer===this.profileUser.user._id">
     <button *ngIf="Edit" routerLink='/Editprofile'>Edit </button>
@@ -42,7 +66,8 @@
         You haven’t uploaded any Article yet
        </h4>
        <h4 *ngIf="this.Viewer!==this.profileUser.user._id">
-       User haven’t uploaded any Article yet
+        The user hasn’t uploaded any Article yet
+
        </h4>
        <button *ngIf="this.Viewer===this.profileUser.user._id" routerLink='/blogform'>Upload </button>
     </div>
@@ -72,7 +97,7 @@
       You haven’t uploaded any  post yet
      </h4>
      <h4 *ngIf="this.Viewer!==this.profileUser.user._id">
-      User haven’t uploaded any  post yet
+      The user hasn’t uploaded any  post yet
       </h4>
      <button *ngIf="this.Viewer===this.profileUser.user._id" routerLink='/Exploreform'>Upload </button>
   </div>
@@ -96,4 +121,3 @@
 </div>
 
 </div>
-  <!-- style="background-image:url('{{profileUser.profile.p_coverPhoto}}')" -->

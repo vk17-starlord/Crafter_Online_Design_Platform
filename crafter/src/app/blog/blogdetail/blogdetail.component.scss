@@ -441,3 +441,72 @@ mat-icon{
     }
 }
     }
+
+    .skeleton{
+        padding: 2em 0;
+        min-height: 100vh;
+        .loading {
+            overflow: hidden;
+            
+            background-color: lighten($color: $darkblue, $amount: 05);
+            
+            width: 100%;
+            height: 200%;
+            position: relative;
+        
+        }
+        .loading::after  ,.loadme::after  {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-100%);
+            background: -webkit-gradient(linear, left top,
+                        right top, from(transparent), 
+                        color-stop(rgba(255, 255, 255, 0.2)),
+                        to(transparent));
+                          
+            background: linear-gradient(90deg, transparent,
+                    rgba(255, 255, 255, 0.2), transparent);
+        
+            /* Adding animation */
+            animation: loading 1.5s infinite;
+        }
+        
+       
+    .s-heading{
+        width:70%;
+        margin:20px 0;
+        height: 5vh;
+    }
+    div{
+             
+        overflow: hidden !important;
+    }
+    .name{
+        width: 100px;
+        height: 20px;
+        margin: 20px 0;
+    }
+    .date{
+        width: 70px;
+        height: 10px; 
+    }
+    .desc{
+        margin:20px 0;
+        width: 70%;
+        height: 30px;   
+    }
+    .txt
+    {
+        width:100%;
+        height: 60vh;
+    }
+    .circle{
+      margin-right: 25px;
+        width: 75px;
+       height: 75px;
+       border-radius: 50%; 
+    }
+    }

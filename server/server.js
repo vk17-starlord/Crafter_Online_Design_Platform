@@ -24,6 +24,9 @@ require('./models/blogModel/blogqoute');
 require('./models/profile');
 require('./models/dribbbleModel/dribbbleModel');
 require('./models/dribbbleModel/dribbleCategory');
+require('./models/guideModel/guide')
+require('./models/guideModel/Book/book')
+require('./models/guideModel/UiKit/uikit')
 
 app.use(require('./routes/user'));
 app.use(require('./routes/blogRoutes/blogRouter'));
@@ -34,6 +37,10 @@ app.use(require('./routes/profile'));
 app.use(require('./routes/dribbbleRoutes/dribbbleRouter'));
 app.use(require('./routes/dribbbleRoutes/dribbbleCategoryRouter'));
 app.use(require('./routes/project'));
+app.use(require('./routes/guide/guideRouter'));
+app.use(require('./routes/guide/Book/book'));
+app.use(require('./routes/guide/UiKit/uikit'))
+
 mongoose.connect(process.env.MONGO_URL, {
     useCreateIndex: true,
     useFindAndModify: false,

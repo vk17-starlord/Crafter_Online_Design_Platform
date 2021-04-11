@@ -4,6 +4,7 @@ import {ProfileUploadService}  from '../services/profile-upload.service'
 import {AuthenticationService} from '../services/authentication.service'
 import {MatSnackBar} from '@angular/material/snack-bar'
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import {Router} from '@angular/router';
 import { ExploreService } from '../services/explore.service';
 import { ProjectService } from '../services/project.service';
 @Component({
@@ -101,17 +102,36 @@ PostOptions: OwlOptions = {
 
 
 
-  constructor(private authentication:AuthenticationService,private _snackBar: MatSnackBar,private Profile:    ProfileUploadService  ,private blogService:BlogService ,private exploreService:ExploreService,private Projects:ProjectService ) { }
+  constructor(private router:Router, private authentication:AuthenticationService,private _snackBar: MatSnackBar,private Profile:    ProfileUploadService  ,private blogService:BlogService ,private exploreService:ExploreService,private Projects:ProjectService ) { }
   NewProjects:any=[]
    b_skeleton=true;
-   p_skeleton=true
+   p_skeleton=true;
+   loaduser=true;
+
+   download(name){
+     
+    this.Projects.GetZip(name).subscribe(data => {
+      const blob = new Blob([data], {
+        type: 'application/zip'
+      });
+      const url = window.URL.createObjectURL(blob);
+      window.open(url);
+ 
+    });
+   }
   ngOnInit(): void {
 
+    this.NewProjects=    this.Projects.GetAllProjects().filter((ele)=>{
+      if(ele.diff=='Junior' ||  ele.diff=='Newbie'){
+        return ele;
+      }
+    })
+
+    this.NewProjects=this.NewProjects.slice(0,3)
+console.log(this.NewProjects,'projects')
     this.blogService.getallBlogs().subscribe((res)=>{
       let Blogs:any=[];
       Blogs=res;
-      
-  
       let Sorted=Blogs.sort((val1, val2)=>
        {return new Date(val2.createdAt).getTime() - new 
         Date(val1.createdAt).getTime()}
@@ -174,6 +194,8 @@ ele.postedBy.userName=ele.postedBy.userName.trim().slice(0,20).concat('..');
       })
       this.ShowUsers=true;
  console.log(this.RecentUsers)
+
+ this.loaduser=false;
     }else{
       this.ShowUsers=false;
     }
@@ -207,5 +229,8 @@ ele.postedBy.userName=ele.postedBy.userName.trim().slice(0,20).concat('..');
     this._snackBar.open('logout successfull', 'X',{
      duration: 2000
    });
+
+   this.router.navigateByUrl('/')
+   
   }
 }

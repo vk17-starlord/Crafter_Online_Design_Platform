@@ -78,6 +78,85 @@ background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
     
 
 }
+.skeleton{
+    height: 60vh;
+    border: 1px solid rgba(204, 204, 204, 0.103);
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    justify-content:center;
+    padding: 2em;
+    .loading {
+        overflow: hidden;
+        
+        background-color: lighten($color: $darkblue, $amount: 05);
+          
+        width: 100%;
+        height: 200%;
+        position: relative;
+    
+    }
+
+
+    /* The moving element */
+    .loading::after  ,.loadme::after  {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        background: -webkit-gradient(linear, left top,
+                    right top, from(transparent), 
+                    color-stop(rgba(255, 255, 255, 0.2)),
+                    to(transparent));
+                      
+        background: linear-gradient(90deg, transparent,
+                rgba(255, 255, 255, 0.2), transparent);
+    
+        /* Adding animation */
+        animation: loading 2s infinite;
+    }
+    
+    div{
+        background: -webkit-gradient(linear, left top,
+        right top, from(transparent), 
+        color-stop(rgba(255, 255, 255, 0.2)),
+        to(transparent));
+          
+        background: linear-gradient(90deg, transparent,
+        rgba(255, 255, 255, 0.2), transparent);
+      
+        overflow: hidden !important;
+
+    }
+    overflow: hidden !important;
+
+    align-items:flex-start;
+    flex-direction: column;
+    .s-title{
+        width:40%;
+        min-height: 40px;
+    }
+    .s-desc{
+        width:40%;
+        min-height: 120px;
+        margin: 20px 0;
+        
+    }
+    .s-btn{
+        width: 200px;
+        height: 60px;
+        background: -webkit-gradient(linear, left top,
+        right top, from(transparent), 
+        color-stop(rgba(255, 255, 255, 0.2)),
+        to(transparent));
+          
+        background: linear-gradient(90deg, transparent,
+        rgba(255, 255, 255, 0.2), transparent);
+    
+    }
+}
 .recent-container{
 
     &::after{
@@ -306,3 +385,8 @@ p{
  background: $primary;
  color:white;
 }
+
+
+
+
+
