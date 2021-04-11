@@ -58,7 +58,8 @@ This project focuses 🎯 on 4 major parts
 ![Screenshot_2021-02-26 Crafter(3)](https://user-images.githubusercontent.com/53342781/109320026-8ef72380-7875-11eb-9902-01a3f87dc680.png)
 
 ⭐ Homepage
-![Screenshot_2021-04-11 Crafter](https://user-images.githubusercontent.com/53342781/114298734-6483c180-9ad5-11eb-892e-edc2a2458eea.png)
+![Screenshot_2021-04-11 Crafter(5)](https://user-images.githubusercontent.com/53342781/114298864-02778c00-9ad6-11eb-9a0b-71bcd93d002a.png)
+
 
 
 ⭐ Portfolio 
