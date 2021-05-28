@@ -1,0 +1,26 @@
+<div class="form">
+  <h4>Add Course <i class="fas fa-graduation-cap"></i></h4>
+  
+  <p>Enter Course Title</p>
+  <input type="text" [(ngModel)]="data.title" name="title">
+  <p>Enter Course Description</p>
+  <textarea [(ngModel)]="data.description" name="description">
+      </textarea>
+  <p>Enter Course Link</p>
+  <input type="text" [(ngModel)]="data.link" name="link">
+  <p>Upload Course Coverphoto</p>
+  <div class="button-wrap">
+    <label class ="new-button" for="upload"> 
+        Upload  
+    </label>
+
+        <input id="upload" type="file"   (change)="OnImageChange($event)" />    
+    <div>
+
+        <div class="btn">
+            <button class="submit" (click)="submitForm()">Done <i class="fas fa-check-circle"></i></button>
+
+        </div>
+        
+
+</div>

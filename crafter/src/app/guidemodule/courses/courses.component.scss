@@ -1,0 +1,145 @@
+@import '../../app.component.scss';
+.course-container{
+    width: 100%;
+
+    .hero{
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image:url('./photo-1555421689-3f034debb7a6.webp')
+    }
+  .h-col{
+      border-radius: 20px;
+      min-height:100vh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+h1{
+    font-size: 48px;
+    font-weight: bold;
+    font-family: Vester;
+    line-height: 115%;
+}
+p{
+    padding-right: 10%;
+    text-align: justify;
+    font-size: 20px;
+line-height: 150%;
+opacity: .8;
+margin: 0;
+}
+  }
+}
+
+.yb-container{
+    width:70%;
+    margin: 20px auto;
+  h2,p{
+      width: 98%;
+
+      margin: 20px auto;
+  }
+  h2{
+      font-size: 24px;
+      line-height: 125%;
+  }
+  p{
+      font-size: 16px;
+      line-height: 150%;
+      opacity: .8;
+  }
+    img{
+        width: 15vh;
+        margin: 20px auto;
+        height: 15vh;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+    #name{
+        font-size: 16px;
+        opacity: 0.8;
+    }
+    #channel{
+        font-weight: bold;
+    }
+    button{
+        padding: 10px 20px;
+        margin: 20px auto;
+
+        text-align: center;
+        background-color: $primary;
+        border: none;
+        text-transform: capitalize;
+        border-radius: 8px;
+font-size: 16px;
+        color: white;
+        &:hover{
+            transition: 0.2s ease-in-out;
+            background-color: darken($color: $primary, $amount: 10);
+        }
+    }
+ 
+    .item{
+        p{
+            text-align: center;
+            font-size: 16px;
+         
+            margin: 2px auto;
+    
+            letter-spacing: 0.1em;
+        }
+border-radius: 12px;
+        background-color: lighten($color: $light-blue, $amount: 05);
+
+        width: 90%;
+        margin: 0 auto;
+        min-height: 300px;
+    }
+}
+
+.add-post{
+    position: fixed;
+ 
+    right: 50px;
+    top: 85%;
+ background-color: $primary ;
+ background: $primary;
+ color:white;
+}
+
+
+.course-card{
+    width: 80%;
+margin: 20px auto;
+    padding:10px;
+   
+    h1{
+        font-family: Vester;
+        font-size: 24px;
+    }
+    p{
+        font-family: RobotoLight;
+        line-height: 150%;
+    }
+    img{
+        max-width: 100%;
+margin: 20px auto;
+}
+    .c-txt{
+        padding: 10px;
+ 
+    }
+    button{
+        background-color: $primary;
+        color: whitesmoke;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        &:hover{
+            background-color: darken($color: $primary, $amount: 10);
+        }
+    }
+}

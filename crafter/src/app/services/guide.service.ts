@@ -1,52 +1,71 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GuideService {
-  
+  constructor(private http: HttpClient) { }
 
-   Resources:any={
- Youtubers:[
-   {
-     name:'Ran Segall',
-     profile:'https://uploads-ssl.webflow.com/5dbe6dc615cb7f8453a36368/5dfe8287c3faab38b8ae3f15_47694598_2159951487601380_3161074802911870976_n.jpg'
-     ,channel:'Flux',
-     link:'https://www.youtube.com/channel/UCN7dywl5wDxTu1RM3eJ_h9Q'
-     ,website:'https://www.flux-academy.com/'
 
-    },
-   {
-    name:'Daniel Scott.',
-    profile:'https://yt3.ggpht.com/ytc/AAUvwngWFbFDiwtuJ-p7AJeg2_AR6dv2g4V5zVRFc2Ohog=s176-c-k-c0x00ffffff-no-rj'
-    ,channel:' Bring Your Own Laptop ',
-    link:'https://www.youtube.com/user/BringYourOwnLaptop',
-    website:'https://www.bringyourownlaptop.com'
-  },
   
+  URL="http://localhost:3000"
+
+  getMemeType(type){
+    let Types= ['image/gif','image/png','image/svg+xml','image/svg','image/webp','image/jpeg','image/png'];
+ return Types.includes(type);
+  }
+
+  PostGuide(data){
+  
+return this.http.post(`http://localhost:3000/guide`,{data})
+  }
+  
+  GetCourse()
   {
-    name:'Thomas cargill',
-    profile:'https://yt3.ggpht.com/ytc/AAUvwngKSEFGUaYUBKlUk8M2vddrvSL6s82mBiUyA81hkg=s176-c-k-c0x00ffffff-no-rj'
-    ,channel:'Satori Graphics ',
-    link:'https://www.youtube.com/channel/UCoeJKtPJLoIBqWq4o8TDLpA',
-    website:'https://satorigraphics.net/'
-  },
+    return this.http.get(`http://localhost:3000/guide`);
+  }
+  Youtubers=[
+    {
+      name:'Ran Segall',
+      profile:'https://uploads-ssl.webflow.com/5dbe6dc615cb7f8453a36368/5dfe8287c3faab38b8ae3f15_47694598_2159951487601380_3161074802911870976_n.jpg'
+      ,channel:'Flux',
+      link:'https://www.youtube.com/channel/UCN7dywl5wDxTu1RM3eJ_h9Q'
+      ,website:'https://www.flux-academy.com/'
+ 
+     },
+    {
+     name:'Daniel Scott.',
+     profile:'https://yt3.ggpht.com/ytc/AAUvwngWFbFDiwtuJ-p7AJeg2_AR6dv2g4V5zVRFc2Ohog=s176-c-k-c0x00ffffff-no-rj'
+     ,channel:' Bring Your Own Laptop ',
+     link:'https://www.youtube.com/user/BringYourOwnLaptop',
+     website:'https://www.bringyourownlaptop.com'
+   },
+   
+   {
+     name:'Thomas cargill',
+     profile:'https://yt3.ggpht.com/ytc/AAUvwngKSEFGUaYUBKlUk8M2vddrvSL6s82mBiUyA81hkg=s176-c-k-c0x00ffffff-no-rj'
+     ,channel:'Satori Graphics ',
+     link:'https://www.youtube.com/channel/UCoeJKtPJLoIBqWq4o8TDLpA',
+     website:'https://satorigraphics.net/'
+   },
+   
   
  
-
-  {
-    name:'Gary Simon',
-    profile:'https://yt3.ggpht.com/ytc/AAUvwnicQ5YCpxK5a_Qxv_CiqZAavecesw1o5sFqpe2A=s900-c-k-c0x00ffffff-no-rj'
-    ,channel:' Design Course',
-    link:'https://www.youtube.com/channel/UCoeJKtPJLoIBqWq4o8TDLpA',
-    website:'https://designcourse.com/'
-   ,subscribers:'749K'
-  },
-
-
-
-  ]
-,
+   {
+     name:'Gary Simon',
+     profile:'https://yt3.ggpht.com/ytc/AAUvwnicQ5YCpxK5a_Qxv_CiqZAavecesw1o5sFqpe2A=s900-c-k-c0x00ffffff-no-rj'
+     ,channel:' Design Course',
+     link:'https://www.youtube.com/channel/UCoeJKtPJLoIBqWq4o8TDLpA',
+     website:'https://designcourse.com/'
+    ,subscribers:'749K'
+   },
+ 
+ 
+ 
+   ]
+ 
+   Resources:any={
 
   Books:[
 
@@ -147,11 +166,12 @@ Courses:[
 };
   
  
-  constructor() { }
 
-  GetResources(): void {
-    return this.Resources;
+
+  getYoutubers(){
+    return this.Youtubers;
   }
+
 
   
   

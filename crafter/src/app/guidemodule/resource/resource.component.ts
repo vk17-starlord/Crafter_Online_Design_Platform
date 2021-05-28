@@ -32,11 +32,7 @@ export class ResourceComponent implements OnInit {
   Youtubers:any;
 
   ngOnInit(): void {
-    this.Resources=this.guide.GetResources()
 
-    console.log(this.Resources)
-
-    this.Youtubers=this.Resources.Youtubers;
   }
 
   Menus:any=[

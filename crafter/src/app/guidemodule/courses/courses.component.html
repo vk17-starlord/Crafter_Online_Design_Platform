@@ -1,1 +1,61 @@
-<p>courses works!</p>
+<div class="course-container">
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 h-col">
+            <h1>Learn designing alongside experienced Leaders  </h1>
+            <p>Looking to level up your design skills? More than a simple webinar or static online course, Workshops are live and highly interactive—featuring must-have insights from your favorite design leaders. </p>
+        </div>
+        <div class="col-sm-12 col-lg-6 h-col hero">
+        </div>
+
+
+    </div>
+    </div>
+
+
+    <div class="yb-container">
+    <h2>Want to start learning designing for free? </h2>
+    <p>Yes you can start out learning  UI UX designing for free by taking free tutorials on youtube to get a basic idea of things these are some of the famous and renowned YouTubers which can help you set a strong base</p>
+        <owl-carousel-o [options]="customOptions">
+
+            <ng-template carouselSlide *ngFor="let person of Youtubers " >
+                <div class="item flex-column  d-flex justify-content-center align-items-center" >
+<a [href]="person.website" target="_blank">
+    <img [src]="person.profile" alt="">
+
+</a>
+                    <p id="channel">{{person.channel}}</p>
+<p id="name">{{person.name}}</p>
+
+<a [href]="person.link" target="_blank">
+    <button>view </button>
+</a>
+                 </div>
+            </ng-template>      
+        </owl-carousel-o>
+    </div>
+
+
+    <div class="container">
+        <div class="row course-card" *ngFor="let course of Courses">
+            <div class="col-sm-12 col-lg-5 c-txt">
+                <h1>{{course.title}}</h1>
+<p>{{course.description }}</p>         
+</div>
+            <div class="col-sm-12 col-lg-7 c-img">
+<img [src]="course.cover_photo" alt="">
+<a [href]="course.link" target="_blank">
+    <button>View Course</button>   
+
+</a>
+</div>
+            
+        </div>
+    </div>
+</div>
+<button class="add-post" (click)="openForm()" mat-fab   aria-label="Example icon button with a delete icon">
+  
+    <mat-icon>add</mat-icon>
+
+  </button>
+

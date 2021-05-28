@@ -22,6 +22,8 @@ import {GuideComponent} from './guidemodule/guide/guide.component';
 import {ResourceComponent} from './guidemodule/resource/resource.component';
 import {StatsComponent} from './guidemodule/stats/stats.component';
 import {ToolsComponent} from './guidemodule/tools/tools.component'
+import { CoursesComponent } from './guidemodule/courses/courses.component';
+import { BooksComponent } from './guidemodule/books/books.component';
 
 const routes: Routes = [
  
@@ -51,6 +53,8 @@ const routes: Routes = [
    {path:"Resource" ,component:ResourceComponent,canActivate:[AuthGuardGuard]},
    {path:"Tools" ,component:ToolsComponent,canActivate:[AuthGuardGuard]},
    {path:"Stats" ,component:StatsComponent,canActivate:[AuthGuardGuard]},
+   {path:"Courses" ,component:CoursesComponent,canActivate:[AuthGuardGuard]},
+   {path:"Books" ,component:BooksComponent,canActivate:[AuthGuardGuard]},
 
    { path: '', redirectTo: '/landingpage', pathMatch: 'full' },
 

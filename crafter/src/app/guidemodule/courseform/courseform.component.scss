@@ -1,0 +1,71 @@
+@import '../../app.component.scss';
+.form{
+    width: 100%;
+    min-height: 75vh;
+    color: white;
+    padding: 20px;
+    .btn{
+        width: 100%;
+        text-align: center;
+    }
+    p{
+        text-align: left;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    .submit{
+        border-radius: 8px;
+        &:hover{
+            transition: 0.4s ease;
+            background-color: rgb(90,71,248);
+        }
+        text-align: left;
+
+      background-color: $primary;
+      border: none;
+      color: white;
+        margin: 20px auto;
+    padding: 10px 20px;
+    }
+    .new-button {
+        display: inline-block;
+        padding: 8px 12px; 
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: $primary;
+        font-size: 16px;
+        transition:0.5s ease-in-out;
+        &:hover{
+            background: rgb(90,71,248);
+        
+        }
+        color: #fff;
+    }input[type="file"] {
+      position: absolute;
+      z-index: -1;
+      top: 6px;
+      left: 0;
+      font-size: 15px;
+      color: rgb(153,153,153);
+    }.button-wrap {
+      position: relative;
+    }
+    input,textarea{
+        margin: 10px auto;
+        border-radius: 0;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        background-color:lighten($color:  $light-blue, $amount: 05);
+    }
+    h4{
+        margin: 20px auto;
+        font-size: 24px;
+        text-align: center;
+        font-family: vester;
+        letter-spacing: 0.1em;
+    }
+background-color:lighten($color: $darkblue, $amount: 05);
+}

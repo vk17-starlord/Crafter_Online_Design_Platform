@@ -50,7 +50,7 @@ router.post('/guide/coverphoto', upload.single('coverphoto'), async (req,res)=>{
 
 router.post('/guide', async (req,res)=>{
     try {
-        const {title, cover_photo, link, category, description} = req.body
+        const {title, cover_photo, link, category, description} = req.body.data;
         if(!title || !cover_photo || !link || !category || !description){
             return res.status(401).json({err: "Please Enter all the fields"})
         }

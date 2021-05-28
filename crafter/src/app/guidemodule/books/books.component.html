@@ -1,1 +1,17 @@
-<p>books works!</p>
+<div class="book-container">
+
+<div class="container row">
+<div class="col-sm-12 col-lg-4 col-md-4" *ngFor="let book of Books">
+<div class="cover-photo" style="background-image:url('{{book.img}}')">
+
+    <div class="overlay">
+        <p>{{book.desc}}</p>
+        <a [href]="book.link" target="_blank" style="background-color:{{book.bg}}">Read Online</a>
+    </div>
+</div>
+<h2>{{book.title}}</h2>
+<p>{{book.authors}}</p>
+</div>
+</div>
+
+</div>

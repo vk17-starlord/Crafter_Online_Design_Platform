@@ -12,6 +12,8 @@ export class GuideComponent implements OnInit {
   constructor( guideService: GuideService) { }
 
 
+
+
   Timeline:any=[
 
     {
@@ -40,8 +42,8 @@ para:" Becoming an UI designer is not that easy, right? It requires several skil
 }
 ,
 {
-  title:"From  Where should i start my journey of UI UX designer",
-  redirect:"https://uxdesign.cc/how-to-become-a-ui-ux-designer-self-taught-8a511170fd7c"
+  title:"Tell me some Statistic Data about this",
+ link:"/Stats"
 ,
   para:"You have already stepped towards the first step by visiting our website..you just need bit of guidance to start out nicely!"
 }
@@ -56,21 +58,21 @@ para:" Becoming an UI designer is not that easy, right? It requires several skil
 
 {
   title:"Which are some of the best UI UX courses",
- link:"/courses"
+ link:"/Courses"
   ,
   para:"We have got you some of the best Designing courses you can enroll in and also some free courses which beginners can try out to understand basics.."
 }
 ,
 {
   title:"Are there some Books available on designing??  ",
- link:"/books"
+ link:"/Books"
   ,
   para:"Yess!! Indeed their are many books out there which can enhance your skills to next level..."
 }
 ,
 {
   title:"Where can i find free ui ux resources??  ",
- link:"/resources"
+ link:"/Resources"
   ,
   para:"we are providing free resources to all the users which includes ui kits font-kits and links to other free resources available online "
 }
