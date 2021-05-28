@@ -31,17 +31,17 @@
     </div>
   <div class="profile-box row">
     <div class="col-sm-12 col-lg-3 col d-flex justify-content-start align-items-center flex-column">
-      <img [src]="profileUser.profile.postedBy.profilePic" (click)="openBottomSheet()" alt="">
+      <img [src]="profileUser.user.profilePic" (click)="openBottomSheet()" alt="">
     </div>
     <div class="col-sm-12 col-lg-9 col">
 
       <h4>{{profileUser.user.firstName}} {{profileUser.user.lastName}}</h4>
        <p><i class="fas fa-briefcase"></i> {{profileUser.user.whoAreYou}}</p>
        <p><i class="fas fa-envelope"></i> {{profileUser.user.email}}</p>
-   <p><i class="fas fa-biohazard"></i>{{profileUser.profile.bio}}</p>
+   <p *ngIf="profileUser.profile.bio"><i class="fas fa-biohazard"></i>{{profileUser.profile.bio}}</p>
   <div *ngIf="this.Viewer===this.profileUser.user._id">
     <button *ngIf="Edit" routerLink='/Editprofile'>Edit </button>
-    <button *ngIf="Upload" routerLink='/Uploadpost'>Upload </button>
+    <button *ngIf="Upload" routerLink='/profileform'>Upload </button>
 
   </div>
 
@@ -89,7 +89,7 @@
     <i class="fas fa-image"></i>
     <span id="label"> Designs </span>
   </ng-template>
-  <div class="n-container" *ngIf="this.profileUser.blog.length<1">
+  <div class="n-container" *ngIf="this.profileUser.dribbble.length<1">
     <div class="not-posted">
 
     </div>

@@ -21,6 +21,8 @@ router.post('/postProfileInfo', requireLogin, async (req,res)=>{
             }else{
             try {
                 const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body;
+                console.log( {bio, desc, p_coverPhoto, p_contact, p_links} )
+  
                 const newUserProfile = new Profile({
                     bio,
                     desc,
@@ -43,6 +45,7 @@ router.put('/updateProfile/:id', requireLogin, async (req,res)=>{
         const {bio, desc, p_coverPhoto, p_contact, p_links} = req.body
 
  
+        console.log( {bio, desc, p_coverPhoto, p_contact, p_links} )
         await Profile.findOneAndUpdate({postedBy: req.params.id}, {
             bio, desc, p_coverPhoto, p_contact, p_links, postedBy: req.user
         }, (err, prof)=>{

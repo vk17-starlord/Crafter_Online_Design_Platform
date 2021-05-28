@@ -72,7 +72,8 @@ para:" Becoming an UI designer is not that easy, right? It requires several skil
 ,
 {
   title:"Where can i find free ui ux resources??  ",
- link:"/Resources"
+  redirect:"https://uxplanet.org/most-up-to-date-ui-ux-resources-2019-constantly-updated-f924dee3d1a4 "
+
   ,
   para:"we are providing free resources to all the users which includes ui kits font-kits and links to other free resources available online "
 }
@@ -80,8 +81,7 @@ para:" Becoming an UI designer is not that easy, right? It requires several skil
 
 {
   title:"what next??",
- link:"/resources"
-  ,
+
   para:"If you feel confident about your designing skills..then you must go for an online internship or start your own freelancing business!! "
 }
 

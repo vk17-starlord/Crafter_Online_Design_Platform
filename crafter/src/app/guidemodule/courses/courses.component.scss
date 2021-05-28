@@ -125,8 +125,11 @@ margin: 20px auto;
         line-height: 150%;
     }
     img{
-        max-width: 100%;
+      width: 100%;
 margin: 20px auto;
+max-height: 40vh;
+object-fit: cover;
+object-position:  center;
 }
     .c-txt{
         padding: 10px;
